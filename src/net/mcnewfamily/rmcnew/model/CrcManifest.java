@@ -17,32 +17,23 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.parser;
+package net.mcnewfamily.rmcnew.model;
 
-import net.mcnewfamily.rmcnew.model.DestinationHubMap;
-import net.mcnewfamily.rmcnew.shared.Constants;
+import net.mcnewfamily.rmcnew.parser.DestinationHubMappingParser;
 
 import java.io.IOException;
-import java.util.List;
 
-public class DestinationHubMappingParser extends ConfigCSVParser {
+public class CrcManifest {
+	private final String DESTINATION_HUB_MAP_CSV = "destinationHubMapping.csv";
 
-	public DestinationHubMap parse() throws IOException {
-		DestinationHubMap hubMap = new DestinationHubMap();
-		boolean headerSeen = false;
+	private DestinationHubMap hubMap;
 
-		List<String[]> lines = this.readAll();
-		for (String[] line : lines) {
-			if (headerSeen) {
-				hubMap.put(line[0], line[1], line[2]);
-			} else if (line[0].equalsIgnoreCase(Constants.FINAL_DESTINATION) &&
-					   line[1].equalsIgnoreCase(Constants.HUB) &&
-					   line[2].equalsIgnoreCase(Constants.COUNTRY)) {
-				headerSeen = true;
-			} else {
-				throw new IllegalArgumentException("Error in destination Hub Mapping CSV file!");
-			}
-		}
-		return hubMap;
+	public CrcManifest() throws IOException {
+		DestinationHubMappingParser hubMappingParser = new DestinationHubMappingParser();
+		hubMappingParser.openCSVFile(DESTINATION_HUB_MAP_CSV);
+		hubMap = hubMappingParser.parse();
+		System.out.println(hubMap.toString());
 	}
+
+
 }

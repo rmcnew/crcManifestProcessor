@@ -19,6 +19,7 @@
 
 package net.mcnewfamily.rmcnew.user_interface;
 
+import net.mcnewfamily.rmcnew.model.CrcManifest;
 import net.mcnewfamily.rmcnew.shared.Util;
 
 import javax.swing.*;
@@ -27,6 +28,7 @@ import java.awt.*;
 public class MainWindow extends JFrame {
 	public static final String mainTitle = "CRC Manifest Processor";
 	public static final String licenseTabTitle = "License";
+	private static CrcManifest manifest;
 
 	private JTabbedPane tabbedPane = new JTabbedPane();
 
@@ -40,8 +42,16 @@ public class MainWindow extends JFrame {
 		}
 	}
 
+	private static void init() {
+		try {
+			manifest = new CrcManifest();
+		} catch (Exception e) {
+
+		}
+	}
 
 	public static void main(String[] args) throws ClassNotFoundException, UnsupportedLookAndFeelException, IllegalAccessException, InstantiationException {
+		init();
 		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		MainWindow mainWindow = new MainWindow(mainTitle);
 		mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

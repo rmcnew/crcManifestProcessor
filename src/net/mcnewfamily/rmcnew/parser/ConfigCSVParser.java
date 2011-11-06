@@ -32,27 +32,27 @@ public abstract class ConfigCSVParser {
 
 	protected CSVReader csvReader;
 
-	protected void openCSVFile(String filename) throws FileNotFoundException {
+	public void openCSVFile(String filename) throws FileNotFoundException {
 		if (Util.notNullAndNotEmpty(filename) ) {
 			csvReader = new CSVReader(new FileReader(filename));
 		}
 	}
 
-	protected void openCSVFile(File file) throws FileNotFoundException {
+	public void openCSVFile(File file) throws FileNotFoundException {
 		if (file != null) {
 			csvReader = new CSVReader(new FileReader(file));
 		}
 	}
 
-	protected List<String[]> readAll() throws IOException {
+	public List<String[]> readAll() throws IOException {
 		return csvReader.readAll();
 	}
 
-	protected String[] readNext() throws IOException {
+	public String[] readNext() throws IOException {
 		return csvReader.readNext();
 	}
 
-	protected void close() throws IOException {
+	public void close() throws IOException {
 		csvReader.close();
 	}
 
