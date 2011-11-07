@@ -25,7 +25,7 @@ import java.util.Set;
 
 public class PriorityMOSMap {
 
-	protected HashMap<String, Boolean> map;
+	protected HashMap<String, Boolean> map = new HashMap<String, Boolean>();
 
 	public PriorityMOSMap() {
 	}
@@ -39,7 +39,11 @@ public class PriorityMOSMap {
 	}
 
 	public Boolean get(Object o) {
-		return map.get(o);
+		Boolean result = map.get(o);
+        if (result == null) {
+            result = false;
+        }
+        return result;
 	}
 
 	public boolean containsKey(Object o) {
@@ -72,6 +76,7 @@ public class PriorityMOSMap {
 		StringBuilder builder = new StringBuilder();
 		builder.append("{\n");
 		for (String key : keys) {
+            builder.append("\t");
 			builder.append(key);
 			builder.append(" => ");
 			builder.append(map.get(key).toString());

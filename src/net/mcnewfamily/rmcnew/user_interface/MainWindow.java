@@ -24,6 +24,7 @@ import net.mcnewfamily.rmcnew.shared.Util;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class MainWindow extends JFrame {
 	public static final String mainTitle = "CRC Manifest Processor";
@@ -42,27 +43,28 @@ public class MainWindow extends JFrame {
 		}
 	}
 
-	private static void init() {
-		try {
-			manifest = new CrcManifest();
-		} catch (Exception e) {
-
-		}
+	private static void init() throws IOException {
+		manifest = CrcManifest.getInstance();
 	}
 
-	public static void main(String[] args) throws ClassNotFoundException, UnsupportedLookAndFeelException, IllegalAccessException, InstantiationException {
-		init();
-		UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		MainWindow mainWindow = new MainWindow(mainTitle);
-		mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Container contentPane = mainWindow.getContentPane();
-		contentPane.add(mainWindow.tabbedPane);
-		// add content
-		mainWindow.addTab("CRC Premanifest", new PremanifestTab());
-		mainWindow.addTab("License", new LicenseTab());
+	public static void main(String[] args) {
+        MainWindow mainWindow = null;
+		try {
+            init();
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            mainWindow = new MainWindow(mainTitle);
+            mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            Container contentPane = mainWindow.getContentPane();
+            contentPane.add(mainWindow.tabbedPane);
+            // add content
+            mainWindow.addTab("CRC Premanifest", new PremanifestTab());
+            mainWindow.addTab("License", new LicenseTab());
 
 
-		mainWindow.pack();
-		mainWindow.setVisible(true);
+            mainWindow.pack();
+            mainWindow.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(mainWindow, e+"\n"+Util.convertStackTraceToString(e.getStackTrace()), e.getClass().getName(), JOptionPane.ERROR_MESSAGE);
+        }
 	}
 }

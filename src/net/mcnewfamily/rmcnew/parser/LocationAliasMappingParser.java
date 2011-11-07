@@ -19,5 +19,29 @@
 
 package net.mcnewfamily.rmcnew.parser;
 
-public class LocationAliasMappingParser {
+import net.mcnewfamily.rmcnew.model.LocationAliasMap;
+import net.mcnewfamily.rmcnew.shared.Constants;
+
+import java.io.IOException;
+import java.util.List;
+
+public class LocationAliasMappingParser extends ConfigCSVParser {
+
+    public LocationAliasMap parse() throws IOException {
+        LocationAliasMap aliasMap = new LocationAliasMap();
+        boolean headerSeen = false;
+
+		List<String[]> lines = this.readAll();
+		for (String[] line : lines) {
+			if (headerSeen) {
+				aliasMap.put(line[0], line[1]);
+			} else if (line[0].equalsIgnoreCase(Constants.ALIAS) &&
+					   line[1].equalsIgnoreCase(Constants.FINAL_DESTINATION)) {
+				headerSeen = true;
+			} else {
+				throw new IllegalArgumentException("Error in location alias CSV file!");
+			}
+		}
+        return aliasMap;
+    }
 }

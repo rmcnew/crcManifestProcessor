@@ -25,7 +25,7 @@ import java.util.Set;
 
 public class LocationAliasMap {
 
-	protected HashMap<String, String> map;
+	protected HashMap<String, String> map = new HashMap<String, String>();
 
 	public LocationAliasMap() {
 	}
@@ -72,6 +72,7 @@ public class LocationAliasMap {
 		StringBuilder builder = new StringBuilder();
 		builder.append("{\n");
 		for (String key : keys) {
+            builder.append("\t");
 			builder.append(key);
 			builder.append(" => ");
 			builder.append(map.get(key).toString());

@@ -26,6 +26,8 @@ import java.io.File;
 public class PremanifestController {
 
 	public static Constants.ReturnValue runWorkflow(File preManifestInputFile, File preManifestOutputFile) {
+
+
 		return Constants.ReturnValue.SUCCESS;
 	}
 

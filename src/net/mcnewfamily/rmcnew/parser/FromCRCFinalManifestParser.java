@@ -19,5 +19,6 @@
 
 package net.mcnewfamily.rmcnew.parser;
 
-public class FromCRCFinalManifestParser {
+public class FromCRCFinalManifestParser extends ConfigCSVParser {
+
 }

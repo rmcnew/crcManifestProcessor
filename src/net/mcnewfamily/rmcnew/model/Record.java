@@ -108,8 +108,50 @@ public class Record {
 		this.country = country;
 	}
 
-	public int replaceLocationAliases() {
+    @Override
+    public String toString() {
+        return "Record{" +
+                "name='" + name + '\'' +
+                ", rank='" + rank + '\'' +
+                ", MOS='" + MOS + '\'' +
+                ", serviceBranch='" + serviceBranch + '\'' +
+                ", gender='" + gender + '\'' +
+                ", finalDestination='" + finalDestination + '\'' +
+                ", hub='" + hub + '\'' +
+                ", country='" + country + '\'' +
+                '}';
+    }
 
-		return 0;
-	}
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Record record = (Record) o;
+
+        if (MOS != null ? !MOS.equals(record.MOS) : record.MOS != null) return false;
+        if (country != null ? !country.equals(record.country) : record.country != null) return false;
+        if (finalDestination != null ? !finalDestination.equals(record.finalDestination) : record.finalDestination != null)
+            return false;
+        if (!gender.equals(record.gender)) return false;
+        if (hub != null ? !hub.equals(record.hub) : record.hub != null) return false;
+        if (!name.equals(record.name)) return false;
+        if (!rank.equals(record.rank)) return false;
+        if (!serviceBranch.equals(record.serviceBranch)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + rank.hashCode();
+        result = 31 * result + (MOS != null ? MOS.hashCode() : 0);
+        result = 31 * result + serviceBranch.hashCode();
+        result = 31 * result + gender.hashCode();
+        result = 31 * result + (finalDestination != null ? finalDestination.hashCode() : 0);
+        result = 31 * result + (hub != null ? hub.hashCode() : 0);
+        result = 31 * result + (country != null ? country.hashCode() : 0);
+        return result;
+    }
 }

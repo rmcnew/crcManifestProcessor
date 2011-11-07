@@ -25,7 +25,7 @@ import java.util.Set;
 
 public class DestinationHubMap {
 
-	protected HashMap<String, HubCountry> map;
+	protected HashMap<String, HubCountry> map = new HashMap<String, HubCountry>();
 
 	public DestinationHubMap() {
 	}
@@ -76,6 +76,7 @@ public class DestinationHubMap {
 		StringBuilder builder = new StringBuilder();
 		builder.append("{\n");
 		for (String key : keys) {
+            builder.append("\t");
 			builder.append(key);
 			builder.append(" => ");
 			builder.append(map.get(key).toString());

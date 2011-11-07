@@ -25,6 +25,7 @@ public class Constants {
 	public final static String FINAL_DESTINATION = "FINAL_DESTINATION";
 	public final static String HUB = "HUB";
 	public final static String COUNTRY = "COUNTRY";
+    public final static String ALIAS = "ALIAS";
 	public final static String NOT_FOUND = "NOT_FOUND";
 	public final static String MOS = "MOS";
 	public final static String KUWAIT = "KUWAIT";
@@ -33,6 +34,11 @@ public class Constants {
 	public final static String ALI_AL_SALEM = "ALI_AL_SALEM";
 	public final static String AL_UDEID = "AL_UDEID";
 	public final static String BAGRAM = "BAGRAM";
+    public final static String NAME = "NAME";
+    public final static String RANK = "RANK";
+    public final static String AFSC_MOS = "AFSC/MOS";
+    public final static String SERVICE_BRANCH = "SERVICE_BRANCH";
+    public final static String GENDER = "GENDER";
 
 	public static enum ReturnValue {
 		SUCCESS("Successful execution"),

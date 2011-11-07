@@ -35,7 +35,13 @@
 	<target name="dist" depends="compile" description="generate the distribution">
 		<mkdir dir="${dist}"/>
 		<copy todir="${dist}">
-            <fileset dir="config"/>
+            <resources>
+                <file file="destinationHubMapping.csv"/>
+                <file file="locationAlias.csv"/>
+                <file file="priorityMOS.csv"/>
+                <file file="gpl.txt"/>
+                <file file="apache2.txt"/>
+            </resources>
         </copy>
 		<jar jarfile="${dist}/crcManifestProcessor-${DSTAMP}.jar" basedir="${build}">
 			<manifest>
