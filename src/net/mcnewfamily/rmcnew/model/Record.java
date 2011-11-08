@@ -19,6 +19,10 @@
 
 package net.mcnewfamily.rmcnew.model;
 
+import net.mcnewfamily.rmcnew.shared.Constants;
+
+import java.util.ArrayList;
+
 public class Record {
 
 	String name;
@@ -107,6 +111,75 @@ public class Record {
 	public void setCountry(String country) {
 		this.country = country;
 	}
+
+    public String toCSV() {
+        StringBuilder builder = new StringBuilder(name);
+        builder.append(",");
+        builder.append(rank);
+        builder.append(",");
+        builder.append(MOS);
+        builder.append(",");
+        builder.append(serviceBranch);
+        builder.append(",");
+        builder.append(gender);
+        builder.append(",");
+        builder.append(finalDestination);
+        builder.append(",");
+        builder.append(hub);
+        builder.append(",");
+        builder.append(country);
+        builder.append("\n");
+        return builder.toString();
+    }
+
+    public static String getHeadersCSV() {
+        StringBuilder builder = new StringBuilder(Constants.NAME);
+        builder.append(",");
+        builder.append(Constants.RANK);
+        builder.append(",");
+        builder.append(Constants.MOS);
+        builder.append(",");
+        builder.append(Constants.SERVICE_BRANCH);
+        builder.append(",");
+        builder.append(Constants.GENDER);
+        builder.append(",");
+        builder.append(Constants.FINAL_DESTINATION);
+        builder.append(",");
+        builder.append(Constants.HUB);
+        builder.append(",");
+        builder.append(Constants.COUNTRY);
+        builder.append("\n");
+        return builder.toString();
+    }
+
+
+    public String[] toStringArray() {
+        ArrayList<String> arrayList = new ArrayList<String>();
+        arrayList.add(name);
+        arrayList.add(rank);
+        arrayList.add(MOS);
+        arrayList.add(serviceBranch);
+        arrayList.add(gender);
+        arrayList.add(finalDestination);
+        arrayList.add(hub);
+        arrayList.add(country);
+        String[] result = new String[arrayList.size()];
+        return arrayList.toArray(result);
+    }
+
+    public static String[] getHeaders() {
+        ArrayList<String> arrayList = new ArrayList<String>();
+        arrayList.add(Constants.NAME);
+        arrayList.add(Constants.RANK);
+        arrayList.add(Constants.MOS);
+        arrayList.add(Constants.SERVICE_BRANCH);
+        arrayList.add(Constants.GENDER);
+        arrayList.add(Constants.FINAL_DESTINATION);
+        arrayList.add(Constants.HUB);
+        arrayList.add(Constants.COUNTRY);
+        String[] result = new String[arrayList.size()];
+        return arrayList.toArray(result);
+    }
 
     @Override
     public String toString() {

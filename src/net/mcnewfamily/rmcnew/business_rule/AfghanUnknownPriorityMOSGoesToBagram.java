@@ -19,5 +19,23 @@
 
 package net.mcnewfamily.rmcnew.business_rule;
 
+import net.mcnewfamily.rmcnew.model.PriorityMOSMap;
+import net.mcnewfamily.rmcnew.model.Record;
+import net.mcnewfamily.rmcnew.shared.Constants;
+
+import java.io.IOException;
+
 public class AfghanUnknownPriorityMOSGoesToBagram {
+
+    /**
+    *  if COUNTRY is Afghanistan and destination is UNKNOWN and MOS
+    *  is from the priority list, make the HUB Bagram
+    */
+    public static void applyRule(Record record, PriorityMOSMap mosMap) throws IOException {
+        if ( record.getCountry().equalsIgnoreCase(Constants.AFGHANISTAN) &&
+             record.getFinalDestination().equalsIgnoreCase(Constants.FINAL_DESTINATION) &&
+              mosMap.get(record.getMOS()) != null ) {
+            record.setHub(Constants.BAGRAM);
+        }
+    }
 }

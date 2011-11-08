@@ -20,17 +20,17 @@
 package net.mcnewfamily.rmcnew.reader;
 
 import net.mcnewfamily.rmcnew.model.Record;
+import net.mcnewfamily.rmcnew.model.RecordList;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FromCRCPremanifestReader extends AbstractCSVReader {
 
-    public List<Record> parse() throws IOException {
-        List<Record> records = new ArrayList<Record>();
+    public RecordList read() throws IOException {
+        RecordList records = new RecordList();
         boolean headerSeen = false;
 
 		List<String[]> lines = this.readAll();
@@ -54,7 +54,7 @@ public class FromCRCPremanifestReader extends AbstractCSVReader {
 				throw new IllegalArgumentException("Error in premanifest CSV file format!");
 			}
 		}
-        System.out.println("Records parsed:\n");
+        System.out.println("Records read:\n");
         for (Record record : records) {
             System.out.println(record);
         }

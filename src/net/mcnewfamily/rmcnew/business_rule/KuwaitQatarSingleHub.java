@@ -19,5 +19,24 @@
 
 package net.mcnewfamily.rmcnew.business_rule;
 
+import net.mcnewfamily.rmcnew.model.Record;
+import net.mcnewfamily.rmcnew.shared.Constants;
+
 public class KuwaitQatarSingleHub {
+    /**
+     * Kuwait and Qatar both have single hubs.  If the destination is UNKNOWN or the
+     * hub is NOT_FOUND and the country is Kuwait, make the hub ALI AL SALEM.
+     * If the destination is UNKNOWN or the hub is NOT_FOUND and the country is
+     * Qatar, make the hub AL UDEID.
+     * @param record the record to which the business rule is applied
+     */
+    public static void applyRule(Record record) {
+        if ( (record.getFinalDestination().equalsIgnoreCase(Constants.UNKNOWN)) || record.getHub().equals(Constants.NOT_FOUND)) {
+            if (record.getCountry().equals(Constants.KUWAIT)) {
+                record.setHub(Constants.ALI_AL_SALEM);
+            } else if (record.getCountry().equals(Constants.QATAR)) {
+                record.setHub(Constants.AL_UDEID);
+            }
+        }
+    }
 }

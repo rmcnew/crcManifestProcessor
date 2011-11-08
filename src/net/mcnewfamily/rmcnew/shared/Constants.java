@@ -31,28 +31,13 @@ public class Constants {
 	public final static String KUWAIT = "KUWAIT";
 	public final static String QATAR = "QATAR";
 	public final static String AFGHANISTAN = "AFGHANISTAN";
-	public final static String ALI_AL_SALEM = "ALI_AL_SALEM";
-	public final static String AL_UDEID = "AL_UDEID";
+	public final static String ALI_AL_SALEM = "ALI AL SALEM";
+	public final static String AL_UDEID = "AL UDEID";
 	public final static String BAGRAM = "BAGRAM";
     public final static String NAME = "NAME";
     public final static String RANK = "RANK";
     public final static String AFSC_MOS = "AFSC/MOS";
     public final static String SERVICE_BRANCH = "SERVICE_BRANCH";
     public final static String GENDER = "GENDER";
-
-	public static enum ReturnValue {
-		SUCCESS("Successful execution"),
-		ERROR("An error occurred");
-
-		private final String description;
-
-		public String getDescription() {
-			return description;
-		}
-
-		ReturnValue(String theDescription) {
-			description = theDescription;
-		}
-	}
 
 }

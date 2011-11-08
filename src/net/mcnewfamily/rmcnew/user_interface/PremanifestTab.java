@@ -20,7 +20,7 @@
 package net.mcnewfamily.rmcnew.user_interface;
 
 import net.mcnewfamily.rmcnew.controller.PremanifestController;
-import net.mcnewfamily.rmcnew.shared.Constants;
+import net.mcnewfamily.rmcnew.shared.Util;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -113,12 +113,12 @@ public class PremanifestTab extends JComponent implements ActionListener {
 			} else if (premanifestOutputFile == null) {
 				JOptionPane.showMessageDialog(this, outputErrorMessage, errorMessageTitle, JOptionPane.ERROR_MESSAGE);
 			} else {
-				Constants.ReturnValue returnValue = PremanifestController.runWorkflow(premanifestInputFile, premanifestOutputFile);
-				if (returnValue == Constants.ReturnValue.SUCCESS) {
-					JOptionPane.showMessageDialog(this, "Premanifest processing is complete", "Success!", JOptionPane.PLAIN_MESSAGE);
-				} else {
-					JOptionPane.showMessageDialog(this, returnValue.getDescription(), "Error", JOptionPane.ERROR_MESSAGE);
-				}
+                try {
+				    PremanifestController.runWorkflow(premanifestInputFile, premanifestOutputFile);
+				    JOptionPane.showMessageDialog(this, "Premanifest processing is complete", "Success!", JOptionPane.PLAIN_MESSAGE);
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(this, e+"\n"+ Util.convertStackTraceToString(e.getStackTrace()), e.getClass().getName(), JOptionPane.ERROR_MESSAGE);
+                }
 			}
 		}
 	}

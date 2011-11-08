@@ -27,7 +27,7 @@ import java.util.List;
 
 public class DestinationHubCSVReader extends AbstractCSVReader {
 
-	public DestinationHubMap parse() throws IOException {
+	public DestinationHubMap read() throws IOException {
 		DestinationHubMap hubMap = new DestinationHubMap();
 		boolean headerSeen = false;
 

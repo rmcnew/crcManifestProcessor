@@ -19,5 +19,8 @@
 
 package net.mcnewfamily.rmcnew.writer;
 
-public class PremanifestWriter {
+public class PremanifestWriter extends AbstractCSVWriter {
+
+
+
 }

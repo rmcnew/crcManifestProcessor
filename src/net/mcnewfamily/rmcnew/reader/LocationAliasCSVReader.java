@@ -27,7 +27,7 @@ import java.util.List;
 
 public class LocationAliasCSVReader extends AbstractCSVReader {
 
-    public LocationAliasMap parse() throws IOException {
+    public LocationAliasMap read() throws IOException {
         LocationAliasMap aliasMap = new LocationAliasMap();
         boolean headerSeen = false;
 

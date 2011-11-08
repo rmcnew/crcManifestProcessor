@@ -27,7 +27,7 @@ import java.util.List;
 
 public class PriorityMOSReader extends AbstractCSVReader {
 
-    public PriorityMOSMap parse() throws IOException {
+    public PriorityMOSMap read() throws IOException {
         PriorityMOSMap mosMap = new PriorityMOSMap();
          boolean headerSeen = false;
 

@@ -19,5 +19,6 @@
 
 package net.mcnewfamily.rmcnew.writer;
 
-public class FinalManifestWriter {
+public class FinalManifestWriter extends AbstractCSVWriter {
+
 }

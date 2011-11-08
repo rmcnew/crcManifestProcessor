@@ -19,12 +19,11 @@
 
 package net.mcnewfamily.rmcnew.model;
 
-import net.mcnewfamily.rmcnew.parser.DestinationHubMappingParser;
-import net.mcnewfamily.rmcnew.parser.LocationAliasMappingParser;
-import net.mcnewfamily.rmcnew.parser.PriorityMOSParser;
+import net.mcnewfamily.rmcnew.reader.DestinationHubCSVReader;
+import net.mcnewfamily.rmcnew.reader.LocationAliasCSVReader;
+import net.mcnewfamily.rmcnew.reader.PriorityMOSReader;
 
 import java.io.IOException;
-import java.util.List;
 
 public class CrcManifest {
 	private final String DESTINATION_HUB_MAP_CSV = "destinationHubMapping.csv";
@@ -35,7 +34,7 @@ public class CrcManifest {
 	private DestinationHubMap hubMap;
     private LocationAliasMap aliasMap;
     private PriorityMOSMap mosMap;
-    private List<Record> records;
+    private RecordList records;
 
     // class methods
     public static CrcManifest getInstance() throws IOException {
@@ -47,20 +46,18 @@ public class CrcManifest {
 
     // instance methods
 	private CrcManifest() throws IOException {
-        // parse the configuration files
-		DestinationHubMappingParser hubMappingParser = new DestinationHubMappingParser();
-		hubMappingParser.openCSVFile(DESTINATION_HUB_MAP_CSV);
-		hubMap = hubMappingParser.parse();
+        // read the configuration files
+		DestinationHubCSVReader hubCSVParser = new DestinationHubCSVReader();
+		hubCSVParser.openCSVFile(DESTINATION_HUB_MAP_CSV);
+		hubMap = hubCSVParser.read();
 
-        LocationAliasMappingParser aliasMappingParser = new LocationAliasMappingParser();
-        aliasMappingParser.openCSVFile(LOCATION_ALIAS_MAP_CSV);
-        aliasMap = aliasMappingParser.parse();
-        System.out.println(aliasMap);
+        LocationAliasCSVReader aliasCSVParser = new LocationAliasCSVReader();
+        aliasCSVParser.openCSVFile(LOCATION_ALIAS_MAP_CSV);
+        aliasMap = aliasCSVParser.read();
 
-        PriorityMOSParser mosParser = new PriorityMOSParser();
+        PriorityMOSReader mosParser = new PriorityMOSReader();
         mosParser.openCSVFile(PRIORITY_MOS_CSV);
-        mosMap = mosParser.parse();
-        System.out.println(mosMap);
+        mosMap = mosParser.read();
 	}
 
     public DestinationHubMap getHubMap() {
@@ -75,11 +72,11 @@ public class CrcManifest {
         return mosMap;
     }
 
-    public List<Record> getRecords() {
+    public RecordList getRecords() {
         return records;
     }
 
-    public void setRecords(List<Record> records) {
+    public void setRecords(RecordList records) {
         this.records = records;
     }
 }
