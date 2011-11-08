@@ -17,7 +17,8 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.business_rule;
+package net.mcnewfamily.rmcnew.reader;
 
-public class BusinessRule {
+public class FromCRCFinalManifestReader extends AbstractCSVReader {
+
 }

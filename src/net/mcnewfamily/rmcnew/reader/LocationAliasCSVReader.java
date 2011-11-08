@@ -17,30 +17,31 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.parser;
+package net.mcnewfamily.rmcnew.reader;
 
-import net.mcnewfamily.rmcnew.model.PriorityMOSMap;
+import net.mcnewfamily.rmcnew.model.LocationAliasMap;
 import net.mcnewfamily.rmcnew.shared.Constants;
 
 import java.io.IOException;
 import java.util.List;
 
-public class PriorityMOSParser extends ConfigCSVParser {
+public class LocationAliasCSVReader extends AbstractCSVReader {
 
-    public PriorityMOSMap parse() throws IOException {
-        PriorityMOSMap mosMap = new PriorityMOSMap();
-         boolean headerSeen = false;
+    public LocationAliasMap parse() throws IOException {
+        LocationAliasMap aliasMap = new LocationAliasMap();
+        boolean headerSeen = false;
 
 		List<String[]> lines = this.readAll();
 		for (String[] line : lines) {
 			if (headerSeen) {
-				mosMap.put(line[0], true);
-			} else if (line[0].equalsIgnoreCase(Constants.MOS))	{
+				aliasMap.put(line[0], line[1]);
+			} else if (line[0].equalsIgnoreCase(Constants.ALIAS) &&
+					   line[1].equalsIgnoreCase(Constants.FINAL_DESTINATION)) {
 				headerSeen = true;
 			} else {
-				throw new IllegalArgumentException("Error in priority MOS CSV file!");
+				throw new IllegalArgumentException("Error in location alias CSV file!");
 			}
 		}
-        return mosMap;
+        return aliasMap;
     }
 }

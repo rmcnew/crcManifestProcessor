@@ -17,16 +17,17 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.parser;
+package net.mcnewfamily.rmcnew.reader;
 
 import net.mcnewfamily.rmcnew.model.Record;
 import net.mcnewfamily.rmcnew.shared.Constants;
+import net.mcnewfamily.rmcnew.shared.Util;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FromCRCPremanifestParser extends ConfigCSVParser {
+public class FromCRCPremanifestReader extends AbstractCSVReader {
 
     public List<Record> parse() throws IOException {
         List<Record> records = new ArrayList<Record>();
@@ -37,7 +38,9 @@ public class FromCRCPremanifestParser extends ConfigCSVParser {
             // NAME, RANK, MOS, SERVICE_BRANCH, GENDER, FINAL_DESTINATION, HUB, COUNTRY
 			if (headerSeen) {
 				Record record = new Record(line[0], line[1], line[2], line[3], line[4], line[5], line[6], line[7]);
-                records.add(record);
+                if (Util.notNullAndNotEmpty(line[0])) {
+                    records.add(record);
+                }
 			} else if (line[0].equalsIgnoreCase(Constants.NAME) &&
 					   line[1].equalsIgnoreCase(Constants.RANK) &&
 					   (line[2].equalsIgnoreCase(Constants.MOS) || (line[2].equalsIgnoreCase(Constants.AFSC_MOS)) ) &&
