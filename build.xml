@@ -40,7 +40,7 @@
                 <file file="locationAlias.csv"/>
                 <file file="priorityMOS.csv"/>
                 <file file="gpl.txt"/>
-                <file file="apache2.txt"/>
+                <file file="src/au/com/bytecode/opencsv/apache2.txt"/>
             </resources>
         </copy>
 		<jar jarfile="${dist}/crcManifestProcessor-${DSTAMP}.jar" basedir="${build}">

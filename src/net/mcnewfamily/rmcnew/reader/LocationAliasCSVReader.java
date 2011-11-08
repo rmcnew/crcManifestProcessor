@@ -25,7 +25,7 @@ import net.mcnewfamily.rmcnew.shared.Constants;
 import java.io.IOException;
 import java.util.List;
 
-public class LocationAliasCSVReader extends AbstractCSVReader {
+public class LocationAliasCsvReader extends AbstractCsvReader {
 
     public LocationAliasMap read() throws IOException {
         LocationAliasMap aliasMap = new LocationAliasMap();

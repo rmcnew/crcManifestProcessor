@@ -19,12 +19,13 @@
 
 package net.mcnewfamily.rmcnew.controller;
 
-import net.mcnewfamily.rmcnew.business_rule.AfghanUnknownPriorityMOSGoesToBagram;
+import net.mcnewfamily.rmcnew.business_rule.AfghanUnknownPriorityMosGoesToBagram;
 import net.mcnewfamily.rmcnew.business_rule.KuwaitQatarSingleHub;
 import net.mcnewfamily.rmcnew.model.*;
-import net.mcnewfamily.rmcnew.reader.FromCRCPremanifestReader;
+import net.mcnewfamily.rmcnew.reader.FromCrcPremanifestCsvReader;
 import net.mcnewfamily.rmcnew.shared.Constants;
-import net.mcnewfamily.rmcnew.writer.PremanifestWriter;
+import net.mcnewfamily.rmcnew.shared.Util;
+import net.mcnewfamily.rmcnew.writer.PremanifestCsvWriter;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,9 +35,9 @@ public class PremanifestController {
 	public static void runWorkflow(File preManifestInputFile, File preManifestOutputFile) throws IOException {
 
         CrcManifest crcManifest = CrcManifest.getInstance();
-        FromCRCPremanifestReader premanifestReader = new FromCRCPremanifestReader();
-        premanifestReader.openCSVFile(preManifestInputFile);
-        RecordList records = premanifestReader.read();
+        FromCrcPremanifestCsvReader premanifestCSVReader = new FromCrcPremanifestCsvReader();
+        premanifestCSVReader.openCsvFile(preManifestInputFile);
+        RecordList records = premanifestCSVReader.read();
         crcManifest.setRecords(records);
 
         LocationAliasMap aliasMap = crcManifest.getAliasMap();
@@ -44,13 +45,17 @@ public class PremanifestController {
         PriorityMOSMap mosMap = crcManifest.getMosMap();
 
         for (Record record : records) {
-            // location alias substitution\
             String finalDestination = record.getFinalDestination();
+            // strip prefixes and suffixes
+            finalDestination = Util.stripLocationPrefixesAndSuffixes(finalDestination);
+            // location alias substitution
             String alias = aliasMap.get(finalDestination);
             if (alias != null) {
                 System.out.println("Replaced alias:  " + finalDestination + " => " + alias);
                 finalDestination = alias;
                 record.setFinalDestination(alias);
+            } else {
+                record.setFinalDestination(finalDestination);
             }
             // hub look-up
             HubCountry hubCountry = hubMap.get(finalDestination);
@@ -70,14 +75,14 @@ public class PremanifestController {
             }
             // apply business rules
             KuwaitQatarSingleHub.applyRule(record);
-            AfghanUnknownPriorityMOSGoesToBagram.applyRule(record, mosMap);
+            AfghanUnknownPriorityMosGoesToBagram.applyRule(record, mosMap);
         }
         // write out results
-        PremanifestWriter premanifestWriter = new PremanifestWriter();
-        premanifestWriter.openCSVforWriting(preManifestOutputFile);
-        premanifestWriter.writeAll(records.toListOfStringArray());
-        premanifestWriter.flush();
-        premanifestWriter.close();
+        PremanifestCsvWriter premanifestCSVWriter = new PremanifestCsvWriter();
+        premanifestCSVWriter.openCsvForWriting(preManifestOutputFile);
+        premanifestCSVWriter.writeAll(records.toListOfStringArray());
+        premanifestCSVWriter.flush();
+        premanifestCSVWriter.close();
 	}
 
 }

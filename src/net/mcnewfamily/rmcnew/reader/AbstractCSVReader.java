@@ -28,17 +28,17 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
-public abstract class AbstractCSVReader {
+public abstract class AbstractCsvReader {
 
 	protected CSVReader csvReader;
 
-	public void openCSVFile(String filename) throws FileNotFoundException {
+	public void openCsvFile(String filename) throws FileNotFoundException {
 		if (Util.notNullAndNotEmpty(filename) ) {
 			csvReader = new CSVReader(new FileReader(filename));
 		}
 	}
 
-	public void openCSVFile(File file) throws FileNotFoundException {
+	public void openCsvFile(File file) throws FileNotFoundException {
 		if (file != null) {
 			csvReader = new CSVReader(new FileReader(file));
 		}

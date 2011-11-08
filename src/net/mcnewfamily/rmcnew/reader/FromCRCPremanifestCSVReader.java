@@ -27,7 +27,7 @@ import net.mcnewfamily.rmcnew.shared.Util;
 import java.io.IOException;
 import java.util.List;
 
-public class FromCRCPremanifestReader extends AbstractCSVReader {
+public class FromCrcPremanifestCsvReader extends AbstractCsvReader {
 
     public RecordList read() throws IOException {
         RecordList records = new RecordList();

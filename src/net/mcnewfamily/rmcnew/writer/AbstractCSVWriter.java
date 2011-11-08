@@ -27,17 +27,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-public abstract class AbstractCSVWriter {
+public abstract class AbstractCsvWriter {
 
     protected CSVWriter csvWriter;
 
-    public void openCSVforWriting(String filename) throws IOException {
+    public void openCsvForWriting(String filename) throws IOException {
         if (Util.notNullAndNotEmpty(filename) ) {
             csvWriter = new CSVWriter(new FileWriter(filename));
         }
     }
 
-    public void openCSVforWriting(File file) throws IOException {
+    public void openCsvForWriting(File file) throws IOException {
         if (file != null) {
             csvWriter = new CSVWriter(new FileWriter(file));
         }

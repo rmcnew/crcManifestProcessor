@@ -25,7 +25,7 @@ import net.mcnewfamily.rmcnew.shared.Constants;
 import java.io.IOException;
 import java.util.List;
 
-public class DestinationHubCSVReader extends AbstractCSVReader {
+public class DestinationHubCsvReader extends AbstractCsvReader {
 
 	public DestinationHubMap read() throws IOException {
 		DestinationHubMap hubMap = new DestinationHubMap();

@@ -19,16 +19,14 @@
 
 package net.mcnewfamily.rmcnew.model;
 
-import net.mcnewfamily.rmcnew.reader.DestinationHubCSVReader;
-import net.mcnewfamily.rmcnew.reader.LocationAliasCSVReader;
-import net.mcnewfamily.rmcnew.reader.PriorityMOSReader;
+import net.mcnewfamily.rmcnew.reader.DestinationHubCsvReader;
+import net.mcnewfamily.rmcnew.reader.LocationAliasCsvReader;
+import net.mcnewfamily.rmcnew.reader.PriorityMosCsvReader;
+import net.mcnewfamily.rmcnew.shared.Constants;
 
 import java.io.IOException;
 
 public class CrcManifest {
-	private final String DESTINATION_HUB_MAP_CSV = "destinationHubMapping.csv";
-    private final String LOCATION_ALIAS_MAP_CSV = "locationAlias.csv";
-    private final String PRIORITY_MOS_CSV = "priorityMOS.csv";
 
     private static CrcManifest instance = null;
 	private DestinationHubMap hubMap;
@@ -47,17 +45,17 @@ public class CrcManifest {
     // instance methods
 	private CrcManifest() throws IOException {
         // read the configuration files
-		DestinationHubCSVReader hubCSVParser = new DestinationHubCSVReader();
-		hubCSVParser.openCSVFile(DESTINATION_HUB_MAP_CSV);
+		DestinationHubCsvReader hubCSVParser = new DestinationHubCsvReader();
+		hubCSVParser.openCsvFile(Constants.DESTINATION_HUB_MAP_CSV);
 		hubMap = hubCSVParser.read();
 
-        LocationAliasCSVReader aliasCSVParser = new LocationAliasCSVReader();
-        aliasCSVParser.openCSVFile(LOCATION_ALIAS_MAP_CSV);
+        LocationAliasCsvReader aliasCSVParser = new LocationAliasCsvReader();
+        aliasCSVParser.openCsvFile(Constants.LOCATION_ALIAS_MAP_CSV);
         aliasMap = aliasCSVParser.read();
 
-        PriorityMOSReader mosParser = new PriorityMOSReader();
-        mosParser.openCSVFile(PRIORITY_MOS_CSV);
-        mosMap = mosParser.read();
+        PriorityMosCsvReader MosCsvParser = new PriorityMosCsvReader();
+        MosCsvParser.openCsvFile(Constants.PRIORITY_MOS_CSV);
+        mosMap = MosCsvParser.read();
 	}
 
     public DestinationHubMap getHubMap() {

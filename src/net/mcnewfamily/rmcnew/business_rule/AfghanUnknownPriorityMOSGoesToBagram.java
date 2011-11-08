@@ -25,7 +25,7 @@ import net.mcnewfamily.rmcnew.shared.Constants;
 
 import java.io.IOException;
 
-public class AfghanUnknownPriorityMOSGoesToBagram {
+public class AfghanUnknownPriorityMosGoesToBagram {
 
     /**
     *  if COUNTRY is Afghanistan and destination is UNKNOWN and MOS

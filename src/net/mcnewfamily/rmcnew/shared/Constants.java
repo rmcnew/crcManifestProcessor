@@ -40,4 +40,12 @@ public class Constants {
     public final static String SERVICE_BRANCH = "SERVICE_BRANCH";
     public final static String GENDER = "GENDER";
 
+    // Configuration files
+    public final static String DESTINATION_HUB_MAP_CSV = "destinationHubMapping.csv";
+    public final static String LOCATION_ALIAS_MAP_CSV = "locationAlias.csv";
+    public final static String PRIORITY_MOS_CSV = "priorityMOS.csv";
+    public final static String CONFIGURATION_XLSX = "crcManifestProcessorConfig.xlsx";
+    public final static String DESTINATION_HUB_MAP_SHEET = "destinationHubMapping";
+    public final static String LOCATION_ALIAS_MAP_SHEET = "locationAlias";
+    public final static String PRIORITY_MOS_SHEET = "priorityMOS";
 }

@@ -17,8 +17,8 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.writer;
+package net.mcnewfamily.rmcnew.reader;
 
-public class FinalManifestWriter extends AbstractCSVWriter {
+public class FromCrcFinalManifestCsvReader extends AbstractCsvReader {
 
 }
