@@ -19,9 +19,7 @@
 
 package net.mcnewfamily.rmcnew.model;
 
-import net.mcnewfamily.rmcnew.reader.DestinationHubCsvReader;
-import net.mcnewfamily.rmcnew.reader.LocationAliasCsvReader;
-import net.mcnewfamily.rmcnew.reader.PriorityMosCsvReader;
+import net.mcnewfamily.rmcnew.reader.ConfigXlsxReader;
 import net.mcnewfamily.rmcnew.shared.Constants;
 
 import java.io.IOException;
@@ -44,18 +42,12 @@ public class CrcManifest {
 
     // instance methods
 	private CrcManifest() throws IOException {
-        // read the configuration files
-		DestinationHubCsvReader hubCSVParser = new DestinationHubCsvReader();
-		hubCSVParser.openCsvFile(Constants.DESTINATION_HUB_MAP_CSV);
-		hubMap = hubCSVParser.read();
-
-        LocationAliasCsvReader aliasCSVParser = new LocationAliasCsvReader();
-        aliasCSVParser.openCsvFile(Constants.LOCATION_ALIAS_MAP_CSV);
-        aliasMap = aliasCSVParser.read();
-
-        PriorityMosCsvReader MosCsvParser = new PriorityMosCsvReader();
-        MosCsvParser.openCsvFile(Constants.PRIORITY_MOS_CSV);
-        mosMap = MosCsvParser.read();
+        ConfigXlsxReader xlsxReader = new ConfigXlsxReader();
+        xlsxReader.openXlsxFile(Constants.CONFIGURATION_XLSX);
+        xlsxReader.read();
+        hubMap = xlsxReader.getHubMap();
+        aliasMap = xlsxReader.getAliasMap();
+        mosMap = xlsxReader.getMosMap();
 	}
 
     public DestinationHubMap getHubMap() {

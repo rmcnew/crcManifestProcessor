@@ -19,6 +19,9 @@
 
 package net.mcnewfamily.rmcnew.shared;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DateUtil;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -55,5 +58,33 @@ public class Util {
             }
         }
         return string;
+    }
+
+    public static String getCellValueAsStringOrEmptyString(Cell cell) {
+        if (cell == null) {
+            return "";
+        }
+        String value;
+        switch(cell.getCellType()) {
+            case Cell.CELL_TYPE_STRING:
+                value = cell.getRichStringCellValue().getString();
+                break;
+            case Cell.CELL_TYPE_NUMERIC:
+                if(DateUtil.isCellDateFormatted(cell)) {
+                    value = cell.getDateCellValue().toString();
+                } else {
+                    value = Double.toString(cell.getNumericCellValue());
+                }
+                break;
+            case Cell.CELL_TYPE_BOOLEAN:
+                value = Boolean.toString(cell.getBooleanCellValue());
+                break;
+            case Cell.CELL_TYPE_FORMULA:
+                value = cell.getCellFormula();
+                break;
+            default:
+                value = "";
+        }
+        return value;
     }
 }

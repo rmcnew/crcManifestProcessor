@@ -30,13 +30,13 @@ import java.awt.event.ActionListener;
 import java.io.File;
 
 public class PremanifestTab extends JComponent implements ActionListener {
-	private final String inputPrompt = "Select Premanifest CSV file from CRC";
-	private final String outputPrompt = "Select Output Premanifest filename";
+	private final String inputPrompt = "Select Premanifest Excel file from CRC";
+	private final String outputPrompt = "Select Output Premanifest filename (.xlsx)";
 	private final String buttonText = "Generate Premanifest";
-	private final String inputFilenameLabelBasis = "Premanifest CSV file from CRC:  ";
+	private final String inputFilenameLabelBasis = "Premanifest Excel file from CRC:  ";
 	private final String outputFilenameLabelBasis = "Output Premanifest filename:  ";
 	private final String errorMessageTitle = "File Not Specified";
-	private final String inputErrorMessage = "Please select the premanifest CSV input file";
+	private final String inputErrorMessage = "Please select the premanifest Excel input file";
 	private final String outputErrorMessage = "Please select the desired name for the premanifest output";
 
 	private File premanifestInputFile = null;
@@ -72,7 +72,7 @@ public class PremanifestTab extends JComponent implements ActionListener {
 		inputFileChooser = new JFileChooser();
 		inputFileChooser.setDialogTitle(inputPrompt);
 		inputFileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
-		inputFileChooser.setFileFilter(new FileNameExtensionFilter("CSV files", "csv", "CSV"));
+		inputFileChooser.setFileFilter(new FileNameExtensionFilter("Excel spreadsheets", "xlsx", "xls"));
 		inputFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		outputFileChooser = new JFileChooser();
 		outputFileChooser.setDialogTitle(outputPrompt);

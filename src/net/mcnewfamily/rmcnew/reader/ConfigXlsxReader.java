@@ -20,41 +20,87 @@
 package net.mcnewfamily.rmcnew.reader;
 
 import net.mcnewfamily.rmcnew.model.DestinationHubMap;
+import net.mcnewfamily.rmcnew.model.LocationAliasMap;
+import net.mcnewfamily.rmcnew.model.PriorityMOSMap;
 import net.mcnewfamily.rmcnew.shared.Constants;
-import net.mcnewfamily.rmcnew.shared.Util;
-import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+public class ConfigXlsxReader extends AbstractXlsxReader {
 
-public class ConfigXlsxReader {
-
-    private XSSFWorkbook workbook;
-
-    public void openXlsxFile(String filename) throws IOException {
-        if (Util.notNullAndNotEmpty(filename) ) {
-            workbook = new XSSFWorkbook(new FileInputStream(filename));
-        }
-    }
-
-    public void openXlsxFile(File file) throws IOException {
-        if (file != null) {
-            workbook = new XSSFWorkbook(new FileInputStream(file));
-        }
-    }
+    private DestinationHubMap hubMap;
+    private LocationAliasMap aliasMap;
+    private PriorityMOSMap mosMap;
 
     public void read() {
-        // get the hub mapping and read it
+        readDestinationHubs();
+        readLocationAlias();
+        readPriorityMos();
+    }
+
+    private void readDestinationHubs() {
         XSSFSheet destinationHubSheet = workbook.getSheet(Constants.DESTINATION_HUB_MAP_SHEET);
-        DestinationHubMap hubMap = new DestinationHubMap();
+        hubMap = new DestinationHubMap();
+        boolean headerSeen = false;
         for (Row row : destinationHubSheet) {
-            for (Cell cell : row) {
-              // do stuff here
-            }
+            String cell0 = row.getCell(0).getStringCellValue();
+            String cell1 = row.getCell(1).getStringCellValue();
+            String cell2 = row.getCell(2).getStringCellValue();
+            if (headerSeen) {
+                hubMap.put(cell0, cell1, cell2);
+            } else if (cell0.equalsIgnoreCase(Constants.FINAL_DESTINATION) &&
+					   cell1.equalsIgnoreCase(Constants.HUB) &&
+					   cell2.equalsIgnoreCase(Constants.COUNTRY)) {
+				headerSeen = true;
+			} else {
+				throw new IllegalArgumentException("Error in destinationHubMapping tab of " + Constants.CONFIGURATION_XLSX  + "!");
+			}
         }
+    }
+
+    private void readLocationAlias() {
+        XSSFSheet locationAliasSheet = workbook.getSheet(Constants.LOCATION_ALIAS_MAP_SHEET);
+        aliasMap = new LocationAliasMap();
+        boolean headerSeen = false;
+        for (Row row : locationAliasSheet) {
+            String cell0 = row.getCell(0).getStringCellValue();
+            String cell1 = row.getCell(1).getStringCellValue();
+            if (headerSeen) {
+                aliasMap.put(cell0, cell1);
+            } else if (cell0.equalsIgnoreCase(Constants.ALIAS) &&
+					   cell1.equalsIgnoreCase(Constants.FINAL_DESTINATION)) {
+				headerSeen = true;
+			} else {
+				throw new IllegalArgumentException("Error in locationAlias tab of " + Constants.CONFIGURATION_XLSX  + "!");
+			}
+        }
+    }
+
+    private void readPriorityMos() {
+        XSSFSheet priorityMosSheet = workbook.getSheet(Constants.PRIORITY_MOS_SHEET);
+        mosMap = new PriorityMOSMap();
+        boolean headerSeen = false;
+        for (Row row : priorityMosSheet) {
+            String cell0 = row.getCell(0).getStringCellValue();
+            if (headerSeen) {
+                mosMap.put(cell0, true);
+            } else if (cell0.equalsIgnoreCase(Constants.MOS)) {
+				headerSeen = true;
+			} else {
+				throw new IllegalArgumentException("Error in priorityMOS tab of " + Constants.CONFIGURATION_XLSX  + "!");
+			}
+        }
+    }
+
+    public DestinationHubMap getHubMap() {
+        return hubMap;
+    }
+
+    public LocationAliasMap getAliasMap() {
+        return aliasMap;
+    }
+
+    public PriorityMOSMap getMosMap() {
+        return mosMap;
     }
 }

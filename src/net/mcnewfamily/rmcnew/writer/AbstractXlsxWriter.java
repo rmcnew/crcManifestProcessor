@@ -17,44 +17,36 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.reader;
+package net.mcnewfamily.rmcnew.writer;
 
-import au.com.bytecode.opencsv.CSVReader;
 import net.mcnewfamily.rmcnew.shared.Util;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.List;
 
-public abstract class AbstractCsvReader {
+public abstract class AbstractXlsxWriter {
 
-	protected CSVReader csvReader;
+    XSSFWorkbook workbook;
+    FileOutputStream fileOutputStream;
 
-	public void openCsvFile(String filename) throws FileNotFoundException {
-		if (Util.notNullAndNotEmpty(filename) ) {
-			csvReader = new CSVReader(new FileReader(filename));
-		}
-	}
+    public void openXlsxForWriting(String filename) throws IOException {
+        if (Util.notNullAndNotEmpty(filename) ) {
+            workbook = new XSSFWorkbook();
+            fileOutputStream = new FileOutputStream(filename);
+        }
+    }
 
-	public void openCsvFile(File file) throws FileNotFoundException {
-		if (file != null) {
-			csvReader = new CSVReader(new FileReader(file));
-		}
-	}
+    public void openXlsxForWriting(File file) throws IOException {
+        if (file != null) {
+            workbook = new XSSFWorkbook();
+            fileOutputStream = new FileOutputStream(file);
+        }
+    }
 
-	public List<String[]> readAll() throws IOException {
-		return csvReader.readAll();
-	}
-
-	public String[] readNext() throws IOException {
-		return csvReader.readNext();
-	}
-
-	public void close() throws IOException {
-		csvReader.close();
-	}
-
-
+    public void closeXlsx() throws IOException {
+        workbook.write(fileOutputStream);
+        fileOutputStream.close();
+    }
 }

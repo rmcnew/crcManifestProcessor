@@ -21,8 +21,9 @@ package net.mcnewfamily.rmcnew.controller;
 
 import net.mcnewfamily.rmcnew.business_rule.AfghanUnknownPriorityMosGoesToBagram;
 import net.mcnewfamily.rmcnew.business_rule.KuwaitQatarSingleHub;
+import net.mcnewfamily.rmcnew.business_rule.MakeAllMilitaryServiceBranchA;
 import net.mcnewfamily.rmcnew.model.*;
-import net.mcnewfamily.rmcnew.reader.FromCrcPremanifestCsvReader;
+import net.mcnewfamily.rmcnew.reader.FromCrcPremanifestXlsxReader;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
 import net.mcnewfamily.rmcnew.writer.PremanifestCsvWriter;
@@ -35,10 +36,11 @@ public class PremanifestController {
 	public static void runWorkflow(File preManifestInputFile, File preManifestOutputFile) throws IOException {
 
         CrcManifest crcManifest = CrcManifest.getInstance();
-        FromCrcPremanifestCsvReader premanifestCSVReader = new FromCrcPremanifestCsvReader();
-        premanifestCSVReader.openCsvFile(preManifestInputFile);
-        RecordList records = premanifestCSVReader.read();
+        FromCrcPremanifestXlsxReader premanifestXlsxReader = new FromCrcPremanifestXlsxReader();
+        premanifestXlsxReader.openXlsxFile(preManifestInputFile);
+        RecordList records = premanifestXlsxReader.read();
         crcManifest.setRecords(records);
+        System.out.println(records);
 
         LocationAliasMap aliasMap = crcManifest.getAliasMap();
         DestinationHubMap hubMap = crcManifest.getHubMap();
@@ -76,6 +78,7 @@ public class PremanifestController {
             // apply business rules
             KuwaitQatarSingleHub.applyRule(record);
             AfghanUnknownPriorityMosGoesToBagram.applyRule(record, mosMap);
+            MakeAllMilitaryServiceBranchA.applyRule(record);
         }
         // write out results
         PremanifestCsvWriter premanifestCSVWriter = new PremanifestCsvWriter();

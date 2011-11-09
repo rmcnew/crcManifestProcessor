@@ -86,4 +86,15 @@ public class RecordList implements Iterable<Record> {
         }
         return strings;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder("RecordList {");
+        for (Record record : records) {
+            builder.append(record.toString());
+            builder.append("\n");
+        }
+        builder.append("}\n");
+        return builder.toString();
+    }
 }

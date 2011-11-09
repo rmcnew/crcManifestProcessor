@@ -48,4 +48,5 @@ public class Constants {
     public final static String DESTINATION_HUB_MAP_SHEET = "destinationHubMapping";
     public final static String LOCATION_ALIAS_MAP_SHEET = "locationAlias";
     public final static String PRIORITY_MOS_SHEET = "priorityMOS";
+    public final static String PREMANIFEST_SHEET = "Premanifest";
 }

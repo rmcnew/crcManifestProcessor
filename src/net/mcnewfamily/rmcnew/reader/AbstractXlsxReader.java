@@ -19,29 +19,27 @@
 
 package net.mcnewfamily.rmcnew.reader;
 
-import net.mcnewfamily.rmcnew.model.LocationAliasMap;
-import net.mcnewfamily.rmcnew.shared.Constants;
+import net.mcnewfamily.rmcnew.shared.Util;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.List;
 
-public class LocationAliasCsvReader extends AbstractCsvReader {
+public abstract class AbstractXlsxReader {
 
-    public LocationAliasMap read() throws IOException {
-        LocationAliasMap aliasMap = new LocationAliasMap();
-        boolean headerSeen = false;
+    protected XSSFWorkbook workbook;
 
-		List<String[]> lines = this.readAll();
-		for (String[] line : lines) {
-			if (headerSeen) {
-				aliasMap.put(line[0], line[1]);
-			} else if (line[0].equalsIgnoreCase(Constants.ALIAS) &&
-					   line[1].equalsIgnoreCase(Constants.FINAL_DESTINATION)) {
-				headerSeen = true;
-			} else {
-				throw new IllegalArgumentException("Error in location alias CSV file!");
-			}
-		}
-        return aliasMap;
+    public void openXlsxFile(String filename) throws IOException {
+        if (Util.notNullAndNotEmpty(filename) ) {
+            workbook = new XSSFWorkbook(new FileInputStream(filename));
+        }
     }
+
+    public void openXlsxFile(File file) throws IOException {
+        if (file != null) {
+            workbook = new XSSFWorkbook(new FileInputStream(file));
+        }
+    }
+
 }
