@@ -47,9 +47,14 @@ public class Constants {
     public final static String DESTINATION_HUB_MAP_SHEET = "destinationHubMapping";
     public final static String LOCATION_ALIAS_MAP_SHEET = "locationAlias";
     public final static String PRIORITY_MOS_SHEET = "priorityMOS";
+
     public final static String PREMANIFEST_SHEET = "Premanifest";
     public final static String PREMANFIEST_COUNTS_SHEET = "Premanifest_Counts";
     public final static String FINAL_MANIFEST_SHEET = "Final_Manifest";
     public final static String FINAL_MANIFEST_COUNTS_SHEET = "Final_Manifest_Counts";
     public final static String ON_PREMANIFEST_BUT_DID_NOT_FLY = "On_Premanifest_But_Did_Not_Fly";
+    public final static String LOCATION = "LOCATION";
+    public final static String MIL = "MIL";
+    public final static String DOD_CIV = "DOD_CIV";
+    public final static String Grand_Total = "Grand_Total";
 }
