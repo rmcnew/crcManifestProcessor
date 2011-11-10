@@ -26,7 +26,7 @@ import net.mcnewfamily.rmcnew.model.*;
 import net.mcnewfamily.rmcnew.reader.FromCrcPremanifestXlsxReader;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
-import net.mcnewfamily.rmcnew.writer.PremanifestCsvWriter;
+import net.mcnewfamily.rmcnew.writer.PremanifestXlsxWriter;
 
 import java.io.File;
 import java.io.IOException;
@@ -81,11 +81,11 @@ public class PremanifestController {
             MakeAllMilitaryServiceBranchA.applyRule(record);
         }
         // write out results
-        PremanifestCsvWriter premanifestCSVWriter = new PremanifestCsvWriter();
-        premanifestCSVWriter.openCsvForWriting(preManifestOutputFile);
-        premanifestCSVWriter.writeAll(records.toListOfStringArray());
-        premanifestCSVWriter.flush();
-        premanifestCSVWriter.close();
+        PremanifestXlsxWriter xlsxWriter = new PremanifestXlsxWriter();
+        xlsxWriter.openXlsxForWriting(preManifestOutputFile);
+        xlsxWriter.writeRecords(records);
+        xlsxWriter.writeSummaryTable(records);
+        xlsxWriter.close();
 	}
 
 }

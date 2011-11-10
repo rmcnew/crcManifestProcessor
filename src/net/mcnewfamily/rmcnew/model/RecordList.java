@@ -78,11 +78,11 @@ public class RecordList implements Iterable<Record> {
         return records.iterator();
     }
 
-    public List<String[]> toListOfStringArray() {
-        List<String[]> strings = new ArrayList<String[]>();
+    public List<List<String>> toListOfListOfString() {
+        List<List<String>> strings = new ArrayList<List<String>>();
         strings.add(Record.getHeaders());
         for (Record record : records) {
-            strings.add(record.toStringArray());
+            strings.add(record.toList());
         }
         return strings;
     }

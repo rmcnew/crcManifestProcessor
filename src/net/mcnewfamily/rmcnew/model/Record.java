@@ -22,6 +22,7 @@ package net.mcnewfamily.rmcnew.model;
 import net.mcnewfamily.rmcnew.shared.Constants;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Record {
 
@@ -152,8 +153,7 @@ public class Record {
         return builder.toString();
     }
 
-
-    public String[] toStringArray() {
+    public List<String> toList() {
         ArrayList<String> arrayList = new ArrayList<String>();
         arrayList.add(name);
         arrayList.add(rank);
@@ -163,11 +163,10 @@ public class Record {
         arrayList.add(finalDestination);
         arrayList.add(hub);
         arrayList.add(country);
-        String[] result = new String[arrayList.size()];
-        return arrayList.toArray(result);
+        return arrayList;
     }
 
-    public static String[] getHeaders() {
+    public static List<String> getHeaders() {
         ArrayList<String> arrayList = new ArrayList<String>();
         arrayList.add(Constants.NAME);
         arrayList.add(Constants.RANK);
@@ -177,8 +176,7 @@ public class Record {
         arrayList.add(Constants.FINAL_DESTINATION);
         arrayList.add(Constants.HUB);
         arrayList.add(Constants.COUNTRY);
-        String[] result = new String[arrayList.size()];
-        return arrayList.toArray(result);
+        return arrayList;
     }
 
     @Override

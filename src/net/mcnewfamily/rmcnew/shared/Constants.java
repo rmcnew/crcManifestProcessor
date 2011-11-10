@@ -40,7 +40,6 @@ public class Constants {
     public final static String SERVICE_BRANCH = "SERVICE_BRANCH";
     public final static String GENDER = "GENDER";
 
-    // Configuration files
     public final static String DESTINATION_HUB_MAP_CSV = "destinationHubMapping.csv";
     public final static String LOCATION_ALIAS_MAP_CSV = "locationAlias.csv";
     public final static String PRIORITY_MOS_CSV = "priorityMOS.csv";
@@ -49,4 +48,8 @@ public class Constants {
     public final static String LOCATION_ALIAS_MAP_SHEET = "locationAlias";
     public final static String PRIORITY_MOS_SHEET = "priorityMOS";
     public final static String PREMANIFEST_SHEET = "Premanifest";
+    public final static String PREMANFIEST_COUNTS_SHEET = "Premanifest_Counts";
+    public final static String FINAL_MANIFEST_SHEET = "Final_Manifest";
+    public final static String FINAL_MANIFEST_COUNTS_SHEET = "Final_Manifest_Counts";
+    public final static String ON_PREMANIFEST_BUT_DID_NOT_FLY = "On_Premanifest_But_Did_Not_Fly";
 }

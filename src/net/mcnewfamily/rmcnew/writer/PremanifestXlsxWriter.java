@@ -19,5 +19,20 @@
 
 package net.mcnewfamily.rmcnew.writer;
 
-public class PremanifestXlsxWriter {
+import net.mcnewfamily.rmcnew.model.RecordList;
+import net.mcnewfamily.rmcnew.shared.Constants;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+
+public class PremanifestXlsxWriter extends AbstractXlsxWriter {
+
+    public void writeRecords(RecordList records) {
+        if (records != null && !records.isEmpty()) {
+            XSSFSheet premanifestSheet = workbook.createSheet(Constants.PREMANIFEST_SHEET);
+            addListOfListsToSheet(premanifestSheet, records.toListOfListOfString());
+        }
+    }
+
+    public void writeSummaryTable(RecordList records) {
+        XSSFSheet premanifestSheet = workbook.createSheet(Constants.PREMANFIEST_COUNTS_SHEET);
+    }
 }

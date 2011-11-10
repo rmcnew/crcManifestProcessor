@@ -20,11 +20,15 @@
 package net.mcnewfamily.rmcnew.writer;
 
 import net.mcnewfamily.rmcnew.shared.Util;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 public abstract class AbstractXlsxWriter {
 
@@ -45,8 +49,28 @@ public abstract class AbstractXlsxWriter {
         }
     }
 
-    public void closeXlsx() throws IOException {
+    public void close() throws IOException {
         workbook.write(fileOutputStream);
         fileOutputStream.close();
+    }
+
+    public void addListToRow(XSSFRow row, List<String> list) {
+        if (row != null && list != null) {
+            int cellIndex = 0;
+            for (String string : list) {
+                XSSFCell cell = row.createCell(cellIndex++, XSSFCell.CELL_TYPE_STRING);
+                cell.setCellValue(string);
+            }
+        }
+    }
+
+    public void addListOfListsToSheet(XSSFSheet sheet, List<List<String>> listOfLists) {
+        if (sheet != null && listOfLists != null) {
+            int rowIndex = 0;
+            for (List<String> list : listOfLists) {
+                XSSFRow row = sheet.createRow(rowIndex++);
+                addListToRow(row, list);
+            }
+        }
     }
 }
