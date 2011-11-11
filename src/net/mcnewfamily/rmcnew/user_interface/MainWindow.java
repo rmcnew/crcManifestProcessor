@@ -19,7 +19,7 @@
 
 package net.mcnewfamily.rmcnew.user_interface;
 
-import net.mcnewfamily.rmcnew.model.CrcManifest;
+import net.mcnewfamily.rmcnew.model.data.CrcManifest;
 import net.mcnewfamily.rmcnew.shared.Util;
 
 import javax.swing.*;

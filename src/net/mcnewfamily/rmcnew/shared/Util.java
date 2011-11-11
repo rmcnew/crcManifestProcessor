@@ -73,7 +73,7 @@ public class Util {
                 if(DateUtil.isCellDateFormatted(cell)) {
                     value = cell.getDateCellValue().toString();
                 } else {
-                    value = Double.toString(cell.getNumericCellValue());
+                    value = Integer.toString((int)cell.getNumericCellValue());
                 }
                 break;
             case Cell.CELL_TYPE_BOOLEAN:

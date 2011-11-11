@@ -17,7 +17,7 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.model;
+package net.mcnewfamily.rmcnew.model.data;
 
 public class MilCivCount {
 
@@ -32,6 +32,10 @@ public class MilCivCount {
         this.civilianCount = civilianCount;
     }
 
+    public String getMilitaryCountString() {
+        return "" + militaryCount;
+    }
+
     public Integer getMilitaryCount() {
         return militaryCount;
     }
@@ -40,12 +44,25 @@ public class MilCivCount {
         this.militaryCount = militaryCount;
     }
 
+    public String getCivilianCountString() {
+        return "" + civilianCount;
+    }
+
     public Integer getCivilianCount() {
         return civilianCount;
     }
 
     public void setCivilianCount(Integer civilianCount) {
         this.civilianCount = civilianCount;
+    }
+
+    public String getGrandTotalString() {
+        int subtotal = this.militaryCount + this.civilianCount;
+        return "" + subtotal;
+    }
+
+    public Integer getGrandTotal() {
+        return this.militaryCount + this.civilianCount;
     }
 
     @Override
@@ -68,7 +85,4 @@ public class MilCivCount {
         return result;
     }
 
-    public Integer getTotal() {
-        return this.militaryCount + this.civilianCount;
-    }
 }

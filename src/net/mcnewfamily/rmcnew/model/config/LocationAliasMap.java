@@ -17,17 +17,17 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.model;
+package net.mcnewfamily.rmcnew.model.config;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Set;
 
-public class PriorityMOSMap {
+public class LocationAliasMap {
 
-	protected HashMap<String, Boolean> map = new HashMap<String, Boolean>();
+	protected HashMap<String, String> map = new HashMap<String, String>();
 
-	public PriorityMOSMap() {
+	public LocationAliasMap() {
 	}
 
 	public int size() {
@@ -38,23 +38,19 @@ public class PriorityMOSMap {
 		return map.isEmpty();
 	}
 
-	public Boolean get(Object o) {
-		Boolean result = map.get(o);
-        if (result == null) {
-            result = false;
-        }
-        return result;
+	public String get(Object o) {
+		return map.get(o);
 	}
 
 	public boolean containsKey(Object o) {
 		return map.containsKey(o);
 	}
 
-	public Boolean put(String s, Boolean aBoolean) {
-		return map.put(s, aBoolean);
+	public String put(String alias, String finalDestination) {
+		return map.put(alias, finalDestination);
 	}
 
-	public Boolean remove(Object o) {
+	public String remove(Object o) {
 		return map.remove(o);
 	}
 
@@ -62,12 +58,12 @@ public class PriorityMOSMap {
 		map.clear();
 	}
 
-	public Set<String> keySet() {
-		return map.keySet();
+	public Collection<String> values() {
+		return map.values();
 	}
 
-	public Collection<Boolean> values() {
-		return map.values();
+	public Set<String> keySet() {
+		return map.keySet();
 	}
 
 	@Override

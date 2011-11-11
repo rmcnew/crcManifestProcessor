@@ -17,25 +17,11 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.business_rule;
+package net.mcnewfamily.rmcnew.model.excel;
 
-import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
-import net.mcnewfamily.rmcnew.model.data.Record;
-import net.mcnewfamily.rmcnew.shared.Constants;
+// formatting data that is used to style a CellEssence
+public class CellStyleEssence {
 
-import java.io.IOException;
-
-public class AfghanUnknownPriorityMosGoesToBagram {
-
-    /**
-    *  if COUNTRY is Afghanistan and destination is UNKNOWN and MOS
-    *  is from the priority list, make the HUB Bagram
-    */
-    public static void applyRule(Record record, PriorityMOSMap mosMap) throws IOException {
-        if ( record.getCountry().equalsIgnoreCase(Constants.AFGHANISTAN) &&
-             record.getFinalDestination().equalsIgnoreCase(Constants.FINAL_DESTINATION) &&
-              mosMap.get(record.getMOS()) != null ) {
-            record.setHub(Constants.BAGRAM);
-        }
-    }
+    // we mirror parts of the POI CellStyle interface that
+    // are relevant to the cell style we need to model
 }

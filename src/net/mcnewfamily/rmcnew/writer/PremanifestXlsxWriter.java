@@ -19,7 +19,8 @@
 
 package net.mcnewfamily.rmcnew.writer;
 
-import net.mcnewfamily.rmcnew.model.RecordList;
+import net.mcnewfamily.rmcnew.model.data.CountryHubCountMap;
+import net.mcnewfamily.rmcnew.model.data.RecordList;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
@@ -32,7 +33,10 @@ public class PremanifestXlsxWriter extends AbstractXlsxWriter {
         }
     }
 
-    public void writeSummaryTable(RecordList records) {
-        XSSFSheet premanifestSheet = workbook.createSheet(Constants.PREMANFIEST_COUNTS_SHEET);
+    public void writeSummaryTable(CountryHubCountMap countryHubCountMap) {
+        if (countryHubCountMap != null && !countryHubCountMap.isEmpty()) {
+            XSSFSheet premanifestCountsSheet = workbook.createSheet(Constants.PREMANFIEST_COUNTS_SHEET);
+            addListOfListsToSheet(premanifestCountsSheet, countryHubCountMap.toListOfListOfString());
+        }
     }
 }

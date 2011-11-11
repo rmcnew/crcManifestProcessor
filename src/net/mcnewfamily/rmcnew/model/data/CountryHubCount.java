@@ -17,21 +17,22 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.model;
+package net.mcnewfamily.rmcnew.model.data;
 
 import net.mcnewfamily.rmcnew.shared.Constants;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
+import java.util.TreeMap;
 
 public class CountryHubCount {
 
     private String countryName;
     private MilCivCount countryCount = new MilCivCount(0,0);
-    private HashMap<String, MilCivCount> hubCounts;
+    private TreeMap<String, MilCivCount> hubCounts = new TreeMap<String, MilCivCount>();
 
-    public CountryHubCount() {
+    public CountryHubCount(String countryName) {
+        this.countryName = countryName;
     }
 
     public void plusOneToMilCount(HubCountry hubCountry) {
@@ -68,7 +69,7 @@ public class CountryHubCount {
         countryCount.setCivilianCount(civilianCount);
     }
 
-    public List<String> getHeaders() {
+    public static List<String> getHeaders() {
         List<String> headers = new ArrayList<String>();
         headers.add(Constants.LOCATION);
         headers.add(Constants.MIL);
@@ -77,10 +78,38 @@ public class CountryHubCount {
         return headers;
     }
 
+    // countryName, MIL total, CIV total, Grand total
+    private List<String> getCountryTotals() {
+        List<String> countryTotals = new ArrayList<String>();
+        countryTotals.add(this.countryName);
+        countryTotals.add(this.countryCount.getMilitaryCountString());
+        countryTotals.add(this.countryCount.getCivilianCountString());
+        countryTotals.add(this.countryCount.getGrandTotalString());
+        return countryTotals;
+    }
+
+    private List<List<String>> getHubTotals () {
+        List<List<String>> hubTotals = new ArrayList<List<String>>();
+        for (String hubName : hubCounts.keySet()) {
+            hubTotals.add(getSingleHubTotal(hubName, hubCounts.get(hubName) ));
+        }
+        return hubTotals;
+    }
+
+    // <tab> hubName, MIL total, CIV total, Grand total
+    private List<String> getSingleHubTotal(String hubName, MilCivCount hubCount) {
+        List<String> singleHubTotals = new ArrayList<String>();
+        singleHubTotals.add(hubName);
+        singleHubTotals.add(hubCount.getMilitaryCountString());
+        singleHubTotals.add(hubCount.getCivilianCountString());
+        singleHubTotals.add(hubCount.getGrandTotalString());
+        return singleHubTotals;
+    }
+
     public List<List<String>> toListOfListOfString() {
         List<List<String>> strings = new ArrayList<List<String>>();
-        strings.add(getHeaders());
-        // more to do here
+        strings.add(this.getCountryTotals());
+        strings.addAll(this.getHubTotals());
         return strings;
     }
 }

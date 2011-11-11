@@ -17,7 +17,7 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.model;
+package net.mcnewfamily.rmcnew.model.data;
 
 import net.mcnewfamily.rmcnew.shared.Constants;
 
@@ -224,5 +224,13 @@ public class Record {
         result = 31 * result + (hub != null ? hub.hashCode() : 0);
         result = 31 * result + (country != null ? country.hashCode() : 0);
         return result;
+    }
+
+    public boolean isMilitary() {
+        return (this.serviceBranch.equalsIgnoreCase(Constants.ARMY) ||
+                this.serviceBranch.equalsIgnoreCase(Constants.AIR_FORCE) ||
+                this.serviceBranch.equalsIgnoreCase(Constants.NAVY) ||
+                this.serviceBranch.equalsIgnoreCase(Constants.MARINE_CORP) ||
+                this.serviceBranch.equalsIgnoreCase(Constants.COAST_GUARD) );
     }
 }

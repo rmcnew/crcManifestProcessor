@@ -17,17 +17,17 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.model;
+package net.mcnewfamily.rmcnew.model.config;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Set;
 
-public class LocationAliasMap {
+public class PriorityMOSMap {
 
-	protected HashMap<String, String> map = new HashMap<String, String>();
+	protected HashMap<String, Boolean> map = new HashMap<String, Boolean>();
 
-	public LocationAliasMap() {
+	public PriorityMOSMap() {
 	}
 
 	public int size() {
@@ -38,19 +38,23 @@ public class LocationAliasMap {
 		return map.isEmpty();
 	}
 
-	public String get(Object o) {
-		return map.get(o);
+	public Boolean get(Object o) {
+		Boolean result = map.get(o);
+        if (result == null) {
+            result = false;
+        }
+        return result;
 	}
 
 	public boolean containsKey(Object o) {
 		return map.containsKey(o);
 	}
 
-	public String put(String alias, String finalDestination) {
-		return map.put(alias, finalDestination);
+	public Boolean put(String s, Boolean aBoolean) {
+		return map.put(s, aBoolean);
 	}
 
-	public String remove(Object o) {
+	public Boolean remove(Object o) {
 		return map.remove(o);
 	}
 
@@ -58,12 +62,12 @@ public class LocationAliasMap {
 		map.clear();
 	}
 
-	public Collection<String> values() {
-		return map.values();
-	}
-
 	public Set<String> keySet() {
 		return map.keySet();
+	}
+
+	public Collection<Boolean> values() {
+		return map.values();
 	}
 
 	@Override

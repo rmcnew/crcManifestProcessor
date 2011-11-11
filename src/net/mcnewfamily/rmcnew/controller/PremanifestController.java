@@ -22,7 +22,10 @@ package net.mcnewfamily.rmcnew.controller;
 import net.mcnewfamily.rmcnew.business_rule.AfghanUnknownPriorityMosGoesToBagram;
 import net.mcnewfamily.rmcnew.business_rule.KuwaitQatarSingleHub;
 import net.mcnewfamily.rmcnew.business_rule.MakeAllMilitaryServiceBranchA;
-import net.mcnewfamily.rmcnew.model.*;
+import net.mcnewfamily.rmcnew.model.config.DestinationHubMap;
+import net.mcnewfamily.rmcnew.model.config.LocationAliasMap;
+import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
+import net.mcnewfamily.rmcnew.model.data.*;
 import net.mcnewfamily.rmcnew.reader.FromCrcPremanifestXlsxReader;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
@@ -45,6 +48,7 @@ public class PremanifestController {
         LocationAliasMap aliasMap = crcManifest.getAliasMap();
         DestinationHubMap hubMap = crcManifest.getHubMap();
         PriorityMOSMap mosMap = crcManifest.getMosMap();
+        CountryHubCountMap countryHubCountMap = crcManifest.getCountryHubCountMap();
 
         for (Record record : records) {
             String finalDestination = record.getFinalDestination();
@@ -79,12 +83,20 @@ public class PremanifestController {
             KuwaitQatarSingleHub.applyRule(record);
             AfghanUnknownPriorityMosGoesToBagram.applyRule(record, mosMap);
             MakeAllMilitaryServiceBranchA.applyRule(record);
+            // count country / hub totals
+            // first, ensure hubCountry matches what the record contains
+            hubCountry = new HubCountry(record.getHub(), record.getCountry());
+            if (record.isMilitary()) {
+                countryHubCountMap.plusOneToMilCount(hubCountry);
+            } else {
+                countryHubCountMap.plusOneToCivCount(hubCountry);
+            }
         }
         // write out results
         PremanifestXlsxWriter xlsxWriter = new PremanifestXlsxWriter();
         xlsxWriter.openXlsxForWriting(preManifestOutputFile);
         xlsxWriter.writeRecords(records);
-        xlsxWriter.writeSummaryTable(records);
+        xlsxWriter.writeSummaryTable(countryHubCountMap);
         xlsxWriter.close();
 	}
 

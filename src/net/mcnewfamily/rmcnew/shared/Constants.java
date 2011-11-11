@@ -39,6 +39,11 @@ public class Constants {
     public final static String AFSC_MOS = "AFSC/MOS";
     public final static String SERVICE_BRANCH = "SERVICE_BRANCH";
     public final static String GENDER = "GENDER";
+    public static final String ARMY = "A";
+    public static final String AIR_FORCE = "AF";
+    public static final String MARINE_CORP = "M";
+    public static final String NAVY = "N";
+    public static final String COAST_GUARD = "CG";
 
     public final static String DESTINATION_HUB_MAP_CSV = "destinationHubMapping.csv";
     public final static String LOCATION_ALIAS_MAP_CSV = "locationAlias.csv";

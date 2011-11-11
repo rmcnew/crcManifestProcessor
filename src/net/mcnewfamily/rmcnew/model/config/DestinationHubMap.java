@@ -17,7 +17,9 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.model;
+package net.mcnewfamily.rmcnew.model.config;
+
+import net.mcnewfamily.rmcnew.model.data.HubCountry;
 
 import java.util.Collection;
 import java.util.HashMap;

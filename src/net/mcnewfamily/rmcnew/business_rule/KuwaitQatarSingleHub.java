@@ -19,7 +19,7 @@
 
 package net.mcnewfamily.rmcnew.business_rule;
 
-import net.mcnewfamily.rmcnew.model.Record;
+import net.mcnewfamily.rmcnew.model.data.Record;
 import net.mcnewfamily.rmcnew.shared.Constants;
 
 public class KuwaitQatarSingleHub {

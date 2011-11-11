@@ -17,8 +17,11 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.model;
+package net.mcnewfamily.rmcnew.model.data;
 
+import net.mcnewfamily.rmcnew.model.config.DestinationHubMap;
+import net.mcnewfamily.rmcnew.model.config.LocationAliasMap;
+import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
 import net.mcnewfamily.rmcnew.reader.ConfigXlsxReader;
 import net.mcnewfamily.rmcnew.shared.Constants;
 
@@ -31,6 +34,7 @@ public class CrcManifest {
     private LocationAliasMap aliasMap;
     private PriorityMOSMap mosMap;
     private RecordList records;
+    private CountryHubCountMap countryHubCountMap = new CountryHubCountMap();
 
     // class methods
     public static CrcManifest getInstance() throws IOException {
@@ -42,12 +46,12 @@ public class CrcManifest {
 
     // instance methods
 	private CrcManifest() throws IOException {
-        ConfigXlsxReader xlsxReader = new ConfigXlsxReader();
-        xlsxReader.openXlsxFile(Constants.CONFIGURATION_XLSX);
-        xlsxReader.read();
-        hubMap = xlsxReader.getHubMap();
-        aliasMap = xlsxReader.getAliasMap();
-        mosMap = xlsxReader.getMosMap();
+        ConfigXlsxReader configXlsxReader = new ConfigXlsxReader();
+        configXlsxReader.openXlsxFile(Constants.CONFIGURATION_XLSX);
+        configXlsxReader.read();
+        hubMap = configXlsxReader.getHubMap();
+        aliasMap = configXlsxReader.getAliasMap();
+        mosMap = configXlsxReader.getMosMap();
 	}
 
     public DestinationHubMap getHubMap() {
@@ -68,5 +72,13 @@ public class CrcManifest {
 
     public void setRecords(RecordList records) {
         this.records = records;
+    }
+
+    public CountryHubCountMap getCountryHubCountMap() {
+        return countryHubCountMap;
+    }
+
+    public void setCountryHubCountMap(CountryHubCountMap countryHubCountMap) {
+        this.countryHubCountMap = countryHubCountMap;
     }
 }

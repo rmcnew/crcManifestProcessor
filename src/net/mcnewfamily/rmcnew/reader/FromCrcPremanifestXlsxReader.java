@@ -19,8 +19,8 @@
 
 package net.mcnewfamily.rmcnew.reader;
 
-import net.mcnewfamily.rmcnew.model.Record;
-import net.mcnewfamily.rmcnew.model.RecordList;
+import net.mcnewfamily.rmcnew.model.data.Record;
+import net.mcnewfamily.rmcnew.model.data.RecordList;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
 import org.apache.poi.ss.usermodel.Row;

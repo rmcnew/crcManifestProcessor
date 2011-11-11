@@ -19,27 +19,22 @@
 
 package net.mcnewfamily.rmcnew.business_rule;
 
-import net.mcnewfamily.rmcnew.model.Record;
+import net.mcnewfamily.rmcnew.model.data.Record;
+import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
 
 public class MakeAllMilitaryServiceBranchA {
     // If the person is military, make their service branch code "A" regardless of their actual branch
-    private static final String ARMY = "A";
-    private static final String AIR_FORCE = "AF";
-    private static final String MARINE_CORP = "M";
-    private static final String NAVY = "N";
-    private static final String COAST_GUARD = "CG";
-
     public static void applyRule(Record record) {
         if (record != null) {
             String serviceBranch = record.getServiceBranch();
             if (Util.notNullAndNotEmpty(serviceBranch)) {
-                if (serviceBranch.equalsIgnoreCase(AIR_FORCE) ||
-                    serviceBranch.equalsIgnoreCase(MARINE_CORP) ||
-                    serviceBranch.equalsIgnoreCase(NAVY) ||
-                    serviceBranch.equalsIgnoreCase(COAST_GUARD)
+                if (serviceBranch.equalsIgnoreCase(Constants.AIR_FORCE) ||
+                    serviceBranch.equalsIgnoreCase(Constants.MARINE_CORP) ||
+                    serviceBranch.equalsIgnoreCase(Constants.NAVY) ||
+                    serviceBranch.equalsIgnoreCase(Constants.COAST_GUARD)
                     ) {
-                   record.setServiceBranch(ARMY);
+                   record.setServiceBranch(Constants.ARMY);
                 }
             }
         }

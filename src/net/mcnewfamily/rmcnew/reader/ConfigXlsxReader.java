@@ -19,9 +19,9 @@
 
 package net.mcnewfamily.rmcnew.reader;
 
-import net.mcnewfamily.rmcnew.model.DestinationHubMap;
-import net.mcnewfamily.rmcnew.model.LocationAliasMap;
-import net.mcnewfamily.rmcnew.model.PriorityMOSMap;
+import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
+import net.mcnewfamily.rmcnew.model.config.DestinationHubMap;
+import net.mcnewfamily.rmcnew.model.config.LocationAliasMap;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;

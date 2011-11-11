@@ -17,25 +17,14 @@
  *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.business_rule;
+package net.mcnewfamily.rmcnew.model.excel;
 
-import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
-import net.mcnewfamily.rmcnew.model.data.Record;
-import net.mcnewfamily.rmcnew.shared.Constants;
+// contents and formatting data that will be used to
+// create a XSSFCell that is part of a spreadsheet
+// these cells have not yet been assigned a location within
+// the spreadsheet, hence no row or column fields
+public class CellEssence {
 
-import java.io.IOException;
-
-public class AfghanUnknownPriorityMosGoesToBagram {
-
-    /**
-    *  if COUNTRY is Afghanistan and destination is UNKNOWN and MOS
-    *  is from the priority list, make the HUB Bagram
-    */
-    public static void applyRule(Record record, PriorityMOSMap mosMap) throws IOException {
-        if ( record.getCountry().equalsIgnoreCase(Constants.AFGHANISTAN) &&
-             record.getFinalDestination().equalsIgnoreCase(Constants.FINAL_DESTINATION) &&
-              mosMap.get(record.getMOS()) != null ) {
-            record.setHub(Constants.BAGRAM);
-        }
-    }
+    // we mirror some parts of the POI Cell interface that are relevant to
+    // the part of the cell we need to model
 }
