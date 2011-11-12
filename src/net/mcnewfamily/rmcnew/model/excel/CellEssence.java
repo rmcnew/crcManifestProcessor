@@ -1,32 +1,34 @@
 /*
  * Copyright (c) 2011 Richard Scott McNew.
  *
- * This file is part of crcManifestProcessor.
+ * This file is part of CRC Manifest Processor.
  *
- *     crcManifestProcessor is free software: you can redistribute it and/or modify
+ *     CRC Manifest Processor is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
  *     the Free Software Foundation, either version 3 of the License, or
  *     (at your option) any later version.
  *
- *     crcManifestProcessor is distributed in the hope that it will be useful,
+ *     CRC Manifest Processor is distributed in the hope that it will be useful,
  *     but WITHOUT ANY WARRANTY; without even the implied warranty of
  *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *     GNU General Public License for more details.
  *
  *     You should have received a copy of the GNU General Public License
- *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
+ *     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 package net.mcnewfamily.rmcnew.model.excel;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 
 // contents and formatting data that will be used to
 // create a XSSFCell that is part of a spreadsheet
 // these cells have not yet been assigned a location within
 // the spreadsheet, hence no row or column fields
+// TODO: add support for cell comments
 public class CellEssence {
 
     // we mirror some parts of the POI Cell interface that are relevant to
@@ -47,12 +49,11 @@ public class CellEssence {
 
         public int toPoiCellType() {
             return this.enumInt;
-
         }
     }
 
     private CellType cellType = CellType.CELL_TYPE_STRING; // default to string CellType
-    private CellStyleEssence cellStyleEssence = null;
+    private CellStyleEssence cellStyleEssence = new CellStyleEssence();
     private String value;
 
     public CellEssence() {
@@ -82,15 +83,19 @@ public class CellEssence {
         this.value = value;
     }
 
+
     public XSSFCell toXSSFCell(XSSFRow row, int columnIndex) {
         if (row != null && columnIndex >= 0) {
             XSSFCell cell = row.createCell(columnIndex);
             cell.setCellType(this.cellType.toPoiCellType());
+            if (this.cellStyleEssence != null) {
+                XSSFCellStyle cellStyle = this.cellStyleEssence.toXSSFCellStyle(row.getSheet().getWorkbook());
+                cell.setCellStyle(cellStyle);
+            }
             cell.setCellValue(this.value);
-            cell.setCellStyle(this.cellStyleEssence.toXSSFCellStyle());
             return cell;
         } else {
-            throw new IllegalArgumentException("row cannot be null and columnIndex must be non-negative!");
+            throw new IllegalArgumentException("Cannot create XSSFCell on null XSSFRow cannot be null or using invalid columnIndex!");
         }
     }
 }

@@ -1,24 +1,27 @@
 /*
  * Copyright (c) 2011 Richard Scott McNew.
  *
- * This file is part of crcManifestProcessor.
+ * This file is part of CRC Manifest Processor.
  *
- *     crcManifestProcessor is free software: you can redistribute it and/or modify
+ *     CRC Manifest Processor is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
  *     the Free Software Foundation, either version 3 of the License, or
  *     (at your option) any later version.
  *
- *     crcManifestProcessor is distributed in the hope that it will be useful,
+ *     CRC Manifest Processor is distributed in the hope that it will be useful,
  *     but WITHOUT ANY WARRANTY; without even the implied warranty of
  *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *     GNU General Public License for more details.
  *
  *     You should have received a copy of the GNU General Public License
- *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
+ *     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 package net.mcnewfamily.rmcnew.model.data;
 
+import net.mcnewfamily.rmcnew.model.excel.CellEssence;
+import net.mcnewfamily.rmcnew.model.excel.RowEssence;
+import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
 import net.mcnewfamily.rmcnew.shared.Constants;
 
 import java.util.ArrayList;
@@ -166,6 +169,17 @@ public class Record {
         return arrayList;
     }
 
+    public RowEssence toRowEssence() {
+        RowEssence rowEssence = new RowEssence();
+        for (String field : toList()) {
+            CellEssence cell = new CellEssence();
+            cell.setCellStyleEssence(CellSharedStyles.ENTRY_STYLE);
+            cell.setValue(field);
+            rowEssence.add(cell);
+        }
+        return rowEssence;
+    }
+
     public static List<String> getHeaders() {
         ArrayList<String> arrayList = new ArrayList<String>();
         arrayList.add(Constants.NAME);
@@ -177,6 +191,17 @@ public class Record {
         arrayList.add(Constants.HUB);
         arrayList.add(Constants.COUNTRY);
         return arrayList;
+    }
+
+    public static RowEssence getHeaderRowEssence() {
+        RowEssence headerRow = new RowEssence();
+        for (String header : getHeaders()) {
+            CellEssence cell = new CellEssence();
+            cell.setCellStyleEssence(CellSharedStyles.HEADER_STYLE);
+            cell.setValue(header);
+            headerRow.add(cell);
+        }
+        return headerRow;
     }
 
     @Override

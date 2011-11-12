@@ -1,20 +1,20 @@
 /*
  * Copyright (c) 2011 Richard Scott McNew.
  *
- * This file is part of crcManifestProcessor.
+ * This file is part of CRC Manifest Processor.
  *
- *     crcManifestProcessor is free software: you can redistribute it and/or modify
+ *     CRC Manifest Processor is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
  *     the Free Software Foundation, either version 3 of the License, or
  *     (at your option) any later version.
  *
- *     crcManifestProcessor is distributed in the hope that it will be useful,
+ *     CRC Manifest Processor is distributed in the hope that it will be useful,
  *     but WITHOUT ANY WARRANTY; without even the implied warranty of
  *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *     GNU General Public License for more details.
  *
  *     You should have received a copy of the GNU General Public License
- *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
+ *     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 package net.mcnewfamily.rmcnew.controller;
@@ -43,7 +43,7 @@ public class PremanifestController {
         premanifestXlsxReader.openXlsxFile(preManifestInputFile);
         RecordList records = premanifestXlsxReader.read();
         crcManifest.setRecords(records);
-        System.out.println(records);
+        //System.out.println(records);
 
         LocationAliasMap aliasMap = crcManifest.getAliasMap();
         DestinationHubMap hubMap = crcManifest.getHubMap();
@@ -57,7 +57,7 @@ public class PremanifestController {
             // location alias substitution
             String alias = aliasMap.get(finalDestination);
             if (alias != null) {
-                System.out.println("Replaced alias:  " + finalDestination + " => " + alias);
+                //System.out.println("Replaced alias:  " + finalDestination + " => " + alias);
                 finalDestination = alias;
                 record.setFinalDestination(alias);
             } else {
@@ -66,7 +66,7 @@ public class PremanifestController {
             // hub look-up
             HubCountry hubCountry = hubMap.get(finalDestination);
             if (hubCountry != null) {
-                System.out.println("Found hub: " + finalDestination + " => " + hubCountry);
+                //System.out.println("Found hub: " + finalDestination + " => " + hubCountry);
                 record.setHub(hubCountry.getHub());
                 if (!record.getCountry().equalsIgnoreCase(hubCountry.getCountry())) {
                     System.out.println("Countries do not match!  " + record.getCountry() + " != " + hubCountry.getCountry());
@@ -91,12 +91,12 @@ public class PremanifestController {
             } else {
                 countryHubCountMap.plusOneToCivCount(hubCountry);
             }
+
         }
         // write out results
         PremanifestXlsxWriter xlsxWriter = new PremanifestXlsxWriter();
         xlsxWriter.openXlsxForWriting(preManifestOutputFile);
-        xlsxWriter.writeRecords(records);
-        xlsxWriter.writeSummaryTable(countryHubCountMap);
+        xlsxWriter.writePremanifest(crcManifest);
         xlsxWriter.close();
 	}
 

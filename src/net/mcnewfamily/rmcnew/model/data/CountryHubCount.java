@@ -1,25 +1,29 @@
 /*
  * Copyright (c) 2011 Richard Scott McNew.
  *
- * This file is part of crcManifestProcessor.
+ * This file is part of CRC Manifest Processor.
  *
- *     crcManifestProcessor is free software: you can redistribute it and/or modify
+ *     CRC Manifest Processor is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
  *     the Free Software Foundation, either version 3 of the License, or
  *     (at your option) any later version.
  *
- *     crcManifestProcessor is distributed in the hope that it will be useful,
+ *     CRC Manifest Processor is distributed in the hope that it will be useful,
  *     but WITHOUT ANY WARRANTY; without even the implied warranty of
  *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *     GNU General Public License for more details.
  *
  *     You should have received a copy of the GNU General Public License
- *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
+ *     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 package net.mcnewfamily.rmcnew.model.data;
 
+import net.mcnewfamily.rmcnew.model.excel.CellEssence;
+import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
+import net.mcnewfamily.rmcnew.model.excel.RowEssence;
 import net.mcnewfamily.rmcnew.shared.Constants;
+import net.mcnewfamily.rmcnew.shared.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +82,17 @@ public class CountryHubCount {
         return headers;
     }
 
+    public static RowEssence getHeadersRowEssence() {
+        RowEssence rowEssence = new RowEssence();
+        for (String header : getHeaders()) {
+            CellEssence cell = new CellEssence();
+            cell.setCellStyleEssence(CellSharedStyles.HEADER_STYLE);
+            cell.setValue(header);
+            rowEssence.add(cell);
+        }
+        return rowEssence;
+    }
+
     // countryName, MIL total, CIV total, Grand total
     private List<String> getCountryTotals() {
         List<String> countryTotals = new ArrayList<String>();
@@ -88,6 +103,17 @@ public class CountryHubCount {
         return countryTotals;
     }
 
+    public RowEssence getCountryTotalsRowEssence() {
+        RowEssence rowEssence = new RowEssence();
+        for (String field : getCountryTotals()) {
+            CellEssence cell = new CellEssence();
+            cell.setCellStyleEssence(CellSharedStyles.COUNTRY_STYLE);
+            cell.setValue(field);
+            rowEssence.add(cell);
+        }
+        return rowEssence;
+    }
+
     private List<List<String>> getHubTotals () {
         List<List<String>> hubTotals = new ArrayList<List<String>>();
         for (String hubName : hubCounts.keySet()) {
@@ -95,6 +121,15 @@ public class CountryHubCount {
         }
         return hubTotals;
     }
+
+    private List<RowEssence> getHubTotalsRowEssences() {
+        List<RowEssence> hubTotals = new ArrayList<RowEssence>();
+        for (String hubName : hubCounts.keySet()) {
+            hubTotals.add(getSingleHubTotalRowEssence(hubName, hubCounts.get(hubName) ));
+        }
+        return hubTotals;
+    }
+
 
     // <tab> hubName, MIL total, CIV total, Grand total
     private List<String> getSingleHubTotal(String hubName, MilCivCount hubCount) {
@@ -106,10 +141,32 @@ public class CountryHubCount {
         return singleHubTotals;
     }
 
+    public RowEssence getSingleHubTotalRowEssence(String hubName, MilCivCount hubCount) {
+        RowEssence rowEssence = null;
+        if (Util.notNullAndNotEmpty(hubName) && hubCount!= null) {
+        rowEssence = new RowEssence();
+        CellEssence hubNameCell = new CellEssence();
+        hubNameCell.setCellStyleEssence(CellSharedStyles.HUB_NAME_STYLE);
+        hubNameCell.setValue(hubName);
+        rowEssence.add(hubNameCell);
+        rowEssence.addAll(hubCount.toCellEssenceList());
+        } else {
+            throw new IllegalArgumentException("Cannot create RowEssence using null or empty hub name and/or hub count!");
+        }
+        return rowEssence;
+    }
+
     public List<List<String>> toListOfListOfString() {
         List<List<String>> strings = new ArrayList<List<String>>();
         strings.add(this.getCountryTotals());
         strings.addAll(this.getHubTotals());
         return strings;
+    }
+
+    public List<RowEssence> toListOfRowEssences() {
+        List<RowEssence> list = new ArrayList<RowEssence>();
+        list.add(this.getCountryTotalsRowEssence());
+        list.addAll(this.getHubTotalsRowEssences());
+        return list;
     }
 }

@@ -1,20 +1,20 @@
 /*
  * Copyright (c) 2011 Richard Scott McNew.
  *
- * This file is part of crcManifestProcessor.
+ * This file is part of CRC Manifest Processor.
  *
- *     crcManifestProcessor is free software: you can redistribute it and/or modify
+ *     CRC Manifest Processor is free software: you can redistribute it and/or modify
  *     it under the terms of the GNU General Public License as published by
  *     the Free Software Foundation, either version 3 of the License, or
  *     (at your option) any later version.
  *
- *     crcManifestProcessor is distributed in the hope that it will be useful,
+ *     CRC Manifest Processor is distributed in the hope that it will be useful,
  *     but WITHOUT ANY WARRANTY; without even the implied warranty of
  *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *     GNU General Public License for more details.
  *
  *     You should have received a copy of the GNU General Public License
- *     along with crcManifestProcessor.  If not, see <http://www.gnu.org/licenses/>.
+ *     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 package net.mcnewfamily.rmcnew.model.excel;
@@ -22,6 +22,7 @@ package net.mcnewfamily.rmcnew.model.excel;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFColor;
+import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.awt.*;
@@ -140,6 +141,7 @@ public class CellStyleEssence {
     private XSSFColor backgroundColor = new XSSFColor(Color.WHITE);
     private boolean wrappedText = false;
     private short indentationInSpaces = 0;
+    private FontEssence fontEssence = new FontEssence();
 
     public CellStyleEssence() {
     }
@@ -232,6 +234,14 @@ public class CellStyleEssence {
         this.indentationInSpaces = indentationInSpaces;
     }
 
+    public FontEssence getFontEssence() {
+        return fontEssence;
+    }
+
+    public void setFontEssence(FontEssence fontEssence) {
+        this.fontEssence = fontEssence;
+    }
+
     public XSSFCellStyle toXSSFCellStyle(XSSFWorkbook workbook) {
         if (workbook != null) {
             XSSFCellStyle xssfCellStyle = workbook.createCellStyle();
@@ -246,6 +256,10 @@ public class CellStyleEssence {
             xssfCellStyle.setFillPattern(fillPattern.toPoiCellStyle());
             xssfCellStyle.setWrapText(this.wrappedText);
             xssfCellStyle.setIndention(this.indentationInSpaces);
+            if (this.fontEssence != null) {
+                    XSSFFont font = fontEssence.toXSSFFont(workbook);
+                    xssfCellStyle.setFont(font);
+            }
             return xssfCellStyle;
         } else {
             throw new IllegalArgumentException("Cannot create XSSFCellStyle using a null XSSFWorkbook!");
