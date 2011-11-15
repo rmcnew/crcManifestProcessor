@@ -58,7 +58,7 @@ public class MainWindow extends JFrame {
             contentPane.add(mainWindow.tabbedPane);
             // add content
             mainWindow.addTab("CRC Premanifest", new PremanifestTab());
-            mainWindow.addTab("License", new LicenseTab());
+            mainWindow.addTab("License", new AboutTab());
 
 
             mainWindow.pack();

@@ -81,8 +81,8 @@ public class PremanifestTab extends JComponent implements ActionListener {
 
 		// UI layout
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		this.setMinimumSize(new Dimension(500,200));
-		this.setPreferredSize(new Dimension(500, 200));
+		this.setMinimumSize(new Dimension(300,200));
+		this.setPreferredSize(new Dimension(300, 200));
 		this.add(inputButton);
 		this.add(inputFilnameLabel);
 		this.add(Box.createRigidArea(new Dimension(5, 20)));
