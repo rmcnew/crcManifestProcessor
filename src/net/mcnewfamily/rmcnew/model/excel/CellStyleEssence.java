@@ -251,9 +251,10 @@ public class CellStyleEssence {
             xssfCellStyle.setBorderRight(rightBorder.toPoiCellStyle());
             xssfCellStyle.setAlignment(horizontalAlignment.toPoiCellStyle());
             xssfCellStyle.setVerticalAlignment(verticalAlignment.toPoiCellStyle());
-            xssfCellStyle.setFillForegroundColor(foregroundColor.getIndexed());
-            xssfCellStyle.setFillBackgroundColor(backgroundColor.getIndexed());
             xssfCellStyle.setFillPattern(fillPattern.toPoiCellStyle());
+            // foreground color must be set before background color is set
+            xssfCellStyle.setFillForegroundColor(foregroundColor);
+            xssfCellStyle.setFillBackgroundColor(backgroundColor);
             xssfCellStyle.setWrapText(this.wrappedText);
             xssfCellStyle.setIndention(this.indentationInSpaces);
             if (this.fontEssence != null) {

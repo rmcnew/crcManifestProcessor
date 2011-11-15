@@ -2,44 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00c994c0-c747-4669-9f2d-b55288ec84a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/Scott_GPL3_CRC_Manifest_Processor.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellSharedStyles.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/FontEssence.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/RowEssence.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/SheetEssence.java" />
-      <change type="DELETED" beforePath="C:\Users\richard.s.mcnew\Documents\projects\crcManifestProcessor\.idea\copyright\Scott_GPL3_crcManifestProcessor.xml" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\richard.s.mcnew\Documents\projects\crcManifestProcessor\src\net\mcnewfamily\rmcnew\business_rule\AfghanUnknownPriorityMOSGoesToBagram.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/business_rule/AfghanUnknownPriorityMosGoesToBagram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/business_rule/KuwaitQatarSingleHub.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/business_rule/KuwaitQatarSingleHub.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/business_rule/MakeAllMilitaryServiceBranchA.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/business_rule/MakeAllMilitaryServiceBranchA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/FinalManifestController.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/FinalManifestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/PremanifestController.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/PremanifestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/config/DestinationHubMap.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/config/DestinationHubMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/config/LocationAliasMap.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/config/LocationAliasMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/config/PriorityMOSMap.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/config/PriorityMOSMap.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCount.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCount.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCountMap.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCountMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CrcManifest.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CrcManifest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/HubCountry.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/HubCountry.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/MilCivCount.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/MilCivCount.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Record.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Record.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/RecordList.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/RecordList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellEssence.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellEssence.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellSharedStyles.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellSharedStyles.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellStyleEssence.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellStyleEssence.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/AbstractXlsxReader.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/AbstractXlsxReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ConfigXlsxReader.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ConfigXlsxReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/FromCrcPremanifestXlsxReader.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/FromCrcPremanifestXlsxReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Constants.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Util.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Util.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/FinalManifestTab.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/FinalManifestTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/LicenseTab.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/LicenseTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/MainWindow.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/PremanifestTab.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/PremanifestTab.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/AbstractXlsxWriter.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/AbstractXlsxWriter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/PremanifestXlsxWriter.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/PremanifestXlsxWriter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/RowEssence.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/RowEssence.java" />
     </list>
     <ignored path="crcManifestProcessor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,10 +79,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PremanifestXlsxWriter.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CellStyleEssence.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellStyleEssence.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="253" column="71" selection-start="8514" selection-end="8514" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PremanifestXlsxWriter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/PremanifestXlsxWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="53" selection-start="1818" selection-end="1818" vertical-scroll-proportion="0.6186541">
+            <state line="53" column="67" selection-start="2484" selection-end="2484" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CountryHubCountMap.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCountMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="89" selection-start="3584" selection-end="3584" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RowEssence.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/RowEssence.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="73" column="47" selection-start="2301" selection-end="2301" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MilCivCount.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/MilCivCount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="110" column="57" selection-start="3355" selection-end="3355" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -122,7 +127,16 @@
       <file leaf-file-name="CountryHubCount.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="36" selection-start="5879" selection-end="5879" vertical-scroll-proportion="0.0">
+            <state line="58" column="41" selection-start="2217" selection-end="2217" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CellSharedStyles.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellSharedStyles.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="74" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.30277443">
               <folding />
             </state>
           </provider>
@@ -165,22 +179,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/SheetEssence.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/AbstractXlsxWriter.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/SharedCellStyles.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/RecordList.java" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/business_rule/AfghanUnknownPriorityMosGoesToBagram.java" />
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellStyleEssence.java" />
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/MilCivCount.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellEssence.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/FontEssence.java" />
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCount.java" />
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCountMap.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Record.java" />
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellSharedStyles.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/PremanifestController.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellStyleEssence.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCount.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/MilCivCount.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/PremanifestXlsxWriter.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/RowEssence.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCountMap.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellSharedStyles.java" />
       </list>
     </option>
   </component>
@@ -447,9 +461,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -466,9 +480,9 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -609,22 +623,22 @@
     <frame x="-4" y="24" width="1288" height="1004" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275463" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1936255" sideWeight="0.0" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12910448" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940239" sideWeight="0.6724537" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298611" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275463" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988048" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940239" sideWeight="0.6724537" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22231075" sideWeight="0.68058693" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22231075" sideWeight="0.68058693" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275463" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23955224" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298611" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -688,114 +702,96 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellStyleEssence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="261" column="12" selection-start="8973" selection-end="8973" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/RowEssence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="13" selection-start="1295" selection-end="1295" vertical-scroll-proportion="0.2327791">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellEssence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="40" selection-start="3207" selection-end="3207" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/FontEssence.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="90" selection-start="4009" selection-end="4009" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="36" selection-start="5879" selection-end="5879" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="130" column="90" selection-start="4009" selection-end="4009" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/RecordList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="23" selection-start="2819" selection-end="2819" vertical-scroll-proportion="0.67695963">
-          <folding />
-        </state>
+        <state line="105" column="23" selection-start="2819" selection-end="2819" vertical-scroll-proportion="0.67695963" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.13872135">
-          <folding />
-        </state>
+        <state line="28" column="13" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.13872135" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/PremanifestTab.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="13" selection-start="1182" selection-end="1182" vertical-scroll-proportion="-0.98914355">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/MilCivCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="29" selection-start="2702" selection-end="2702" vertical-scroll-proportion="1.0605701">
-          <folding />
-        </state>
+        <state line="31" column="13" selection-start="1182" selection-end="1182" vertical-scroll-proportion="-0.98914355" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/FromCrcPremanifestXlsxReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="13" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.111638956">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Record.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="59" selection-start="4577" selection-end="4577" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellSharedStyles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="95" selection-start="1343" selection-end="1343" vertical-scroll-proportion="0.32328105">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCountMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="62" selection-start="2836" selection-end="2836" vertical-scroll-proportion="0.9192399">
-          <folding />
-        </state>
+        <state line="30" column="13" selection-start="1185" selection-end="1185" vertical-scroll-proportion="0.111638956" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CrcManifest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="13" selection-start="1193" selection-end="1193" vertical-scroll-proportion="0.4348837">
+        <state line="29" column="13" selection-start="1193" selection-end="1193" vertical-scroll-proportion="0.4348837" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellEssence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="40" selection-start="3207" selection-end="3207" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="175" column="59" selection-start="4577" selection-end="4577" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellStyleEssence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="253" column="71" selection-start="8514" selection-end="8514" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/PremanifestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="47" selection-start="4696" selection-end="4696" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="98" column="47" selection-start="4696" selection-end="4696" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/PremanifestXlsxWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="53" selection-start="1818" selection-end="1818" vertical-scroll-proportion="0.6186541">
+        <state line="53" column="67" selection-start="2484" selection-end="2484" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="41" selection-start="2217" selection-end="2217" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/RowEssence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="47" selection-start="2301" selection-end="2301" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/MilCivCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="57" selection-start="3355" selection-end="3355" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/CountryHubCountMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="89" selection-start="3584" selection-end="3584" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellSharedStyles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="74" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.30277443">
           <folding />
         </state>
       </provider>

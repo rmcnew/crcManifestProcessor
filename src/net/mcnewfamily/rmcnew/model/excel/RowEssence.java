@@ -22,9 +22,9 @@ package net.mcnewfamily.rmcnew.model.excel;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 // contents and formatting data that will be used to
@@ -33,9 +33,14 @@ import java.util.List;
 // the spreadsheet, hence no row or column fields
 public class RowEssence implements Iterable<CellEssence> {
 
-    private List<CellEssence> cellEssences = new ArrayList<CellEssence>();
+    private LinkedList<CellEssence> cellEssences = new LinkedList<CellEssence>();
 
     public RowEssence() {
+    }
+
+    public RowEssence(List<CellEssence> cellEssences) {
+        this.cellEssences = new LinkedList<CellEssence>();
+        this.cellEssences.addAll(cellEssences);
     }
 
     public int size() {
@@ -64,6 +69,10 @@ public class RowEssence implements Iterable<CellEssence> {
 
     public void clear() {
         cellEssences.clear();
+    }
+
+    public void push(CellEssence cellEssence) {
+        cellEssences.push(cellEssence);
     }
 
     @Override

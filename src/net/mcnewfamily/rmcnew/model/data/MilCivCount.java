@@ -21,6 +21,8 @@ package net.mcnewfamily.rmcnew.model.data;
 
 import net.mcnewfamily.rmcnew.model.excel.CellEssence;
 import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
+import net.mcnewfamily.rmcnew.model.excel.CellStyleEssence;
+import net.mcnewfamily.rmcnew.shared.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,6 +73,14 @@ public class MilCivCount {
         return this.militaryCount + this.civilianCount;
     }
 
+    public void plusOneToMilCount() {
+        militaryCount++;
+    }
+
+    public void plusOneToCivCount() {
+        civilianCount++;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -91,20 +101,28 @@ public class MilCivCount {
         return result;
     }
 
-    public List<CellEssence> toCellEssenceList() {
+    public List<CellEssence> toCellEssenceList(String hubName) {
+        CellStyleEssence styleEssence;
+        if (hubName.equalsIgnoreCase(Constants.UNKNOWN)) {
+            styleEssence = CellSharedStyles.UNKNOWN_HUB_ENTRY_STYLE;
+        } else if (hubName.equalsIgnoreCase(Constants.Grand_Total)) {
+            styleEssence = CellSharedStyles.HEADER_STYLE;
+        } else {
+            styleEssence = CellSharedStyles.HUB_ENTRY_STYLE;
+        }
         List<CellEssence> list = new ArrayList<CellEssence>();
         CellEssence milCell = new CellEssence(); 
-        milCell.setCellStyleEssence(CellSharedStyles.HUB_ENTRY_STYLE);
+        milCell.setCellStyleEssence(styleEssence);
         milCell.setValue(this.getMilitaryCountString());
         list.add(milCell);
         
         CellEssence civCell = new CellEssence(); 
-        civCell.setCellStyleEssence(CellSharedStyles.HUB_ENTRY_STYLE);
+        civCell.setCellStyleEssence(styleEssence);
         civCell.setValue(this.getCivilianCountString());
         list.add(civCell);        
         
         CellEssence totalCell = new CellEssence(); 
-        totalCell.setCellStyleEssence(CellSharedStyles.HUB_ENTRY_STYLE);
+        totalCell.setCellStyleEssence(styleEssence);
         totalCell.setValue(this.getGrandTotalString());
         list.add(totalCell);
         

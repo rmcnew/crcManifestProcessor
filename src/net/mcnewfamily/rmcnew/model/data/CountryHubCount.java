@@ -43,34 +43,26 @@ public class CountryHubCount {
         String hub = hubCountry.getHub();
         if (hubCounts.containsKey(hub)) {
             MilCivCount hubCount = hubCounts.get(hub);
-            Integer militaryCount = hubCount.getMilitaryCount();
-            militaryCount++;
-            hubCount.setMilitaryCount(militaryCount);
+            hubCount.plusOneToMilCount();
             hubCounts.put(hub, hubCount);
         } else {
             MilCivCount milCivCount = new MilCivCount(1,0);
             hubCounts.put(hub, milCivCount);
         }
-        Integer militaryCount = countryCount.getMilitaryCount();
-        militaryCount++;
-        countryCount.setMilitaryCount(militaryCount);
+        countryCount.plusOneToMilCount();
     }
 
     public void plusOneToCivCount(HubCountry hubCountry) {
         String hub = hubCountry.getHub();
         if (hubCounts.containsKey(hub)) {
             MilCivCount hubCount = hubCounts.get(hub);
-            Integer civilianCount = hubCount.getCivilianCount();
-            civilianCount++;
-            hubCount.setCivilianCount(civilianCount);
+            hubCount.plusOneToCivCount();
             hubCounts.put(hub, hubCount);
         } else {
             MilCivCount milCivCount = new MilCivCount(0,1);
             hubCounts.put(hub, milCivCount);
         }
-        Integer civilianCount = countryCount.getCivilianCount();
-        civilianCount++;
-        countryCount.setCivilianCount(civilianCount);
+        countryCount.plusOneToCivCount();
     }
 
     public static List<String> getHeaders() {
@@ -146,10 +138,14 @@ public class CountryHubCount {
         if (Util.notNullAndNotEmpty(hubName) && hubCount!= null) {
         rowEssence = new RowEssence();
         CellEssence hubNameCell = new CellEssence();
-        hubNameCell.setCellStyleEssence(CellSharedStyles.HUB_NAME_STYLE);
+        if (hubName.equalsIgnoreCase(Constants.UNKNOWN)) {
+            hubNameCell.setCellStyleEssence(CellSharedStyles.UNKNOWN_HUB_NAME_STYLE);
+        } else {
+            hubNameCell.setCellStyleEssence(CellSharedStyles.HUB_NAME_STYLE);
+        }
         hubNameCell.setValue(hubName);
         rowEssence.add(hubNameCell);
-        rowEssence.addAll(hubCount.toCellEssenceList());
+        rowEssence.addAll(hubCount.toCellEssenceList(hubName));
         } else {
             throw new IllegalArgumentException("Cannot create RowEssence using null or empty hub name and/or hub count!");
         }

@@ -27,17 +27,25 @@ import java.awt.*;
 // the CSS class for this application :)
 public class CellSharedStyles {
 
+    // colors
+    private static final byte[] LIGHT_STEEL_BLUE_ARGB = {(byte)0, (byte)176, (byte)196, (byte)240};
+    public static final XSSFColor XSSF_COLOR_LIGHT_STEEL_BLUE = new XSSFColor(LIGHT_STEEL_BLUE_ARGB);
+    public static final XSSFColor XSSF_COLOR_RED = new XSSFColor(Color.RED);
+    public static final XSSFColor XSSF_COLOR_BLACK = new XSSFColor(Color.BLACK);
+
     // header fields for manifest listing
     public static CellStyleEssence HEADER_STYLE = new CellStyleEssence();
     public static FontEssence HEADER_FONT = new FontEssence();
     static {
         HEADER_STYLE.setHorizontalAlignment(CellStyleEssence.CellHorizontalAlignment.ALIGN_LEFT);
         HEADER_STYLE.setVerticalAlignment(CellStyleEssence.CellVerticalAlignment.VERTICAL_CENTER);
-        HEADER_STYLE.setBackgroundColor(new XSSFColor(Color.LIGHT_GRAY));
+        HEADER_STYLE.setFillPattern(CellStyleEssence.CellFillPattern.FINE_DOTS);
+        HEADER_STYLE.setBackgroundColor(XSSF_COLOR_LIGHT_STEEL_BLUE);
+        HEADER_STYLE.setForegroundColor(XSSF_COLOR_LIGHT_STEEL_BLUE);
+        HEADER_STYLE.setBottomBorder(CellStyleEssence.CellBorder.BORDER_THIN);
         HEADER_FONT.setBold(true);
         HEADER_FONT.setFontFamily(FontFamily.MODERN);
         HEADER_FONT.setFontName(FontEssence.MS_FONT_ARIAL);
-        HEADER_FONT.setUnderline(true);
         HEADER_FONT.setFontHeightInPoints((short) 12);
         HEADER_STYLE.setFontEssence(HEADER_FONT);
     }
@@ -58,6 +66,7 @@ public class CellSharedStyles {
     static {
         COUNTRY_STYLE.setHorizontalAlignment(CellStyleEssence.CellHorizontalAlignment.ALIGN_LEFT);
         COUNTRY_STYLE.setVerticalAlignment(CellStyleEssence.CellVerticalAlignment.VERTICAL_CENTER);
+        COUNTRY_STYLE.setBottomBorder(CellStyleEssence.CellBorder.BORDER_THIN);
         COUNTRY_FONT.setBold(true);
         COUNTRY_FONT.setFontFamily(FontFamily.MODERN);
         COUNTRY_FONT.setFontName(FontEssence.MS_FONT_ARIAL);
@@ -86,4 +95,29 @@ public class CellSharedStyles {
         HUB_ENTRY_STYLE.setVerticalAlignment(CellStyleEssence.CellVerticalAlignment.VERTICAL_CENTER);
         HUB_ENTRY_STYLE.setFontEssence(HUB_ENTRY_FONT);
     }
+
+    // field entries for UNKNOWN destinations
+    public static CellStyleEssence UNKNOWN_HUB_NAME_STYLE = new CellStyleEssence();
+    public static FontEssence UNKNOWN_HUB_NAME_FONT = new FontEssence();
+    public static CellStyleEssence UNKNOWN_HUB_ENTRY_STYLE = new CellStyleEssence();
+    public static FontEssence UNKNOWN_HUB_ENTRY_FONT = new FontEssence();
+    static {
+        UNKNOWN_HUB_NAME_FONT.setFontFamily(FontFamily.MODERN);
+        UNKNOWN_HUB_NAME_FONT.setFontName(FontEssence.MS_FONT_ARIAL);
+        UNKNOWN_HUB_NAME_FONT.setFontHeightInPoints((short) 11);
+        UNKNOWN_HUB_NAME_FONT.setColor(XSSF_COLOR_RED);
+        UNKNOWN_HUB_NAME_STYLE.setHorizontalAlignment(CellStyleEssence.CellHorizontalAlignment.ALIGN_LEFT);
+        UNKNOWN_HUB_NAME_STYLE.setVerticalAlignment(CellStyleEssence.CellVerticalAlignment.VERTICAL_CENTER);
+        UNKNOWN_HUB_NAME_STYLE.setIndentationInSpaces((short) 4);
+        UNKNOWN_HUB_NAME_STYLE.setFontEssence(UNKNOWN_HUB_NAME_FONT);
+
+        UNKNOWN_HUB_ENTRY_FONT.setFontFamily(FontFamily.MODERN);
+        UNKNOWN_HUB_ENTRY_FONT.setFontName(FontEssence.MS_FONT_ARIAL);
+        UNKNOWN_HUB_ENTRY_FONT.setFontHeightInPoints((short) 11);
+        UNKNOWN_HUB_ENTRY_FONT.setColor(XSSF_COLOR_RED);
+        UNKNOWN_HUB_ENTRY_STYLE.setHorizontalAlignment(CellStyleEssence.CellHorizontalAlignment.ALIGN_LEFT);
+        UNKNOWN_HUB_ENTRY_STYLE.setVerticalAlignment(CellStyleEssence.CellVerticalAlignment.VERTICAL_CENTER);
+        UNKNOWN_HUB_ENTRY_STYLE.setFontEssence(UNKNOWN_HUB_ENTRY_FONT);
+    }
+
 }

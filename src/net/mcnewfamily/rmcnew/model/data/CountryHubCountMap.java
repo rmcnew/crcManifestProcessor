@@ -19,7 +19,11 @@
 
 package net.mcnewfamily.rmcnew.model.data;
 
+import net.mcnewfamily.rmcnew.model.excel.CellEssence;
+import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
+import net.mcnewfamily.rmcnew.model.excel.RowEssence;
 import net.mcnewfamily.rmcnew.model.excel.SheetEssence;
+import net.mcnewfamily.rmcnew.shared.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +32,7 @@ import java.util.TreeMap;
 public class CountryHubCountMap {
 
     private TreeMap<String, CountryHubCount> countryHubCounts = new TreeMap<String, CountryHubCount>();
+    private MilCivCount grandTotal = new MilCivCount();
 
     public CountryHubCountMap() {
     }
@@ -43,6 +48,7 @@ public class CountryHubCountMap {
             countryHubCount.plusOneToMilCount(hubCountry);
             countryHubCounts.put(country, countryHubCount);
         }
+        grandTotal.plusOneToMilCount();
     }
 
     public void plusOneToCivCount(HubCountry hubCountry) {
@@ -56,6 +62,7 @@ public class CountryHubCountMap {
             countryHubCount.plusOneToCivCount(hubCountry);
             countryHubCounts.put(country, countryHubCount);
         }
+        grandTotal.plusOneToCivCount();
     }
 
     public List<List<String>> toListOfListOfString() {
@@ -73,6 +80,13 @@ public class CountryHubCountMap {
         for (String country : countryHubCounts.keySet()) {
             sheetEssence.addAll(countryHubCounts.get(country).toListOfRowEssences());
         }
+        RowEssence grandTotalRowEssence = new RowEssence();
+        CellEssence grandTotalName = new CellEssence();
+        grandTotalName.setValue(Constants.Grand_Total);
+        grandTotalName.setCellStyleEssence(CellSharedStyles.HEADER_STYLE);
+        grandTotalRowEssence.add(grandTotalName);
+        grandTotalRowEssence.addAll(grandTotal.toCellEssenceList(Constants.Grand_Total));
+        sheetEssence.add(grandTotalRowEssence);
         return sheetEssence;
     }
 
