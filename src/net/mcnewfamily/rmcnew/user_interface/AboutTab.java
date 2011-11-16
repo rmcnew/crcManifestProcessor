@@ -44,8 +44,8 @@ public class AboutTab extends JComponent {
         "This application handles the manual process of assigning transportation" +
         " hubs for incoming NPRs from the CRC." +
         "</p><p>" +
-        "The hub assignments are used to create ULNs needed to allocate transportation" +
-        " assets so that the incoming NPRs can travel quickly to their final destinations." +
+        "The hub assignments can be to create ULNs needed to allocate transportation" +
+        " assets so that the incoming NPRs can travel quickly to their final destinations in theater." +
         "</p><p>" +
         "CRC Manifest Processor is free software: you can redistribute it and/or modify" +
         " it under the terms of the GNU General Public License as published by" +
@@ -60,7 +60,13 @@ public class AboutTab extends JComponent {
         "You should have received a copy of the GNU General Public License" +
         " along with CRC Manifest Processor.  If not, see" + 
         " <a href=\"http://www.gnu.org/licenses/\">http://www.gnu.org/licenses/</a>. " +
-        "</p></html>";
+        "</p><p>" +
+        " The source for CRC Manifest Processor is available on GitHub: " +
+        " <a href=\"https://github.com/rmcnew/crcManifestProcessor/\">https://github.com/rmcnew/crcManifestProcessor/</a> " +
+        "</p><p>" +
+        " The CRC Manifest Processor uses libraries from the Apache POI Project: " +
+        " <a href=\"http://poi.apache.org/\">http://poi.apache.org/</a>" +
+        "</p></html>" ;
 
 
 

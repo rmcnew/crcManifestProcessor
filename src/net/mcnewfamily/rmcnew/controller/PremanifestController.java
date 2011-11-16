@@ -51,41 +51,15 @@ public class PremanifestController {
         CountryHubCountMap countryHubCountMap = crcManifest.getCountryHubCountMap();
 
         for (Record record : records) {
-            String finalDestination = record.getFinalDestination();
-            // strip prefixes and suffixes
-            finalDestination = Util.stripLocationPrefixesAndSuffixes(finalDestination);
-            // location alias substitution
-            String alias = aliasMap.get(finalDestination);
-            if (alias != null) {
-                //System.out.println("Replaced alias:  " + finalDestination + " => " + alias);
-                finalDestination = alias;
-                record.setFinalDestination(alias);
-            } else {
-                record.setFinalDestination(finalDestination);
-            }
-            // hub look-up
-            HubCountry hubCountry = hubMap.get(finalDestination);
-            if (hubCountry != null) {
-                //System.out.println("Found hub: " + finalDestination + " => " + hubCountry);
-                record.setHub(hubCountry.getHub());
-                if (!record.getCountry().equalsIgnoreCase(hubCountry.getCountry())) {
-                    System.out.println("Countries do not match!  " + record.getCountry() + " != " + hubCountry.getCountry());
-                }
-                record.setCountry(hubCountry.getCountry());
-            } else {
-                if (finalDestination.equalsIgnoreCase(Constants.UNKNOWN)) {
-                    record.setHub(Constants.UNKNOWN);
-                } else {
-                    record.setHub(Constants.NOT_FOUND);
-                }
-            }
+            processFinalDestination(record, aliasMap);
+            processHubLookup(record, hubMap);
             // apply business rules
             KuwaitQatarSingleHub.applyRule(record);
             AfghanUnknownPriorityMosGoesToBagram.applyRule(record, mosMap);
             MakeAllMilitaryServiceBranchA.applyRule(record);
             // count country / hub totals
             // first, ensure hubCountry matches what the record contains
-            hubCountry = new HubCountry(record.getHub(), record.getCountry());
+            HubCountry hubCountry = new HubCountry(record.getHub(), record.getCountry());
             if (record.isMilitary()) {
                 countryHubCountMap.plusOneToMilCount(hubCountry);
             } else {
@@ -99,5 +73,46 @@ public class PremanifestController {
         xlsxWriter.writePremanifest(crcManifest);
         xlsxWriter.close();
 	}
+
+    private static void processFinalDestination(Record record, LocationAliasMap aliasMap) {
+        String finalDestination = record.getFinalDestination();
+        // strip prefixes and suffixes
+        finalDestination = Util.stripLocationPrefixesAndSuffixes(finalDestination);
+        // location alias substitution
+        if (finalDestination.isEmpty()) {
+            finalDestination = Constants.UNKNOWN;
+        }
+        String alias = aliasMap.get(finalDestination);
+        if (alias != null) {
+            //System.out.println("Replaced alias:  " + finalDestination + " => " + alias);
+            record.setFinalDestination(alias);
+        } else {
+            record.setFinalDestination(finalDestination);
+        }
+    }
+
+    private static void processHubLookup(Record record, DestinationHubMap hubMap) {
+        String finalDestination = record.getFinalDestination();
+        // hub look-up
+        HubCountry hubCountry = hubMap.get(finalDestination);
+        if (hubCountry != null) {
+            //System.out.println("Found hub: " + finalDestination + " => " + hubCountry);
+            record.setHub(hubCountry.getHub());
+            if (!record.getCountry().equalsIgnoreCase(hubCountry.getCountry())) {
+                System.out.println("Countries do not match!  " + record.getCountry() + " != " + hubCountry.getCountry());
+            }
+            record.setCountry(hubCountry.getCountry());
+        } else {
+            if (finalDestination.equalsIgnoreCase(Constants.UNKNOWN)) {
+                record.setHub(Constants.UNKNOWN);
+            } else {
+                record.setHub(Constants.NOT_FOUND);
+            }
+        }
+    }
+
+    private static void applyBusinessRules(Record record) {
+
+    }
 
 }

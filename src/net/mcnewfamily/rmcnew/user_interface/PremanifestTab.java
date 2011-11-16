@@ -105,6 +105,7 @@ public class PremanifestTab extends JComponent implements ActionListener {
 			int returnValue = outputFileChooser.showSaveDialog(PremanifestTab.this);
 			if (returnValue == JFileChooser.APPROVE_OPTION) {
 				premanifestOutputFile = outputFileChooser.getSelectedFile();
+                premanifestOutputFile = attachXlsxExtensionIfMissing(premanifestOutputFile);
 				outputFilenameLabel.setText(outputFilenameLabelBasis + premanifestOutputFile.getName());
 			}
 		} else if (actionEvent.getSource() == generateButton) {
@@ -122,4 +123,22 @@ public class PremanifestTab extends JComponent implements ActionListener {
 			}
 		}
 	}
+
+    private File attachXlsxExtensionIfMissing(File outputFile) {
+        String filename = outputFile.getAbsolutePath();
+        //System.out.println("Filename is: " + filename);
+        if ( filename.endsWith(".xlsx") || filename.endsWith(".XLSX") ) {
+            // do nothing
+        } else if ( filename.endsWith(".xls") || filename.endsWith(".XLS") ) {
+            // replace xls with xlsx
+            filename = filename + "x";
+            outputFile = new File(filename);
+        }
+        else {
+            filename = filename + ".xlsx";
+            outputFile = new File(filename);
+        }
+        //System.out.println("Fixed file is: " + outputFile.getAbsolutePath());
+        return outputFile;
+    }
 }

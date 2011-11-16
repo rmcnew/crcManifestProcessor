@@ -18,40 +18,52 @@
   -->
 
 <project name="crcManifestProcessor" default="dist" basedir=".">
-	<description>Tool used to process CRC manifests</description>
-	<property name="src" location="src"/>
-	<property name="build" location="build"/>
-	<property name="dist"  location="dist"/>
+    <description>Tool used to process CRC manifests</description>
 
-	<target name="init">
-		<tstamp/>
-		<mkdir dir="${build}"/>
-	</target>
+    <property name="src" location="src"/>
+    <property name="build" location="build"/>
+    <property name="dist"  location="dist"/>
 
-	<target name="compile" depends="init" description="compile the source">
-		<javac srcdir="${src}" destdir="${build}"/>
-	</target>
+    <target name="init">
+        <tstamp/>
+        <mkdir dir="${build}"/>
+    </target>
 
-	<target name="dist" depends="compile" description="generate the distribution">
-		<mkdir dir="${dist}"/>
-		<copy todir="${dist}">
-            <resources>
-                <file file="destinationHubMapping.csv"/>
-                <file file="locationAlias.csv"/>
-                <file file="priorityMOS.csv"/>
-                <file file="gpl.txt"/>
-                <file file="src/au/com/bytecode/opencsv/apache2.txt"/>
-            </resources>
+    <target name="compile" depends="init" description="compile the source">
+        <javac srcdir="${src}" destdir="${build}">
+            <classpath>
+                <fileset dir="lib">
+                    <include name="*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="dist" depends="compile" description="generate the distribution">
+        <mkdir dir="${dist}"/>
+        <jar jarfile="${dist}/crcManifestProcessor.jar" basedir="${build}" index="true">
+            <manifest>
+                <attribute name="Main-Class" value="net.mcnewfamily.rmcnew.user_interface.MainWindow"/>
+            </manifest>
+            <restrict>
+                <archives>
+                    <zips>
+                        <fileset dir="lib" includes="*.jar"/>
+                    </zips>
+                </archives>
+            </restrict>
+        </jar>
+        <copy todir="${dist}">
+            <fileset dir=".">
+                <filename name="crcManifestProcessorConfig.xlsx"/>
+                <filename name="README"/>
+                <filename name="gpl.txt"/>
+            </fileset>
         </copy>
-		<jar jarfile="${dist}/crcManifestProcessor-${DSTAMP}.jar" basedir="${build}">
-			<manifest>
-				<attribute name="Main-Class" value="net.mcnewfamily.rmcnew.user_interface.MainWindow"/>
-			</manifest>
-		</jar>
-	</target>
+    </target>
 
-	<target name="clean" description="clean up">
-		<delete dir="${build}"/>
-		<delete dir="${dist}"/>
-	</target>
+    <target name="clean" description="clean up">
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
 </project>
