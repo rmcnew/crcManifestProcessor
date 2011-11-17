@@ -25,8 +25,10 @@
     <property name="dist"  location="dist"/>
 
     <target name="init">
-        <tstamp/>
-        <mkdir dir="${build}"/>
+        <parallel>
+            <mkdir dir="${build}"/>
+            <mkdir dir="${dist}"/>
+        </parallel>
     </target>
 
     <target name="compile" depends="init" description="compile the source">
@@ -39,8 +41,8 @@
         </javac>
     </target>
 
-    <target name="dist" depends="compile" description="generate the distribution">
-        <mkdir dir="${dist}"/>
+    <target name="jar" depends="compile" description="generate the jar">
+        <echo message="Creating the jar archive.  This can take a while . . ."/>
         <jar jarfile="${dist}/crcManifestProcessor.jar" basedir="${build}" index="true">
             <manifest>
                 <attribute name="Main-Class" value="net.mcnewfamily.rmcnew.user_interface.MainWindow"/>
@@ -53,17 +55,23 @@
                 </archives>
             </restrict>
         </jar>
-        <copy todir="${dist}">
-            <fileset dir=".">
-                <filename name="crcManifestProcessorConfig.xlsx"/>
-                <filename name="README"/>
-                <filename name="gpl.txt"/>
-            </fileset>
-        </copy>
+        <echo message="Finished creating the jar archive."/>
+    </target>
+
+    <target name="dist" depends="jar" description="create distribution files">
+        <parallel>
+            <copy todir="${dist}" failonerror="true" file="crcManifestProcessorConfig.xlsx"/>
+            <copy todir="${dist}" failonerror="true" file="CRC_Manifest_Processor.sh"/>
+            <copy todir="${dist}" failonerror="true" file="CRC_Manifest_Processor.vbs"/>
+            <copy todir="${dist}" failonerror="true" file="gpl.txt"/>
+            <copy todir="${dist}" failonerror="true" file="README"/>
+        </parallel>
     </target>
 
     <target name="clean" description="clean up">
-        <delete dir="${build}"/>
-        <delete dir="${dist}"/>
+        <parallel>
+            <delete dir="${build}"/>
+            <delete dir="${dist}"/>
+        </parallel>
     </target>
 </project>
