@@ -19,52 +19,25 @@
 
 package net.mcnewfamily.rmcnew.model.data;
 
-import net.mcnewfamily.rmcnew.model.config.DestinationHubMap;
-import net.mcnewfamily.rmcnew.model.config.LocationAliasMap;
-import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
-import net.mcnewfamily.rmcnew.reader.ConfigXlsxReader;
-import net.mcnewfamily.rmcnew.shared.Constants;
-
 import java.io.IOException;
 
-public class CrcManifest {
+public class PreManifest {
 
-    private static CrcManifest instance = null;
-	private DestinationHubMap hubMap;
-    private LocationAliasMap aliasMap;
-    private PriorityMOSMap mosMap;
+    private static PreManifest instance = null;
     private RecordList records;
     private CountryHubCountMap countryHubCountMap = new CountryHubCountMap();
 
     // class methods
-    public static CrcManifest getInstance() throws IOException {
+    public static PreManifest getInstance() throws IOException {
         if (instance == null) {
-            instance = new CrcManifest();
+            instance = new PreManifest();
         }
         return instance;
     }
 
     // instance methods
-	private CrcManifest() throws IOException {
-        ConfigXlsxReader configXlsxReader = new ConfigXlsxReader();
-        configXlsxReader.openXlsxFile(Constants.CONFIGURATION_XLSX);
-        configXlsxReader.read();
-        hubMap = configXlsxReader.getHubMap();
-        aliasMap = configXlsxReader.getAliasMap();
-        mosMap = configXlsxReader.getMosMap();
+	private PreManifest()  {
 	}
-
-    public DestinationHubMap getHubMap() {
-        return hubMap;
-    }
-
-    public LocationAliasMap getAliasMap() {
-        return aliasMap;
-    }
-
-    public PriorityMOSMap getMosMap() {
-        return mosMap;
-    }
 
     public RecordList getRecords() {
         return records;

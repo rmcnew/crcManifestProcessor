@@ -17,14 +17,7 @@
  *     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.controller;
+package net.mcnewfamily.rmcnew.writer;
 
-import java.io.File;
-import java.io.IOException;
-
-public class FinalManifestController {
-
-    public static void runWorkflow(File preManifestInputFile, File finalManifestInputFile, File preManifestOutputFile) throws IOException {
-        System.out.println("Final Manifest Workflow here");
-    }
+public class FinalManifestXlsxWriter {
 }

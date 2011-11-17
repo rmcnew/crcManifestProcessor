@@ -22,55 +22,50 @@ package net.mcnewfamily.rmcnew.controller;
 import net.mcnewfamily.rmcnew.business_rule.AfghanUnknownPriorityMosGoesToBagram;
 import net.mcnewfamily.rmcnew.business_rule.KuwaitQatarSingleHub;
 import net.mcnewfamily.rmcnew.business_rule.MakeAllMilitaryServiceBranchA;
+import net.mcnewfamily.rmcnew.model.config.CrcManifestProcessorConfig;
 import net.mcnewfamily.rmcnew.model.config.DestinationHubMap;
 import net.mcnewfamily.rmcnew.model.config.LocationAliasMap;
 import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
 import net.mcnewfamily.rmcnew.model.data.*;
-import net.mcnewfamily.rmcnew.reader.FromCrcPremanifestXlsxReader;
+import net.mcnewfamily.rmcnew.reader.FromCrcManifestXlsxReader;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
-import net.mcnewfamily.rmcnew.writer.PremanifestXlsxWriter;
+import net.mcnewfamily.rmcnew.writer.PreManifestXlsxWriter;
 
 import java.io.File;
 import java.io.IOException;
 
-public class PremanifestController {
+public class PreManifestController {
 
 	public static void runWorkflow(File preManifestInputFile, File preManifestOutputFile) throws IOException {
 
-        CrcManifest crcManifest = CrcManifest.getInstance();
-        FromCrcPremanifestXlsxReader premanifestXlsxReader = new FromCrcPremanifestXlsxReader();
-        premanifestXlsxReader.openXlsxFile(preManifestInputFile);
-        RecordList records = premanifestXlsxReader.read();
-        crcManifest.setRecords(records);
+        CrcManifestProcessorConfig config = CrcManifestProcessorConfig.getInstance();
+        PreManifest preManifest = PreManifest.getInstance();
+        FromCrcManifestXlsxReader manifestXlsxReader = new FromCrcManifestXlsxReader();
+        manifestXlsxReader.openXlsxFile(preManifestInputFile);
+        RecordList records = manifestXlsxReader.read();
+        preManifest.setRecords(records);
         //System.out.println(records);
 
-        LocationAliasMap aliasMap = crcManifest.getAliasMap();
-        DestinationHubMap hubMap = crcManifest.getHubMap();
-        PriorityMOSMap mosMap = crcManifest.getMosMap();
-        CountryHubCountMap countryHubCountMap = crcManifest.getCountryHubCountMap();
+        LocationAliasMap aliasMap = config.getAliasMap();
+        DestinationHubMap hubMap = config.getHubMap();
+        PriorityMOSMap mosMap = config.getMosMap();
+        CountryHubCountMap countryHubCountMap = preManifest.getCountryHubCountMap();
 
         for (Record record : records) {
             processFinalDestination(record, aliasMap);
             processHubLookup(record, hubMap);
-            // apply business rules
-            KuwaitQatarSingleHub.applyRule(record);
-            AfghanUnknownPriorityMosGoesToBagram.applyRule(record, mosMap);
-            MakeAllMilitaryServiceBranchA.applyRule(record);
-            // count country / hub totals
-            // first, ensure hubCountry matches what the record contains
-            HubCountry hubCountry = new HubCountry(record.getHub(), record.getCountry());
+            applyBusinessRules(record, mosMap);
             if (record.isMilitary()) {
-                countryHubCountMap.plusOneToMilCount(hubCountry);
+                countryHubCountMap.plusOneToMilCount(record);
             } else {
-                countryHubCountMap.plusOneToCivCount(hubCountry);
+                countryHubCountMap.plusOneToCivCount(record);
             }
-
         }
         // write out results
-        PremanifestXlsxWriter xlsxWriter = new PremanifestXlsxWriter();
+        PreManifestXlsxWriter xlsxWriter = new PreManifestXlsxWriter();
         xlsxWriter.openXlsxForWriting(preManifestOutputFile);
-        xlsxWriter.writePremanifest(crcManifest);
+        xlsxWriter.writePremanifest(preManifest);
         xlsxWriter.close();
 	}
 
@@ -111,8 +106,10 @@ public class PremanifestController {
         }
     }
 
-    private static void applyBusinessRules(Record record) {
-
+    private static void applyBusinessRules(Record record, PriorityMOSMap mosMap) throws IOException {
+        KuwaitQatarSingleHub.applyRule(record);
+        AfghanUnknownPriorityMosGoesToBagram.applyRule(record, mosMap);
+        MakeAllMilitaryServiceBranchA.applyRule(record);
     }
 
 }

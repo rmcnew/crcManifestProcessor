@@ -24,6 +24,7 @@ import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
 import net.mcnewfamily.rmcnew.model.excel.RowEssence;
 import net.mcnewfamily.rmcnew.model.excel.SheetEssence;
 import net.mcnewfamily.rmcnew.shared.Constants;
+import net.mcnewfamily.rmcnew.shared.Util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,15 @@ public class CountryHubCountMap {
     private MilCivCount grandTotal = new MilCivCount();
 
     public CountryHubCountMap() {
+    }
+
+    public void plusOneToMilCount(Record record) {
+        if (record != null && Util.notNullAndNotEmpty(record.getHub()) && Util.notNullAndNotEmpty(record.getCountry())) {
+            HubCountry hubCountry = new HubCountry(record.getHub(), record.getCountry());
+            this.plusOneToMilCount(hubCountry);
+        } else {
+            throw new IllegalArgumentException("Cannot count null or empty countries or hubs!");
+        }
     }
 
     public void plusOneToMilCount(HubCountry hubCountry) {
@@ -49,6 +59,15 @@ public class CountryHubCountMap {
             countryHubCounts.put(country, countryHubCount);
         }
         grandTotal.plusOneToMilCount();
+    }
+
+    public void plusOneToCivCount(Record record) {
+        if (record != null && Util.notNullAndNotEmpty(record.getHub()) && Util.notNullAndNotEmpty(record.getCountry())) {
+            HubCountry hubCountry = new HubCountry(record.getHub(), record.getCountry());
+            this.plusOneToCivCount(hubCountry);
+        } else {
+            throw new IllegalArgumentException("Cannot count null or empty countries or hubs!");
+        }
     }
 
     public void plusOneToCivCount(HubCountry hubCountry) {

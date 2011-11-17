@@ -22,6 +22,8 @@ package net.mcnewfamily.rmcnew.shared;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
 
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -87,4 +89,24 @@ public class Util {
         }
         return value;
     }
+
+    public static File attachXlsxExtensionIfMissing(File outputFile) {
+        String filename = outputFile.getAbsolutePath();
+        //System.out.println("Filename is: " + filename);
+        if ( filename.endsWith(".xlsx") || filename.endsWith(".XLSX") ) {
+            // do nothing
+        } else if ( filename.endsWith(".xls") || filename.endsWith(".XLS") ) {
+            // replace xls with xlsx
+            filename = filename + "x";
+            outputFile = new File(filename);
+        }
+        else {
+            filename = filename + ".xlsx";
+            outputFile = new File(filename);
+        }
+        //System.out.println("Fixed file is: " + outputFile.getAbsolutePath());
+        return outputFile;
+    }
+
+    public static final FileNameExtensionFilter EXCEL_FILTER = new FileNameExtensionFilter("Excel spreadsheets", "xlsx", "xls", "XLSX", "XLS");
 }

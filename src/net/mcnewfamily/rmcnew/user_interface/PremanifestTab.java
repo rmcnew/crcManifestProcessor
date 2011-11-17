@@ -19,17 +19,16 @@
 
 package net.mcnewfamily.rmcnew.user_interface;
 
-import net.mcnewfamily.rmcnew.controller.PremanifestController;
+import net.mcnewfamily.rmcnew.controller.PreManifestController;
 import net.mcnewfamily.rmcnew.shared.Util;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-public class PremanifestTab extends JComponent implements ActionListener {
+public class PreManifestTab extends JComponent implements ActionListener {
 	private final String inputPrompt = "Select Premanifest Excel file from CRC";
 	private final String outputPrompt = "Select Output Premanifest filename (.xlsx)";
 	private final String buttonText = "Generate Premanifest";
@@ -39,32 +38,24 @@ public class PremanifestTab extends JComponent implements ActionListener {
 	private final String inputErrorMessage = "Please select the premanifest Excel input file";
 	private final String outputErrorMessage = "Please select the desired name for the premanifest output";
 
-	private File premanifestInputFile = null;
-	private File premanifestOutputFile = null;
+	private File preManifestInputFile = null;
+	private File preManifestOutputFile = null;
 
 	private JButton inputButton;
 	private JButton outputButton;
-	private JLabel inputFilnameLabel;
+	private JLabel inputFilenameLabel;
 	private JLabel outputFilenameLabel;
 	private JButton generateButton;
 
 	private JFileChooser inputFileChooser;
 	private JFileChooser outputFileChooser;
 
-	public File getPremanifestInputFile() {
-		return premanifestInputFile;
-	}
-
-	public File getPremanifestOutputFile() {
-		return premanifestOutputFile;
-	}
-
-	public PremanifestTab() {
+	public PreManifestTab() {
 		inputButton = new JButton(inputPrompt);
 		inputButton.addActionListener(this);
 		outputButton = new JButton(outputPrompt);
 		outputButton.addActionListener(this);
-		inputFilnameLabel = new JLabel(inputFilenameLabelBasis);
+		inputFilenameLabel = new JLabel(inputFilenameLabelBasis);
 		outputFilenameLabel = new JLabel(outputFilenameLabelBasis);
 		generateButton = new JButton(buttonText);
 		generateButton.addActionListener(this);
@@ -72,7 +63,7 @@ public class PremanifestTab extends JComponent implements ActionListener {
 		inputFileChooser = new JFileChooser();
 		inputFileChooser.setDialogTitle(inputPrompt);
 		inputFileChooser.setDialogType(JFileChooser.OPEN_DIALOG);
-		inputFileChooser.setFileFilter(new FileNameExtensionFilter("Excel spreadsheets", "xlsx", "xls"));
+		inputFileChooser.setFileFilter(Util.EXCEL_FILTER);
 		inputFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
 		outputFileChooser = new JFileChooser();
 		outputFileChooser.setDialogTitle(outputPrompt);
@@ -84,7 +75,7 @@ public class PremanifestTab extends JComponent implements ActionListener {
 		this.setMinimumSize(new Dimension(300,200));
 		this.setPreferredSize(new Dimension(300, 200));
 		this.add(inputButton);
-		this.add(inputFilnameLabel);
+		this.add(inputFilenameLabel);
 		this.add(Box.createRigidArea(new Dimension(5, 20)));
 		this.add(outputButton);
 		this.add(outputFilenameLabel);
@@ -96,26 +87,26 @@ public class PremanifestTab extends JComponent implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
 		if (actionEvent.getSource() == inputButton) {
-			int returnValue = inputFileChooser.showOpenDialog(PremanifestTab.this);
+			int returnValue = inputFileChooser.showOpenDialog(PreManifestTab.this);
 			if (returnValue == JFileChooser.APPROVE_OPTION) {
-				premanifestInputFile = inputFileChooser.getSelectedFile();
-				inputFilnameLabel.setText(inputFilenameLabelBasis + premanifestInputFile.getName());
+				preManifestInputFile = inputFileChooser.getSelectedFile();
+				inputFilenameLabel.setText(inputFilenameLabelBasis + preManifestInputFile.getName());
 			}
 		} else if (actionEvent.getSource() == outputButton) {
-			int returnValue = outputFileChooser.showSaveDialog(PremanifestTab.this);
+			int returnValue = outputFileChooser.showSaveDialog(PreManifestTab.this);
 			if (returnValue == JFileChooser.APPROVE_OPTION) {
-				premanifestOutputFile = outputFileChooser.getSelectedFile();
-                premanifestOutputFile = attachXlsxExtensionIfMissing(premanifestOutputFile);
-				outputFilenameLabel.setText(outputFilenameLabelBasis + premanifestOutputFile.getName());
+				preManifestOutputFile = outputFileChooser.getSelectedFile();
+                preManifestOutputFile = Util.attachXlsxExtensionIfMissing(preManifestOutputFile);
+				outputFilenameLabel.setText(outputFilenameLabelBasis + preManifestOutputFile.getName());
 			}
 		} else if (actionEvent.getSource() == generateButton) {
-			if (premanifestInputFile == null) {
+			if (preManifestInputFile == null) {
 				JOptionPane.showMessageDialog(this, inputErrorMessage, errorMessageTitle, JOptionPane.ERROR_MESSAGE);
-			} else if (premanifestOutputFile == null) {
+			} else if (preManifestOutputFile == null) {
 				JOptionPane.showMessageDialog(this, outputErrorMessage, errorMessageTitle, JOptionPane.ERROR_MESSAGE);
 			} else {
                 try {
-				    PremanifestController.runWorkflow(premanifestInputFile, premanifestOutputFile);
+				    PreManifestController.runWorkflow(preManifestInputFile, preManifestOutputFile);
 				    JOptionPane.showMessageDialog(this, "Premanifest processing is complete", "Success!", JOptionPane.PLAIN_MESSAGE);
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(this, e+"\n"+ Util.convertStackTraceToString(e.getStackTrace()), e.getClass().getName(), JOptionPane.ERROR_MESSAGE);
@@ -123,22 +114,4 @@ public class PremanifestTab extends JComponent implements ActionListener {
 			}
 		}
 	}
-
-    private File attachXlsxExtensionIfMissing(File outputFile) {
-        String filename = outputFile.getAbsolutePath();
-        //System.out.println("Filename is: " + filename);
-        if ( filename.endsWith(".xlsx") || filename.endsWith(".XLSX") ) {
-            // do nothing
-        } else if ( filename.endsWith(".xls") || filename.endsWith(".XLS") ) {
-            // replace xls with xlsx
-            filename = filename + "x";
-            outputFile = new File(filename);
-        }
-        else {
-            filename = filename + ".xlsx";
-            outputFile = new File(filename);
-        }
-        //System.out.println("Fixed file is: " + outputFile.getAbsolutePath());
-        return outputFile;
-    }
 }

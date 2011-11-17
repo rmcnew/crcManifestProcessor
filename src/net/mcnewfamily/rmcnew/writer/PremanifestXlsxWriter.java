@@ -20,19 +20,19 @@
 package net.mcnewfamily.rmcnew.writer;
 
 import net.mcnewfamily.rmcnew.model.data.CountryHubCountMap;
-import net.mcnewfamily.rmcnew.model.data.CrcManifest;
+import net.mcnewfamily.rmcnew.model.data.PreManifest;
 import net.mcnewfamily.rmcnew.model.data.RecordList;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
-public class PremanifestXlsxWriter extends AbstractXlsxWriter {
+public class PreManifestXlsxWriter extends AbstractXlsxWriter {
 
-    public void writePremanifest(CrcManifest crcManifest) {
-        if (crcManifest != null) {
-            writeRecords(crcManifest.getRecords());
-            writeSummaryTable(crcManifest.getCountryHubCountMap());
+    public void writePremanifest(PreManifest preManifest) {
+        if (preManifest != null) {
+            writeRecords(preManifest.getRecords());
+            writeSummaryTable(preManifest.getCountryHubCountMap());
         } else {
-            throw new IllegalArgumentException("Cannot write premanifest for null CrcManifest model!");
+            throw new IllegalArgumentException("Cannot write premanifest for null PreManifest model!");
         }
     }
 

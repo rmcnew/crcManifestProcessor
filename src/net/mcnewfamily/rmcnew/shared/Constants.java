@@ -34,16 +34,23 @@ public class Constants {
 	public final static String ALI_AL_SALEM = "ALI AL SALEM";
 	public final static String AL_UDEID = "AL UDEID";
 	public final static String BAGRAM = "BAGRAM";
+    public final static String OML = "OML";
     public final static String NAME = "NAME";
     public final static String RANK = "RANK";
-    public final static String AFSC_MOS = "AFSC/MOS";
+    public final static String INTRA_THEATER_ULN = "INTRA_THEATER_ULN";
+    public final static String AFSC_SLASH_MOS = "AFSC/MOS";
+    public final static String AFSC_MOS = "AFSC_MOS";
     public final static String SERVICE_BRANCH = "SERVICE_BRANCH";
     public final static String GENDER = "GENDER";
-    public static final String ARMY = "A";
-    public static final String AIR_FORCE = "AF";
-    public static final String MARINE_CORP = "M";
-    public static final String NAVY = "N";
-    public static final String COAST_GUARD = "CG";
+    public final static String TO_THEATER_ULN = "TO_THEATER_ULN";
+    public final static String FTN = "FTN";
+    public final static String WIAS = "WIAS";
+
+    public final static String ARMY = "A";
+    public final static String AIR_FORCE = "AF";
+    public final static String MARINE_CORP = "M";
+    public final static String NAVY = "N";
+    public final static String COAST_GUARD = "CG";
 
     public final static String CONFIGURATION_XLSX = "crcManifestProcessorConfig.xlsx";
     public final static String DESTINATION_HUB_MAP_SHEET = "destinationHubMapping";

@@ -19,17 +19,16 @@
 
 package net.mcnewfamily.rmcnew.user_interface;
 
-import net.mcnewfamily.rmcnew.model.data.CrcManifest;
+import net.mcnewfamily.rmcnew.model.data.PreManifest;
 import net.mcnewfamily.rmcnew.shared.Util;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
 public class MainWindow extends JFrame {
 	public static final String mainTitle = "CRC Manifest Processor";
 	public static final String licenseTabTitle = "License";
-	private static CrcManifest manifest;
+	private static PreManifest manifest;
 
 	private JTabbedPane tabbedPane = new JTabbedPane();
 
@@ -43,24 +42,21 @@ public class MainWindow extends JFrame {
 		}
 	}
 
-	private static void init() throws IOException {
-		manifest = CrcManifest.getInstance();
-	}
-
 	public static void main(String[] args) {
         MainWindow mainWindow = null;
 		try {
-            init();
+            manifest = PreManifest.getInstance();
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             mainWindow = new MainWindow(mainTitle);
             mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             Container contentPane = mainWindow.getContentPane();
             contentPane.add(mainWindow.tabbedPane);
             // add content
-            mainWindow.addTab("CRC Premanifest", new PremanifestTab());
+            mainWindow.addTab("CRC Pre Manifest", new PreManifestTab());
+            mainWindow.addTab("CRC Final Manifest", new FinalManifestTab());
             mainWindow.addTab("License", new AboutTab());
 
-
+            mainWindow.setPreferredSize(new Dimension(370, 290));
             mainWindow.pack();
             mainWindow.setVisible(true);
         } catch (Exception e) {
