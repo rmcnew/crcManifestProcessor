@@ -17,7 +17,8 @@
  *     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.model.data;
+package net.mcnewfamily.rmcnew.controller;
 
-public class FinalManifest {
+public class AbstractManifestController {
+    // common code here
 }

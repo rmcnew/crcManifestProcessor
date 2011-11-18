@@ -19,7 +19,7 @@
 
 package net.mcnewfamily.rmcnew.user_interface;
 
-import net.mcnewfamily.rmcnew.model.data.PreManifest;
+import net.mcnewfamily.rmcnew.model.data.Manifest;
 import net.mcnewfamily.rmcnew.shared.Util;
 
 import javax.swing.*;
@@ -28,7 +28,7 @@ import java.awt.*;
 public class MainWindow extends JFrame {
 	public static final String mainTitle = "CRC Manifest Processor";
 	public static final String licenseTabTitle = "License";
-	private static PreManifest manifest;
+	private static Manifest manifest;
 
 	private JTabbedPane tabbedPane = new JTabbedPane();
 
@@ -45,7 +45,6 @@ public class MainWindow extends JFrame {
 	public static void main(String[] args) {
         MainWindow mainWindow = null;
 		try {
-            manifest = PreManifest.getInstance();
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             mainWindow = new MainWindow(mainTitle);
             mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

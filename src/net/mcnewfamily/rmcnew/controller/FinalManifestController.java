@@ -19,12 +19,22 @@
 
 package net.mcnewfamily.rmcnew.controller;
 
+import net.mcnewfamily.rmcnew.model.config.CrcManifestProcessorConfig;
+import net.mcnewfamily.rmcnew.model.config.DestinationHubMap;
+import net.mcnewfamily.rmcnew.model.config.LocationAliasMap;
+import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
+
 import java.io.File;
 import java.io.IOException;
 
 public class FinalManifestController {
 
     public static void runWorkflow(File preManifestInputFile, File finalManifestInputFile, File preManifestOutputFile) throws IOException {
-        System.out.println("Final Manifest Workflow here");
+        CrcManifestProcessorConfig config = CrcManifestProcessorConfig.getInstance();
+        LocationAliasMap aliasMap = config.getAliasMap();
+        DestinationHubMap hubMap = config.getHubMap();
+        PriorityMOSMap mosMap = config.getMosMap();
+
+
     }
 }

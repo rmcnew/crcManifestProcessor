@@ -19,24 +19,12 @@
 
 package net.mcnewfamily.rmcnew.model.data;
 
-import java.io.IOException;
+public class Manifest {
 
-public class PreManifest {
-
-    private static PreManifest instance = null;
-    private RecordList records;
+    private RecordList records = new RecordList();
     private CountryHubCountMap countryHubCountMap = new CountryHubCountMap();
 
-    // class methods
-    public static PreManifest getInstance() throws IOException {
-        if (instance == null) {
-            instance = new PreManifest();
-        }
-        return instance;
-    }
-
-    // instance methods
-	private PreManifest()  {
+	public Manifest()  {
 	}
 
     public RecordList getRecords() {

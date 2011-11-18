@@ -38,19 +38,23 @@ import java.io.IOException;
 public class PreManifestController {
 
 	public static void runWorkflow(File preManifestInputFile, File preManifestOutputFile) throws IOException {
+        Manifest preManifest = processPreManifestFile(preManifestInputFile);
+        writeResults(preManifest, preManifestOutputFile);
+	}
 
+    public static Manifest processPreManifestFile(File preManifestInputFile) throws IOException {
         CrcManifestProcessorConfig config = CrcManifestProcessorConfig.getInstance();
-        PreManifest preManifest = PreManifest.getInstance();
+        LocationAliasMap aliasMap = config.getAliasMap();
+        DestinationHubMap hubMap = config.getHubMap();
+        PriorityMOSMap mosMap = config.getMosMap();
+
+        Manifest preManifest = new Manifest();
+        CountryHubCountMap countryHubCountMap = preManifest.getCountryHubCountMap();
         FromCrcManifestXlsxReader manifestXlsxReader = new FromCrcManifestXlsxReader();
         manifestXlsxReader.openXlsxFile(preManifestInputFile);
         RecordList records = manifestXlsxReader.read();
         preManifest.setRecords(records);
         //System.out.println(records);
-
-        LocationAliasMap aliasMap = config.getAliasMap();
-        DestinationHubMap hubMap = config.getHubMap();
-        PriorityMOSMap mosMap = config.getMosMap();
-        CountryHubCountMap countryHubCountMap = preManifest.getCountryHubCountMap();
 
         for (Record record : records) {
             processFinalDestination(record, aliasMap);
@@ -62,12 +66,8 @@ public class PreManifestController {
                 countryHubCountMap.plusOneToCivCount(record);
             }
         }
-        // write out results
-        PreManifestXlsxWriter xlsxWriter = new PreManifestXlsxWriter();
-        xlsxWriter.openXlsxForWriting(preManifestOutputFile);
-        xlsxWriter.writePremanifest(preManifest);
-        xlsxWriter.close();
-	}
+        return preManifest;
+    }
 
     private static void processFinalDestination(Record record, LocationAliasMap aliasMap) {
         String finalDestination = record.getFinalDestination();
@@ -110,6 +110,13 @@ public class PreManifestController {
         KuwaitQatarSingleHub.applyRule(record);
         AfghanUnknownPriorityMosGoesToBagram.applyRule(record, mosMap);
         MakeAllMilitaryServiceBranchA.applyRule(record);
+    }
+
+    private static void writeResults(Manifest preManifest, File preManifestOutputFile) throws IOException {
+        PreManifestXlsxWriter xlsxWriter = new PreManifestXlsxWriter();
+        xlsxWriter.openXlsxForWriting(preManifestOutputFile);
+        xlsxWriter.writePremanifest(preManifest);
+        xlsxWriter.close();
     }
 
 }
