@@ -20,7 +20,7 @@
 package net.mcnewfamily.rmcnew.reader;
 
 import net.mcnewfamily.rmcnew.model.data.Record;
-import net.mcnewfamily.rmcnew.model.data.RecordList;
+import net.mcnewfamily.rmcnew.model.data.Records;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
 import org.apache.poi.ss.usermodel.Row;
@@ -30,51 +30,55 @@ import java.io.IOException;
 
 public class FromCrcManifestXlsxReader extends AbstractXlsxReader {
 
-    public RecordList read() throws IOException {
-        RecordList records = new RecordList();
-        boolean headerSeen = false;
-        XSSFSheet premanifestSheet = workbook.getSheet(Constants.PREMANIFEST_SHEET);
-        for (Row row : premanifestSheet) {
-            // OML, NAME, RANK, INTRA_THEATER_ULN, AFSC_MOS, SERVICE_BRANCH, GENDER,
-            // FINAL_DESTINATION, HUB, COUNTRY, TO_THEATER_ULN, FTN, WIAS
-            String oml = Util.getCellValueAsStringOrEmptyString(row.getCell(0));
+    public Records read(String sheetName) throws IOException {
+        if (Util.notNullAndNotEmpty(sheetName)) {
+            Records records = new Records();
+            boolean headerSeen = false;
+            XSSFSheet premanifestSheet = workbook.getSheet(sheetName);
+            for (Row row : premanifestSheet) {
+                // OML, NAME, RANK, INTRA_THEATER_ULN, AFSC_MOS, SERVICE_BRANCH, GENDER,
+                // FINAL_DESTINATION, HUB, COUNTRY, TO_THEATER_ULN, FTN, WIAS
+                String oml = Util.getCellValueAsStringOrEmptyString(row.getCell(0));
 
-            String name = Util.getCellValueAsStringOrEmptyString(row.getCell(1));
-            if (name == null || name.isEmpty()) {
-                continue; // name is a required field; do not process empty lines
+                String name = Util.getCellValueAsStringOrEmptyString(row.getCell(1));
+                if (name == null || name.isEmpty()) {
+                    continue; // name is a required field; do not process empty lines
+                }
+                String rank = Util.getCellValueAsStringOrEmptyString(row.getCell(2));
+                String intraTheaterUln = Util.getCellValueAsStringOrEmptyString(row.getCell(3));
+                String afscMos = Util.getCellValueAsStringOrEmptyString(row.getCell(4));
+                String serviceBranch = Util.getCellValueAsStringOrEmptyString(row.getCell(5));
+                String gender = Util.getCellValueAsStringOrEmptyString(row.getCell(6));
+                String finalDestination = Util.getCellValueAsStringOrEmptyString(row.getCell(7));
+                String hub = Util.getCellValueAsStringOrEmptyString(row.getCell(8));
+                String country = Util.getCellValueAsStringOrEmptyString(row.getCell(9));
+                String toTheaterUln = Util.getCellValueAsStringOrEmptyString(row.getCell(10));
+                String ftn = Util.getCellValueAsStringOrEmptyString(row.getCell(11));
+                String wias = Util.getCellValueAsStringOrEmptyString(row.getCell(12));
+                if (headerSeen) {
+                    Record record = new Record(oml, name, rank, intraTheaterUln, afscMos, serviceBranch, gender, finalDestination, hub, country, toTheaterUln, ftn, wias);
+                    records.add(record);
+                } else if (oml.equalsIgnoreCase(Constants.OML)&&
+                        name.equalsIgnoreCase(Constants.NAME) &&
+                        rank.equalsIgnoreCase(Constants.RANK) &&
+                        intraTheaterUln.equalsIgnoreCase(Constants.INTRA_THEATER_ULN) &&
+                        (afscMos.equalsIgnoreCase(Constants.MOS) || (afscMos.equalsIgnoreCase(Constants.AFSC_MOS)) ||(afscMos.equalsIgnoreCase(Constants.AFSC_SLASH_MOS)) ) &&
+                        serviceBranch.equalsIgnoreCase(Constants.SERVICE_BRANCH) &&
+                        gender.equalsIgnoreCase(Constants.GENDER) &&
+                        finalDestination.equalsIgnoreCase(Constants.FINAL_DESTINATION) &&
+                        hub.equalsIgnoreCase(Constants.HUB) &&
+                        country.equalsIgnoreCase(Constants.COUNTRY) &&
+                        toTheaterUln.equalsIgnoreCase(Constants.TO_THEATER_ULN) &&
+                        ftn.equalsIgnoreCase(Constants.FTN) &&
+                        wias.equalsIgnoreCase(Constants.WIAS) ) {
+                    headerSeen = true;
+                } else {
+                    throw new IllegalArgumentException("Error in PreManifest xlsx file format!");
+                }
             }
-            String rank = Util.getCellValueAsStringOrEmptyString(row.getCell(2));
-            String intraTheaterUln = Util.getCellValueAsStringOrEmptyString(row.getCell(3));
-            String afscMos = Util.getCellValueAsStringOrEmptyString(row.getCell(4));
-            String serviceBranch = Util.getCellValueAsStringOrEmptyString(row.getCell(5));
-            String gender = Util.getCellValueAsStringOrEmptyString(row.getCell(6));
-            String finalDestination = Util.getCellValueAsStringOrEmptyString(row.getCell(7));
-            String hub = Util.getCellValueAsStringOrEmptyString(row.getCell(8));
-            String country = Util.getCellValueAsStringOrEmptyString(row.getCell(9));
-            String toTheaterUln = Util.getCellValueAsStringOrEmptyString(row.getCell(10));
-            String ftn = Util.getCellValueAsStringOrEmptyString(row.getCell(11));
-            String wias = Util.getCellValueAsStringOrEmptyString(row.getCell(12));
-            if (headerSeen) {
-                Record record = new Record(oml, name, rank, intraTheaterUln, afscMos, serviceBranch, gender, finalDestination, hub, country, toTheaterUln, ftn, wias);
-                records.add(record);
-            } else if (oml.equalsIgnoreCase(Constants.OML)&&
-                       name.equalsIgnoreCase(Constants.NAME) &&
-					   rank.equalsIgnoreCase(Constants.RANK) &&
-                       intraTheaterUln.equalsIgnoreCase(Constants.INTRA_THEATER_ULN) &&
-					   (afscMos.equalsIgnoreCase(Constants.MOS) || (afscMos.equalsIgnoreCase(Constants.AFSC_MOS)) ||(afscMos.equalsIgnoreCase(Constants.AFSC_SLASH_MOS)) ) &&
-                       serviceBranch.equalsIgnoreCase(Constants.SERVICE_BRANCH) &&
-                       gender.equalsIgnoreCase(Constants.GENDER) &&
-                       finalDestination.equalsIgnoreCase(Constants.FINAL_DESTINATION) &&
-                       hub.equalsIgnoreCase(Constants.HUB) &&
-                       country.equalsIgnoreCase(Constants.COUNTRY) &&
-                       toTheaterUln.equalsIgnoreCase(Constants.TO_THEATER_ULN) &&
-                       ftn.equalsIgnoreCase(Constants.FTN) &&
-                       wias.equalsIgnoreCase(Constants.WIAS) ) {
-				headerSeen = true;
-			} else {
-				throw new IllegalArgumentException("Error in premanifest xlsx file format!");
-			}     
+            return records;
+        } else {
+            throw new IllegalArgumentException("Cannot read manifest using null or empty sheet name!");
         }
-	    return records;	
     }
 }

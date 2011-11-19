@@ -21,13 +21,13 @@ package net.mcnewfamily.rmcnew.writer;
 
 import net.mcnewfamily.rmcnew.model.data.CountryHubCountMap;
 import net.mcnewfamily.rmcnew.model.data.Manifest;
-import net.mcnewfamily.rmcnew.model.data.RecordList;
+import net.mcnewfamily.rmcnew.model.data.Records;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 public class PreManifestXlsxWriter extends AbstractXlsxWriter {
 
-    public void writePremanifest(Manifest preManifest) {
+    public void writePreManifest(Manifest preManifest) {
         if (preManifest != null) {
             writeRecords(preManifest.getRecords());
             writeSummaryTable(preManifest.getCountryHubCountMap());
@@ -36,14 +36,14 @@ public class PreManifestXlsxWriter extends AbstractXlsxWriter {
         }
     }
 
-    private void writeRecords(RecordList records) {
+    private void writeRecords(Records records) {
         if (records != null && !records.isEmpty()) {
             XSSFSheet premanifestSheet = records.toSheetEssence(Constants.PREMANIFEST_SHEET).toXSSFSheet(workbook);
             for (int columnIndex = 0; columnIndex < 8; columnIndex++) {
                 premanifestSheet.autoSizeColumn(columnIndex);
             }
         } else {
-            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty RecordList!");
+            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
         }
     }
 

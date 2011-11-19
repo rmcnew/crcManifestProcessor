@@ -19,103 +19,24 @@
 
 package net.mcnewfamily.rmcnew.controller;
 
-import net.mcnewfamily.rmcnew.business_rule.AfghanUnknownPriorityMosGoesToBagram;
-import net.mcnewfamily.rmcnew.business_rule.KuwaitQatarSingleHub;
-import net.mcnewfamily.rmcnew.business_rule.MakeAllMilitaryServiceBranchA;
-import net.mcnewfamily.rmcnew.model.config.CrcManifestProcessorConfig;
-import net.mcnewfamily.rmcnew.model.config.DestinationHubMap;
-import net.mcnewfamily.rmcnew.model.config.LocationAliasMap;
-import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
-import net.mcnewfamily.rmcnew.model.data.*;
-import net.mcnewfamily.rmcnew.reader.FromCrcManifestXlsxReader;
+import net.mcnewfamily.rmcnew.model.data.Manifest;
 import net.mcnewfamily.rmcnew.shared.Constants;
-import net.mcnewfamily.rmcnew.shared.Util;
 import net.mcnewfamily.rmcnew.writer.PreManifestXlsxWriter;
 
 import java.io.File;
 import java.io.IOException;
 
-public class PreManifestController {
+public class PreManifestController extends AbstractManifestController{
 
 	public static void runWorkflow(File preManifestInputFile, File preManifestOutputFile) throws IOException {
-        Manifest preManifest = processPreManifestFile(preManifestInputFile);
+        Manifest preManifest = processManifestFile(preManifestInputFile, Constants.PREMANIFEST_SHEET);
         writeResults(preManifest, preManifestOutputFile);
 	}
-
-    public static Manifest processPreManifestFile(File preManifestInputFile) throws IOException {
-        CrcManifestProcessorConfig config = CrcManifestProcessorConfig.getInstance();
-        LocationAliasMap aliasMap = config.getAliasMap();
-        DestinationHubMap hubMap = config.getHubMap();
-        PriorityMOSMap mosMap = config.getMosMap();
-
-        Manifest preManifest = new Manifest();
-        CountryHubCountMap countryHubCountMap = preManifest.getCountryHubCountMap();
-        FromCrcManifestXlsxReader manifestXlsxReader = new FromCrcManifestXlsxReader();
-        manifestXlsxReader.openXlsxFile(preManifestInputFile);
-        RecordList records = manifestXlsxReader.read();
-        preManifest.setRecords(records);
-        //System.out.println(records);
-
-        for (Record record : records) {
-            processFinalDestination(record, aliasMap);
-            processHubLookup(record, hubMap);
-            applyBusinessRules(record, mosMap);
-            if (record.isMilitary()) {
-                countryHubCountMap.plusOneToMilCount(record);
-            } else {
-                countryHubCountMap.plusOneToCivCount(record);
-            }
-        }
-        return preManifest;
-    }
-
-    private static void processFinalDestination(Record record, LocationAliasMap aliasMap) {
-        String finalDestination = record.getFinalDestination();
-        // strip prefixes and suffixes
-        finalDestination = Util.stripLocationPrefixesAndSuffixes(finalDestination);
-        // location alias substitution
-        if (finalDestination.isEmpty()) {
-            finalDestination = Constants.UNKNOWN;
-        }
-        String alias = aliasMap.get(finalDestination);
-        if (alias != null) {
-            //System.out.println("Replaced alias:  " + finalDestination + " => " + alias);
-            record.setFinalDestination(alias);
-        } else {
-            record.setFinalDestination(finalDestination);
-        }
-    }
-
-    private static void processHubLookup(Record record, DestinationHubMap hubMap) {
-        String finalDestination = record.getFinalDestination();
-        // hub look-up
-        HubCountry hubCountry = hubMap.get(finalDestination);
-        if (hubCountry != null) {
-            //System.out.println("Found hub: " + finalDestination + " => " + hubCountry);
-            record.setHub(hubCountry.getHub());
-            if (!record.getCountry().equalsIgnoreCase(hubCountry.getCountry())) {
-                System.out.println("Countries do not match!  " + record.getCountry() + " != " + hubCountry.getCountry());
-            }
-            record.setCountry(hubCountry.getCountry());
-        } else {
-            if (finalDestination.equalsIgnoreCase(Constants.UNKNOWN)) {
-                record.setHub(Constants.UNKNOWN);
-            } else {
-                record.setHub(Constants.NOT_FOUND);
-            }
-        }
-    }
-
-    private static void applyBusinessRules(Record record, PriorityMOSMap mosMap) throws IOException {
-        KuwaitQatarSingleHub.applyRule(record);
-        AfghanUnknownPriorityMosGoesToBagram.applyRule(record, mosMap);
-        MakeAllMilitaryServiceBranchA.applyRule(record);
-    }
 
     private static void writeResults(Manifest preManifest, File preManifestOutputFile) throws IOException {
         PreManifestXlsxWriter xlsxWriter = new PreManifestXlsxWriter();
         xlsxWriter.openXlsxForWriting(preManifestOutputFile);
-        xlsxWriter.writePremanifest(preManifest);
+        xlsxWriter.writePreManifest(preManifest);
         xlsxWriter.close();
     }
 

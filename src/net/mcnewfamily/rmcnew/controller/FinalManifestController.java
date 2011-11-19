@@ -19,22 +19,28 @@
 
 package net.mcnewfamily.rmcnew.controller;
 
-import net.mcnewfamily.rmcnew.model.config.CrcManifestProcessorConfig;
-import net.mcnewfamily.rmcnew.model.config.DestinationHubMap;
-import net.mcnewfamily.rmcnew.model.config.LocationAliasMap;
-import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
+import net.mcnewfamily.rmcnew.model.data.Manifest;
+import net.mcnewfamily.rmcnew.model.data.Records;
+import net.mcnewfamily.rmcnew.shared.Constants;
+import net.mcnewfamily.rmcnew.writer.FinalManifestXlsxWriter;
 
 import java.io.File;
 import java.io.IOException;
 
-public class FinalManifestController {
+public class FinalManifestController extends AbstractManifestController {
 
     public static void runWorkflow(File preManifestInputFile, File finalManifestInputFile, File preManifestOutputFile) throws IOException {
-        CrcManifestProcessorConfig config = CrcManifestProcessorConfig.getInstance();
-        LocationAliasMap aliasMap = config.getAliasMap();
-        DestinationHubMap hubMap = config.getHubMap();
-        PriorityMOSMap mosMap = config.getMosMap();
+        Manifest preManifest = processManifestFile(preManifestInputFile, Constants.PREMANIFEST_SHEET);
+        Manifest finalManifest = processManifestFile(finalManifestInputFile, Constants.FINAL_MANIFEST_SHEET);
+        Records onPreManifestButDidNotFly = new Records();
 
 
+    }
+
+    private static void writeResults(Manifest finalManifest, File finalManifestOutputFile) throws IOException {
+        FinalManifestXlsxWriter xlsxWriter = new FinalManifestXlsxWriter();
+        xlsxWriter.openXlsxForWriting(finalManifestOutputFile);
+        xlsxWriter.writeFinalManifest(finalManifest);
+        xlsxWriter.close();
     }
 }

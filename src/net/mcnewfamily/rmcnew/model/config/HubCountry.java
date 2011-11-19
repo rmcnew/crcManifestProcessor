@@ -17,7 +17,7 @@
  *     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.model.data;
+package net.mcnewfamily.rmcnew.model.config;
 
 public class HubCountry {
 

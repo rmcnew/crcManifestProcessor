@@ -19,8 +19,6 @@
 
 package net.mcnewfamily.rmcnew.model.config;
 
-import net.mcnewfamily.rmcnew.model.data.HubCountry;
-
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Set;

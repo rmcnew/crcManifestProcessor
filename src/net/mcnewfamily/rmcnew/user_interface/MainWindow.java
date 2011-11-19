@@ -19,6 +19,7 @@
 
 package net.mcnewfamily.rmcnew.user_interface;
 
+import net.mcnewfamily.rmcnew.model.config.CrcManifestProcessorConfig;
 import net.mcnewfamily.rmcnew.model.data.Manifest;
 import net.mcnewfamily.rmcnew.shared.Util;
 
@@ -45,6 +46,7 @@ public class MainWindow extends JFrame {
 	public static void main(String[] args) {
         MainWindow mainWindow = null;
 		try {
+            CrcManifestProcessorConfig.init();
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             mainWindow = new MainWindow(mainTitle);
             mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

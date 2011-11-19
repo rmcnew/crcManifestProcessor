@@ -26,38 +26,44 @@ import java.io.IOException;
 
 public class CrcManifestProcessorConfig {
 
-    private static CrcManifestProcessorConfig instance = null;
-    private DestinationHubMap hubMap;
-    private LocationAliasMap aliasMap;
-    private PriorityMOSMap mosMap;
+    private static CrcManifestProcessorConfig instance = new CrcManifestProcessorConfig();
+    private static DestinationHubMap destinationHubMap;
+    private static LocationAliasMap locationAliasMap;
+    private static PriorityMOSMap priorityMosMap;
+    private static RankComparisonMap rankComparisonMap;
 
-    // class methods
-    public static CrcManifestProcessorConfig getInstance() throws IOException {
-        if (instance == null) {
-            instance = new CrcManifestProcessorConfig();
-        }
+    private CrcManifestProcessorConfig(){
+        // do nothing;  init() does the configuration read
+    }
+
+    public static CrcManifestProcessorConfig getInstance() {
         return instance;
     }
 
-    public CrcManifestProcessorConfig() throws IOException {
+    public static void init() throws IOException {
         ConfigXlsxReader configXlsxReader = new ConfigXlsxReader();
         configXlsxReader.openXlsxFile(Constants.CONFIGURATION_XLSX);
         configXlsxReader.read();
-        hubMap = configXlsxReader.getHubMap();
-        aliasMap = configXlsxReader.getAliasMap();
-        mosMap = configXlsxReader.getMosMap();
+        destinationHubMap = configXlsxReader.getHubMap();
+        locationAliasMap = configXlsxReader.getAliasMap();
+        priorityMosMap = configXlsxReader.getMosMap();
+        rankComparisonMap = configXlsxReader.getRankComparisonMap();
     }
 
     public DestinationHubMap getHubMap() {
-        return hubMap;
+        return destinationHubMap;
     }
 
     public LocationAliasMap getAliasMap() {
-        return aliasMap;
+        return locationAliasMap;
     }
 
     public PriorityMOSMap getMosMap() {
-        return mosMap;
+        return priorityMosMap;
+    }
+
+    public RankComparisonMap getRankComparisonMap() {
+        return rankComparisonMap;
     }
 
 }

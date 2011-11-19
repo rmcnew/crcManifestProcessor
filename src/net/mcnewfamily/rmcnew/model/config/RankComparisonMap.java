@@ -17,29 +17,43 @@
  *     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.model.data;
+package net.mcnewfamily.rmcnew.model.config;
 
-public class Manifest {
+import java.util.HashMap;
+import java.util.Set;
 
-    private Records records = new Records();
-    private Countries countries = new Countries();
+public class RankComparisonMap {
 
-	public Manifest()  {
-	}
+    private HashMap<String, Integer> rankComparisonMap = new HashMap<String, Integer>();
 
-    public Records getRecords() {
-        return records;
+    public RankComparisonMap() {
     }
 
-    public void setRecords(Records records) {
-        this.records = records;
+    public int size() {
+        return rankComparisonMap.size();
     }
 
-    public Countries getCountries() {
-        return countries;
+    public boolean isEmpty() {
+        return rankComparisonMap.isEmpty();
     }
 
-    public void setCountries(Countries countries) {
-        this.countries = countries;
+    public Integer get(Object o) {
+        return rankComparisonMap.get(o);
+    }
+
+    public Integer put(String s, Integer integer) {
+        return rankComparisonMap.put(s, integer);
+    }
+
+    public boolean containsKey(Object o) {
+        return rankComparisonMap.containsKey(o);
+    }
+
+    public void clear() {
+        rankComparisonMap.clear();
+    }
+
+    public Set<String> keySet() {
+        return rankComparisonMap.keySet();
     }
 }

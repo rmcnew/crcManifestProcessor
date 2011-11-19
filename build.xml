@@ -60,7 +60,7 @@
 
     <target name="dist" depends="jar" description="create distribution files">
         <parallel>
-            <copy todir="${dist}" failonerror="true" file="crcManifestProcessorConfig.xlsx"/>
+            <copy todir="${dist}" failonerror="true" file="CRC_Manifest_Processor_Config.xlsx"/>
             <copy todir="${dist}" failonerror="true" file="CRC_Manifest_Processor.sh"/>
             <copy todir="${dist}" failonerror="true" file="CRC_Manifest_Processor.vbs"/>
             <copy todir="${dist}" failonerror="true" file="gpl.txt"/>

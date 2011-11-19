@@ -37,6 +37,7 @@ public class Constants {
     public final static String OML = "OML";
     public final static String NAME = "NAME";
     public final static String RANK = "RANK";
+    public final static String LEVEL = "LEVEL";
     public final static String INTRA_THEATER_ULN = "INTRA_THEATER_ULN";
     public final static String AFSC_SLASH_MOS = "AFSC/MOS";
     public final static String AFSC_MOS = "AFSC_MOS";
@@ -52,16 +53,17 @@ public class Constants {
     public final static String NAVY = "N";
     public final static String COAST_GUARD = "CG";
 
-    public final static String CONFIGURATION_XLSX = "crcManifestProcessorConfig.xlsx";
-    public final static String DESTINATION_HUB_MAP_SHEET = "destinationHubMapping";
-    public final static String LOCATION_ALIAS_MAP_SHEET = "locationAlias";
-    public final static String PRIORITY_MOS_SHEET = "priorityMOS";
+    public final static String CONFIGURATION_XLSX = "CRC_Manifest_Processor_Config.xlsx";
+    public final static String DESTINATION_HUB_MAP_SHEET = "DestinationHubCountry";
+    public final static String LOCATION_ALIAS_MAP_SHEET = "LocationAlias";
+    public final static String PRIORITY_MOS_SHEET = "PriorityMOS";
+    public final static String RANK_COMPARISON_SHEET = "RankComparison";
 
-    public final static String PREMANIFEST_SHEET = "Premanifest";
-    public final static String PREMANFIEST_COUNTS_SHEET = "Premanifest_Counts";
+    public final static String PREMANIFEST_SHEET = "Pre_Manifest";
+    public final static String PREMANFIEST_COUNTS_SHEET = "Pre_Manifest_Counts";
     public final static String FINAL_MANIFEST_SHEET = "Final_Manifest";
     public final static String FINAL_MANIFEST_COUNTS_SHEET = "Final_Manifest_Counts";
-    public final static String ON_PREMANIFEST_BUT_DID_NOT_FLY = "On_Premanifest_But_Did_Not_Fly";
+    public final static String ON_PREMANIFEST_BUT_DID_NOT_FLY = "On_PreManifest_But_Did_Not_Fly";
     public final static String LOCATION = "LOCATION";
     public final static String MIL = "MIL";
     public final static String DOD_CIV = "DOD_CIV";

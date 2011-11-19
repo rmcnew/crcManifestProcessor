@@ -19,32 +19,36 @@
 
 package net.mcnewfamily.rmcnew.model.data;
 
+import net.mcnewfamily.rmcnew.model.config.CrcManifestProcessorConfig;
+import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
+import net.mcnewfamily.rmcnew.model.config.RankComparisonMap;
 import net.mcnewfamily.rmcnew.model.excel.CellEssence;
 import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
 import net.mcnewfamily.rmcnew.model.excel.RowEssence;
 import net.mcnewfamily.rmcnew.shared.Constants;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-public class Record {
+public class Record implements Comparator<Record>{
 
     String orderOfMerit;
-	String name;
-	String rank;
+    String name;
+    String rank;
     String intraTheaterULN;
-	String MOS;
-	String serviceBranch;
-	String gender;
-	String finalDestination;
-	String hub;
-	String country;
+    String MOS;
+    String serviceBranch;
+    String gender;
+    String finalDestination;
+    String hub;
+    String country;
     String toTheaterULN;
     String ftnId;
     String wiasId;
 
-	public Record() {
-	}
+    public Record() {
+    }
 
     public Record(String orderOfMerit, String name, String rank, String intraTheaterULN, String MOS, String serviceBranch, String gender, String finalDestination, String hub, String country, String toTheaterULN, String ftnId, String wiasId) {
         this.orderOfMerit = orderOfMerit;
@@ -185,11 +189,38 @@ public class Record {
                 '}';
     }
 
+
+    public static int compare(Record recA, Record recB) {
+        if (recA == null || recB == null) {
+            throw new IllegalArgumentException("Cannot compare null Records!");
+        }
+        PriorityMOSMap priorityMOSMap = CrcManifestProcessorConfig.getInstance().getMosMap();
+        boolean isPriorityRecA = priorityMOSMap.get(recA.getMOS());
+        boolean isPriorityRecB = priorityMOSMap.get(recB.getMOS());
+        if (isPriorityRecA && !isPriorityRecB) {
+            return 1;
+        } else if (!isPriorityRecA && isPriorityRecB) {
+            return -1;
+        } else {
+            RankComparisonMap rankComparisonMap = CrcManifestProcessorConfig.getInstance().getRankComparisonMap();
+            int levelRecA = rankComparisonMap.get(recA.getRank());
+            int levelRecB = rankComparisonMap.get(recB.getRank());
+            if (levelRecA > levelRecB) {
+                return 1;
+            } else if (levelRecA < levelRecB) {
+                return -1;
+            } else {
+                return 0;
+            }
+        }
+    }
+
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Record record = (Record) o;
 
         if (MOS != null ? !MOS.equals(record.MOS) : record.MOS != null) return false;
@@ -229,6 +260,10 @@ public class Record {
         result = 31 * result + (ftnId != null ? ftnId.hashCode() : 0);
         result = 31 * result + (wiasId != null ? wiasId.hashCode() : 0);
         return result;
+    }
+
+    public String hashKey() {
+        return name + rank + serviceBranch + gender;
     }
 
     public List<String> toList() {

@@ -19,6 +19,7 @@
 
 package net.mcnewfamily.rmcnew.model.data;
 
+import net.mcnewfamily.rmcnew.model.config.HubCountry;
 import net.mcnewfamily.rmcnew.model.excel.CellEssence;
 import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
 import net.mcnewfamily.rmcnew.model.excel.RowEssence;
