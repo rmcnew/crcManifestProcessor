@@ -24,6 +24,7 @@ import net.mcnewfamily.rmcnew.business_rule.KuwaitQatarSingleHub;
 import net.mcnewfamily.rmcnew.business_rule.MakeAllMilitaryServiceBranchA;
 import net.mcnewfamily.rmcnew.model.config.*;
 import net.mcnewfamily.rmcnew.model.data.*;
+import net.mcnewfamily.rmcnew.model.exception.SheetNotFoundException;
 import net.mcnewfamily.rmcnew.reader.FromCrcManifestXlsxReader;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
@@ -33,7 +34,7 @@ import java.io.IOException;
 
 public abstract class AbstractManifestController {
 
-    protected static Manifest processManifestFile(File manifestInputFile, String sheetName) throws IOException {
+    protected static Manifest processManifestFile(File manifestInputFile, String sheetName) throws IOException, SheetNotFoundException {
         if (manifestInputFile != null && Util.notNullAndNotEmpty(sheetName)) {
             CrcManifestProcessorConfig config = CrcManifestProcessorConfig.getInstance();
             LocationAliasMap aliasMap = config.getAliasMap();

@@ -19,7 +19,10 @@
 
 package net.mcnewfamily.rmcnew.writer;
 
+import net.mcnewfamily.rmcnew.model.data.CountryHubCountMap;
+import net.mcnewfamily.rmcnew.model.data.Records;
 import net.mcnewfamily.rmcnew.shared.Util;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
@@ -49,4 +52,27 @@ public abstract class AbstractXlsxWriter {
         workbook.write(fileOutputStream);
         fileOutputStream.close();
     }
+
+    protected void writeRecords(Records records, String sheetName) {
+        if (records != null && !records.isEmpty()) {
+            XSSFSheet finalManifestSheet = records.toSheetEssence(sheetName).toXSSFSheet(workbook);
+            for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
+                finalManifestSheet.autoSizeColumn(columnIndex);
+            }
+        } else {
+            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
+        }
+    }
+
+    protected void writeSummaryTable(CountryHubCountMap countryHubCountMap, String sheetName) {
+        if (countryHubCountMap != null && !countryHubCountMap.isEmpty()) {
+            XSSFSheet finalManifestCountsSheet = countryHubCountMap.toSheetEssence(sheetName).toXSSFSheet(workbook);
+            for (int columnIndex = 0; columnIndex < 4; columnIndex++) {
+                finalManifestCountsSheet.autoSizeColumn(columnIndex);
+            }
+        } else {
+            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty CountryHubCountMap!");
+        }
+    }
+
 }

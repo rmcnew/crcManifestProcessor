@@ -190,7 +190,7 @@ public class Record implements Comparator<Record>{
     }
 
 
-    public static int compare(Record recA, Record recB) {
+    public int compare(Record recA, Record recB) {
         if (recA == null || recB == null) {
             throw new IllegalArgumentException("Cannot compare null Records!");
         }

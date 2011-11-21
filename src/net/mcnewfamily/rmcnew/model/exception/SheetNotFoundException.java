@@ -17,29 +17,22 @@
  *     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.mcnewfamily.rmcnew.model.data;
+package net.mcnewfamily.rmcnew.model.exception;
 
-public class Manifest {
+public class SheetNotFoundException extends Exception {
 
-    private Records records = new Records();
-    private CountryHubCountMap countryHubCountMap = new CountryHubCountMap();
-
-	public Manifest()  {
-	}
-
-    public Records getRecords() {
-        return records;
+    // Special exception that represents missing sheets in the Excel workbook
+    public SheetNotFoundException(String message) {
+        super(message);
     }
 
-    public void setRecords(Records records) {
-        this.records = records;
+    @Override
+    public StackTraceElement[] getStackTrace() {
+        return super.getStackTrace();
     }
 
-    public CountryHubCountMap getCountryHubCountMap() {
-        return countryHubCountMap;
-    }
-
-    public void setCountryHubCountMap(CountryHubCountMap countryHubCountMap) {
-        this.countryHubCountMap = countryHubCountMap;
+    @Override
+    public String getMessage() {
+        return super.getMessage();
     }
 }

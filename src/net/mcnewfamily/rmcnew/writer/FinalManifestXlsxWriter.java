@@ -19,42 +19,24 @@
 
 package net.mcnewfamily.rmcnew.writer;
 
-import net.mcnewfamily.rmcnew.model.data.CountryHubCountMap;
 import net.mcnewfamily.rmcnew.model.data.Manifest;
 import net.mcnewfamily.rmcnew.model.data.Records;
 import net.mcnewfamily.rmcnew.shared.Constants;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 public class FinalManifestXlsxWriter extends AbstractXlsxWriter {
 
-    public void writeFinalManifest(Manifest finalManifest) {
+    public void writeFinalManifest(Manifest finalManifest, Manifest preManifest, Records onPreManifestButDidNotFly) {
         if (finalManifest != null) {
-            writeRecords(finalManifest.getRecords());
-            writeSummaryTable(finalManifest.getCountryHubCountMap());
+            writeRecords(finalManifest.getRecords(), Constants.FINAL_MANIFEST_SHEET);
+            writeSummaryTable(finalManifest.getCountryHubCountMap(), Constants.FINAL_MANIFEST_COUNTS_SHEET);
+            writeRecords(preManifest.getRecords(), Constants.PREMANIFEST_SHEET);
+            writeSummaryTable(preManifest.getCountryHubCountMap(), Constants.PREMANFIEST_COUNTS_SHEET);
+            writeRecords(onPreManifestButDidNotFly, Constants.ON_PREMANIFEST_BUT_DID_NOT_FLY);
         } else {
             throw new IllegalArgumentException("Cannot write Final Manifest for null FinalManifest model!");
         }
     }
 
-    private void writeRecords(Records records) {
-        if (records != null && !records.isEmpty()) {
-            XSSFSheet premanifestSheet = records.toSheetEssence(Constants.FINAL_MANIFEST_SHEET).toXSSFSheet(workbook);
-            for (int columnIndex = 0; columnIndex < 8; columnIndex++) {
-                premanifestSheet.autoSizeColumn(columnIndex);
-            }
-        } else {
-            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
-        }
-    }
 
-    private void writeSummaryTable(CountryHubCountMap countryHubCountMap) {
-        if (countryHubCountMap != null && !countryHubCountMap.isEmpty()) {
-            XSSFSheet finalManifestCountsSheet = countryHubCountMap.toSheetEssence(Constants.FINAL_MANIFEST_COUNTS_SHEET).toXSSFSheet(workbook);
-            for (int columnIndex = 0; columnIndex < 4; columnIndex++) {
-                finalManifestCountsSheet.autoSizeColumn(columnIndex);
-            }
-        } else {
-            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty CountryHubCountMap!");
-        }
-    }
+
 }

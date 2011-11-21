@@ -20,6 +20,7 @@
 package net.mcnewfamily.rmcnew.user_interface;
 
 import net.mcnewfamily.rmcnew.controller.FinalManifestController;
+import net.mcnewfamily.rmcnew.model.exception.SheetNotFoundException;
 import net.mcnewfamily.rmcnew.shared.Util;
 
 import javax.swing.*;
@@ -135,11 +136,12 @@ public class FinalManifestTab extends JComponent implements ActionListener {
                 try {
                     FinalManifestController.runWorkflow(fromCrcPreManifestInputFile, fromCrcFinalManifestInputFile, finalManifestOutputFile);
                     JOptionPane.showMessageDialog(this, "Final Manifest processing is complete", "Success!", JOptionPane.PLAIN_MESSAGE);
+                } catch (SheetNotFoundException snfe) {
+                    JOptionPane.showMessageDialog(this, snfe.getMessage(), snfe.getClass().getName(), JOptionPane.ERROR_MESSAGE);
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(this, e+"\n"+ Util.convertStackTraceToString(e.getStackTrace()), e.getClass().getName(), JOptionPane.ERROR_MESSAGE);
                 }
             }
         }
     }
-
 }

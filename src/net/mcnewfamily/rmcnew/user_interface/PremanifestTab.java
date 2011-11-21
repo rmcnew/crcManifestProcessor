@@ -20,6 +20,7 @@
 package net.mcnewfamily.rmcnew.user_interface;
 
 import net.mcnewfamily.rmcnew.controller.PreManifestController;
+import net.mcnewfamily.rmcnew.model.exception.SheetNotFoundException;
 import net.mcnewfamily.rmcnew.shared.Util;
 
 import javax.swing.*;
@@ -108,6 +109,8 @@ public class PreManifestTab extends JComponent implements ActionListener {
                 try {
 				    PreManifestController.runWorkflow(preManifestInputFile, preManifestOutputFile);
 				    JOptionPane.showMessageDialog(this, "Premanifest processing is complete", "Success!", JOptionPane.PLAIN_MESSAGE);
+                } catch (SheetNotFoundException snfe) {
+                    JOptionPane.showMessageDialog(this, snfe.getMessage(), snfe.getClass().getName(), JOptionPane.ERROR_MESSAGE);
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(this, e+"\n"+ Util.convertStackTraceToString(e.getStackTrace()), e.getClass().getName(), JOptionPane.ERROR_MESSAGE);
                 }

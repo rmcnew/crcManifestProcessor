@@ -19,27 +19,32 @@
 
 package net.mcnewfamily.rmcnew.model.data;
 
-public class Manifest {
+public class UlnInfo {
 
-    private Records records = new Records();
-    private CountryHubCountMap countryHubCountMap = new CountryHubCountMap();
+    private String name;
+    private int seats;
 
-	public Manifest()  {
-	}
-
-    public Records getRecords() {
-        return records;
+    public UlnInfo() {
     }
 
-    public void setRecords(Records records) {
-        this.records = records;
+    public UlnInfo(String name, int seats) {
+        this.name = name;
+        this.seats = seats;
     }
 
-    public CountryHubCountMap getCountryHubCountMap() {
-        return countryHubCountMap;
+    public String getName() {
+        return name;
     }
 
-    public void setCountryHubCountMap(CountryHubCountMap countryHubCountMap) {
-        this.countryHubCountMap = countryHubCountMap;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getSeats() {
+        return seats;
+    }
+
+    public void setSeats(int seats) {
+        this.seats = seats;
     }
 }

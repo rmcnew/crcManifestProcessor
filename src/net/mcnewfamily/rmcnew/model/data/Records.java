@@ -21,7 +21,9 @@ package net.mcnewfamily.rmcnew.model.data;
 
 import net.mcnewfamily.rmcnew.model.excel.SheetEssence;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.TreeMap;
 
 public class Records implements Iterable<Record> {
 
@@ -38,16 +40,16 @@ public class Records implements Iterable<Record> {
         records.clear();
     }
 
-    public boolean containsKey(Object o) {
-        return records.containsKey(o);
+    public boolean containsRecord(Record record) {
+        return records.containsKey(record.hashKey());
     }
 
-    public Record get(Object o) {
-        return records.get(o);
+    public Record getRecord(Record record) {
+        return records.get(record.hashKey());
     }
 
-    public Record put(String s, Record record) {
-        return records.put(s, record);
+    public Record addRecord(Record record) {
+        return records.put(record.hashKey(), record);
     }
 
     public Set<String> keySet() {
@@ -56,10 +58,6 @@ public class Records implements Iterable<Record> {
 
     public int size() {
         return records.size();
-    }
-
-    public Record remove(Object o) {
-        return records.remove(o);
     }
 
     public Iterator<Record> iterator() {
@@ -91,31 +89,6 @@ public class Records implements Iterable<Record> {
             sheetEssence.add(record.toRowEssence());
         }
         return sheetEssence;
-    }
-
-    public Countries toCountries() {
-        Countries countries = new Countries();
-        for (Record record : this) {
-            String countryName = record.getCountry();
-            Country country;
-            if (countries.containsKey(countryName)) {
-                country = countries.get(countryName);
-            } else {
-                country = new Country(countryName);
-                countries.put(countryName, country);
-            }
-            String hubName = record.getHub();
-            Hubs hubs = country.getHubs();
-            Hub hub;
-            if (hubs.containsKey(hubName)) {
-                hub = hubs.get(hubName);
-            } else {
-                hub = new Hub(hubName, country);
-                hubs.put(hubName, hub);
-            }
-            hub.add(record);
-        }
-        return countries;
     }
 
     @Override

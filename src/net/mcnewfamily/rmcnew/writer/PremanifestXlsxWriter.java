@@ -19,42 +19,17 @@
 
 package net.mcnewfamily.rmcnew.writer;
 
-import net.mcnewfamily.rmcnew.model.data.CountryHubCountMap;
 import net.mcnewfamily.rmcnew.model.data.Manifest;
-import net.mcnewfamily.rmcnew.model.data.Records;
 import net.mcnewfamily.rmcnew.shared.Constants;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 public class PreManifestXlsxWriter extends AbstractXlsxWriter {
 
     public void writePreManifest(Manifest preManifest) {
         if (preManifest != null) {
-            writeRecords(preManifest.getRecords());
-            writeSummaryTable(preManifest.getCountryHubCountMap());
+            writeRecords(preManifest.getRecords(), Constants.PREMANIFEST_SHEET);
+            writeSummaryTable(preManifest.getCountryHubCountMap(), Constants.PREMANFIEST_COUNTS_SHEET);
         } else {
             throw new IllegalArgumentException("Cannot write premanifest for null PreManifest model!");
-        }
-    }
-
-    private void writeRecords(Records records) {
-        if (records != null && !records.isEmpty()) {
-            XSSFSheet premanifestSheet = records.toSheetEssence(Constants.PREMANIFEST_SHEET).toXSSFSheet(workbook);
-            for (int columnIndex = 0; columnIndex < 8; columnIndex++) {
-                premanifestSheet.autoSizeColumn(columnIndex);
-            }
-        } else {
-            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
-        }
-    }
-
-    private void writeSummaryTable(CountryHubCountMap countryHubCountMap) {
-        if (countryHubCountMap != null && !countryHubCountMap.isEmpty()) {
-            XSSFSheet premanifestCountsSheet = countryHubCountMap.toSheetEssence(Constants.PREMANFIEST_COUNTS_SHEET).toXSSFSheet(workbook);
-            for (int columnIndex = 0; columnIndex < 4; columnIndex++) {
-                premanifestCountsSheet.autoSizeColumn(columnIndex);
-            }
-        } else {
-            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty CountryHubCountMap!");
         }
     }
 }

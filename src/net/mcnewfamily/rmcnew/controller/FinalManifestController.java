@@ -20,8 +20,12 @@
 package net.mcnewfamily.rmcnew.controller;
 
 import net.mcnewfamily.rmcnew.model.data.Manifest;
+import net.mcnewfamily.rmcnew.model.data.Record;
 import net.mcnewfamily.rmcnew.model.data.Records;
+import net.mcnewfamily.rmcnew.model.exception.SheetNotFoundException;
 import net.mcnewfamily.rmcnew.shared.Constants;
+import net.mcnewfamily.rmcnew.user_interface.MainWindow;
+import net.mcnewfamily.rmcnew.user_interface.UlnQuestionPane;
 import net.mcnewfamily.rmcnew.writer.FinalManifestXlsxWriter;
 
 import java.io.File;
@@ -29,18 +33,43 @@ import java.io.IOException;
 
 public class FinalManifestController extends AbstractManifestController {
 
-    public static void runWorkflow(File preManifestInputFile, File finalManifestInputFile, File preManifestOutputFile) throws IOException {
+    public static void runWorkflow(File preManifestInputFile, File finalManifestInputFile, File preManifestOutputFile) throws IOException, SheetNotFoundException {
         Manifest preManifest = processManifestFile(preManifestInputFile, Constants.PREMANIFEST_SHEET);
         Manifest finalManifest = processManifestFile(finalManifestInputFile, Constants.FINAL_MANIFEST_SHEET);
-        Records onPreManifestButDidNotFly = new Records();
+        Records onPreManifestButDidNotFly = findOnPreManifestButDidNotFly(preManifest, finalManifest);
 
+        // get set of hubs
+        // filter out hubs that do not get ULNs
+        // ask user for ULN names and seats
+        // prioritize PAX and assign seats
+        // write out by-hub / ULN sheets
+        UlnQuestionPane.askUserForUlnInfo(MainWindow.getFinalManifestTab(), "TEST HUB");
+        writeResults(finalManifest, preManifest, onPreManifestButDidNotFly, preManifestOutputFile);
 
     }
 
-    private static void writeResults(Manifest finalManifest, File finalManifestOutputFile) throws IOException {
+    private static void writeResults(Manifest finalManifest, Manifest preManifest, Records onPreManifestButDidNotFly, File finalManifestOutputFile) throws IOException {
         FinalManifestXlsxWriter xlsxWriter = new FinalManifestXlsxWriter();
         xlsxWriter.openXlsxForWriting(finalManifestOutputFile);
-        xlsxWriter.writeFinalManifest(finalManifest);
+        xlsxWriter.writeFinalManifest(finalManifest, preManifest, onPreManifestButDidNotFly);
         xlsxWriter.close();
     }
+
+    private static Records findOnPreManifestButDidNotFly(Manifest preManifest, Manifest finalManifest) {
+        if (preManifest != null && finalManifest != null) {
+            Records onPreManifestButDidNotFly = new Records();
+            Records preManifestRecords = preManifest.getRecords();
+            Records finalManifestRecords = finalManifest.getRecords();
+            for (Record record : preManifestRecords) {
+                if (!finalManifestRecords.containsRecord(record)) {
+                    onPreManifestButDidNotFly.addRecord(record);
+                }
+            }
+            return onPreManifestButDidNotFly;
+        } else {
+            throw new IllegalArgumentException("Cannot compare a null manifest!");
+        }
+    }
+
+
 }

@@ -24,6 +24,7 @@ import net.mcnewfamily.rmcnew.model.config.DestinationHubMap;
 import net.mcnewfamily.rmcnew.model.config.LocationAliasMap;
 import net.mcnewfamily.rmcnew.model.config.RankComparisonMap;
 import net.mcnewfamily.rmcnew.shared.Constants;
+import net.mcnewfamily.rmcnew.shared.Util;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
@@ -46,9 +47,9 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
         hubMap = new DestinationHubMap();
         boolean headerSeen = false;
         for (Row row : destinationHubSheet) {
-            String cell0 = row.getCell(0).getStringCellValue();
-            String cell1 = row.getCell(1).getStringCellValue();
-            String cell2 = row.getCell(2).getStringCellValue();
+            String cell0 = Util.getCellValueAsStringOrEmptyString(row.getCell(0));
+            String cell1 = Util.getCellValueAsStringOrEmptyString(row.getCell(1));
+            String cell2 = Util.getCellValueAsStringOrEmptyString(row.getCell(2));
             if (headerSeen) {
                 hubMap.put(cell0, cell1, cell2);
             } else if (cell0.equalsIgnoreCase(Constants.FINAL_DESTINATION) &&
@@ -66,8 +67,8 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
         aliasMap = new LocationAliasMap();
         boolean headerSeen = false;
         for (Row row : locationAliasSheet) {
-            String cell0 = row.getCell(0).getStringCellValue();
-            String cell1 = row.getCell(1).getStringCellValue();
+            String cell0 = Util.getCellValueAsStringOrEmptyString(row.getCell(0));
+            String cell1 = Util.getCellValueAsStringOrEmptyString(row.getCell(1));
             if (headerSeen) {
                 aliasMap.put(cell0, cell1);
             } else if (cell0.equalsIgnoreCase(Constants.ALIAS) &&
@@ -84,7 +85,7 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
         mosMap = new PriorityMOSMap();
         boolean headerSeen = false;
         for (Row row : priorityMosSheet) {
-            String cell0 = row.getCell(0).getStringCellValue();
+            String cell0 = Util.getCellValueAsStringOrEmptyString(row.getCell(0));
             if (headerSeen) {
                 mosMap.put(cell0, true);
             } else if (cell0.equalsIgnoreCase(Constants.MOS)) {
@@ -100,8 +101,8 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
         RankComparisonMap rankComparisonMap = new RankComparisonMap();
         boolean headerSeen = false;
         for (Row row : rankComparisonSheet) {
-            String cell0 = row.getCell(0).getStringCellValue();
-            String cell1 = row.getCell(1).getStringCellValue();
+            String cell0 = Util.getCellValueAsStringOrEmptyString(row.getCell(0));
+            String cell1 = Util.getCellValueAsStringOrEmptyString(row.getCell(1));
             if (headerSeen) {
                 aliasMap.put(cell0, cell1);
             } else if (cell0.equalsIgnoreCase(Constants.RANK) &&

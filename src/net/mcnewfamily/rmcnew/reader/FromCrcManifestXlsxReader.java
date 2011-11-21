@@ -21,6 +21,7 @@ package net.mcnewfamily.rmcnew.reader;
 
 import net.mcnewfamily.rmcnew.model.data.Record;
 import net.mcnewfamily.rmcnew.model.data.Records;
+import net.mcnewfamily.rmcnew.model.exception.SheetNotFoundException;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
 import org.apache.poi.ss.usermodel.Row;
@@ -30,12 +31,15 @@ import java.io.IOException;
 
 public class FromCrcManifestXlsxReader extends AbstractXlsxReader {
 
-    public Records read(String sheetName) throws IOException {
+    public Records read(String sheetName) throws IOException, SheetNotFoundException {
         if (Util.notNullAndNotEmpty(sheetName)) {
             Records records = new Records();
             boolean headerSeen = false;
-            XSSFSheet premanifestSheet = workbook.getSheet(sheetName);
-            for (Row row : premanifestSheet) {
+            XSSFSheet manifestSheet = workbook.getSheet(sheetName);
+            if (manifestSheet == null) {
+                throw new SheetNotFoundException("Cannot find Excel worksheet named:  " + sheetName +"\nPlease check the input file and ensure this sheet exists!");
+            }
+            for (Row row : manifestSheet) {
                 // OML, NAME, RANK, INTRA_THEATER_ULN, AFSC_MOS, SERVICE_BRANCH, GENDER,
                 // FINAL_DESTINATION, HUB, COUNTRY, TO_THEATER_ULN, FTN, WIAS
                 String oml = Util.getCellValueAsStringOrEmptyString(row.getCell(0));
@@ -57,7 +61,7 @@ public class FromCrcManifestXlsxReader extends AbstractXlsxReader {
                 String wias = Util.getCellValueAsStringOrEmptyString(row.getCell(12));
                 if (headerSeen) {
                     Record record = new Record(oml, name, rank, intraTheaterUln, afscMos, serviceBranch, gender, finalDestination, hub, country, toTheaterUln, ftn, wias);
-                    records.add(record);
+                    records.addRecord(record);
                 } else if (oml.equalsIgnoreCase(Constants.OML)&&
                         name.equalsIgnoreCase(Constants.NAME) &&
                         rank.equalsIgnoreCase(Constants.RANK) &&

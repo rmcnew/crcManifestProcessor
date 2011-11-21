@@ -20,48 +20,62 @@
 package net.mcnewfamily.rmcnew.user_interface;
 
 import net.mcnewfamily.rmcnew.model.config.CrcManifestProcessorConfig;
-import net.mcnewfamily.rmcnew.model.data.Manifest;
 import net.mcnewfamily.rmcnew.shared.Util;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class MainWindow extends JFrame {
-	public static final String mainTitle = "CRC Manifest Processor";
-	public static final String licenseTabTitle = "License";
-	private static Manifest manifest;
+    public static final String mainTitle = "CRC Manifest Processor";
+    private static JTabbedPane tabbedPane = new JTabbedPane();
+    private static PreManifestTab preManifestTab;
+    private static FinalManifestTab finalManifestTab;
+    private static AboutTab aboutTab;
 
-	private JTabbedPane tabbedPane = new JTabbedPane();
+    public MainWindow(String s) throws HeadlessException {
+        super(s);
+    }
 
-	public MainWindow(String s) throws HeadlessException {
-		super(s);
-	}
+    public void addTab(String componentTitle, JComponent component) {
+        if (component != null && Util.notNullAndNotEmpty(componentTitle)) {
+            tabbedPane.addTab(componentTitle, component);
+        }
+    }
 
-	public void addTab(String componentTitle, JComponent component) {
-		if (component != null && Util.notNullAndNotEmpty(componentTitle)) {
-			tabbedPane.addTab(componentTitle, component);
-		}
-	}
+    public static PreManifestTab getPreManifestTab() {
+        return preManifestTab;
+    }
 
-	public static void main(String[] args) {
+    public static FinalManifestTab getFinalManifestTab() {
+        return finalManifestTab;
+    }
+
+    public static AboutTab getAboutTab() {
+        return aboutTab;
+    }
+
+    public static void main(String[] args) {
         MainWindow mainWindow = null;
-		try {
+        try {
             CrcManifestProcessorConfig.init();
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            mainWindow = new MainWindow(mainTitle);
-            mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            Container contentPane = mainWindow.getContentPane();
-            contentPane.add(mainWindow.tabbedPane);
-            // add content
-            mainWindow.addTab("CRC Pre Manifest", new PreManifestTab());
-            mainWindow.addTab("CRC Final Manifest", new FinalManifestTab());
-            mainWindow.addTab("License", new AboutTab());
-
-            mainWindow.setPreferredSize(new Dimension(370, 290));
-            mainWindow.pack();
-            mainWindow.setVisible(true);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(mainWindow, e+"\n"+Util.convertStackTraceToString(e.getStackTrace()), e.getClass().getName(), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(mainWindow, e + "\n" + Util.convertStackTraceToString(e.getStackTrace()), e.getClass().getName(), JOptionPane.ERROR_MESSAGE);
         }
-	}
+        mainWindow = new MainWindow(mainTitle);
+        mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        Container contentPane = mainWindow.getContentPane();
+        contentPane.add(tabbedPane);
+        // add content
+        preManifestTab = new PreManifestTab();
+        mainWindow.addTab("CRC Pre Manifest", preManifestTab);
+        finalManifestTab = new FinalManifestTab();
+        mainWindow.addTab("CRC Final Manifest", finalManifestTab);
+        aboutTab = new AboutTab();
+        mainWindow.addTab("License", aboutTab);
+
+        mainWindow.setPreferredSize(new Dimension(370, 290));
+        mainWindow.pack();
+        mainWindow.setVisible(true);
+    }
 }

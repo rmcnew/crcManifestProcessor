@@ -20,6 +20,7 @@
 package net.mcnewfamily.rmcnew.controller;
 
 import net.mcnewfamily.rmcnew.model.data.Manifest;
+import net.mcnewfamily.rmcnew.model.exception.SheetNotFoundException;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.writer.PreManifestXlsxWriter;
 
@@ -28,7 +29,7 @@ import java.io.IOException;
 
 public class PreManifestController extends AbstractManifestController{
 
-	public static void runWorkflow(File preManifestInputFile, File preManifestOutputFile) throws IOException {
+	public static void runWorkflow(File preManifestInputFile, File preManifestOutputFile) throws IOException, SheetNotFoundException {
         Manifest preManifest = processManifestFile(preManifestInputFile, Constants.PREMANIFEST_SHEET);
         writeResults(preManifest, preManifestOutputFile);
 	}
