@@ -33,19 +33,19 @@ import java.util.List;
 
 public class Record implements Comparator<Record>{
 
-    String orderOfMerit;
-    String name;
-    String rank;
-    String intraTheaterULN;
-    String MOS;
-    String serviceBranch;
-    String gender;
-    String finalDestination;
-    String hub;
-    String country;
-    String toTheaterULN;
-    String ftnId;
-    String wiasId;
+    private String orderOfMerit;
+    private String name;
+    private String rank;
+    private String intraTheaterULN;
+    private String MOS;
+    private String serviceBranch;
+    private String gender;
+    private String finalDestination;
+    private String hub;
+    private String country;
+    private String toTheaterULN;
+    private String ftnId;
+    private String wiasId;
 
     public Record() {
     }

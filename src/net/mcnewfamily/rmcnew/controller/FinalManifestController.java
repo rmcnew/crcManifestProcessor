@@ -19,6 +19,7 @@
 
 package net.mcnewfamily.rmcnew.controller;
 
+import net.mcnewfamily.rmcnew.model.data.Hub;
 import net.mcnewfamily.rmcnew.model.data.Manifest;
 import net.mcnewfamily.rmcnew.model.data.Record;
 import net.mcnewfamily.rmcnew.model.data.Records;
@@ -43,7 +44,7 @@ public class FinalManifestController extends AbstractManifestController {
         // ask user for ULN names and seats
         // prioritize PAX and assign seats
         // write out by-hub / ULN sheets
-        UlnQuestionPane.askUserForUlnInfo(MainWindow.getFinalManifestTab(), "TEST HUB");
+        UlnQuestionPane.askUserForUlnInfo(MainWindow.getFinalManifestTab(), new Hub("Test Hub"));
         writeResults(finalManifest, preManifest, onPreManifestButDidNotFly, preManifestOutputFile);
 
     }

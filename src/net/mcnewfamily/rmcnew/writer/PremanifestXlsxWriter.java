@@ -27,7 +27,7 @@ public class PreManifestXlsxWriter extends AbstractXlsxWriter {
     public void writePreManifest(Manifest preManifest) {
         if (preManifest != null) {
             writeRecords(preManifest.getRecords(), Constants.PREMANIFEST_SHEET);
-            writeSummaryTable(preManifest.getCountryHubCountMap(), Constants.PREMANFIEST_COUNTS_SHEET);
+            writeSummaryTable(preManifest, Constants.PREMANFIEST_COUNTS_SHEET);
         } else {
             throw new IllegalArgumentException("Cannot write premanifest for null PreManifest model!");
         }

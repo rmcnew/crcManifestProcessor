@@ -28,9 +28,9 @@ public class FinalManifestXlsxWriter extends AbstractXlsxWriter {
     public void writeFinalManifest(Manifest finalManifest, Manifest preManifest, Records onPreManifestButDidNotFly) {
         if (finalManifest != null) {
             writeRecords(finalManifest.getRecords(), Constants.FINAL_MANIFEST_SHEET);
-            writeSummaryTable(finalManifest.getCountryHubCountMap(), Constants.FINAL_MANIFEST_COUNTS_SHEET);
+            writeSummaryTable(finalManifest, Constants.FINAL_MANIFEST_COUNTS_SHEET);
             writeRecords(preManifest.getRecords(), Constants.PREMANIFEST_SHEET);
-            writeSummaryTable(preManifest.getCountryHubCountMap(), Constants.PREMANFIEST_COUNTS_SHEET);
+            writeSummaryTable(preManifest, Constants.PREMANFIEST_COUNTS_SHEET);
             writeRecords(onPreManifestButDidNotFly, Constants.ON_PREMANIFEST_BUT_DID_NOT_FLY);
         } else {
             throw new IllegalArgumentException("Cannot write Final Manifest for null FinalManifest model!");

@@ -41,25 +41,20 @@ public abstract class AbstractManifestController {
             DestinationHubMap hubMap = config.getHubMap();
             PriorityMOSMap mosMap = config.getMosMap();
 
-            Manifest preManifest = new Manifest();
-            CountryHubCountMap countryHubCountMap = preManifest.getCountryHubCountMap();
+            Manifest manifest = new Manifest();
             FromCrcManifestXlsxReader manifestXlsxReader = new FromCrcManifestXlsxReader();
             manifestXlsxReader.openXlsxFile(manifestInputFile);
             Records records = manifestXlsxReader.read(sheetName);
-            preManifest.setRecords(records);
+            manifest.setRecords(records);
             //System.out.println(records);
 
             for (Record record : records) {
                 processFinalDestination(record, aliasMap);
                 processHubLookup(record, hubMap);
                 applyBusinessRules(record, mosMap);
-                if (record.isMilitary()) {
-                    countryHubCountMap.plusOneToMilCount(record);
-                } else {
-                    countryHubCountMap.plusOneToCivCount(record);
-                }
             }
-            return preManifest;
+            manifest.doSummaryCounts();
+            return manifest;
         } else {
             throw new IllegalArgumentException("Cannot create manifest from null or empty file or sheetName!");
         }

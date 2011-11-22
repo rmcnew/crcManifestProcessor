@@ -19,26 +19,26 @@
 
 package net.mcnewfamily.rmcnew.user_interface;
 
-import net.mcnewfamily.rmcnew.model.data.UlnInfo;
+import net.mcnewfamily.rmcnew.model.data.Hub;
 
 import javax.swing.*;
 
 public class UlnQuestionPane {
 
-    public static UlnInfo askUserForUlnInfo(JComponent rootWindow, String hubName) {
+    public static void askUserForUlnInfo(JComponent rootWindow, Hub hub) {
         String ulnName;
-        do {
-            ulnName = JOptionPane.showInputDialog(rootWindow, "Please provide the ULN for " + hubName);
-        } while (ulnName == null || ulnName.isEmpty());
         Integer seats = null;
         do {
+            ulnName = JOptionPane.showInputDialog(rootWindow, "Please provide the ULN for " + hub.getName());
+        } while (ulnName == null || ulnName.isEmpty());
+        do {
             try {
-                String seatsString = JOptionPane.showInputDialog(rootWindow, "How many seats are available for " + hubName + "?");
-                seats = Integer.parseInt(seatsString);
+                String seatsString = JOptionPane.showInputDialog(rootWindow, "How many seats are available for " + hub.getName() + "?");                seats = Integer.parseInt(seatsString);
             } catch (NumberFormatException nfe) {
                 // do nothing
             }
         } while (seats == null || seats <= 0);
-        return new UlnInfo(ulnName, seats);
+        hub.setUlnName(ulnName);
+        hub.setUlnSeats(seats);
     }
 }

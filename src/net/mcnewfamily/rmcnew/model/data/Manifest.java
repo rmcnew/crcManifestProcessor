@@ -19,10 +19,18 @@
 
 package net.mcnewfamily.rmcnew.model.data;
 
+import net.mcnewfamily.rmcnew.model.excel.*;
+import net.mcnewfamily.rmcnew.shared.Constants;
+
+import java.util.TreeMap;
+
 public class Manifest {
 
     private Records records = new Records();
-    private CountryHubCountMap countryHubCountMap = new CountryHubCountMap();
+    private TreeMap<String, Country> countries = new TreeMap<String, Country>();
+    private int milTotal = 0;
+    private int civTotal = 0;
+
 
 	public Manifest()  {
 	}
@@ -35,11 +43,105 @@ public class Manifest {
         this.records = records;
     }
 
-    public CountryHubCountMap getCountryHubCountMap() {
-        return countryHubCountMap;
+    public int getMilTotal() {
+        return milTotal;
     }
 
-    public void setCountryHubCountMap(CountryHubCountMap countryHubCountMap) {
-        this.countryHubCountMap = countryHubCountMap;
+    public String getMilTotalString() {
+        return "" + milTotal;
+    }
+
+    public int getCivTotal() {
+        return civTotal;
+    }
+
+    public String getCivTotalString() {
+        return "" + civTotal;
+    }
+
+    public int getGrandTotal() {
+        return milTotal + civTotal;
+    }
+
+    public String getGrandTotalString() {
+        return "" + (milTotal + civTotal);
+    }
+
+    public void doSummaryCounts() {
+        for (Record record : records) {
+            if (record.isMilitary()) {
+                plusOneToMilCount(record);
+            } else {
+                plusOneToCivCount(record);
+            }
+        }
+    }
+
+    public void plusOneToMilCount(Record record) {
+        String countryName = record.getCountry();
+        String hubName = record.getHub();
+        if (countries.containsKey(countryName)) {
+            Country country = countries.get(countryName);
+            country.plusOneToMilCount(hubName);
+            countries.put(countryName, country);
+        } else {
+            Country country = new Country(countryName);
+            country.plusOneToMilCount(hubName);
+            countries.put(countryName, country);
+        }
+        milTotal++;
+    }
+
+    public void plusOneToCivCount(Record record) {
+        String countryName = record.getCountry();
+        String hubName = record.getHub();
+        if (countries.containsKey(countryName)) {
+            Country country = countries.get(countryName);
+            country.plusOneToCivCount(hubName);
+            countries.put(countryName, country);
+        } else {
+            Country country = new Country(countryName);
+            country.plusOneToCivCount(hubName);
+            countries.put(countryName, country);
+        }
+        civTotal++;
+    }
+
+    public RowEssence getGrandTotalRowEssence() {
+        RowEssence rowEssence = new RowEssence();
+        CellEssence hubNameCell = new CellEssence();
+        CellStyleEssence styleEssence = CellSharedStyles.COUNTRY_STYLE;
+        hubNameCell.setCellStyleEssence(styleEssence);
+        hubNameCell.setValue(Constants.Grand_Total);
+        rowEssence.add(hubNameCell);
+        CellEssence milCell = new CellEssence();
+        milCell.setCellStyleEssence(styleEssence);
+        milCell.setValue(this.getMilTotalString());
+        rowEssence.add(milCell);
+        CellEssence civCell = new CellEssence();
+        civCell.setCellStyleEssence(styleEssence);
+        civCell.setValue(this.getCivTotalString());
+        rowEssence.add(civCell);
+        CellEssence totalCell = new CellEssence();
+        totalCell.setCellStyleEssence(styleEssence);
+        totalCell.setValue(this.getGrandTotalString());
+        rowEssence.add(totalCell);
+
+        return rowEssence;
+    }
+
+
+    public SheetEssence toSheetEssence(String sheetName) {
+        SheetEssence sheetEssence = new SheetEssence(sheetName);
+        sheetEssence.add(Country.getHeadersRowEssence());
+        for (String country : countries.keySet()) {
+            sheetEssence.addAll(countries.get(country).toListOfRowEssences());
+        }
+        sheetEssence.add(getGrandTotalRowEssence());
+        return sheetEssence;
+    }
+
+    public boolean isEmpty() {
+        return countries.isEmpty();
     }
 }

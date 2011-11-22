@@ -19,9 +19,8 @@
 
 package net.mcnewfamily.rmcnew.writer;
 
-import net.mcnewfamily.rmcnew.model.data.CountryHubCountMap;
+import net.mcnewfamily.rmcnew.model.data.Manifest;
 import net.mcnewfamily.rmcnew.model.data.Records;
-import net.mcnewfamily.rmcnew.shared.Util;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -33,13 +32,6 @@ public abstract class AbstractXlsxWriter {
 
     XSSFWorkbook workbook;
     FileOutputStream fileOutputStream;
-
-    public void openXlsxForWriting(String filename) throws IOException {
-        if (Util.notNullAndNotEmpty(filename) ) {
-            workbook = new XSSFWorkbook();
-            fileOutputStream = new FileOutputStream(filename);
-        }
-    }
 
     public void openXlsxForWriting(File file) throws IOException {
         if (file != null) {
@@ -64,14 +56,14 @@ public abstract class AbstractXlsxWriter {
         }
     }
 
-    protected void writeSummaryTable(CountryHubCountMap countryHubCountMap, String sheetName) {
-        if (countryHubCountMap != null && !countryHubCountMap.isEmpty()) {
-            XSSFSheet finalManifestCountsSheet = countryHubCountMap.toSheetEssence(sheetName).toXSSFSheet(workbook);
+    protected void writeSummaryTable(Manifest manifest, String sheetName) {
+        if (manifest != null) {
+            XSSFSheet finalManifestCountsSheet = manifest.toSheetEssence(sheetName).toXSSFSheet(workbook);
             for (int columnIndex = 0; columnIndex < 4; columnIndex++) {
                 finalManifestCountsSheet.autoSizeColumn(columnIndex);
             }
         } else {
-            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty CountryHubCountMap!");
+            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty manifest!");
         }
     }
 
