@@ -22,9 +22,10 @@ package net.mcnewfamily.rmcnew.model.data;
 import net.mcnewfamily.rmcnew.model.excel.*;
 import net.mcnewfamily.rmcnew.shared.Constants;
 
+import java.util.Iterator;
 import java.util.TreeMap;
 
-public class Manifest {
+public class Manifest implements Iterable<Country> {
 
     private Records records = new Records();
     private TreeMap<String, Country> countries = new TreeMap<String, Country>();
@@ -67,6 +68,29 @@ public class Manifest {
         return "" + (milTotal + civTotal);
     }
 
+    @Override
+    public Iterator<Country> iterator() {
+        return new Iterator<Country>() {
+            private Iterator<String> it = countries.keySet().iterator();
+            private String currentKey;
+            @Override
+            public boolean hasNext() {
+                return it.hasNext();
+            }
+
+            @Override
+            public Country next() {
+                currentKey = it.next();
+                return countries.get(currentKey);
+            }
+
+            @Override
+            public void remove() {
+                countries.remove(currentKey);
+            }
+        };
+    }
+
     public void doSummaryCounts() {
         for (Record record : records) {
             if (record.isMilitary()) {
@@ -79,14 +103,13 @@ public class Manifest {
 
     public void plusOneToMilCount(Record record) {
         String countryName = record.getCountry();
-        String hubName = record.getHub();
         if (countries.containsKey(countryName)) {
             Country country = countries.get(countryName);
-            country.plusOneToMilCount(hubName);
+            country.plusOneToMilCountAndAppendRecord(record);
             countries.put(countryName, country);
         } else {
             Country country = new Country(countryName);
-            country.plusOneToMilCount(hubName);
+            country.plusOneToMilCountAndAppendRecord(record);
             countries.put(countryName, country);
         }
         milTotal++;
@@ -94,14 +117,13 @@ public class Manifest {
 
     public void plusOneToCivCount(Record record) {
         String countryName = record.getCountry();
-        String hubName = record.getHub();
         if (countries.containsKey(countryName)) {
             Country country = countries.get(countryName);
-            country.plusOneToCivCount(hubName);
+            country.plusOneToCivCountAndAppendRecord(record);
             countries.put(countryName, country);
         } else {
             Country country = new Country(countryName);
-            country.plusOneToCivCount(hubName);
+            country.plusOneToCivCountAndAppendRecord(record);
             countries.put(countryName, country);
         }
         civTotal++;

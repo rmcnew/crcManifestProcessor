@@ -31,6 +31,7 @@ public class CrcManifestProcessorConfig {
     private static LocationAliasMap locationAliasMap;
     private static PriorityMOSMap priorityMosMap;
     private static RankComparisonMap rankComparisonMap;
+    private static HubsWithoutUlnsMap hubsWithoutUlnsMap;
 
     private CrcManifestProcessorConfig(){
         // do nothing;  init() does the configuration read
@@ -48,6 +49,7 @@ public class CrcManifestProcessorConfig {
         locationAliasMap = configXlsxReader.getAliasMap();
         priorityMosMap = configXlsxReader.getMosMap();
         rankComparisonMap = configXlsxReader.getRankComparisonMap();
+        hubsWithoutUlnsMap = configXlsxReader.getHubsWithoutUlnsMap();
     }
 
     public DestinationHubMap getHubMap() {
@@ -66,4 +68,7 @@ public class CrcManifestProcessorConfig {
         return rankComparisonMap;
     }
 
+    public HubsWithoutUlnsMap getHubsWithoutUlnsMap() {
+        return hubsWithoutUlnsMap;
+    }
 }

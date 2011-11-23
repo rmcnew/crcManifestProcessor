@@ -19,10 +19,9 @@
 
 package net.mcnewfamily.rmcnew.controller;
 
-import net.mcnewfamily.rmcnew.model.data.Hub;
-import net.mcnewfamily.rmcnew.model.data.Manifest;
-import net.mcnewfamily.rmcnew.model.data.Record;
-import net.mcnewfamily.rmcnew.model.data.Records;
+import net.mcnewfamily.rmcnew.model.config.CrcManifestProcessorConfig;
+import net.mcnewfamily.rmcnew.model.config.HubsWithoutUlnsMap;
+import net.mcnewfamily.rmcnew.model.data.*;
 import net.mcnewfamily.rmcnew.model.exception.SheetNotFoundException;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.user_interface.MainWindow;
@@ -34,29 +33,25 @@ import java.io.IOException;
 
 public class FinalManifestController extends AbstractManifestController {
 
-    public static void runWorkflow(File preManifestInputFile, File finalManifestInputFile, File preManifestOutputFile) throws IOException, SheetNotFoundException {
-        Manifest preManifest = processManifestFile(preManifestInputFile, Constants.PREMANIFEST_SHEET);
-        Manifest finalManifest = processManifestFile(finalManifestInputFile, Constants.FINAL_MANIFEST_SHEET);
+    @Override
+    public void runWorkflow(File manifestInputFile, File preManifestOutputFile) throws IOException, SheetNotFoundException {
+        Manifest preManifest = processManifestFile(manifestInputFile, Constants.PREMANIFEST_SHEET);
+        Manifest finalManifest = processManifestFile(manifestInputFile, Constants.FINAL_MANIFEST_SHEET);
         Records onPreManifestButDidNotFly = findOnPreManifestButDidNotFly(preManifest, finalManifest);
-
-        // get set of hubs
-        // filter out hubs that do not get ULNs
-        // ask user for ULN names and seats
-        // prioritize PAX and assign seats
-        // write out by-hub / ULN sheets
-        UlnQuestionPane.askUserForUlnInfo(MainWindow.getFinalManifestTab(), new Hub("Test Hub"));
+        getUlnInfoFromUser(finalManifest);
+        assignSeatsByUln();
         writeResults(finalManifest, preManifest, onPreManifestButDidNotFly, preManifestOutputFile);
-
     }
 
-    private static void writeResults(Manifest finalManifest, Manifest preManifest, Records onPreManifestButDidNotFly, File finalManifestOutputFile) throws IOException {
+    private void writeResults(Manifest finalManifest, Manifest preManifest, Records onPreManifestButDidNotFly, File finalManifestOutputFile) throws IOException {
         FinalManifestXlsxWriter xlsxWriter = new FinalManifestXlsxWriter();
         xlsxWriter.openXlsxForWriting(finalManifestOutputFile);
         xlsxWriter.writeFinalManifest(finalManifest, preManifest, onPreManifestButDidNotFly);
+        // write out by-hub / ULN sheets
         xlsxWriter.close();
     }
 
-    private static Records findOnPreManifestButDidNotFly(Manifest preManifest, Manifest finalManifest) {
+    private Records findOnPreManifestButDidNotFly(Manifest preManifest, Manifest finalManifest) {
         if (preManifest != null && finalManifest != null) {
             Records onPreManifestButDidNotFly = new Records();
             Records preManifestRecords = preManifest.getRecords();
@@ -72,5 +67,20 @@ public class FinalManifestController extends AbstractManifestController {
         }
     }
 
+    private void getUlnInfoFromUser(Manifest finalManifest) {
+        HubsWithoutUlnsMap hubsWithoutUlnsMap = CrcManifestProcessorConfig.getInstance().getHubsWithoutUlnsMap();
+        for (Country country : finalManifest) {
+            for (Hub hub : country) {
+                if (hubsWithoutUlnsMap.get(hub.getName())) {
+                    continue;
+                }
+                UlnQuestionPane.askUserForUlnInfo(MainWindow.getFinalManifestTab(), hub);
+            }
+        }
+    }
 
+    // prioritize PAX and assign seats
+    private void assignSeatsByUln() {
+
+    }
 }

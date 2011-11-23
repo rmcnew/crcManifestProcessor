@@ -20,6 +20,7 @@
 package net.mcnewfamily.rmcnew.writer;
 
 import net.mcnewfamily.rmcnew.model.data.Manifest;
+import net.mcnewfamily.rmcnew.model.data.PrioritizedRecords;
 import net.mcnewfamily.rmcnew.model.data.Records;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -64,6 +65,17 @@ public abstract class AbstractXlsxWriter {
             }
         } else {
             throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty manifest!");
+        }
+    }
+
+    protected void writePrioritizedRecords(PrioritizedRecords prioritizedRecords, String sheetName) {
+        if (prioritizedRecords != null && !prioritizedRecords.isEmpty()) {
+            XSSFSheet finalManifestSheet = prioritizedRecords.toSheetEssence(sheetName).toXSSFSheet(workbook);
+            for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
+                finalManifestSheet.autoSizeColumn(columnIndex);
+            }
+        } else {
+            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
         }
     }
 

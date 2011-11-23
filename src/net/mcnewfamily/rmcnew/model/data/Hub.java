@@ -25,12 +25,14 @@ import net.mcnewfamily.rmcnew.model.excel.CellStyleEssence;
 import net.mcnewfamily.rmcnew.model.excel.RowEssence;
 import net.mcnewfamily.rmcnew.shared.Constants;
 
-public class Hub {
+import java.util.Iterator;
+
+public class Hub implements Iterable<Record>{
 
     private String name;
     private int milCount = 0;
     private int civCount = 0;
-    private Records records;
+    private PrioritizedRecords prioritizedRecords = new PrioritizedRecords();
     private String ulnName;
     private int ulnSeats;
 
@@ -66,12 +68,12 @@ public class Hub {
         return "" + (milCount + civCount);
     }
 
-    public Records getRecords() {
-        return records;
+    public void appendRecord(Record record) {
+        prioritizedRecords.add(record);
     }
 
-    public void setRecords(Records records) {
-        this.records = records;
+    public PrioritizedRecords getPrioritizedRecords() {
+        return prioritizedRecords;
     }
 
     public String getUlnName() {
@@ -98,13 +100,17 @@ public class Hub {
         civCount++;
     }
 
+    public Iterator<Record> iterator() {
+        return prioritizedRecords.iterator();
+    }
+
     @Override
     public String toString() {
         return "Hub{" +
                 "name='" + name + '\'' +
                 ", milCount=" + milCount +
                 ", civCount=" + civCount +
-                ", records=" + records +
+                ", prioritizedRecords=" + prioritizedRecords +
                 ", ulnName='" + ulnName + '\'' +
                 ", ulnSeats=" + ulnSeats +
                 '}';
@@ -115,7 +121,6 @@ public class Hub {
         RowEssence rowEssence = new RowEssence();
         CellEssence hubNameCell = new CellEssence();
         CellStyleEssence styleEssence;
-        System.out.println(toString());
         if (name.equalsIgnoreCase(Constants.UNKNOWN)) {
             hubNameCell.setCellStyleEssence(CellSharedStyles.UNKNOWN_HUB_NAME_STYLE);
             styleEssence = CellSharedStyles.UNKNOWN_HUB_ENTRY_STYLE;

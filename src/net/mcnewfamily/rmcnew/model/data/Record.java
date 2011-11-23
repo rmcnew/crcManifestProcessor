@@ -26,12 +26,12 @@ import net.mcnewfamily.rmcnew.model.excel.CellEssence;
 import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
 import net.mcnewfamily.rmcnew.model.excel.RowEssence;
 import net.mcnewfamily.rmcnew.shared.Constants;
+import net.mcnewfamily.rmcnew.shared.Util;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
-public class Record implements Comparator<Record>{
+public class Record implements Comparable<Record>{
 
     private String orderOfMerit;
     private String name;
@@ -189,33 +189,41 @@ public class Record implements Comparator<Record>{
                 '}';
     }
 
-
-    public int compare(Record recA, Record recB) {
-        if (recA == null || recB == null) {
+    public int compareTo(Record that) {
+        if (that == null) {
             throw new IllegalArgumentException("Cannot compare null Records!");
         }
         PriorityMOSMap priorityMOSMap = CrcManifestProcessorConfig.getInstance().getMosMap();
-        boolean isPriorityRecA = priorityMOSMap.get(recA.getMOS());
-        boolean isPriorityRecB = priorityMOSMap.get(recB.getMOS());
-        if (isPriorityRecA && !isPriorityRecB) {
+        boolean isPriorityThis = priorityMOSMap.get(MOS);
+        boolean isPriorityThat = priorityMOSMap.get(that.getMOS());
+        if (isPriorityThis && !isPriorityThat) {
             return 1;
-        } else if (!isPriorityRecA && isPriorityRecB) {
+        } else if (!isPriorityThis && isPriorityThat) {
             return -1;
         } else {
             RankComparisonMap rankComparisonMap = CrcManifestProcessorConfig.getInstance().getRankComparisonMap();
-            int levelRecA = rankComparisonMap.get(recA.getRank());
-            int levelRecB = rankComparisonMap.get(recB.getRank());
-            if (levelRecA > levelRecB) {
+            Integer levelThis;
+            Integer levelThat;
+            if (Util.notNullAndNotEmpty(rank) && rankComparisonMap.containsKey(rank)) {
+                levelThis = rankComparisonMap.get(rank);
+            } else {
+                levelThis = 0;
+            }
+            String thatRank = that.getRank();
+            if (Util.notNullAndNotEmpty(thatRank) && rankComparisonMap.containsKey(thatRank)) {
+                levelThat = rankComparisonMap.get(thatRank);
+            } else {
+                levelThat = 0;
+            }
+            if (levelThis > levelThat) {
                 return 1;
-            } else if (levelRecA < levelRecB) {
+            } else if (levelThis < levelThat) {
                 return -1;
             } else {
                 return 0;
             }
         }
     }
-
-
 
     @Override
     public boolean equals(Object o) {

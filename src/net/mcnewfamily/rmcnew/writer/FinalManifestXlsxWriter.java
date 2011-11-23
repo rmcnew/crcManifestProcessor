@@ -19,6 +19,10 @@
 
 package net.mcnewfamily.rmcnew.writer;
 
+import net.mcnewfamily.rmcnew.model.config.CrcManifestProcessorConfig;
+import net.mcnewfamily.rmcnew.model.config.HubsWithoutUlnsMap;
+import net.mcnewfamily.rmcnew.model.data.Country;
+import net.mcnewfamily.rmcnew.model.data.Hub;
 import net.mcnewfamily.rmcnew.model.data.Manifest;
 import net.mcnewfamily.rmcnew.model.data.Records;
 import net.mcnewfamily.rmcnew.shared.Constants;
@@ -32,11 +36,21 @@ public class FinalManifestXlsxWriter extends AbstractXlsxWriter {
             writeRecords(preManifest.getRecords(), Constants.PREMANIFEST_SHEET);
             writeSummaryTable(preManifest, Constants.PREMANFIEST_COUNTS_SHEET);
             writeRecords(onPreManifestButDidNotFly, Constants.ON_PREMANIFEST_BUT_DID_NOT_FLY);
+            writeHubs(finalManifest);
         } else {
             throw new IllegalArgumentException("Cannot write Final Manifest for null FinalManifest model!");
         }
     }
 
-
-
+    private void writeHubs(Manifest finalManifest) {
+        HubsWithoutUlnsMap hubsWithoutUlnsMap = CrcManifestProcessorConfig.getInstance().getHubsWithoutUlnsMap();
+        for (Country country : finalManifest) {
+            for (Hub hub : country) {
+                if (hubsWithoutUlnsMap.get(hub.getName())) {
+                    continue;
+                }
+                writePrioritizedRecords(hub.getPrioritizedRecords(), hub.getName().toUpperCase());
+            }
+        }
+    }
 }

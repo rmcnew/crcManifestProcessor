@@ -22,53 +22,53 @@ package net.mcnewfamily.rmcnew.model.config;
 import java.util.HashMap;
 import java.util.Set;
 
-public class RankComparisonMap {
+public class HubsWithoutUlnsMap {
 
-    private HashMap<String, Integer> rankComparisonMap = new HashMap<String, Integer>();
+    private HashMap<String, Boolean> hubsWithoutUlns = new HashMap<String, Boolean>();
 
-    public RankComparisonMap() {
+    public HubsWithoutUlnsMap() {
     }
 
     public int size() {
-        return rankComparisonMap.size();
+        return hubsWithoutUlns.size();
     }
 
     public boolean isEmpty() {
-        return rankComparisonMap.isEmpty();
+        return hubsWithoutUlns.isEmpty();
     }
 
-    public Integer get(Object o) {
-        return rankComparisonMap.get(o);
+    public Boolean get(Object o) {
+        Boolean result =  hubsWithoutUlns.get(o);
+        if (result == null) {
+            result = false;
+        }
+        return result;
     }
 
-    public Integer put(String s, Integer integer) {
-        return rankComparisonMap.put(s, integer);
+    public Boolean put(String s, Boolean aBoolean) {
+        return hubsWithoutUlns.put(s, aBoolean);
     }
 
     public boolean containsKey(Object o) {
-        return rankComparisonMap.containsKey(o);
+        return hubsWithoutUlns.containsKey(o);
     }
 
     public void clear() {
-        rankComparisonMap.clear();
+        hubsWithoutUlns.clear();
     }
 
     public Set<String> keySet() {
-        return rankComparisonMap.keySet();
+        return hubsWithoutUlns.keySet();
     }
 
-    @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder("RankComparisonMap{");
-        Set<String> keys = rankComparisonMap.keySet();
-        for (String key : keys) {
-            builder.append("Rank: ");
+        StringBuilder builder = new StringBuilder("HubsWithoutUlnsMap {");
+        for (String key : hubsWithoutUlns.keySet()) {
             builder.append(key);
             builder.append(" => ");
-            builder.append(rankComparisonMap.get(key));
-            builder.append("\n");
+            builder.append(hubsWithoutUlns.get(key));
         }
-        builder.append('}');
+        builder.append("}\n");
         return builder.toString();
     }
 }

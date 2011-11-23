@@ -25,10 +25,11 @@ import net.mcnewfamily.rmcnew.model.excel.RowEssence;
 import net.mcnewfamily.rmcnew.shared.Constants;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
 
-public class Country {
+public class Country implements Iterable<Hub> {
 
     private String name;
     private TreeMap<String, Hub> hubs = new TreeMap<String, Hub>();
@@ -63,30 +64,62 @@ public class Country {
         return "" + (milCount + civCount);
     }
 
-    public void plusOneToMilCount(String hubName) {
+    public String getName() {
+        return name;
+    }
+
+    public Iterator<Hub> iterator() {
+        return new Iterator<Hub>() {
+            private Iterator<String> it = hubs.keySet().iterator();
+            private String currentKey;
+            @Override
+            public boolean hasNext() {
+                return it.hasNext();
+            }
+
+            @Override
+            public Hub next() {
+                currentKey = it.next();
+                return hubs.get(currentKey);
+            }
+
+            @Override
+            public void remove() {
+                hubs.remove(currentKey);
+            }
+        };
+    }
+
+    public void plusOneToMilCountAndAppendRecord(Record record) {
+        String hubName = record.getHub();
+        Hub hub;
         if (hubs.containsKey(hubName)) {
-            Hub hub = hubs.get(hubName);
+            hub = hubs.get(hubName);
             hub.plusOneToMilCount();
             hubs.put(hubName, hub);
         } else {
-            Hub hub = new Hub(hubName);
+            hub = new Hub(hubName);
             hub.plusOneToMilCount();
             hubs.put(hubName, hub);
         }
         milCount++;
+        hub.appendRecord(record);
     }
 
-    public void plusOneToCivCount(String hubName) {
+    public void plusOneToCivCountAndAppendRecord(Record record) {
+        String hubName = record.getHub();
+        Hub hub;
         if (hubs.containsKey(hubName)) {
-            Hub hub = hubs.get(hubName);
+            hub = hubs.get(hubName);
             hub.plusOneToCivCount();
             hubs.put(hubName, hub);
         } else {
-            Hub hub = new Hub(hubName);
+            hub = new Hub(hubName);
             hub.plusOneToCivCount();
             hubs.put(hubName, hub);
         }
         civCount++;
+        hub.appendRecord(record);
     }
 
     public static List<String> getHeaders() {

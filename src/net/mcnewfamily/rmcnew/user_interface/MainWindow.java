@@ -57,8 +57,8 @@ public class MainWindow extends JFrame {
     public static void main(String[] args) {
         MainWindow mainWindow = null;
         try {
-            CrcManifestProcessorConfig.init();
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            CrcManifestProcessorConfig.init();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(mainWindow, e + "\n" + Util.convertStackTraceToString(e.getStackTrace()), e.getClass().getName(), JOptionPane.ERROR_MESSAGE);
         }
@@ -74,7 +74,7 @@ public class MainWindow extends JFrame {
         aboutTab = new AboutTab();
         mainWindow.addTab("License", aboutTab);
 
-        mainWindow.setPreferredSize(new Dimension(370, 290));
+        mainWindow.setPreferredSize(new Dimension(360, 240));
         mainWindow.pack();
         mainWindow.setVisible(true);
     }

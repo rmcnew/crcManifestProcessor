@@ -29,7 +29,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import java.io.IOException;
 
-public class FromCrcManifestXlsxReader extends AbstractXlsxReader {
+public class ManifestXlsxReader extends AbstractXlsxReader {
 
     public Records read(String sheetName) throws IOException, SheetNotFoundException {
         if (Util.notNullAndNotEmpty(sheetName)) {

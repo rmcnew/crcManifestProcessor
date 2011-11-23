@@ -29,12 +29,14 @@ import java.io.IOException;
 
 public class PreManifestController extends AbstractManifestController{
 
-	public static void runWorkflow(File preManifestInputFile, File preManifestOutputFile) throws IOException, SheetNotFoundException {
-        Manifest preManifest = processManifestFile(preManifestInputFile, Constants.PREMANIFEST_SHEET);
-        writeResults(preManifest, preManifestOutputFile);
+    @Override
+	public void runWorkflow(File manifestInputFile, File manifestOutputFile) throws IOException, SheetNotFoundException {
+
+        Manifest preManifest = processManifestFile(manifestInputFile, Constants.PREMANIFEST_SHEET);
+        writeResults(preManifest, manifestOutputFile);
 	}
 
-    private static void writeResults(Manifest preManifest, File preManifestOutputFile) throws IOException {
+    private void writeResults(Manifest preManifest, File preManifestOutputFile) throws IOException {
         PreManifestXlsxWriter xlsxWriter = new PreManifestXlsxWriter();
         xlsxWriter.openXlsxForWriting(preManifestOutputFile);
         xlsxWriter.writePreManifest(preManifest);

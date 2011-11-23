@@ -19,10 +19,7 @@
 
 package net.mcnewfamily.rmcnew.reader;
 
-import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
-import net.mcnewfamily.rmcnew.model.config.DestinationHubMap;
-import net.mcnewfamily.rmcnew.model.config.LocationAliasMap;
-import net.mcnewfamily.rmcnew.model.config.RankComparisonMap;
+import net.mcnewfamily.rmcnew.model.config.*;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
 import org.apache.poi.ss.usermodel.Row;
@@ -34,12 +31,14 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
     private LocationAliasMap aliasMap;
     private PriorityMOSMap mosMap;
     private RankComparisonMap rankComparisonMap;
+    private HubsWithoutUlnsMap hubsWithoutUlnsMap;
 
     public void read() {
         readDestinationHubs();
         readLocationAlias();
         readPriorityMos();
         readRankComparison();
+        readHubsWithoutUlns();
     }
 
     private void readDestinationHubs() {
@@ -51,7 +50,9 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
             String cell1 = Util.getCellValueAsStringOrEmptyString(row.getCell(1));
             String cell2 = Util.getCellValueAsStringOrEmptyString(row.getCell(2));
             if (headerSeen) {
-                hubMap.put(cell0, cell1, cell2);
+                if (Util.notNullAndNotEmpty(cell0) && Util.notNullAndNotEmpty(cell1) && Util.notNullAndNotEmpty(cell2)) {
+                    hubMap.put(cell0, cell1, cell2);
+                }
             } else if (cell0.equalsIgnoreCase(Constants.FINAL_DESTINATION) &&
 					   cell1.equalsIgnoreCase(Constants.HUB) &&
 					   cell2.equalsIgnoreCase(Constants.COUNTRY)) {
@@ -70,7 +71,9 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
             String cell0 = Util.getCellValueAsStringOrEmptyString(row.getCell(0));
             String cell1 = Util.getCellValueAsStringOrEmptyString(row.getCell(1));
             if (headerSeen) {
-                aliasMap.put(cell0, cell1);
+                if (Util.notNullAndNotEmpty(cell0) && Util.notNullAndNotEmpty(cell1)) {
+                    aliasMap.put(cell0, cell1);
+                }
             } else if (cell0.equalsIgnoreCase(Constants.ALIAS) &&
 					   cell1.equalsIgnoreCase(Constants.FINAL_DESTINATION)) {
 				headerSeen = true;
@@ -87,7 +90,9 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
         for (Row row : priorityMosSheet) {
             String cell0 = Util.getCellValueAsStringOrEmptyString(row.getCell(0));
             if (headerSeen) {
-                mosMap.put(cell0, true);
+                if (Util.notNullAndNotEmpty(cell0)) {
+                    mosMap.put(cell0, true);
+                }
             } else if (cell0.equalsIgnoreCase(Constants.MOS)) {
 				headerSeen = true;
 			} else {
@@ -98,13 +103,15 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
 
     private void readRankComparison() {
         XSSFSheet rankComparisonSheet = workbook.getSheet(Constants.RANK_COMPARISON_SHEET);
-        RankComparisonMap rankComparisonMap = new RankComparisonMap();
+        rankComparisonMap = new RankComparisonMap();
         boolean headerSeen = false;
         for (Row row : rankComparisonSheet) {
             String cell0 = Util.getCellValueAsStringOrEmptyString(row.getCell(0));
             String cell1 = Util.getCellValueAsStringOrEmptyString(row.getCell(1));
-            if (headerSeen) {
-                aliasMap.put(cell0, cell1);
+            if (headerSeen)  {
+                if (Util.notNullAndNotEmpty(cell0) && Util.notNullAndNotEmpty(cell1)) {
+                    rankComparisonMap.put(cell0, Integer.parseInt(cell1));
+                }
             } else if (cell0.equalsIgnoreCase(Constants.RANK) &&
 					   cell1.equalsIgnoreCase(Constants.LEVEL)) {
 				headerSeen = true;
@@ -113,6 +120,25 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
 			}
         }
     }
+
+    private void readHubsWithoutUlns() {
+        XSSFSheet hubsWithoutUlnsSheet = workbook.getSheet(Constants.HUBS_WITHOUT_ULNS_SHEET);
+        hubsWithoutUlnsMap = new HubsWithoutUlnsMap();
+        boolean headerSeen = false;
+        for (Row row : hubsWithoutUlnsSheet) {
+            String cell0 = Util.getCellValueAsStringOrEmptyString(row.getCell(0));
+            if (headerSeen) {
+                if (Util.notNullAndNotEmpty(cell0)) {
+                    hubsWithoutUlnsMap.put(cell0, true);
+                }
+            } else if (cell0.equalsIgnoreCase(Constants.HUBS_WITHOUT_ULNS)) {
+				headerSeen = true;
+			} else {
+				throw new IllegalArgumentException("Error in " + Constants.HUBS_WITHOUT_ULNS_SHEET  + " tab of " + Constants.CONFIGURATION_XLSX  + "!");
+			}
+        }
+    }
+
 
     public DestinationHubMap getHubMap() {
         return hubMap;
@@ -130,4 +156,7 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
         return rankComparisonMap;
     }
 
+    public HubsWithoutUlnsMap getHubsWithoutUlnsMap() {
+        return hubsWithoutUlnsMap;
+    }
 }

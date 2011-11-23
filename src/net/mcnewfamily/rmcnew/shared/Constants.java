@@ -46,6 +46,7 @@ public class Constants {
     public final static String TO_THEATER_ULN = "TO_THEATER_ULN";
     public final static String FTN = "FTN";
     public final static String WIAS = "WIAS";
+    public final static String HUBS_WITHOUT_ULNS = "HUBS_WITHOUT_ULNS";
 
     public final static String ARMY = "A";
     public final static String AIR_FORCE = "AF";
@@ -58,6 +59,7 @@ public class Constants {
     public final static String LOCATION_ALIAS_MAP_SHEET = "LocationAlias";
     public final static String PRIORITY_MOS_SHEET = "PriorityMOS";
     public final static String RANK_COMPARISON_SHEET = "RankComparison";
+    public final static String HUBS_WITHOUT_ULNS_SHEET = "HubsWithoutUlns";
 
     public final static String PREMANIFEST_SHEET = "Pre_Manifest";
     public final static String PREMANFIEST_COUNTS_SHEET = "Pre_Manifest_Counts";
@@ -68,4 +70,9 @@ public class Constants {
     public final static String MIL = "MIL";
     public final static String DOD_CIV = "DOD_CIV";
     public final static String Grand_Total = "Grand_Total";
+
+    public final static String PRE_MANIFEST_BUTTON_TEXT = "Generate Premanifest";
+    public final static String PRE_MANIFEST_SUCCESS_TEXT = "Premanifest processing is complete";
+    public final static String FINAL_MANIFEST_BUTTON_TEXT = "Generate Final Manifest";
+    public final static String FINAL_MANIFEST_SUCCESS_TEXT = "Final Manifest processing is complete";
 }

@@ -25,7 +25,7 @@ import net.mcnewfamily.rmcnew.business_rule.MakeAllMilitaryServiceBranchA;
 import net.mcnewfamily.rmcnew.model.config.*;
 import net.mcnewfamily.rmcnew.model.data.*;
 import net.mcnewfamily.rmcnew.model.exception.SheetNotFoundException;
-import net.mcnewfamily.rmcnew.reader.FromCrcManifestXlsxReader;
+import net.mcnewfamily.rmcnew.reader.ManifestXlsxReader;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
 
@@ -34,6 +34,8 @@ import java.io.IOException;
 
 public abstract class AbstractManifestController {
 
+    public abstract void runWorkflow(File inputFile, File outputFile) throws IOException, SheetNotFoundException;
+
     protected static Manifest processManifestFile(File manifestInputFile, String sheetName) throws IOException, SheetNotFoundException {
         if (manifestInputFile != null && Util.notNullAndNotEmpty(sheetName)) {
             CrcManifestProcessorConfig config = CrcManifestProcessorConfig.getInstance();
@@ -41,10 +43,10 @@ public abstract class AbstractManifestController {
             DestinationHubMap hubMap = config.getHubMap();
             PriorityMOSMap mosMap = config.getMosMap();
 
-            Manifest manifest = new Manifest();
-            FromCrcManifestXlsxReader manifestXlsxReader = new FromCrcManifestXlsxReader();
+            ManifestXlsxReader manifestXlsxReader = new ManifestXlsxReader();
             manifestXlsxReader.openXlsxFile(manifestInputFile);
             Records records = manifestXlsxReader.read(sheetName);
+            Manifest manifest = new Manifest();
             manifest.setRecords(records);
             //System.out.println(records);
 
