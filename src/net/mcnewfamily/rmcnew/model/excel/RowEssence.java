@@ -98,4 +98,14 @@ public class RowEssence implements Iterable<CellEssence> {
         }
         return xssfRow;
     }
+
+    public static RowEssence EMPTY_ROW() {
+        CellEssence cellEssence = new CellEssence();
+        cellEssence.setValue(" ");
+        cellEssence.setCellType(CellEssence.CellType.CELL_TYPE_STRING);
+        cellEssence.setCellStyleEssence(CellSharedStyles.ENTRY_STYLE);
+        RowEssence rowEssence = new RowEssence();
+        rowEssence.add(cellEssence);
+        return rowEssence;
+    }
 }

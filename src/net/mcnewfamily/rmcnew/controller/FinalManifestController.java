@@ -38,8 +38,7 @@ public class FinalManifestController extends AbstractManifestController {
         Manifest preManifest = processManifestFile(manifestInputFile, Constants.PREMANIFEST_SHEET);
         Manifest finalManifest = processManifestFile(manifestInputFile, Constants.FINAL_MANIFEST_SHEET);
         Records onPreManifestButDidNotFly = findOnPreManifestButDidNotFly(preManifest, finalManifest);
-        getUlnInfoFromUser(finalManifest);
-        assignSeatsByUln();
+        getUlnInfoFromUserAndAssignSeats(finalManifest);
         writeResults(finalManifest, preManifest, onPreManifestButDidNotFly, preManifestOutputFile);
     }
 
@@ -67,7 +66,7 @@ public class FinalManifestController extends AbstractManifestController {
         }
     }
 
-    private void getUlnInfoFromUser(Manifest finalManifest) {
+    private void getUlnInfoFromUserAndAssignSeats(Manifest finalManifest) {
         HubsWithoutUlnsMap hubsWithoutUlnsMap = CrcManifestProcessorConfig.getInstance().getHubsWithoutUlnsMap();
         for (Country country : finalManifest) {
             for (Hub hub : country) {
@@ -75,12 +74,14 @@ public class FinalManifestController extends AbstractManifestController {
                     continue;
                 }
                 UlnQuestionPane.askUserForUlnInfo(MainWindow.getFinalManifestTab(), hub);
+                int seatsAvailable = hub.getUlnSeats();
+                for (Record record : hub.getPrioritizedRecords()) {
+                    if (seatsAvailable > 0) {
+                        record.setIntraTheaterULN(hub.getUlnName());
+                        seatsAvailable--;
+                    }
+                }
             }
         }
-    }
-
-    // prioritize PAX and assign seats
-    private void assignSeatsByUln() {
-
     }
 }

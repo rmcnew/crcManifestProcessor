@@ -19,6 +19,7 @@
 
 package net.mcnewfamily.rmcnew.model.data;
 
+import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
 import net.mcnewfamily.rmcnew.model.excel.RowEssence;
 import net.mcnewfamily.rmcnew.model.excel.SheetEssence;
 
@@ -27,7 +28,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
 
-public class PrioritizedRecords {
+public class PrioritizedRecords implements Iterable<Record> {
 
     private TreeSet<Record> prioritizedRecords = new TreeSet<Record>();
 
@@ -59,10 +60,19 @@ public class PrioritizedRecords {
     }
 
     public List<RowEssence> toRowEssenceList() {
+        boolean ulnEmpty = false;
         List<RowEssence> list = new ArrayList<RowEssence>();
         for (Record record : prioritizedRecords) {
-            list.add(record.toRowEssence());
-            // add styling for records without a ULN
+            String intraTheaterUln = record.getIntraTheaterULN();
+            if (!ulnEmpty && (intraTheaterUln == null || intraTheaterUln.isEmpty() )) {
+                ulnEmpty = true;
+                list.add(RowEssence.EMPTY_ROW());
+            }
+            if (ulnEmpty) {
+                list.add(record.toRowEssence(CellSharedStyles.UNKNOWN_HUB_ENTRY_STYLE));
+            } else {
+                list.add(record.toRowEssence());
+            }
         }
         return list;
     }

@@ -24,6 +24,7 @@ import net.mcnewfamily.rmcnew.model.config.PriorityMOSMap;
 import net.mcnewfamily.rmcnew.model.config.RankComparisonMap;
 import net.mcnewfamily.rmcnew.model.excel.CellEssence;
 import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
+import net.mcnewfamily.rmcnew.model.excel.CellStyleEssence;
 import net.mcnewfamily.rmcnew.model.excel.RowEssence;
 import net.mcnewfamily.rmcnew.shared.Constants;
 import net.mcnewfamily.rmcnew.shared.Util;
@@ -197,9 +198,9 @@ public class Record implements Comparable<Record>{
         boolean isPriorityThis = priorityMOSMap.get(MOS);
         boolean isPriorityThat = priorityMOSMap.get(that.getMOS());
         if (isPriorityThis && !isPriorityThat) {
-            return 1;
-        } else if (!isPriorityThis && isPriorityThat) {
             return -1;
+        } else if (!isPriorityThis && isPriorityThat) {
+            return 1;
         } else {
             RankComparisonMap rankComparisonMap = CrcManifestProcessorConfig.getInstance().getRankComparisonMap();
             Integer levelThis;
@@ -216,9 +217,9 @@ public class Record implements Comparable<Record>{
                 levelThat = 0;
             }
             if (levelThis > levelThat) {
-                return 1;
-            } else if (levelThis < levelThat) {
                 return -1;
+            } else if (levelThis < levelThat) {
+                return 1;
             } else {
                 return 0;
             }
@@ -302,6 +303,18 @@ public class Record implements Comparable<Record>{
         }
         return rowEssence;
     }
+
+    public RowEssence toRowEssence(CellStyleEssence cellStyleEssence) {
+            RowEssence rowEssence = new RowEssence();
+            for (String field : toList()) {
+                CellEssence cell = new CellEssence();
+                cell.setCellStyleEssence(cellStyleEssence);
+                cell.setValue(field);
+                rowEssence.add(cell);
+            }
+            return rowEssence;
+        }
+
 
     public static List<String> getHeaders() {
         ArrayList<String> arrayList = new ArrayList<String>();
