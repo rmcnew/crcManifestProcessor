@@ -21,6 +21,7 @@ package net.mcnewfamily.rmcnew.model.data;
 
 import net.mcnewfamily.rmcnew.model.excel.*;
 import net.mcnewfamily.rmcnew.shared.Constants;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import java.util.Iterator;
 import java.util.TreeMap;
@@ -31,7 +32,7 @@ public class Manifest implements Iterable<Country> {
     private TreeMap<String, Country> countries = new TreeMap<String, Country>();
     private int milTotal = 0;
     private int civTotal = 0;
-
+    private XSSFSheet instructions;
 
 	public Manifest()  {
 	}
@@ -66,6 +67,14 @@ public class Manifest implements Iterable<Country> {
 
     public String getGrandTotalString() {
         return "" + (milTotal + civTotal);
+    }
+
+    public XSSFSheet getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(XSSFSheet instructions) {
+        this.instructions = instructions;
     }
 
     @Override

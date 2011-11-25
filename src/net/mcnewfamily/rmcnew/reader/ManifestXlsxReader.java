@@ -19,6 +19,7 @@
 
 package net.mcnewfamily.rmcnew.reader;
 
+import net.mcnewfamily.rmcnew.model.data.Manifest;
 import net.mcnewfamily.rmcnew.model.data.Record;
 import net.mcnewfamily.rmcnew.model.data.Records;
 import net.mcnewfamily.rmcnew.model.exception.SheetNotFoundException;
@@ -31,7 +32,7 @@ import java.io.IOException;
 
 public class ManifestXlsxReader extends AbstractXlsxReader {
 
-    public Records read(String sheetName) throws IOException, SheetNotFoundException {
+    public Manifest readManifest(String sheetName) throws IOException, SheetNotFoundException {
         if (Util.notNullAndNotEmpty(sheetName)) {
             Records records = new Records();
             boolean headerSeen = false;
@@ -80,9 +81,21 @@ public class ManifestXlsxReader extends AbstractXlsxReader {
                     throw new IllegalArgumentException("Error in PreManifest xlsx file format!");
                 }
             }
-            return records;
+            Manifest manifest = new Manifest();
+            manifest.setRecords(records);
+            copyInstructions(manifest);
+            return manifest;
         } else {
             throw new IllegalArgumentException("Cannot read manifest using null or empty sheet name!");
+        }
+    }
+
+    public void copyInstructions(Manifest manifest) {
+        if (manifest != null) {
+            int instructionsSheetIndex = workbook.getSheetIndex(Constants.INSTRUCTIONS_SHEET);
+            manifest.setInstructions(workbook.cloneSheet(instructionsSheetIndex));
+        } else {
+            throw new IllegalArgumentException("Cannot add instructions to a null Manifest!");
         }
     }
 }

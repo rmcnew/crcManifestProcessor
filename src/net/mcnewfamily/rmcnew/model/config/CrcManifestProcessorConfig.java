@@ -34,7 +34,7 @@ public class CrcManifestProcessorConfig {
     private static HubsWithoutUlnsMap hubsWithoutUlnsMap;
 
     private CrcManifestProcessorConfig(){
-        // do nothing;  init() does the configuration read
+        // do nothing;  init() does the configuration readManifest
     }
 
     public static CrcManifestProcessorConfig getInstance() {

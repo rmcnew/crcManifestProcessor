@@ -22,6 +22,7 @@ package net.mcnewfamily.rmcnew.model.data;
 import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
 import net.mcnewfamily.rmcnew.model.excel.RowEssence;
 import net.mcnewfamily.rmcnew.model.excel.SheetEssence;
+import net.mcnewfamily.rmcnew.shared.Util;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -31,6 +32,7 @@ import java.util.TreeSet;
 public class PrioritizedRecords implements Iterable<Record> {
 
     private TreeSet<Record> prioritizedRecords = new TreeSet<Record>();
+    int lastRow = 0;
 
     public PrioritizedRecords() {
     }
@@ -59,6 +61,10 @@ public class PrioritizedRecords implements Iterable<Record> {
         return prioritizedRecords.iterator();
     }
 
+    public int getLastRow() {
+        return lastRow;
+    }
+
     public List<RowEssence> toRowEssenceList() {
         boolean ulnEmpty = false;
         List<RowEssence> list = new ArrayList<RowEssence>();
@@ -74,6 +80,7 @@ public class PrioritizedRecords implements Iterable<Record> {
                 list.add(record.toRowEssence());
             }
         }
+        lastRow = list.size() + 2;
         return list;
     }
 
@@ -83,5 +90,15 @@ public class PrioritizedRecords implements Iterable<Record> {
         sheetEssence.add(Record.getHeaderRowEssence());
         sheetEssence.addAll(toRowEssenceList());
         return sheetEssence;
+    }
+
+    public int getAssignedUlnCount() {
+        int count = 0;
+        for (Record record : prioritizedRecords) {
+            if (Util.notNullAndNotEmpty(record.getIntraTheaterULN())) {
+                count++;
+            }
+        }
+        return count;
     }
 }

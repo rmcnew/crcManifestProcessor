@@ -31,7 +31,6 @@ public class PreManifestController extends AbstractManifestController{
 
     @Override
 	public void runWorkflow(File manifestInputFile, File manifestOutputFile) throws IOException, SheetNotFoundException {
-
         Manifest preManifest = processManifestFile(manifestInputFile, Constants.PREMANIFEST_SHEET);
         writeResults(preManifest, manifestOutputFile);
 	}

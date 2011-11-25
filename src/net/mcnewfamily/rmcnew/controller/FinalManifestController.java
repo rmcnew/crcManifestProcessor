@@ -46,7 +46,7 @@ public class FinalManifestController extends AbstractManifestController {
         FinalManifestXlsxWriter xlsxWriter = new FinalManifestXlsxWriter();
         xlsxWriter.openXlsxForWriting(finalManifestOutputFile);
         xlsxWriter.writeFinalManifest(finalManifest, preManifest, onPreManifestButDidNotFly);
-        // write out by-hub / ULN sheets
+        xlsxWriter.copyInstructionsSheet();
         xlsxWriter.close();
     }
 

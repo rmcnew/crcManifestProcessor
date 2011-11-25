@@ -20,10 +20,10 @@
 package net.mcnewfamily.rmcnew.writer;
 
 import net.mcnewfamily.rmcnew.model.data.Manifest;
-import net.mcnewfamily.rmcnew.model.data.PrioritizedRecords;
 import net.mcnewfamily.rmcnew.model.data.Records;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import net.mcnewfamily.rmcnew.shared.Constants;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -68,15 +68,30 @@ public abstract class AbstractXlsxWriter {
         }
     }
 
-    protected void writePrioritizedRecords(PrioritizedRecords prioritizedRecords, String sheetName) {
-        if (prioritizedRecords != null && !prioritizedRecords.isEmpty()) {
-            XSSFSheet finalManifestSheet = prioritizedRecords.toSheetEssence(sheetName).toXSSFSheet(workbook);
-            for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
-                finalManifestSheet.autoSizeColumn(columnIndex);
+    protected void writeInstructions(Manifest manifest) {
+        if (manifest != null) {
+            XSSFSheet copySheet = workbook.createSheet(Constants.INSTRUCTIONS_SHEET);
+            XSSFSheet instructionsSheet = manifest.getInstructions();
+            for (Row row : instructionsSheet) {
+
             }
         } else {
-            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
+            throw new IllegalArgumentException("Cannot create instructions sheet from null Manifest!");
         }
     }
 
+    protected void createTextBox(XSSFSheet xssfSheet, XSSFClientAnchor xssfClientAnchor, String text) {
+        if (xssfSheet != null) {
+            XSSFDrawing xssfDrawing = xssfSheet.createDrawingPatriarch();
+            XSSFTextBox xssfTextBox = xssfDrawing.createTextbox(xssfClientAnchor);
+            xssfTextBox.setText(new XSSFRichTextString(text));
+
+        } else {
+            throw new IllegalArgumentException("Cannot create drawing on  null or empty sheet!");
+        }
+    }
+
+    public void copyInstructionsSheet() {
+
+    }
 }

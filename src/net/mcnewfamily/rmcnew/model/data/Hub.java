@@ -24,24 +24,33 @@ import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
 import net.mcnewfamily.rmcnew.model.excel.CellStyleEssence;
 import net.mcnewfamily.rmcnew.model.excel.RowEssence;
 import net.mcnewfamily.rmcnew.shared.Constants;
+import org.apache.poi.xssf.usermodel.XSSFClientAnchor;
 
+import java.util.HashMap;
 import java.util.Iterator;
 
 public class Hub implements Iterable<Record>{
 
     private String name;
+    private Country parentCountry;
     private int milCount = 0;
     private int civCount = 0;
     private PrioritizedRecords prioritizedRecords = new PrioritizedRecords();
     private String ulnName;
     private int ulnSeats;
+    private int summaryTextRowCount = 0;
 
-    public Hub(String name) {
+    public Hub(String name, Country parentCountry) {
         this.name = name;
+        this.parentCountry = parentCountry;
     }
 
     public String getName() {
         return name;
+    }
+
+    public Country getParentCountry() {
+        return parentCountry;
     }
 
     public int getMilCount() {
@@ -146,4 +155,71 @@ public class Hub implements Iterable<Record>{
         return rowEssence;
     }
 
+    public String generateUlnUsageString() {
+        int ulnsDesired = prioritizedRecords.size();
+        int ulnsAssigned = prioritizedRecords.getAssignedUlnCount();
+        int ulnsAvailable = this.ulnSeats;
+        int ulnsStillNeeded = ulnsDesired - ulnsAvailable;
+        int ulnsExtra = ulnsAvailable - ulnsAssigned;
+        StringBuilder builder = new StringBuilder("");
+        builder.append(ulnsAssigned);
+        builder.append(" of ");
+        builder.append(ulnsAvailable);
+        builder.append(" ULNs used; ");
+        if (ulnsStillNeeded > 0) {
+            builder.append("Need ");
+            builder.append(ulnsStillNeeded);
+            builder.append(" more ULNs.");
+        } else if (ulnsExtra > 0) {
+            builder.append(" Please release ");
+            builder.append(ulnsExtra);
+            builder.append(" ULNs.");
+        } else {
+            builder.append(" No changes needed.");
+        }
+        summaryTextRowCount++;
+        return builder.toString();
+    }
+
+    public String generateOnwardMovementString() {
+        StringBuilder builder = new StringBuilder("");
+        if (parentCountry.getName().equalsIgnoreCase(Constants.AFGHANISTAN)) {
+            HashMap<String, Integer> nonHubFinalDestinationCounts = getNonHubFinalDestinationCounts();
+            if (nonHubFinalDestinationCounts.size() > 0 ) {
+                builder.append("\nNeed USFOR-A LNO to reserve the following via APRS:");
+                summaryTextRowCount++;
+                for (String key : nonHubFinalDestinationCounts.keySet()) {
+                    builder.append("\n");
+                    summaryTextRowCount++;
+                    builder.append(nonHubFinalDestinationCounts.get(key));
+                    builder.append(" seats to ");
+                    builder.append(key);
+                }
+            }
+        }
+        return builder.toString();
+    }
+
+    private HashMap<String, Integer> getNonHubFinalDestinationCounts() {
+        HashMap<String, Integer> nonHubFinalDestinationCounts = new HashMap<String, Integer>();
+        for (Record record : prioritizedRecords) {
+            String finalDestination = record.getFinalDestination();
+            if (!finalDestination.equalsIgnoreCase(name)) {
+                if (nonHubFinalDestinationCounts.containsKey(finalDestination)) {
+                    int count = nonHubFinalDestinationCounts.get(finalDestination);
+                    count++;
+                    nonHubFinalDestinationCounts.put(finalDestination, count);
+                } else {
+                    nonHubFinalDestinationCounts.put(finalDestination, 1);
+                }
+            }
+        }
+        return nonHubFinalDestinationCounts;
+    }
+
+    public XSSFClientAnchor getClientAnchor() {
+        int startRow = prioritizedRecords.getLastRow();
+        int endRow = startRow + summaryTextRowCount + 1;
+        return new XSSFClientAnchor(0, 0, 0, 0, 3, startRow, 7, endRow);
+    }
 }

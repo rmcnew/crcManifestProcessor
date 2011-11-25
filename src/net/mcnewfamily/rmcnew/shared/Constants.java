@@ -66,6 +66,7 @@ public class Constants {
     public final static String FINAL_MANIFEST_SHEET = "Final_Manifest";
     public final static String FINAL_MANIFEST_COUNTS_SHEET = "Final_Manifest_Counts";
     public final static String ON_PREMANIFEST_BUT_DID_NOT_FLY = "On_PreManifest_But_Did_Not_Fly";
+    public final static String INSTRUCTIONS_SHEET = "Instructions";
     public final static String LOCATION = "LOCATION";
     public final static String MIL = "MIL";
     public final static String DOD_CIV = "DOD_CIV";

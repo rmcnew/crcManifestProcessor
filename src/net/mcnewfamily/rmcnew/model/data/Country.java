@@ -98,7 +98,7 @@ public class Country implements Iterable<Hub> {
             hub.plusOneToMilCount();
             hubs.put(hubName, hub);
         } else {
-            hub = new Hub(hubName);
+            hub = new Hub(hubName, this);
             hub.plusOneToMilCount();
             hubs.put(hubName, hub);
         }
@@ -114,7 +114,7 @@ public class Country implements Iterable<Hub> {
             hub.plusOneToCivCount();
             hubs.put(hubName, hub);
         } else {
-            hub = new Hub(hubName);
+            hub = new Hub(hubName, this);
             hub.plusOneToCivCount();
             hubs.put(hubName, hub);
         }

@@ -45,12 +45,9 @@ public abstract class AbstractManifestController {
 
             ManifestXlsxReader manifestXlsxReader = new ManifestXlsxReader();
             manifestXlsxReader.openXlsxFile(manifestInputFile);
-            Records records = manifestXlsxReader.read(sheetName);
-            Manifest manifest = new Manifest();
-            manifest.setRecords(records);
-            //System.out.println(records);
+            Manifest manifest = manifestXlsxReader.readManifest(sheetName);
 
-            for (Record record : records) {
+            for (Record record : manifest.getRecords()) {
                 processFinalDestination(record, aliasMap);
                 processHubLookup(record, hubMap);
                 applyBusinessRules(record, mosMap);
@@ -104,5 +101,4 @@ public abstract class AbstractManifestController {
         AfghanUnknownPriorityMosGoesToBagram.applyRule(record, mosMap);
         MakeAllMilitaryServiceBranchA.applyRule(record);
     }
-
 }

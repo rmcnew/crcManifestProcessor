@@ -21,11 +21,9 @@ package net.mcnewfamily.rmcnew.writer;
 
 import net.mcnewfamily.rmcnew.model.config.CrcManifestProcessorConfig;
 import net.mcnewfamily.rmcnew.model.config.HubsWithoutUlnsMap;
-import net.mcnewfamily.rmcnew.model.data.Country;
-import net.mcnewfamily.rmcnew.model.data.Hub;
-import net.mcnewfamily.rmcnew.model.data.Manifest;
-import net.mcnewfamily.rmcnew.model.data.Records;
+import net.mcnewfamily.rmcnew.model.data.*;
 import net.mcnewfamily.rmcnew.shared.Constants;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 public class FinalManifestXlsxWriter extends AbstractXlsxWriter {
 
@@ -49,8 +47,24 @@ public class FinalManifestXlsxWriter extends AbstractXlsxWriter {
                 if (hubsWithoutUlnsMap.get(hub.getName())) {
                     continue;
                 }
-                writePrioritizedRecords(hub.getPrioritizedRecords(), hub.getName().toUpperCase());
+                writePrioritizedRecords(hub);
             }
         }
     }
+
+    private void writePrioritizedRecords(Hub hub) {
+        PrioritizedRecords prioritizedRecords = hub.getPrioritizedRecords();
+        String sheetName = hub.getName();
+        if (prioritizedRecords != null && !prioritizedRecords.isEmpty()) {
+            XSSFSheet finalManifestSheet = prioritizedRecords.toSheetEssence(sheetName).toXSSFSheet(workbook);
+            for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
+                finalManifestSheet.autoSizeColumn(columnIndex);
+            }
+            String text = hub.generateUlnUsageString() + hub.generateOnwardMovementString();
+            createTextBox(finalManifestSheet, hub.getClientAnchor(), text);
+        } else {
+            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
+        }
+    }
+
 }
