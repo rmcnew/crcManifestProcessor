@@ -21,6 +21,8 @@ package net.mcnewfamily.rmcnew.shared;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.DateUtil;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.*;
 
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
@@ -109,4 +111,86 @@ public class Util {
     }
 
     public static final FileNameExtensionFilter EXCEL_FILTER = new FileNameExtensionFilter("Excel spreadsheets", "xlsx", "xls", "XLSX", "XLS");
+
+    public static void copyXSSFSheet(XSSFSheet srcSheet, XSSFSheet destSheet) {
+        if (srcSheet != null && destSheet != null) {
+            for (Row srcRow : srcSheet) {
+                Row destRow = destSheet.createRow(srcRow.getRowNum());
+                copyXSSFRow((XSSFRow) srcRow, (XSSFRow) destRow);
+            }
+            //copySheetDrawings(srcSheet, destSheet);
+        } else {
+            throw new IllegalArgumentException("Cannot copy from / to null XSSFSheet!");
+        }
+    }
+
+    public static void copySheetDrawings(XSSFSheet srcSheet, XSSFSheet destSheet) {
+        if (srcSheet != null && destSheet != null) {
+            XSSFDrawing srcDrawing = srcSheet.createDrawingPatriarch();
+            XSSFDrawing destDrawing = destSheet.createDrawingPatriarch();
+            org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTDrawing srcCTDrawing = srcDrawing.getCTDrawing();
+            org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTDrawing destCTDrawing = destDrawing.getCTDrawing();
+            destCTDrawing.set(srcCTDrawing.copy());
+        } else {
+            throw new IllegalArgumentException("Cannot copy drawings from / to null XSSFSheet!");
+        }
+    }
+
+    public static void copyXSSFRow(XSSFRow srcRow, XSSFRow destRow) {
+        for (Cell srcCell : srcRow) {
+            XSSFCell destCell = destRow.createCell(srcCell.getColumnIndex());
+            copyXSSFCell((XSSFCell) srcCell, destCell);
+        }
+        destRow.setHeight(srcRow.getHeight());
+    }
+
+    public static void copyXSSFCell(XSSFCell srcCell, XSSFCell destCell) {
+        if (srcCell != null && destCell != null) {
+            switch(srcCell.getCellType()) {
+                case Cell.CELL_TYPE_STRING:
+                    destCell.setCellType(Cell.CELL_TYPE_STRING);
+                    destCell.setCellValue(srcCell.getRichStringCellValue());
+                    break;
+                case Cell.CELL_TYPE_NUMERIC:
+                    destCell.setCellType(Cell.CELL_TYPE_NUMERIC);
+                    if(DateUtil.isCellDateFormatted(srcCell)) {
+                        destCell.setCellValue(srcCell.getDateCellValue());
+                    } else {
+                        destCell.setCellValue(srcCell.getNumericCellValue());
+                    }
+                    break;
+                case Cell.CELL_TYPE_BOOLEAN:
+                    destCell.setCellType(Cell.CELL_TYPE_BOOLEAN);
+                    destCell.setCellValue(srcCell.getBooleanCellValue());
+                    break;
+                case Cell.CELL_TYPE_FORMULA:
+                    destCell.setCellType(Cell.CELL_TYPE_FORMULA);
+                    destCell.setCellValue(srcCell.getCellFormula());
+                    break;
+            }
+            copyXSSFCellStyle(srcCell, destCell);
+        } else {
+            throw new IllegalArgumentException("Cannot copy from / to null XSSFCell!");
+        }
+    }
+
+    public static void copyXSSFCellStyle(XSSFCell srcCell, XSSFCell destCell) {
+        XSSFCellStyle srcCellStyle = srcCell.getCellStyle();
+        XSSFCellStyle destCellStyle = destCell.getCellStyle();
+//        destCellStyle.cloneStyleFrom(srcCellStyle);
+        destCellStyle.setAlignment(srcCellStyle.getAlignment());
+        destCellStyle.setVerticalAlignment(srcCellStyle.getVerticalAlignment());
+        destCellStyle.setFont(srcCellStyle.getFont());
+        destCellStyle.setBorderBottom(srcCellStyle.getBorderBottom());
+        destCellStyle.setBorderLeft(srcCellStyle.getBorderLeft());
+        destCellStyle.setBorderRight(srcCellStyle.getBorderRight());
+        destCellStyle.setBorderTop(srcCellStyle.getBorderTop());
+        destCellStyle.setFillPattern(srcCellStyle.getFillPattern());
+        // foreground color must be set before background color is set
+        destCellStyle.setFillForegroundColor(srcCellStyle.getFillForegroundColor());
+        destCellStyle.setFillBackgroundColor(srcCellStyle.getFillBackgroundColor());
+        destCellStyle.setIndention(srcCellStyle.getIndention());
+        destCellStyle.setWrapText(srcCellStyle.getWrapText());
+        destCell.setCellStyle(destCellStyle);
+    }
 }

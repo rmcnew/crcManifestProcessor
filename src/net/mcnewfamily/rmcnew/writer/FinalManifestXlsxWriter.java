@@ -35,6 +35,7 @@ public class FinalManifestXlsxWriter extends AbstractXlsxWriter {
             writeSummaryTable(preManifest, Constants.PREMANFIEST_COUNTS_SHEET);
             writeRecords(onPreManifestButDidNotFly, Constants.ON_PREMANIFEST_BUT_DID_NOT_FLY);
             writeHubs(finalManifest);
+            writeInstructions(finalManifest);
         } else {
             throw new IllegalArgumentException("Cannot write Final Manifest for null FinalManifest model!");
         }

@@ -22,7 +22,7 @@ package net.mcnewfamily.rmcnew.writer;
 import net.mcnewfamily.rmcnew.model.data.Manifest;
 import net.mcnewfamily.rmcnew.model.data.Records;
 import net.mcnewfamily.rmcnew.shared.Constants;
-import org.apache.poi.ss.usermodel.Row;
+import net.mcnewfamily.rmcnew.shared.Util;
 import org.apache.poi.xssf.usermodel.*;
 
 import java.io.File;
@@ -59,9 +59,9 @@ public abstract class AbstractXlsxWriter {
 
     protected void writeSummaryTable(Manifest manifest, String sheetName) {
         if (manifest != null) {
-            XSSFSheet finalManifestCountsSheet = manifest.toSheetEssence(sheetName).toXSSFSheet(workbook);
+            XSSFSheet manifestCountsSheet = manifest.toSheetEssence(sheetName).toXSSFSheet(workbook);
             for (int columnIndex = 0; columnIndex < 4; columnIndex++) {
-                finalManifestCountsSheet.autoSizeColumn(columnIndex);
+                manifestCountsSheet.autoSizeColumn(columnIndex);
             }
         } else {
             throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty manifest!");
@@ -70,10 +70,11 @@ public abstract class AbstractXlsxWriter {
 
     protected void writeInstructions(Manifest manifest) {
         if (manifest != null) {
-            XSSFSheet copySheet = workbook.createSheet(Constants.INSTRUCTIONS_SHEET);
-            XSSFSheet instructionsSheet = manifest.getInstructions();
-            for (Row row : instructionsSheet) {
-
+            XSSFSheet destSheet = workbook.createSheet(Constants.INSTRUCTIONS_SHEET);
+            XSSFSheet srcSheet = manifest.getInstructions();
+            Util.copyXSSFSheet(srcSheet, destSheet);
+            for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
+                destSheet.autoSizeColumn(columnIndex);
             }
         } else {
             throw new IllegalArgumentException("Cannot create instructions sheet from null Manifest!");

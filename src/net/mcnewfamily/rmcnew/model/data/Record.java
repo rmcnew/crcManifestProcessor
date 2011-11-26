@@ -221,7 +221,12 @@ public class Record implements Comparable<Record>{
             } else if (levelThis < levelThat) {
                 return 1;
             } else {
-                return 0;
+                int result =  name.compareTo(that.getName());
+                if (result != 0) {
+                    return result;
+                } else {
+                    return this.hashCode() - that.hashCode();
+                }
             }
         }
     }
