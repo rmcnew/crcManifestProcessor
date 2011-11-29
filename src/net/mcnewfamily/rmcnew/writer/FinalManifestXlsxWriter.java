@@ -35,7 +35,10 @@ public class FinalManifestXlsxWriter extends AbstractXlsxWriter {
             writeSummaryTable(preManifest, Constants.PREMANFIEST_COUNTS_SHEET);
             writeRecords(onPreManifestButDidNotFly, Constants.ON_PREMANIFEST_BUT_DID_NOT_FLY);
             writeHubs(finalManifest);
-            writeInstructions(finalManifest);
+            // there are bugs in the current version of Apache POI that do not
+            // copy cell styles correctly and corrupt the spreadsheet.  Copying
+            // the instruction sheet is not essential, so we will defer doing this for now.
+            //writeInstructions(finalManifest);
         } else {
             throw new IllegalArgumentException("Cannot write Final Manifest for null FinalManifest model!");
         }
