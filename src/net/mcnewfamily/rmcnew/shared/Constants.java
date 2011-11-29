@@ -50,6 +50,7 @@ public class Constants {
 
     public final static String ARMY = "A";
     public final static String AIR_FORCE = "AF";
+    public final static String AIR_FORCE2 = "F";
     public final static String MARINE_CORP = "M";
     public final static String NAVY = "N";
     public final static String COAST_GUARD = "CG";

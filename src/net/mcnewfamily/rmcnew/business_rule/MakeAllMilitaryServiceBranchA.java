@@ -30,6 +30,7 @@ public class MakeAllMilitaryServiceBranchA {
             String serviceBranch = record.getServiceBranch();
             if (Util.notNullAndNotEmpty(serviceBranch)) {
                 if (serviceBranch.equalsIgnoreCase(Constants.AIR_FORCE) ||
+                    serviceBranch.equalsIgnoreCase(Constants.AIR_FORCE2) ||
                     serviceBranch.equalsIgnoreCase(Constants.MARINE_CORP) ||
                     serviceBranch.equalsIgnoreCase(Constants.NAVY) ||
                     serviceBranch.equalsIgnoreCase(Constants.COAST_GUARD)
