@@ -47,7 +47,7 @@ public class Util {
         return builder.toString();
     }
 
-    public static String LOCATION_REGEX = "^CAMP|^COB|^FOB|^COP|^FB|^ABP|^PB|^FORWARD OPERATING BASE|^FIRE BASE|^COMBAT OUTPOST|^ANP|^OP|^VSO|^VSP|ANP$|AFLD$|DC$|OP$|PRT$";
+    public static String LOCATION_REGEX = "^CAMP|^COB|^FOB|^COP|^FB|^ABP|^PB|^FORWARD OPERATING BASE|^FIRE BASE|^COMBAT OUTPOST|^ANP|^OP|^VSO|^VSP|ANP$|AFLD$|DC$|OP$|PRT$|AIRBASE$|AIR BASE$|AIRFIELD$|AIR FIELD$";
     public static Pattern locationPattern = Pattern.compile(LOCATION_REGEX);
 
     public static String stripLocationPrefixesAndSuffixes(String string) {

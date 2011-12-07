@@ -24,21 +24,21 @@ import java.awt.*;
 
 public class AboutTab extends JComponent {
 
-    private static final Dimension LICENSE_TAB_SIZE = new Dimension(295, 195);
+    private static final Dimension ABOUT_TAB_SIZE = new Dimension(295, 195);
 	public AboutTab() {
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
-		JEditorPane editorPane = new JEditorPane("text/html", GPL3_LICENSE);
+		JEditorPane editorPane = new JEditorPane("text/html", ABOUT_TAB_HTML);
 		editorPane.setEditable(false);
-        editorPane.setPreferredSize(LICENSE_TAB_SIZE);
+        editorPane.setPreferredSize(ABOUT_TAB_SIZE);
         editorPane.setVisible(true);
 		JScrollPane editorScrollPane = new JScrollPane(editorPane);
-		editorScrollPane.setPreferredSize(LICENSE_TAB_SIZE);
+		editorScrollPane.setPreferredSize(ABOUT_TAB_SIZE);
         editorScrollPane.setVisible(true);
         this.add(editorScrollPane);
 	}
 
-    private final static String GPL3_LICENSE = "<html>" +
+    private final static String ABOUT_TAB_HTML = "<html>" +
         "<h2>CRC Manifest Processor, Copyright (c) 2011 Richard Scott McNew.</h2>" +
         "<p>" +
         "This application handles the manual process of assigning transportation" +

@@ -72,7 +72,7 @@ public class MainWindow extends JFrame {
         finalManifestTab = new FinalManifestTab();
         mainWindow.addTab("CRC Final Manifest", finalManifestTab);
         aboutTab = new AboutTab();
-        mainWindow.addTab("License", aboutTab);
+        mainWindow.addTab("About", aboutTab);
 
         mainWindow.setPreferredSize(new Dimension(360, 240));
         mainWindow.pack();
