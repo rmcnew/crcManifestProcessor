@@ -22,7 +22,8 @@
 
     <property name="src" location="src"/>
     <property name="build" location="build"/>
-    <property name="dist"  location="dist"/>
+    <property name="dist"  location="CRC_Manifest_Processor"/>
+    <property name="releaseVersion" value="1.2"/>
 
     <target name="init">
         <parallel>
@@ -63,9 +64,13 @@
             <copy todir="${dist}" failonerror="true" file="CRC_Manifest_Processor_Config.xlsx"/>
             <copy todir="${dist}" failonerror="true" file="CRC_Manifest_Processor.sh"/>
             <copy todir="${dist}" failonerror="true" file="CRC_Manifest_Processor.vbs"/>
+            <copy todir="${dist}" failonerror="true" file="How_to_use_CRC_Manifest_Processor.pptx"/>
             <copy todir="${dist}" failonerror="true" file="gpl.txt"/>
             <copy todir="${dist}" failonerror="true" file="README"/>
         </parallel>
+        <zip destfile="CRC_Manifest_Processor-${releaseVersion}.zip">
+            <fileset dir="${dist}"/>
+        </zip>
     </target>
 
     <target name="clean" description="clean up">

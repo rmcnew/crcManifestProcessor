@@ -42,10 +42,10 @@ public class AboutTab extends JComponent {
         "<h2>CRC Manifest Processor, Copyright (c) 2011 Richard Scott McNew.</h2>" +
         "<p>" +
         "This application handles the manual process of assigning transportation" +
-        " hubs for incoming NPRs from the CRC." +
+        " hubs for incoming personnel from the CRC." +
         "</p><p>" +
         "The hub assignments can be to create ULNs needed to allocate transportation" +
-        " assets so that the incoming NPRs can travel quickly to their final destinations in theater." +
+        " assets so that incoming non-unit related personnel replacements (NRPs) quickly to their final destinations in theater." +
         "</p><p>" +
         "CRC Manifest Processor is free software: you can redistribute it and/or modify" +
         " it under the terms of the GNU General Public License as published by" +

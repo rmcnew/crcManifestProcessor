@@ -93,7 +93,9 @@ public class ManifestXlsxReader extends AbstractXlsxReader {
     public void copyInstructions(Manifest manifest) {
         if (manifest != null) {
             int instructionsSheetIndex = workbook.getSheetIndex(Constants.INSTRUCTIONS_SHEET);
-            manifest.setInstructions(workbook.cloneSheet(instructionsSheetIndex));
+            if (instructionsSheetIndex >= 0) {
+                manifest.setInstructions(workbook.cloneSheet(instructionsSheetIndex));
+            }
         } else {
             throw new IllegalArgumentException("Cannot add instructions to a null Manifest!");
         }

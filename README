@@ -1,11 +1,11 @@
 CRC Manifest Processor, Copyright (c) 2011 Richard Scott McNew.
 
 This application handles the manual process of assigning
-transportation hubs for incoming NPRs from the CRC.
+transportation hubs for incoming personnel from the CRC.
 
 The hub assignments are used to create ULNs needed to allocate
-transportation assets so that the incoming NPRs can travel
-quickly to their final destinations.
+transportation assets so that incoming non-unit related personnel
+replacements (NRPs) can travel quickly to their final destinations.
 
 CRC Manifest Processor is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

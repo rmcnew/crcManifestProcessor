@@ -37,7 +37,7 @@ public class UlnQuestionPane {
             } catch (NumberFormatException nfe) {
                 // do nothing
             }
-        } while (seats == null || seats <= 0);
+        } while (seats == null || seats < 0);
         hub.setUlnName(ulnName);
         hub.setUlnSeats(seats);
     }
