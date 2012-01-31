@@ -162,20 +162,24 @@ public class Hub implements Iterable<Record>{
         int ulnsStillNeeded = ulnsDesired - ulnsAvailable;
         int ulnsExtra = ulnsAvailable - ulnsAssigned;
         StringBuilder builder = new StringBuilder("");
-        builder.append(ulnsAssigned);
-        builder.append(" of ");
-        builder.append(ulnsAvailable);
-        builder.append(" ULNs used; ");
-        if (ulnsStillNeeded > 0) {
-            builder.append("Need ");
-            builder.append(ulnsStillNeeded);
-            builder.append(" more ULNs.");
-        } else if (ulnsExtra > 0) {
-            builder.append(" Please release ");
-            builder.append(ulnsExtra);
-            builder.append(" ULNs.");
+        if (ulnsAvailable == 0) {
+            builder.append("No ULN seats are available.  Passengers must travel by Space-R.");
         } else {
-            builder.append(" No changes needed.");
+            builder.append(ulnsAssigned);
+            builder.append(" of ");
+            builder.append(ulnsAvailable);
+            builder.append(" ULNs used; ");
+            if (ulnsStillNeeded > 0) {
+                builder.append("Need ");
+                builder.append(ulnsStillNeeded);
+                builder.append(" more ULNs.");
+            } else if (ulnsExtra > 0) {
+                builder.append(" Please release ");
+                builder.append(ulnsExtra);
+                builder.append(" ULNs.");
+            } else {
+                builder.append(" No changes needed.");
+            }
         }
         summaryTextRowCount++;
         return builder.toString();
