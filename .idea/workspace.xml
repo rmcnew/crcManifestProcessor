@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00c994c0-c747-4669-9f2d-b55288ec84a6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Hub.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Hub.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CRC_Manifest_Processor_Config.xlsx" afterPath="$PROJECT_DIR$/CRC_Manifest_Processor_Config.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Util.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Util.java" />
     </list>
     <ignored path="crcManifestProcessor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,7 +90,6 @@
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/FinalManifestXlsxWriter.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Constants.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/business_rule/MakeAllMilitaryServiceBranchA.java" />
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Util.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/AboutTab.java" />
         <option value="$PROJECT_DIR$/README" />
@@ -98,6 +97,7 @@
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ManifestXlsxReader.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/UlnQuestionPane.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Hub.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Util.java" />
       </list>
     </option>
   </component>
@@ -140,7 +140,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -398,6 +397,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -415,9 +415,9 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -562,10 +562,10 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12910448" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14114326" sideWeight="0.67346936" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292517" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292517" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3265306" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3265306" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988048" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -653,21 +653,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellEssence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="13" selection-start="1319" selection-end="1319" vertical-scroll-proportion="-0.5585042" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellSharedStyles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="1036" selection-end="1036" vertical-scroll-proportion="-0.034981906" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/business_rule/MakeAllMilitaryServiceBranchA.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="95" selection-start="185" selection-end="185" vertical-scroll-proportion="0.09883721" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellStyleEssence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="254" column="74" selection-start="8527" selection-end="8589" vertical-scroll-proportion="0.58488375" />
@@ -681,11 +666,6 @@
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="74" column="32" selection-start="2880" selection-end="2880" vertical-scroll-proportion="0.7390791" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="200" selection-start="1954" selection-end="1954" vertical-scroll-proportion="0.020070838" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README">
@@ -705,42 +685,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/UlnQuestionPane.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="41" selection-start="1636" selection-end="1636" vertical-scroll-proportion="0.7503587">
+        <state line="39" column="41" selection-start="1636" selection-end="1636" vertical-scroll-proportion="0.7503587" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/AbstractXlsxWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="23" selection-start="2272" selection-end="2272" vertical-scroll-proportion="0.8859155" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Hub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="165" column="94" selection-start="5189" selection-end="5189" vertical-scroll-proportion="0.37887323" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/FinalManifestXlsxWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="91" selection-start="2073" selection-end="2073" vertical-scroll-proportion="0.01830986" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="46" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.023943663" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ConfigXlsxReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="13" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ManifestXlsxReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="41" selection-start="5420" selection-end="5420" vertical-scroll-proportion="0.6585366">
+        <state line="95" column="41" selection-start="5420" selection-end="5420" vertical-scroll-proportion="0.73170733">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/AbstractXlsxWriter.java">
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/AbstractXlsxReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="23" selection-start="2272" selection-end="2272" vertical-scroll-proportion="0.8859155">
+        <state line="28" column="22" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.40140846">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Hub.java">
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/AbstractManifestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="94" selection-start="5189" selection-end="5189" vertical-scroll-proportion="0.37887323">
+        <state line="34" column="22" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.114084505">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/FinalManifestXlsxWriter.java">
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="91" selection-start="2073" selection-end="2073" vertical-scroll-proportion="0.01830986">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="46" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.023943663">
+        <state line="49" column="4" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.5365854">
           <folding />
         </state>
       </provider>
