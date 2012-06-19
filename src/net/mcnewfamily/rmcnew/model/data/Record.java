@@ -32,37 +32,35 @@ import net.mcnewfamily.rmcnew.shared.Util;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Record implements Comparable<Record>{
+public class Record implements Comparable<Record> {
 
     private String orderOfMerit;
     private String name;
     private String rank;
-    private String intraTheaterULN;
     private String MOS;
     private String serviceBranch;
     private String gender;
     private String finalDestination;
     private String hub;
     private String country;
-    private String toTheaterULN;
+    private String uln;
     private String ftnId;
     private String wiasId;
 
     public Record() {
     }
 
-    public Record(String orderOfMerit, String name, String rank, String intraTheaterULN, String MOS, String serviceBranch, String gender, String finalDestination, String hub, String country, String toTheaterULN, String ftnId, String wiasId) {
+    public Record(String orderOfMerit, String name, String rank, String MOS, String serviceBranch, String gender, String finalDestination, String hub, String country, String uln, String ftnId, String wiasId) {
         this.orderOfMerit = orderOfMerit;
         this.name = name;
         this.rank = rank;
-        this.intraTheaterULN = intraTheaterULN;
         this.MOS = MOS;
         this.serviceBranch = serviceBranch;
         this.gender = gender;
         this.finalDestination = finalDestination;
         this.hub = hub;
         this.country = country;
-        this.toTheaterULN = toTheaterULN;
+        this.uln = uln;
         this.ftnId = ftnId;
         this.wiasId = wiasId;
     }
@@ -89,14 +87,6 @@ public class Record implements Comparable<Record>{
 
     public void setRank(String rank) {
         this.rank = rank;
-    }
-
-    public String getIntraTheaterULN() {
-        return intraTheaterULN;
-    }
-
-    public void setIntraTheaterULN(String intraTheaterULN) {
-        this.intraTheaterULN = intraTheaterULN;
     }
 
     public String getMOS() {
@@ -147,12 +137,12 @@ public class Record implements Comparable<Record>{
         this.country = country;
     }
 
-    public String getToTheaterULN() {
-        return toTheaterULN;
+    public String getUln() {
+        return uln;
     }
 
-    public void setToTheaterULN(String toTheaterULN) {
-        this.toTheaterULN = toTheaterULN;
+    public void setUln(String uln) {
+        this.uln = uln;
     }
 
     public String getFtnId() {
@@ -177,14 +167,13 @@ public class Record implements Comparable<Record>{
                 "orderOfMerit='" + orderOfMerit + '\'' +
                 ", name='" + name + '\'' +
                 ", rank='" + rank + '\'' +
-                ", intraTheaterULN='" + intraTheaterULN + '\'' +
                 ", MOS='" + MOS + '\'' +
                 ", serviceBranch='" + serviceBranch + '\'' +
                 ", gender='" + gender + '\'' +
                 ", finalDestination='" + finalDestination + '\'' +
                 ", hub='" + hub + '\'' +
                 ", country='" + country + '\'' +
-                ", toTheaterULN='" + toTheaterULN + '\'' +
+                ", uln='" + uln + '\'' +
                 ", ftnId='" + ftnId + '\'' +
                 ", wiasId='" + wiasId + '\'' +
                 '}';
@@ -221,7 +210,7 @@ public class Record implements Comparable<Record>{
             } else if (levelThis < levelThat) {
                 return 1;
             } else {
-                int result =  name.compareTo(that.getName());
+                int result = name.compareTo(that.getName());
                 if (result != 0) {
                     return result;
                 } else {
@@ -244,14 +233,12 @@ public class Record implements Comparable<Record>{
         if (ftnId != null ? !ftnId.equals(record.ftnId) : record.ftnId != null) return false;
         if (!gender.equals(record.gender)) return false;
         if (hub != null ? !hub.equals(record.hub) : record.hub != null) return false;
-        if (intraTheaterULN != null ? !intraTheaterULN.equals(record.intraTheaterULN) : record.intraTheaterULN != null)
-            return false;
         if (!name.equals(record.name)) return false;
         if (orderOfMerit != null ? !orderOfMerit.equals(record.orderOfMerit) : record.orderOfMerit != null)
             return false;
         if (!rank.equals(record.rank)) return false;
         if (!serviceBranch.equals(record.serviceBranch)) return false;
-        if (toTheaterULN != null ? !toTheaterULN.equals(record.toTheaterULN) : record.toTheaterULN != null)
+        if (uln != null ? !uln.equals(record.uln) : record.uln != null)
             return false;
         if (wiasId != null ? !wiasId.equals(record.wiasId) : record.wiasId != null) return false;
 
@@ -263,14 +250,13 @@ public class Record implements Comparable<Record>{
         int result = orderOfMerit != null ? orderOfMerit.hashCode() : 0;
         result = 31 * result + name.hashCode();
         result = 31 * result + rank.hashCode();
-        result = 31 * result + (intraTheaterULN != null ? intraTheaterULN.hashCode() : 0);
         result = 31 * result + (MOS != null ? MOS.hashCode() : 0);
         result = 31 * result + serviceBranch.hashCode();
         result = 31 * result + gender.hashCode();
         result = 31 * result + (finalDestination != null ? finalDestination.hashCode() : 0);
         result = 31 * result + (hub != null ? hub.hashCode() : 0);
         result = 31 * result + (country != null ? country.hashCode() : 0);
-        result = 31 * result + (toTheaterULN != null ? toTheaterULN.hashCode() : 0);
+        result = 31 * result + (uln != null ? uln.hashCode() : 0);
         result = 31 * result + (ftnId != null ? ftnId.hashCode() : 0);
         result = 31 * result + (wiasId != null ? wiasId.hashCode() : 0);
         return result;
@@ -285,16 +271,16 @@ public class Record implements Comparable<Record>{
         arrayList.add(orderOfMerit);
         arrayList.add(name);
         arrayList.add(rank);
-        arrayList.add(intraTheaterULN);
         arrayList.add(MOS);
         arrayList.add(serviceBranch);
         arrayList.add(gender);
         arrayList.add(finalDestination);
         arrayList.add(hub);
         arrayList.add(country);
-        arrayList.add(toTheaterULN);
-        arrayList.add(ftnId);
-        arrayList.add(wiasId);
+        // Do not output these fields;  ULNs are provided by higher
+        //arrayList.add(uln);
+        //arrayList.add(ftnId);
+        //arrayList.add(wiasId);
         return arrayList;
     }
 
@@ -310,15 +296,15 @@ public class Record implements Comparable<Record>{
     }
 
     public RowEssence toRowEssence(CellStyleEssence cellStyleEssence) {
-            RowEssence rowEssence = new RowEssence();
-            for (String field : toList()) {
-                CellEssence cell = new CellEssence();
-                cell.setCellStyleEssence(cellStyleEssence);
-                cell.setValue(field);
-                rowEssence.add(cell);
-            }
-            return rowEssence;
+        RowEssence rowEssence = new RowEssence();
+        for (String field : toList()) {
+            CellEssence cell = new CellEssence();
+            cell.setCellStyleEssence(cellStyleEssence);
+            cell.setValue(field);
+            rowEssence.add(cell);
         }
+        return rowEssence;
+    }
 
 
     public static List<String> getHeaders() {
@@ -326,16 +312,16 @@ public class Record implements Comparable<Record>{
         arrayList.add(Constants.OML);
         arrayList.add(Constants.NAME);
         arrayList.add(Constants.RANK);
-        arrayList.add(Constants.INTRA_THEATER_ULN);
         arrayList.add(Constants.AFSC_MOS);
         arrayList.add(Constants.SERVICE_BRANCH);
         arrayList.add(Constants.GENDER);
         arrayList.add(Constants.FINAL_DESTINATION);
         arrayList.add(Constants.HUB);
         arrayList.add(Constants.COUNTRY);
-        arrayList.add(Constants.TO_THEATER_ULN);
-        arrayList.add(Constants.FTN);
-        arrayList.add(Constants.WIAS);
+        // Do not output these fields;  ULNs are provided by higher
+        //arrayList.add(Constants.ULN);
+        //arrayList.add(Constants.FTN);
+        //arrayList.add(Constants.WIAS);
         return arrayList;
     }
 
@@ -355,6 +341,6 @@ public class Record implements Comparable<Record>{
                 this.serviceBranch.equalsIgnoreCase(Constants.AIR_FORCE) ||
                 this.serviceBranch.equalsIgnoreCase(Constants.NAVY) ||
                 this.serviceBranch.equalsIgnoreCase(Constants.MARINE_CORP) ||
-                this.serviceBranch.equalsIgnoreCase(Constants.COAST_GUARD) );
+                this.serviceBranch.equalsIgnoreCase(Constants.COAST_GUARD));
     }
 }

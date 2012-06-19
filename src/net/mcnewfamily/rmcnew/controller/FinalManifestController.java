@@ -19,13 +19,11 @@
 
 package net.mcnewfamily.rmcnew.controller;
 
-import net.mcnewfamily.rmcnew.model.config.CrcManifestProcessorConfig;
-import net.mcnewfamily.rmcnew.model.config.HubsWithoutUlnsMap;
-import net.mcnewfamily.rmcnew.model.data.*;
+import net.mcnewfamily.rmcnew.model.data.Manifest;
+import net.mcnewfamily.rmcnew.model.data.Record;
+import net.mcnewfamily.rmcnew.model.data.Records;
 import net.mcnewfamily.rmcnew.model.exception.SheetNotFoundException;
 import net.mcnewfamily.rmcnew.shared.Constants;
-import net.mcnewfamily.rmcnew.user_interface.MainWindow;
-import net.mcnewfamily.rmcnew.user_interface.UlnQuestionPane;
 import net.mcnewfamily.rmcnew.writer.FinalManifestXlsxWriter;
 
 import java.io.File;
@@ -38,7 +36,6 @@ public class FinalManifestController extends AbstractManifestController {
         Manifest preManifest = processManifestFile(manifestInputFile, Constants.PREMANIFEST_SHEET);
         Manifest finalManifest = processManifestFile(manifestInputFile, Constants.FINAL_MANIFEST_SHEET);
         Records onPreManifestButDidNotFly = findOnPreManifestButDidNotFly(preManifest, finalManifest);
-        getUlnInfoFromUserAndAssignSeats(finalManifest);
         writeResults(finalManifest, preManifest, onPreManifestButDidNotFly, preManifestOutputFile);
     }
 
@@ -46,7 +43,6 @@ public class FinalManifestController extends AbstractManifestController {
         FinalManifestXlsxWriter xlsxWriter = new FinalManifestXlsxWriter();
         xlsxWriter.openXlsxForWriting(finalManifestOutputFile);
         xlsxWriter.writeFinalManifest(finalManifest, preManifest, onPreManifestButDidNotFly);
-        xlsxWriter.copyInstructionsSheet();
         xlsxWriter.close();
     }
 
@@ -66,22 +62,4 @@ public class FinalManifestController extends AbstractManifestController {
         }
     }
 
-    private void getUlnInfoFromUserAndAssignSeats(Manifest finalManifest) {
-        HubsWithoutUlnsMap hubsWithoutUlnsMap = CrcManifestProcessorConfig.getInstance().getHubsWithoutUlnsMap();
-        for (Country country : finalManifest) {
-            for (Hub hub : country) {
-                if (hubsWithoutUlnsMap.get(hub.getName())) {
-                    continue;
-                }
-                UlnQuestionPane.askUserForUlnInfo(MainWindow.getFinalManifestTab(), hub);
-                int seatsAvailable = hub.getUlnSeats();
-                for (Record record : hub.getPrioritizedRecords()) {
-                    if (seatsAvailable > 0) {
-                        record.setIntraTheaterULN(hub.getUlnName());
-                        seatsAvailable--;
-                    }
-                }
-            }
-        }
-    }
 }

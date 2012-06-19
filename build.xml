@@ -22,8 +22,8 @@
 
     <property name="src" location="src"/>
     <property name="build" location="build"/>
-    <property name="dist"  location="CRC_Manifest_Processor"/>
-    <property name="releaseVersion" value="1.2"/>
+    <property name="dist" location="dist"/>
+    <property name="releaseVersion" value="2.0"/>
 
     <target name="init">
         <parallel>

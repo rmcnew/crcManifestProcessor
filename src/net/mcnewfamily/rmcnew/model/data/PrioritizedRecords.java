@@ -19,10 +19,8 @@
 
 package net.mcnewfamily.rmcnew.model.data;
 
-import net.mcnewfamily.rmcnew.model.excel.CellSharedStyles;
 import net.mcnewfamily.rmcnew.model.excel.RowEssence;
 import net.mcnewfamily.rmcnew.model.excel.SheetEssence;
-import net.mcnewfamily.rmcnew.shared.Util;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -66,21 +64,12 @@ public class PrioritizedRecords implements Iterable<Record> {
     }
 
     public List<RowEssence> toRowEssenceList() {
-        boolean ulnEmpty = false;
         List<RowEssence> list = new ArrayList<RowEssence>();
         for (Record record : prioritizedRecords) {
-            String intraTheaterUln = record.getIntraTheaterULN();
-            if (!ulnEmpty && (intraTheaterUln == null || intraTheaterUln.isEmpty() )) {
-                ulnEmpty = true;
-                list.add(RowEssence.EMPTY_ROW());
-            }
-            if (ulnEmpty) {
-                list.add(record.toRowEssence(CellSharedStyles.UNKNOWN_HUB_ENTRY_STYLE));
-            } else {
-                list.add(record.toRowEssence());
-            }
+            list.add(record.toRowEssence());
         }
-        lastRow = list.size() + 2;
+        list.add(RowEssence.EMPTY_ROW());
+        lastRow = list.size() + 2; // size + header + blank line at end
         return list;
     }
 
@@ -92,13 +81,4 @@ public class PrioritizedRecords implements Iterable<Record> {
         return sheetEssence;
     }
 
-    public int getAssignedUlnCount() {
-        int count = 0;
-        for (Record record : prioritizedRecords) {
-            if (Util.notNullAndNotEmpty(record.getIntraTheaterULN())) {
-                count++;
-            }
-        }
-        return count;
-    }
 }

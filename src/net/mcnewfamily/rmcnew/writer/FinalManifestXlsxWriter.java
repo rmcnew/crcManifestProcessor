@@ -64,8 +64,8 @@ public class FinalManifestXlsxWriter extends AbstractXlsxWriter {
             for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
                 finalManifestSheet.autoSizeColumn(columnIndex);
             }
-            String text = hub.generateUlnUsageString() + hub.generateOnwardMovementString();
-            createTextBox(finalManifestSheet, hub.getClientAnchor(), text);
+            //String text = hub.generateUlnUsageString() + hub.generateOnwardMovementString();
+            //createTextBox(finalManifestSheet, hub.getClientAnchor(), text);
         } else {
             throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
         }

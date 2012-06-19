@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00c994c0-c747-4669-9f2d-b55288ec84a6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CRC_Manifest_Processor_Config.xlsx" afterPath="$PROJECT_DIR$/CRC_Manifest_Processor_Config.xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CRC_Manifest_Processor_Config.xlsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Manifest_Template.xlsx" afterPath="$PROJECT_DIR$/Manifest_Template.xlsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/FinalManifestController.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/FinalManifestController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Hub.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Hub.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/PrioritizedRecords.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/PrioritizedRecords.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Record.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Record.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ManifestXlsxReader.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ManifestXlsxReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Constants.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Constants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Util.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Util.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/FinalManifestXlsxWriter.java" afterPath="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/FinalManifestXlsxWriter.java" />
     </list>
     <ignored path="crcManifestProcessor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,7 +75,17 @@
     <favorites_list name="crcManifestProcessor" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="ManifestXlsxReader.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ManifestXlsxReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="16" selection-start="3641" selection-end="3641" vertical-scroll-proportion="0.81400436">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -82,22 +104,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/AbstractManifestController.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Country.java" />
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/PrioritizedRecords.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/AbstractXlsxWriter.java" />
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Record.java" />
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/FinalManifestXlsxWriter.java" />
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Constants.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/business_rule/MakeAllMilitaryServiceBranchA.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/AboutTab.java" />
         <option value="$PROJECT_DIR$/README" />
-        <option value="$PROJECT_DIR$/build.xml" />
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ManifestXlsxReader.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/UlnQuestionPane.java" />
-        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Hub.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/FinalManifestXlsxWriter.java" />
         <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Util.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/PrioritizedRecords.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/FinalManifestController.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Constants.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Record.java" />
+        <option value="$PROJECT_DIR$/build.xml" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Hub.java" />
+        <option value="$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ManifestXlsxReader.java" />
       </list>
     </option>
   </component>
@@ -396,8 +418,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -558,23 +580,23 @@
     <frame x="-4" y="24" width="1448" height="880" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19316375" sideWeight="0.0" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19266056" sideWeight="0.675307" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12910448" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14114326" sideWeight="0.67346936" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14114326" sideWeight="0.675307" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32742155" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292517" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32742155" sideWeight="0.49752998" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3265306" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32469305" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988048" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21030346" sideWeight="0.6716216" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3275463" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28016937" sideWeight="0.67257845" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32742155" sideWeight="0.49752998" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23955224" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837838" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -653,92 +675,112 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/excel/CellStyleEssence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="254" column="74" selection-start="8527" selection-end="8589" vertical-scroll-proportion="0.58488375" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="48" selection-start="2398" selection-end="2398" vertical-scroll-proportion="1.027907" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="32" selection-start="2880" selection-end="2880" vertical-scroll-proportion="0.7390791" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="42" selection-start="164" selection-end="164" vertical-scroll-proportion="0.059302326" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/AboutTab.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="37" selection-start="1787" selection-end="1787" vertical-scroll-proportion="0.38134593" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/FinalManifestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="41" selection-start="1956" selection-end="1956" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/user_interface/UlnQuestionPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="41" selection-start="1636" selection-end="1636" vertical-scroll-proportion="0.7503587" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/AbstractXlsxWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="23" selection-start="2272" selection-end="2272" vertical-scroll-proportion="0.8859155" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Hub.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="94" selection-start="5189" selection-end="5189" vertical-scroll-proportion="0.37887323" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/FinalManifestXlsxWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="91" selection-start="2073" selection-end="2073" vertical-scroll-proportion="0.01830986" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="46" selection-start="1170" selection-end="1170" vertical-scroll-proportion="0.023943663" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ConfigXlsxReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="13" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.0">
+        <state line="27" column="13" selection-start="1100" selection-end="1100" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/AbstractManifestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="22" selection-start="1469" selection-end="1469" vertical-scroll-proportion="-0.53672314">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ManifestXlsxReader.java">
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/FinalManifestXlsxWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="41" selection-start="5420" selection-end="5420" vertical-scroll-proportion="0.73170733">
+        <state line="65" column="14" selection-start="3211" selection-end="3211" vertical-scroll-proportion="0.6398305">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/AbstractXlsxReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="22" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.40140846">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/AbstractManifestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="22" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.114084505">
+        <state line="28" column="22" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.3997175">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="4" selection-start="1758" selection-end="1758" vertical-scroll-proportion="0.5365854">
+        <state line="49" column="151" selection-start="1905" selection-end="1905" vertical-scroll-proportion="0.24460432">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/PrioritizedRecords.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="71" selection-start="2176" selection-end="2176" vertical-scroll-proportion="0.54378533">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/FinalManifestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="0" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.19280575">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/PreManifestXlsxWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="13" selection-start="974" selection-end="974" vertical-scroll-proportion="0.5762712">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/writer/AbstractXlsxWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="23" selection-start="2272" selection-end="2272" vertical-scroll-proportion="0.74435025">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Records.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="13" selection-start="1011" selection-end="1011" vertical-scroll-proportion="-0.7048023">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Hub.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="156" column="0" selection-start="4682" selection-end="4682" vertical-scroll-proportion="0.27966103">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/model/data/Record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="279" column="67" selection-start="9234" selection-end="9234" vertical-scroll-proportion="1.4892086">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="0" selection-start="2698" selection-end="2698" vertical-scroll-proportion="0.76836157">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/controller/PreManifestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="13" selection-start="1158" selection-end="1158" vertical-scroll-proportion="0.47175142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/shared/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="49" selection-start="2000" selection-end="2000" vertical-scroll-proportion="0.120056495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/mcnewfamily/rmcnew/reader/ManifestXlsxReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="16" selection-start="3641" selection-end="3641" vertical-scroll-proportion="0.81400436">
           <folding />
         </state>
       </provider>

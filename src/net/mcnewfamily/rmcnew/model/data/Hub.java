@@ -29,7 +29,7 @@ import org.apache.poi.xssf.usermodel.XSSFClientAnchor;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class Hub implements Iterable<Record>{
+public class Hub implements Iterable<Record> {
 
     private String name;
     private Country parentCountry;
@@ -153,55 +153,6 @@ public class Hub implements Iterable<Record>{
         rowEssence.add(totalCell);
 
         return rowEssence;
-    }
-
-    public String generateUlnUsageString() {
-        int ulnsDesired = prioritizedRecords.size();
-        int ulnsAssigned = prioritizedRecords.getAssignedUlnCount();
-        int ulnsAvailable = this.ulnSeats;
-        int ulnsStillNeeded = ulnsDesired - ulnsAvailable;
-        int ulnsExtra = ulnsAvailable - ulnsAssigned;
-        StringBuilder builder = new StringBuilder("");
-        if (ulnsAvailable == 0) {
-            builder.append("No ULN seats are available.  Passengers must travel by Space-R.");
-        } else {
-            builder.append(ulnsAssigned);
-            builder.append(" of ");
-            builder.append(ulnsAvailable);
-            builder.append(" ULNs used; ");
-            if (ulnsStillNeeded > 0) {
-                builder.append("Need ");
-                builder.append(ulnsStillNeeded);
-                builder.append(" more ULNs.");
-            } else if (ulnsExtra > 0) {
-                builder.append(" Please release ");
-                builder.append(ulnsExtra);
-                builder.append(" ULNs.");
-            } else {
-                builder.append(" No changes needed.");
-            }
-        }
-        summaryTextRowCount++;
-        return builder.toString();
-    }
-
-    public String generateOnwardMovementString() {
-        StringBuilder builder = new StringBuilder("");
-        if (parentCountry.getName().equalsIgnoreCase(Constants.AFGHANISTAN)) {
-            HashMap<String, Integer> nonHubFinalDestinationCounts = getNonHubFinalDestinationCounts();
-            if (nonHubFinalDestinationCounts.size() > 0 ) {
-                builder.append("\nNeed USFOR-A LNO to reserve the following via APRS:");
-                summaryTextRowCount++;
-                for (String key : nonHubFinalDestinationCounts.keySet()) {
-                    builder.append("\n");
-                    summaryTextRowCount++;
-                    builder.append(nonHubFinalDestinationCounts.get(key));
-                    builder.append(" seats to ");
-                    builder.append(key);
-                }
-            }
-        }
-        return builder.toString();
     }
 
     private HashMap<String, Integer> getNonHubFinalDestinationCounts() {
