@@ -46,7 +46,7 @@
         <echo message="Creating the jar archive.  This can take a while . . ."/>
         <jar jarfile="${dist}/crcManifestProcessor.jar" basedir="${build}" index="true">
             <manifest>
-                <attribute name="Main-Class" value="net.mcnewfamily.rmcnew.user_interface.MainWindow"/>
+                <attribute name="Main-Class" value="com.starrypenguin.rmcnew.user_interface.MainWindow"/>
             </manifest>
             <restrict>
                 <archives>
