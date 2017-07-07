@@ -76,4 +76,7 @@ public class Constants {
     public final static String PRE_MANIFEST_SUCCESS_TEXT = "Premanifest processing is complete";
     public final static String FINAL_MANIFEST_BUTTON_TEXT = "Generate Final Manifest";
     public final static String FINAL_MANIFEST_SUCCESS_TEXT = "Final Manifest processing is complete";
+
+    public final static String PRE = "PRE";
+    public final static String FINAL = "FINAL";
 }

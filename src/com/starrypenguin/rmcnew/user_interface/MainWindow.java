@@ -26,7 +26,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainWindow extends JFrame {
-    public static final String mainTitle = "CRC Manifest Processor";
+    private static final String mainTitle = "CRC Manifest Processor";
     private static JTabbedPane tabbedPane = new JTabbedPane();
     private static PreManifestTab preManifestTab;
     private static FinalManifestTab finalManifestTab;
@@ -34,12 +34,6 @@ public class MainWindow extends JFrame {
 
     public MainWindow(String s) throws HeadlessException {
         super(s);
-    }
-
-    public void addTab(String componentTitle, JComponent component) {
-        if (component != null && Util.notNullAndNotEmpty(componentTitle)) {
-            tabbedPane.addTab(componentTitle, component);
-        }
     }
 
     public static PreManifestTab getPreManifestTab() {
@@ -60,10 +54,13 @@ public class MainWindow extends JFrame {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             CrcManifestProcessorConfig.init();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(mainWindow, e + "\n" + Util.convertStackTraceToString(e.getStackTrace()), e.getClass().getName(), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,
+                    e + "\n" + Util.convertStackTraceToString(e.getStackTrace()),
+                    e.getClass().getName(),
+                    JOptionPane.ERROR_MESSAGE);
         }
         mainWindow = new MainWindow(mainTitle);
-        mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         Container contentPane = mainWindow.getContentPane();
         contentPane.add(tabbedPane);
         // add content
@@ -74,8 +71,14 @@ public class MainWindow extends JFrame {
         aboutTab = new AboutTab();
         mainWindow.addTab("About", aboutTab);
 
-        mainWindow.setPreferredSize(new Dimension(360, 240));
+        mainWindow.setPreferredSize(new Dimension(380, 260));
         mainWindow.pack();
         mainWindow.setVisible(true);
+    }
+
+    public void addTab(String componentTitle, JComponent component) {
+        if (component != null && Util.notNullAndNotEmpty(componentTitle)) {
+            tabbedPane.addTab(componentTitle, component);
+        }
     }
 }
