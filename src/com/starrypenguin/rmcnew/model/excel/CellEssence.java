@@ -19,7 +19,7 @@
 
 package com.starrypenguin.rmcnew.model.excel;
 
-import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -31,28 +31,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 // TODO: add support for cell comments
 public class CellEssence {
 
-    // we mirror some parts of the POI Cell interface that are relevant to
-    // the part of the cell we need to model
-    public enum CellType {
-        CELL_TYPE_NUMERIC (Cell.CELL_TYPE_NUMERIC),
-        CELL_TYPE_STRING (Cell.CELL_TYPE_STRING),
-        CELL_TYPE_FORMULA (Cell.CELL_TYPE_FORMULA),
-        CELL_TYPE_BLANK (Cell.CELL_TYPE_BLANK),
-        CELL_TYPE_BOOLEAN (Cell.CELL_TYPE_BOOLEAN),
-        CELL_TYPE_ERROR (Cell.CELL_TYPE_ERROR);
 
-        private int enumInt;
-
-        CellType(int enumInt) {
-            this.enumInt = enumInt;
-        }
-
-        public int toPoiCellType() {
-            return this.enumInt;
-        }
-    }
-
-    private CellType cellType = CellType.CELL_TYPE_STRING; // default to string CellType
+    private CellType cellType = CellType.STRING; // default to string CellType
     private CellStyleEssence cellStyleEssence = new CellStyleEssence();
     private String value;
 
@@ -87,7 +67,7 @@ public class CellEssence {
     public XSSFCell toXSSFCell(XSSFRow row, int columnIndex) {
         if (row != null && columnIndex >= 0) {
             XSSFCell cell = row.createCell(columnIndex);
-            cell.setCellType(this.cellType.toPoiCellType());
+            cell.setCellType(this.cellType);
             if (this.cellStyleEssence != null) {
                 XSSFCellStyle cellStyle = this.cellStyleEssence.toXSSFCellStyle(row.getSheet().getWorkbook());
                 cell.setCellStyle(cellStyle);

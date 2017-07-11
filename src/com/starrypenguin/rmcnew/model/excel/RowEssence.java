@@ -19,6 +19,7 @@
 
 package com.starrypenguin.rmcnew.model.excel;
 
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
@@ -41,6 +42,16 @@ public class RowEssence implements Iterable<CellEssence> {
     public RowEssence(List<CellEssence> cellEssences) {
         this.cellEssences = new LinkedList<CellEssence>();
         this.cellEssences.addAll(cellEssences);
+    }
+
+    public static RowEssence EMPTY_ROW() {
+        CellEssence cellEssence = new CellEssence();
+        cellEssence.setValue(" ");
+        cellEssence.setCellType(CellType.STRING);
+        cellEssence.setCellStyleEssence(CellSharedStyles.ENTRY_STYLE);
+        RowEssence rowEssence = new RowEssence();
+        rowEssence.add(cellEssence);
+        return rowEssence;
     }
 
     public int size() {
@@ -97,15 +108,5 @@ public class RowEssence implements Iterable<CellEssence> {
             throw new IllegalArgumentException("Cannot create XSSFRow on null XSSFSheet or using invalid row index!");
         }
         return xssfRow;
-    }
-
-    public static RowEssence EMPTY_ROW() {
-        CellEssence cellEssence = new CellEssence();
-        cellEssence.setValue(" ");
-        cellEssence.setCellType(CellEssence.CellType.CELL_TYPE_STRING);
-        cellEssence.setCellStyleEssence(CellSharedStyles.ENTRY_STYLE);
-        RowEssence rowEssence = new RowEssence();
-        rowEssence.add(cellEssence);
-        return rowEssence;
     }
 }

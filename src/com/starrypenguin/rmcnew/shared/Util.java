@@ -31,6 +31,10 @@ import java.util.regex.Pattern;
 
 public class Util {
 
+    public static final FileNameExtensionFilter EXCEL_FILTER = new FileNameExtensionFilter("Excel spreadsheets", "xlsx", "xls", "XLSX", "XLS");
+    public static String LOCATION_REGEX = "^CAMP|^COB|^FOB|^COP|^FB|^ABP|^PB|^FORWARD OPERATING BASE|^FIRE BASE|^COMBAT OUTPOST|^ANP|^OP|^VSO|^VSP|^RCC|ANP$|AFLD$|AFB$|DC$|OP$|PRT$|AIRBASE$|AIR BASE$|AIRFIELD$|AIR FIELD$";
+    public static Pattern locationPattern = Pattern.compile(LOCATION_REGEX);
+
     public static boolean notNullAndNotEmpty(String string) {
         return (string != null && !string.isEmpty());
     }
@@ -46,9 +50,6 @@ public class Util {
         }
         return builder.toString();
     }
-
-    public static String LOCATION_REGEX = "^CAMP|^COB|^FOB|^COP|^FB|^ABP|^PB|^FORWARD OPERATING BASE|^FIRE BASE|^COMBAT OUTPOST|^ANP|^OP|^VSO|^VSP|^RCC|ANP$|AFLD$|AFB$|DC$|OP$|PRT$|AIRBASE$|AIR BASE$|AIRFIELD$|AIR FIELD$";
-    public static Pattern locationPattern = Pattern.compile(LOCATION_REGEX);
 
     public static String stripLocationPrefixesAndSuffixes(String string) {
         // remove destination prefixes: CAMP, FOB, COP, FORWARD OPERATING BASE, FIRE BASE, COMBAT OUTPOST, ANP, etc.
@@ -69,21 +70,21 @@ public class Util {
             return "";
         }
         String value;
-        switch (cell.getCellType()) {
-            case Cell.CELL_TYPE_STRING:
+        switch (cell.getCellTypeEnum()) {
+            case STRING:
                 value = cell.getRichStringCellValue().getString();
                 break;
-            case Cell.CELL_TYPE_NUMERIC:
+            case NUMERIC:
                 if (DateUtil.isCellDateFormatted(cell)) {
                     value = cell.getDateCellValue().toString();
                 } else {
                     value = Integer.toString((int) cell.getNumericCellValue());
                 }
                 break;
-            case Cell.CELL_TYPE_BOOLEAN:
+            case BOOLEAN:
                 value = Boolean.toString(cell.getBooleanCellValue());
                 break;
-            case Cell.CELL_TYPE_FORMULA:
+            case FORMULA:
                 value = cell.getCellFormula();
                 break;
             default:
@@ -108,8 +109,6 @@ public class Util {
         //System.out.println("Fixed file is: " + outputFile.getAbsolutePath());
         return outputFile;
     }
-
-    public static final FileNameExtensionFilter EXCEL_FILTER = new FileNameExtensionFilter("Excel spreadsheets", "xlsx", "xls", "XLSX", "XLS");
 
     public static void copyXSSFSheet(XSSFSheet srcSheet, XSSFSheet destSheet) {
         if (srcSheet != null && destSheet != null) {
