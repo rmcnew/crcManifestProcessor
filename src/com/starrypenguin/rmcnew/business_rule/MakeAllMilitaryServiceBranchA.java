@@ -33,8 +33,7 @@ public class MakeAllMilitaryServiceBranchA {
                     serviceBranch.equalsIgnoreCase(Constants.AIR_FORCE2) ||
                     serviceBranch.equalsIgnoreCase(Constants.MARINE_CORP) ||
                     serviceBranch.equalsIgnoreCase(Constants.NAVY) ||
-                    serviceBranch.equalsIgnoreCase(Constants.COAST_GUARD)
-                    ) {
+                        serviceBranch.equalsIgnoreCase(Constants.COAST_GUARD)) {
                    record.setServiceBranch(Constants.ARMY);
                 }
             }

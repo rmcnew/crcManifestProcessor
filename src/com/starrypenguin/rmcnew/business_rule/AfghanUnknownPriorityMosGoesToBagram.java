@@ -32,10 +32,12 @@ public class AfghanUnknownPriorityMosGoesToBagram {
     *  is from the priority list, make the HUB Bagram
     */
     public static void applyRule(Record record, PriorityMOSMap priorityMOSMap) throws IOException {
-        if ( record.getCountry().equalsIgnoreCase(Constants.AFGHANISTAN) &&
-             record.getFinalDestination().equalsIgnoreCase(Constants.UNKNOWN) &&
-             priorityMOSMap.get(record.getMOS())) {
-            record.setHub(Constants.BAGRAM);
+        if ((record != null) && (priorityMOSMap != null)) {
+            if (record.getCountry().equalsIgnoreCase(Constants.AFGHANISTAN) &&
+                    record.getFinalDestination().equalsIgnoreCase(Constants.UNKNOWN) &&
+                    priorityMOSMap.get(record.getMOS())) {
+                record.setHub(Constants.BAGRAM);
+            }
         }
     }
 }

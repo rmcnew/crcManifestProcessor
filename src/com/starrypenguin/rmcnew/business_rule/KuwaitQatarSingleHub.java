@@ -31,11 +31,13 @@ public class KuwaitQatarSingleHub {
      * @param record the record to which the business rule is applied
      */
     public static void applyRule(Record record) {
-        if ( (record.getFinalDestination().equalsIgnoreCase(Constants.UNKNOWN)) || record.getHub().equals(Constants.NOT_FOUND)) {
-            if (record.getCountry().equals(Constants.KUWAIT)) {
-                record.setHub(Constants.ALI_AL_SALEM);
-            } else if (record.getCountry().equals(Constants.QATAR)) {
-                record.setHub(Constants.AL_UDEID);
+        if (record != null) {
+            if ((record.getFinalDestination().equalsIgnoreCase(Constants.UNKNOWN)) || record.getHub().equalsIgnoreCase(Constants.NOT_FOUND)) {
+                if (record.getCountry().equalsIgnoreCase(Constants.KUWAIT)) {
+                    record.setHub(Constants.ALI_AL_SALEM);
+                } else if (record.getCountry().equalsIgnoreCase(Constants.QATAR)) {
+                    record.setHub(Constants.AL_UDEID);
+                }
             }
         }
     }
