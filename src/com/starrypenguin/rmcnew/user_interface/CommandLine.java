@@ -31,12 +31,13 @@ import java.io.IOException;
  * CommandLine
  * <p/>
  * Command line interface to invoke library
- * <p/>
- * Author: Richard Scott McNew
  */
 public class CommandLine {
 
     public static void main(String[] args) throws IOException, SheetNotFoundException {
+//        for (String arg : args) {
+//            System.out.println("arg is: " + arg);
+//        }
         File inputFile = new File(args[0]);
         if (!inputFile.canRead()) {
             System.err.println("Input file " + inputFile.getName() + " is not readable!");

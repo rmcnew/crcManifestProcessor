@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2011 Richard Scott McNew.
+ * Copyright (c) 2017 Richard Scott McNew.
  *
  * This file is part of CRC Manifest Processor.
  *
@@ -19,33 +19,23 @@
 
 package com.starrypenguin.rmcnew.reader;
 
-import com.starrypenguin.rmcnew.shared.Util;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.Test;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 
-public abstract class AbstractXlsxReader {
+/**
+ * ConfigXlsxReaderTest
+ * <p/>
+ * Tests for ConfigXlsxReader
+ */
+public class ConfigXlsxReaderTest {
 
-    protected XSSFWorkbook workbook;
-
-    public void openXlsxFile(String filename) throws IOException {
-        if (Util.notNullAndNotEmpty(filename) ) {
-            workbook = new XSSFWorkbook(new FileInputStream(filename));
-        } else {
-            throw new IOException("Filename is null or empty!");
-        }
+    // Gracefully handle null config
+    @Test(expected = IOException.class)
+    public void NullConfigTest() throws IOException {
+        ConfigXlsxReader configXlsxReader = new ConfigXlsxReader();
+        configXlsxReader.openXlsxFile((File) null);
+        configXlsxReader.read();
     }
-
-    public void openXlsxFile(File file) throws IOException {
-        if ((file != null) && (Util.notNullAndNotEmpty(file.getName()))) {
-            workbook = new XSSFWorkbook(new FileInputStream(file));
-        } else {
-            throw new IOException("File is null or empty!");
-        }
-    }
-
-
-
 }

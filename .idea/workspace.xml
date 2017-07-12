@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00c994c0-c747-4669-9f2d-b55288ec84a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/shared/UtilTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/reader/ConfigXlsxReaderTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/excel/CellSharedStyles.java" afterPath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/excel/CellSharedStyles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/excel/FontEssence.java" afterPath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/excel/FontEssence.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java" afterPath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/AbstractXlsxReader.java" afterPath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/AbstractXlsxReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/user_interface/CommandLine.java" afterPath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/user_interface/CommandLine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/shared/UtilTest.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/shared/UtilTest.java" />
     </list>
     <ignored path="crcManifestProcessor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,21 +68,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java">
+      <file leaf-file-name="AbstractXlsxReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/AbstractXlsxReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="68" column="58" lean-forward="false" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="58" />
+            <state relative-caret-position="600">
+              <caret line="44" column="39" lean-forward="true" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UtilTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/shared/UtilTest.java">
+      <file leaf-file-name="ConfigXlsxReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/ConfigXlsxReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="69" column="8" lean-forward="false" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+            <state relative-caret-position="38">
+              <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigXlsxReaderTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/reader/ConfigXlsxReaderTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ManifestXlsxReader.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/ManifestXlsxReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="605">
+              <caret line="66" column="16" lean-forward="false" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -137,7 +156,6 @@
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/user_interface/RunPreManifestWorkflow.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/api/RunPreManifestWorkflow.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Constants.java" />
-        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/user_interface/CommandLine.java" />
         <option value="$PROJECT_DIR$/tst/com/starrypenguin/rmcnew/business_rule/AfghanUnknownPriorityMosGoesToBagramTest.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/business_rule/KuwaitQatarSingleHub.java" />
         <option value="$PROJECT_DIR$/tst/com/starrypenguin/rmcnew/business_rule/KuwaitQatarSingleHubTest.java" />
@@ -152,6 +170,9 @@
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/excel/FontEssence.java" />
         <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/shared/UtilTest.java" />
+        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/user_interface/CommandLine.java" />
+        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/AbstractXlsxReader.java" />
+        <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/reader/ConfigXlsxReaderTest.java" />
       </list>
     </option>
   </component>
@@ -218,6 +239,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crcManifestProcessor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crcManifestProcessor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rmcnew" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reader" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -546,7 +589,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MakeAllMilitaryServiceBranchATest">
+  <component name="RunManager" selected="JUnit.ConfigXlsxReaderTest">
     <configuration default="false" name="AfghanUnknownPriorityMosGoesToBagramTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -637,6 +680,32 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.starrypenguin.rmcnew.shared" />
       <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.shared.UtilTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="ConfigXlsxReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.starrypenguin.rmcnew.reader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="crcManifestProcessor" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.starrypenguin.rmcnew.reader" />
+      <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" />
@@ -758,19 +827,21 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="5">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.MainWindow" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.AfghanUnknownPriorityMosGoesToBagramTest" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.KuwaitQatarSingleHubTest" />
       <item index="3" class="java.lang.String" itemvalue="JUnit.MakeAllMilitaryServiceBranchATest" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.UtilTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.ConfigXlsxReaderTest" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MakeAllMilitaryServiceBranchATest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.UtilTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.KuwaitQatarSingleHubTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.AfghanUnknownPriorityMosGoesToBagramTest" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ConfigXlsxReaderTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MakeAllMilitaryServiceBranchATest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.UtilTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.KuwaitQatarSingleHubTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.AfghanUnknownPriorityMosGoesToBagramTest" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -791,17 +862,17 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="KuwaitQatarSingleHubTest - 2017.07.10 at 22h 49m 22s.xml">
-      <configuration name="KuwaitQatarSingleHubTest" configurationId="JUnit" />
+    <history-entry file="ConfigXlsxReaderTest - 2017.07.11 at 23h 33m 13s.xml">
+      <configuration name="ConfigXlsxReaderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KuwaitQatarSingleHubTest - 2017.07.10 at 22h 50m 55s.xml">
-      <configuration name="KuwaitQatarSingleHubTest" configurationId="JUnit" />
+    <history-entry file="ConfigXlsxReaderTest - 2017.07.11 at 23h 33m 58s.xml">
+      <configuration name="ConfigXlsxReaderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="KuwaitQatarSingleHubTest - 2017.07.10 at 22h 54m 06s.xml">
-      <configuration name="KuwaitQatarSingleHubTest" configurationId="JUnit" />
+    <history-entry file="ConfigXlsxReaderTest - 2017.07.11 at 23h 35m 36s.xml">
+      <configuration name="ConfigXlsxReaderTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MakeAllMilitaryServiceBranchATest - 2017.07.10 at 23h 18m 55s.xml">
-      <configuration name="MakeAllMilitaryServiceBranchATest" configurationId="JUnit" />
+    <history-entry file="ConfigXlsxReaderTest - 2017.07.11 at 23h 42m 57s.xml">
+      <configuration name="ConfigXlsxReaderTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MakeAllMilitaryServiceBranchATest - 2017.07.10 at 23h 20m 44s.xml">
       <configuration name="MakeAllMilitaryServiceBranchATest" configurationId="JUnit" />
@@ -876,7 +947,8 @@
     <MESSAGE value="Implemented most parsers; still needs more testing; added Apache license file for OpenCSV" />
     <MESSAGE value="Add Java library workflows to act as test drivers;  add command line interface to verify library workflows are working correctly." />
     <MESSAGE value="Update POI interface classes to use non-deprecated APIs and remove redundant enums" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update POI interface classes to use non-deprecated APIs and remove redundant enums" />
+    <MESSAGE value="Add junit test run to Ant build.xml; more POI updates; Add some unit tests for Util (still more to be added)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add junit test run to Ant build.xml; more POI updates; Add some unit tests for Util (still more to be added)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
@@ -900,17 +972,11 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/api/RunFinalManifestWorkflow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/api/RunPreManifestWorkflow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -926,6 +992,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="42" column="64" lean-forward="false" selection-start-line="42" selection-start-column="64" selection-end-line="42" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -933,6 +1000,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -940,6 +1008,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
           <caret line="45" column="89" lean-forward="false" selection-start-line="45" selection-start-column="89" selection-end-line="45" selection-end-column="89" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1047,6 +1116,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1057,17 +1127,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/user_interface/CommandLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="45" column="89" lean-forward="false" selection-start-line="45" selection-start-column="89" selection-end-line="45" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/api/RunAbstractWorkflow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="42" column="64" lean-forward="false" selection-start-line="42" selection-start-column="64" selection-end-line="42" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1075,6 +1139,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1142,6 +1207,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="26" column="13" lean-forward="false" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,28 +1215,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/ManifestXlsxReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="66" column="16" lean-forward="false" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/AbstractXlsxReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/ConfigXlsxReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-976">
-          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1186,6 +1230,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1245,18 +1290,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/shared/UtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="64" column="4" lean-forward="false" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="-1254">
           <caret line="68" column="58" lean-forward="false" selection-start-line="68" selection-start-column="25" selection-end-line="68" selection-end-column="58" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/shared/UtilTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/ManifestXlsxReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="69" column="8" lean-forward="false" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
+        <state relative-caret-position="605">
+          <caret line="66" column="16" lean-forward="false" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/user_interface/CommandLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="32" column="43" lean-forward="false" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/ConfigXlsxReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/AbstractXlsxReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="44" column="39" lean-forward="true" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/reader/ConfigXlsxReaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
           <folding />
         </state>
       </provider>

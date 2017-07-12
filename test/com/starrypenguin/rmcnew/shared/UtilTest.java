@@ -63,10 +63,4 @@ public class UtilTest {
         assertEquals(Util.stripLocationPrefixesAndSuffixes("VICTORY AIR FIELD"), "VICTORY");
     }
 
-    @Test
-    public void getCellValueAsStringOrEmptyStringTest() {
-
-        // Prepare test data
-
-    }
 }
