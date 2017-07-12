@@ -20,6 +20,7 @@
 package com.starrypenguin.rmcnew.shared;
 
 import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.*;
@@ -144,25 +145,25 @@ public class Util {
 
     public static void copyXSSFCell(XSSFCell srcCell, XSSFCell destCell) {
         if (srcCell != null && destCell != null) {
-            switch (srcCell.getCellType()) {
-                case Cell.CELL_TYPE_STRING:
-                    destCell.setCellType(Cell.CELL_TYPE_STRING);
+            switch (srcCell.getCellTypeEnum()) {
+                case STRING:
+                    destCell.setCellType(CellType.STRING);
                     destCell.setCellValue(srcCell.getRichStringCellValue());
                     break;
-                case Cell.CELL_TYPE_NUMERIC:
-                    destCell.setCellType(Cell.CELL_TYPE_NUMERIC);
+                case NUMERIC:
+                    destCell.setCellType(CellType.NUMERIC);
                     if (DateUtil.isCellDateFormatted(srcCell)) {
                         destCell.setCellValue(srcCell.getDateCellValue());
                     } else {
                         destCell.setCellValue(srcCell.getNumericCellValue());
                     }
                     break;
-                case Cell.CELL_TYPE_BOOLEAN:
-                    destCell.setCellType(Cell.CELL_TYPE_BOOLEAN);
+                case BOOLEAN:
+                    destCell.setCellType(CellType.BOOLEAN);
                     destCell.setCellValue(srcCell.getBooleanCellValue());
                     break;
-                case Cell.CELL_TYPE_FORMULA:
-                    destCell.setCellType(Cell.CELL_TYPE_FORMULA);
+                case FORMULA:
+                    destCell.setCellType(CellType.FORMULA);
                     destCell.setCellValue(srcCell.getCellFormula());
                     break;
             }
@@ -176,14 +177,14 @@ public class Util {
         XSSFCellStyle srcCellStyle = srcCell.getCellStyle();
         XSSFCellStyle destCellStyle = destCell.getCellStyle();
 //        destCellStyle.cloneStyleFrom(srcCellStyle);
-        destCellStyle.setAlignment(srcCellStyle.getAlignment());
-        destCellStyle.setVerticalAlignment(srcCellStyle.getVerticalAlignment());
+        destCellStyle.setAlignment(srcCellStyle.getAlignmentEnum());
+        destCellStyle.setVerticalAlignment(srcCellStyle.getVerticalAlignmentEnum());
         destCellStyle.setFont(srcCellStyle.getFont());
-        destCellStyle.setBorderBottom(srcCellStyle.getBorderBottom());
-        destCellStyle.setBorderLeft(srcCellStyle.getBorderLeft());
-        destCellStyle.setBorderRight(srcCellStyle.getBorderRight());
-        destCellStyle.setBorderTop(srcCellStyle.getBorderTop());
-        destCellStyle.setFillPattern(srcCellStyle.getFillPattern());
+        destCellStyle.setBorderBottom(srcCellStyle.getBorderBottomEnum());
+        destCellStyle.setBorderLeft(srcCellStyle.getBorderLeftEnum());
+        destCellStyle.setBorderRight(srcCellStyle.getBorderRightEnum());
+        destCellStyle.setBorderTop(srcCellStyle.getBorderTopEnum());
+        destCellStyle.setFillPattern(srcCellStyle.getFillPatternEnum());
         // foreground color must be set before background color is set
         destCellStyle.setFillForegroundColor(srcCellStyle.getFillForegroundColor());
         destCellStyle.setFillBackgroundColor(srcCellStyle.getFillBackgroundColor());

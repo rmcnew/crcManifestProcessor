@@ -21,15 +21,16 @@
     <description>Tool used to process CRC manifests</description>
 
     <property name="src" location="src"/>
+    <property name="test.src" location="test"/>
     <property name="build" location="build"/>
+    <property name="build.test" location="build/test"/>
     <property name="dist" location="dist"/>
     <property name="releaseVersion" value="2.0"/>
 
     <target name="init">
-        <parallel>
-            <mkdir dir="${build}"/>
-            <mkdir dir="${dist}"/>
-        </parallel>
+        <mkdir dir="${build}"/>
+        <mkdir dir="${dist}"/>
+        <mkdir dir="${build.test}"/>
     </target>
 
     <target name="compile" depends="init" description="compile the source">
@@ -42,9 +43,9 @@
         </javac>
     </target>
 
-    <target name="jar" depends="compile" description="generate the jar">
+    <target name="jar" depends="compile, test" description="generate the jar">
         <echo message="Creating the jar archive.  This can take a while . . ."/>
-        <jar jarfile="${dist}/crcManifestProcessor.jar" basedir="${build}" index="true">
+        <jar jarfile="${dist}/crcManifestProcessor.jar" basedir="${build}" index="true" excludes="${build.test}">
             <manifest>
                 <attribute name="Main-Class" value="com.starrypenguin.rmcnew.user_interface.MainWindow"/>
             </manifest>
@@ -65,12 +66,45 @@
             <copy todir="${dist}" failonerror="true" file="CRC_Manifest_Processor.sh"/>
             <copy todir="${dist}" failonerror="true" file="CRC_Manifest_Processor.vbs"/>
             <copy todir="${dist}" failonerror="true" file="How_to_use_CRC_Manifest_Processor.pptx"/>
+            <copy todir="${dist}" failonerror="true" file="How_to_use_CRC_Manifest_Processor.pdf"/>
             <copy todir="${dist}" failonerror="true" file="gpl.txt"/>
             <copy todir="${dist}" failonerror="true" file="README"/>
         </parallel>
         <zip destfile="CRC_Manifest_Processor-${releaseVersion}.zip">
             <fileset dir="${dist}"/>
         </zip>
+    </target>
+
+    <target name="test" depends="compile" description="run unit tests">
+        <echo message="Running unit tests . . ."/>
+        <javac srcdir="${test.src}" destdir="${build.test}" includeantruntime="false">
+            <classpath>
+                <fileset dir="test_lib">
+                    <include name="*.jar"/>
+                </fileset>
+                <path>
+                    <pathelement location="${build}"/>
+                </path>
+            </classpath>
+        </javac>
+        <junit printsummary="on" haltonfailure="yes" fork="true">
+            <classpath>
+                <fileset dir="lib">
+                    <include name="*.jar"/>
+                </fileset>
+                <fileset dir="test_lib">
+                    <include name="*.jar"/>
+                </fileset>
+                <path>
+                    <pathelement location="${build}"/>
+                    <pathelement location="${build.test}"/>
+                </path>
+            </classpath>
+            <formatter type="brief" usefile="false"/>
+            <batchtest>
+                <fileset dir="${test.src}" includes="**/*Test.java"/>
+            </batchtest>
+        </junit>
     </target>
 
     <target name="clean" description="clean up">

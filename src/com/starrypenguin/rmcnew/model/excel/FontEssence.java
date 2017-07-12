@@ -19,7 +19,6 @@
 
 package com.starrypenguin.rmcnew.model.excel;
 
-import org.apache.poi.ss.usermodel.Font;
 import org.apache.poi.ss.usermodel.FontCharset;
 import org.apache.poi.ss.usermodel.FontFamily;
 import org.apache.poi.ss.usermodel.FontUnderline;
@@ -124,11 +123,6 @@ public class FontEssence {
             xssfFont.setCharSet(FontCharset.DEFAULT);
             xssfFont.setFamily(this.fontFamily);
             xssfFont.setBold(this.bold);
-            if (this.bold) {
-                xssfFont.setBoldweight(Font.BOLDWEIGHT_BOLD);
-            } else {
-                xssfFont.setBoldweight(Font.BOLDWEIGHT_NORMAL);
-            }
             xssfFont.setItalic(this.italic);
             if (this.underline) {
                 xssfFont.setUnderline(FontUnderline.SINGLE);
