@@ -38,4 +38,9 @@ public class ConfigXlsxReaderTest {
         configXlsxReader.openXlsxFile((File) null);
         configXlsxReader.read();
     }
+
+    @Test
+    public void IncompleteConfigTest() {
+        
+    }
 }
