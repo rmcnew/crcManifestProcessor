@@ -20,6 +20,7 @@
 package com.starrypenguin.rmcnew.reader;
 
 import com.starrypenguin.rmcnew.model.config.*;
+import com.starrypenguin.rmcnew.model.exception.SheetNotFoundException;
 import com.starrypenguin.rmcnew.shared.Constants;
 import com.starrypenguin.rmcnew.shared.Util;
 import org.apache.poi.ss.usermodel.Row;
@@ -33,7 +34,7 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
     private RankComparisonMap rankComparisonMap;
     private HubsWithoutUlnsMap hubsWithoutUlnsMap;
 
-    public void read() {
+    public void read() throws SheetNotFoundException {
         readDestinationHubs();
         readLocationAlias();
         readPriorityMos();
@@ -41,8 +42,12 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
         readHubsWithoutUlns();
     }
 
-    private void readDestinationHubs() {
+    private void readDestinationHubs() throws SheetNotFoundException {
         XSSFSheet destinationHubSheet = workbook.getSheet(Constants.DESTINATION_HUB_MAP_SHEET);
+        if (destinationHubSheet == null) {
+            throw new SheetNotFoundException("Required sheet " +
+                    Constants.DESTINATION_HUB_MAP_SHEET + " missing from " + Constants.CONFIGURATION_XLSX);
+        }
         hubMap = new DestinationHubMap();
         boolean headerSeen = false;
         for (Row row : destinationHubSheet) {
@@ -63,8 +68,12 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
         }
     }
 
-    private void readLocationAlias() {
+    private void readLocationAlias() throws SheetNotFoundException {
         XSSFSheet locationAliasSheet = workbook.getSheet(Constants.LOCATION_ALIAS_MAP_SHEET);
+        if (locationAliasSheet == null) {
+            throw new SheetNotFoundException("Required sheet " +
+                    Constants.LOCATION_ALIAS_MAP_SHEET + " missing from " + Constants.CONFIGURATION_XLSX);
+        }
         aliasMap = new LocationAliasMap();
         boolean headerSeen = false;
         for (Row row : locationAliasSheet) {
@@ -83,8 +92,12 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
         }
     }
 
-    private void readPriorityMos() {
+    private void readPriorityMos() throws SheetNotFoundException {
         XSSFSheet priorityMosSheet = workbook.getSheet(Constants.PRIORITY_MOS_SHEET);
+        if (priorityMosSheet == null) {
+            throw new SheetNotFoundException("Required sheet " +
+                    Constants.PRIORITY_MOS_SHEET + " missing from " + Constants.CONFIGURATION_XLSX);
+        }
         mosMap = new PriorityMOSMap();
         boolean headerSeen = false;
         for (Row row : priorityMosSheet) {
@@ -101,8 +114,12 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
         }
     }
 
-    private void readRankComparison() {
+    private void readRankComparison() throws SheetNotFoundException {
         XSSFSheet rankComparisonSheet = workbook.getSheet(Constants.RANK_COMPARISON_SHEET);
+        if (rankComparisonSheet == null) {
+            throw new SheetNotFoundException("Required sheet " +
+                    Constants.RANK_COMPARISON_SHEET + " missing from " + Constants.CONFIGURATION_XLSX);
+        }
         rankComparisonMap = new RankComparisonMap();
         boolean headerSeen = false;
         for (Row row : rankComparisonSheet) {
@@ -121,8 +138,12 @@ public class ConfigXlsxReader extends AbstractXlsxReader {
         }
     }
 
-    private void readHubsWithoutUlns() {
+    private void readHubsWithoutUlns() throws SheetNotFoundException {
         XSSFSheet hubsWithoutUlnsSheet = workbook.getSheet(Constants.HUBS_WITHOUT_ULNS_SHEET);
+        if (hubsWithoutUlnsSheet == null) {
+            throw new SheetNotFoundException("Required sheet " +
+                    Constants.HUBS_WITHOUT_ULNS_SHEET + " missing from " + Constants.CONFIGURATION_XLSX);
+        }
         hubsWithoutUlnsMap = new HubsWithoutUlnsMap();
         boolean headerSeen = false;
         for (Row row : hubsWithoutUlnsSheet) {

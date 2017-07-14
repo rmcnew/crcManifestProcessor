@@ -19,6 +19,7 @@
 
 package com.starrypenguin.rmcnew.model.config;
 
+import com.starrypenguin.rmcnew.model.exception.SheetNotFoundException;
 import com.starrypenguin.rmcnew.reader.ConfigXlsxReader;
 import com.starrypenguin.rmcnew.shared.Constants;
 
@@ -41,7 +42,7 @@ public class CrcManifestProcessorConfig {
         return instance;
     }
 
-    public static void init() throws IOException {
+    public static void init() throws IOException, SheetNotFoundException {
         ConfigXlsxReader configXlsxReader = new ConfigXlsxReader();
         configXlsxReader.openXlsxFile(Constants.CONFIGURATION_XLSX);
         configXlsxReader.read();

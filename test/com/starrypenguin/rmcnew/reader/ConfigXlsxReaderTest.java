@@ -19,10 +19,15 @@
 
 package com.starrypenguin.rmcnew.reader;
 
+import com.starrypenguin.rmcnew.model.exception.SheetNotFoundException;
+import com.starrypenguin.rmcnew.shared.Util;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
  * ConfigXlsxReaderTest
@@ -31,16 +36,50 @@ import java.io.IOException;
  */
 public class ConfigXlsxReaderTest {
 
+    private ConfigXlsxReader configXlsxReader;
+
+    @Before
+    public void SetupTest() {
+        configXlsxReader = new ConfigXlsxReader();
+    }
+
     // Gracefully handle null config
     @Test(expected = IOException.class)
-    public void NullConfigTest() throws IOException {
-        ConfigXlsxReader configXlsxReader = new ConfigXlsxReader();
+    public void NullConfigTest() throws IOException, SheetNotFoundException {
         configXlsxReader.openXlsxFile((File) null);
         configXlsxReader.read();
     }
 
+    @Test(expected = SheetNotFoundException.class)
+    public void EmptyConfigTest() throws IOException, SheetNotFoundException {
+        String currentDir = Util.getCurrentDirectory();
+        configXlsxReader.openXlsxFile(currentDir + "/test_resource/CRC_Manifest_Processor_Config-empty.xlsx");
+        configXlsxReader.read();
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void InvalidDataConfigTest() throws IOException, SheetNotFoundException {
+        String currentDir = Util.getCurrentDirectory();
+        configXlsxReader.openXlsxFile(currentDir + "/test_resource/CRC_Manifest_Processor_Config-invalid_data.xlsx");
+        configXlsxReader.read();
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void MissingSheetsConfigTest() throws IOException, SheetNotFoundException {
+        String currentDir = Util.getCurrentDirectory();
+        configXlsxReader.openXlsxFile(currentDir + "/test_resource/CRC_Manifest_Processor_Config-missing_sheets.xlsx");
+        configXlsxReader.read();
+    }
+
     @Test
-    public void IncompleteConfigTest() {
-        
+    public void FullConfigTest() throws IOException, SheetNotFoundException {
+        String currentDir = Util.getCurrentDirectory();
+        configXlsxReader.openXlsxFile(currentDir + "/test_resource/CRC_Manifest_Processor_Config-full.xlsx");
+        configXlsxReader.read();
+        assertNotNull(configXlsxReader.getAliasMap());
+        assertNotNull(configXlsxReader.getHubMap());
+        assertNotNull(configXlsxReader.getHubsWithoutUlnsMap());
+        assertNotNull(configXlsxReader.getMosMap());
+        assertNotNull(configXlsxReader.getRankComparisonMap());
     }
 }

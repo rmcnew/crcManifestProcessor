@@ -21,9 +21,9 @@ package com.starrypenguin.rmcnew.reader;
 
 import com.starrypenguin.rmcnew.model.data.Manifest;
 import com.starrypenguin.rmcnew.model.data.Record;
+import com.starrypenguin.rmcnew.model.data.Records;
 import com.starrypenguin.rmcnew.model.exception.SheetNotFoundException;
 import com.starrypenguin.rmcnew.shared.Constants;
-import com.starrypenguin.rmcnew.model.data.Records;
 import com.starrypenguin.rmcnew.shared.Util;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -31,6 +31,14 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import java.io.IOException;
 
 public class ManifestXlsxReader extends AbstractXlsxReader {
+
+    public Manifest readPreManifest() throws IOException, SheetNotFoundException {
+        return readManifest(Constants.PREMANIFEST_SHEET);
+    }
+
+    public Manifest readFinalManifest() throws IOException, SheetNotFoundException {
+        return readManifest(Constants.FINAL_MANIFEST_SHEET);
+    }
 
     public Manifest readManifest(String sheetName) throws IOException, SheetNotFoundException {
         if (Util.notNullAndNotEmpty(sheetName)) {

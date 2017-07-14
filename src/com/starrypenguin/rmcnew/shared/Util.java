@@ -192,4 +192,8 @@ public class Util {
         destCellStyle.setWrapText(srcCellStyle.getWrapText());
         destCell.setCellStyle(destCellStyle);
     }
+
+    public static String getCurrentDirectory() {
+        return System.getProperty("user.dir");
+    }
 }
