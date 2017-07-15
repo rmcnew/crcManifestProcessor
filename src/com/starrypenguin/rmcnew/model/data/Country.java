@@ -24,20 +24,37 @@ import com.starrypenguin.rmcnew.model.excel.CellSharedStyles;
 import com.starrypenguin.rmcnew.model.excel.RowEssence;
 import com.starrypenguin.rmcnew.shared.Constants;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Country implements Iterable<Hub> {
 
     private String name;
-    private TreeMap<String, Hub> hubs = new TreeMap<String, Hub>();
+    private TreeMap<String, Hub> hubs = new TreeMap<>();
     private int milCount = 0;
     private int civCount = 0;
 
     public Country(String name) {
         this.name = name;
+    }
+
+    public static List<String> getHeaders() {
+        List<String> headers = new ArrayList<>();
+        headers.add(Constants.LOCATION);
+        headers.add(Constants.MIL);
+        headers.add(Constants.DOD_CIV);
+        headers.add(Constants.Grand_Total);
+        return headers;
+    }
+
+    public static RowEssence getHeadersRowEssence() {
+        RowEssence rowEssence = new RowEssence();
+        for (String header : getHeaders()) {
+            CellEssence cell = new CellEssence();
+            cell.setCellStyleEssence(CellSharedStyles.HEADER_STYLE);
+            cell.setValue(header);
+            rowEssence.add(cell);
+        }
+        return rowEssence;
     }
 
     public int getMilCount() {
@@ -122,29 +139,9 @@ public class Country implements Iterable<Hub> {
         hub.appendRecord(record);
     }
 
-    public static List<String> getHeaders() {
-        List<String> headers = new ArrayList<String>();
-        headers.add(Constants.LOCATION);
-        headers.add(Constants.MIL);
-        headers.add(Constants.DOD_CIV);
-        headers.add(Constants.Grand_Total);
-        return headers;
-    }
-
-    public static RowEssence getHeadersRowEssence() {
-        RowEssence rowEssence = new RowEssence();
-        for (String header : getHeaders()) {
-            CellEssence cell = new CellEssence();
-            cell.setCellStyleEssence(CellSharedStyles.HEADER_STYLE);
-            cell.setValue(header);
-            rowEssence.add(cell);
-        }
-        return rowEssence;
-    }
-
     // name, MIL total, CIV total, Grand total
     private List<String> getCountryTotals() {
-        List<String> countryTotals = new ArrayList<String>();
+        List<String> countryTotals = new ArrayList<>();
         countryTotals.add(name);
         countryTotals.add(getMilCountString());
         countryTotals.add(getCivCountString());
@@ -164,16 +161,15 @@ public class Country implements Iterable<Hub> {
     }
 
     private List<RowEssence> getHubTotalsRowEssences() {
-        List<RowEssence> hubTotals = new ArrayList<RowEssence>();
-        for (String hubName : hubs.keySet()) {
-            Hub hub = hubs.get(hubName);
-            hubTotals.add(hub.toRowEssence());
+        List<RowEssence> hubTotals = new ArrayList<>();
+        for (Map.Entry<String, Hub> entry : hubs.entrySet()) {
+            hubTotals.add(entry.getValue().toRowEssence());
         }
         return hubTotals;
     }
 
     public List<RowEssence> toListOfRowEssences() {
-        List<RowEssence> list = new ArrayList<RowEssence>();
+        List<RowEssence> list = new ArrayList<>();
         list.add(this.getCountryTotalsRowEssence());
         list.addAll(this.getHubTotalsRowEssences());
         return list;

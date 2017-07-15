@@ -20,6 +20,7 @@
 package com.starrypenguin.rmcnew.model.config;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class RankComparisonMap {
@@ -60,12 +61,12 @@ public class RankComparisonMap {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder("RankComparisonMap{");
-        Set<String> keys = rankComparisonMap.keySet();
-        for (String key : keys) {
+        Set<Map.Entry<String, Integer>> entries = rankComparisonMap.entrySet();
+        for (Map.Entry<String, Integer> entry : entries) {
             builder.append("Rank: ");
-            builder.append(key);
+            builder.append(entry.getKey());
             builder.append(" => ");
-            builder.append(rankComparisonMap.get(key));
+            builder.append(entry.getValue());
             builder.append("\n");
         }
         builder.append('}');

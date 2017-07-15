@@ -24,9 +24,9 @@ import com.starrypenguin.rmcnew.model.config.PriorityMOSMap;
 import com.starrypenguin.rmcnew.model.config.RankComparisonMap;
 import com.starrypenguin.rmcnew.model.excel.CellEssence;
 import com.starrypenguin.rmcnew.model.excel.CellSharedStyles;
+import com.starrypenguin.rmcnew.model.excel.CellStyleEssence;
 import com.starrypenguin.rmcnew.model.excel.RowEssence;
 import com.starrypenguin.rmcnew.shared.Constants;
-import com.starrypenguin.rmcnew.model.excel.CellStyleEssence;
 import com.starrypenguin.rmcnew.shared.Util;
 
 import java.util.ArrayList;
@@ -63,6 +63,35 @@ public class Record implements Comparable<Record> {
         this.uln = uln;
         this.ftnId = ftnId;
         this.wiasId = wiasId;
+    }
+
+    public static List<String> getHeaders() {
+        ArrayList<String> arrayList = new ArrayList<String>();
+        arrayList.add(Constants.OML);
+        arrayList.add(Constants.NAME);
+        arrayList.add(Constants.RANK);
+        arrayList.add(Constants.AFSC_MOS);
+        arrayList.add(Constants.SERVICE_BRANCH);
+        arrayList.add(Constants.GENDER);
+        arrayList.add(Constants.FINAL_DESTINATION);
+        arrayList.add(Constants.HUB);
+        arrayList.add(Constants.COUNTRY);
+        // Do not output these fields;  ULNs are provided by higher
+        //arrayList.add(Constants.ULN);
+        //arrayList.add(Constants.FTN);
+        //arrayList.add(Constants.WIAS);
+        return arrayList;
+    }
+
+    public static RowEssence getHeaderRowEssence() {
+        RowEssence headerRow = new RowEssence();
+        for (String header : getHeaders()) {
+            CellEssence cell = new CellEssence();
+            cell.setCellStyleEssence(CellSharedStyles.HEADER_STYLE);
+            cell.setValue(header);
+            headerRow.add(cell);
+        }
+        return headerRow;
     }
 
     public String getOrderOfMerit() {
@@ -267,7 +296,7 @@ public class Record implements Comparable<Record> {
     }
 
     public List<String> toList() {
-        ArrayList<String> arrayList = new ArrayList<String>();
+        ArrayList<String> arrayList = new ArrayList<>();
         arrayList.add(orderOfMerit);
         arrayList.add(name);
         arrayList.add(rank);
@@ -304,36 +333,6 @@ public class Record implements Comparable<Record> {
             rowEssence.add(cell);
         }
         return rowEssence;
-    }
-
-
-    public static List<String> getHeaders() {
-        ArrayList<String> arrayList = new ArrayList<String>();
-        arrayList.add(Constants.OML);
-        arrayList.add(Constants.NAME);
-        arrayList.add(Constants.RANK);
-        arrayList.add(Constants.AFSC_MOS);
-        arrayList.add(Constants.SERVICE_BRANCH);
-        arrayList.add(Constants.GENDER);
-        arrayList.add(Constants.FINAL_DESTINATION);
-        arrayList.add(Constants.HUB);
-        arrayList.add(Constants.COUNTRY);
-        // Do not output these fields;  ULNs are provided by higher
-        //arrayList.add(Constants.ULN);
-        //arrayList.add(Constants.FTN);
-        //arrayList.add(Constants.WIAS);
-        return arrayList;
-    }
-
-    public static RowEssence getHeaderRowEssence() {
-        RowEssence headerRow = new RowEssence();
-        for (String header : getHeaders()) {
-            CellEssence cell = new CellEssence();
-            cell.setCellStyleEssence(CellSharedStyles.HEADER_STYLE);
-            cell.setValue(header);
-            headerRow.add(cell);
-        }
-        return headerRow;
     }
 
     public boolean isMilitary() {

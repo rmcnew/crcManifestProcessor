@@ -156,7 +156,7 @@ public class Hub implements Iterable<Record> {
     }
 
     private HashMap<String, Integer> getNonHubFinalDestinationCounts() {
-        HashMap<String, Integer> nonHubFinalDestinationCounts = new HashMap<String, Integer>();
+        HashMap<String, Integer> nonHubFinalDestinationCounts = new HashMap<>();
         for (Record record : prioritizedRecords) {
             String finalDestination = record.getFinalDestination();
             if (!finalDestination.equalsIgnoreCase(name) && !finalDestination.equalsIgnoreCase(Constants.UNKNOWN)) {

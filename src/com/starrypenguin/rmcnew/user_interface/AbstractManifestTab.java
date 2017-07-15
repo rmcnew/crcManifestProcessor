@@ -31,17 +31,16 @@ import java.io.File;
 
 public class AbstractManifestTab extends JComponent implements ActionListener {
 
+    protected static final String inputPrompt = "Select Excel manifest file from CRC";
+    protected static final String outputPrompt = "Select Output filename (.xlsx)";
+    protected static final String inputFilenameLabelBasis = "Excel manifest file from CRC:  ";
+    protected static final String outputFilenameLabelBasis = "Output filename:  ";
+    protected static final String errorMessageTitle = "File Not Specified";
+    protected static final String inputErrorMessage = "Please select the Excel manifest input file";
+    protected static final String outputErrorMessage = "Please select the desired name for the output file";
     protected String buttonText;
     protected String successText;
     protected AbstractManifestController controller;
-    protected final String inputPrompt = "Select Excel manifest file from CRC";
-	protected final String outputPrompt = "Select Output filename (.xlsx)";
-	protected final String inputFilenameLabelBasis = "Excel manifest file from CRC:  ";
-	protected final String outputFilenameLabelBasis = "Output filename:  ";
-	protected final String errorMessageTitle = "File Not Specified";
-	protected final String inputErrorMessage = "Please select the Excel manifest input file";
-	protected final String outputErrorMessage = "Please select the desired name for the output file";
-
 	protected File manifestInputFile = null;
 	protected File manifestOutputFile = null;
 

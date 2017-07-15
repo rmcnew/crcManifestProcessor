@@ -33,8 +33,8 @@ import java.util.regex.Pattern;
 public class Util {
 
     public static final FileNameExtensionFilter EXCEL_FILTER = new FileNameExtensionFilter("Excel spreadsheets", "xlsx", "xls", "XLSX", "XLS");
-    public static String LOCATION_REGEX = "^CAMP|^COB|^FOB|^COP|^FB|^ABP|^PB|^FORWARD OPERATING BASE|^FIRE BASE|^COMBAT OUTPOST|^ANP|^OP|^VSO|^VSP|^RCC|ANP$|AFLD$|AFB$|DC$|OP$|PRT$|AIRBASE$|AIR BASE$|AIRFIELD$|AIR FIELD$";
-    public static Pattern locationPattern = Pattern.compile(LOCATION_REGEX);
+    public static final String LOCATION_REGEX = "^CAMP|^COB|^FOB|^COP|^FB|^ABP|^PB|^FORWARD OPERATING BASE|^FIRE BASE|^COMBAT OUTPOST|^ANP|^OP|^VSO|^VSP|^RCC|ANP$|AFLD$|AFB$|DC$|OP$|PRT$|AIRBASE$|AIR BASE$|AIRFIELD$|AIR FIELD$";
+    public static final Pattern locationPattern = Pattern.compile(LOCATION_REGEX);
 
     public static boolean notNullAndNotEmpty(String string) {
         return (string != null && !string.isEmpty());
@@ -166,6 +166,8 @@ public class Util {
                     destCell.setCellType(CellType.FORMULA);
                     destCell.setCellValue(srcCell.getCellFormula());
                     break;
+                default:
+                    throw new IllegalArgumentException("Unknown cell type!  Not sure how to copy this cell!");
             }
             copyXSSFCellStyle(srcCell, destCell);
         } else {

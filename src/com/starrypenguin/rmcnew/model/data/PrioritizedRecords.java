@@ -29,8 +29,8 @@ import java.util.TreeSet;
 
 public class PrioritizedRecords implements Iterable<Record> {
 
-    private TreeSet<Record> prioritizedRecords = new TreeSet<Record>();
     int lastRow = 0;
+    private TreeSet<Record> prioritizedRecords = new TreeSet<>();
 
     public PrioritizedRecords() {
     }
@@ -64,7 +64,7 @@ public class PrioritizedRecords implements Iterable<Record> {
     }
 
     public List<RowEssence> toRowEssenceList() {
-        List<RowEssence> list = new ArrayList<RowEssence>();
+        List<RowEssence> list = new ArrayList<>();
         for (Record record : prioritizedRecords) {
             list.add(record.toRowEssence());
         }

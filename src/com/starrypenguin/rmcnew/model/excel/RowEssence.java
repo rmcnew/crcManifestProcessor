@@ -34,13 +34,13 @@ import java.util.List;
 // the spreadsheet, hence no row or column fields
 public class RowEssence implements Iterable<CellEssence> {
 
-    private LinkedList<CellEssence> cellEssences = new LinkedList<CellEssence>();
+    private LinkedList<CellEssence> cellEssences = new LinkedList<>();
 
     public RowEssence() {
     }
 
     public RowEssence(List<CellEssence> cellEssences) {
-        this.cellEssences = new LinkedList<CellEssence>();
+        this.cellEssences = new LinkedList<>();
         this.cellEssences.addAll(cellEssences);
     }
 
@@ -88,7 +88,12 @@ public class RowEssence implements Iterable<CellEssence> {
 
     @Override
     public boolean equals(Object o) {
-        return cellEssences.equals(o);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        RowEssence that = (RowEssence) o;
+
+        return cellEssences.equals(that.cellEssences);
     }
 
     @Override

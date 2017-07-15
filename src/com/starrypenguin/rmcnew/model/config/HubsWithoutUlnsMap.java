@@ -20,6 +20,7 @@
 package com.starrypenguin.rmcnew.model.config;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class HubsWithoutUlnsMap {
@@ -63,10 +64,10 @@ public class HubsWithoutUlnsMap {
 
     public String toString() {
         StringBuilder builder = new StringBuilder("HubsWithoutUlnsMap {");
-        for (String key : hubsWithoutUlns.keySet()) {
-            builder.append(key);
+        for (Map.Entry<String, Boolean> entry : hubsWithoutUlns.entrySet()) {
+            builder.append(entry.getKey());
             builder.append(" => ");
-            builder.append(hubsWithoutUlns.get(key));
+            builder.append(entry.getValue());
         }
         builder.append("}\n");
         return builder.toString();

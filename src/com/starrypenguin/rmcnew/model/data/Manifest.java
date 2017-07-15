@@ -24,12 +24,13 @@ import com.starrypenguin.rmcnew.shared.Constants;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import java.util.Iterator;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class Manifest implements Iterable<Country> {
 
     private Records records = new Records();
-    private TreeMap<String, Country> countries = new TreeMap<String, Country>();
+    private TreeMap<String, Country> countries = new TreeMap<>();
     private int milTotal = 0;
     private int civTotal = 0;
     private XSSFSheet instructions;
@@ -165,8 +166,8 @@ public class Manifest implements Iterable<Country> {
     public SheetEssence toSheetEssence(String sheetName) {
         SheetEssence sheetEssence = new SheetEssence(sheetName);
         sheetEssence.add(Country.getHeadersRowEssence());
-        for (String country : countries.keySet()) {
-            sheetEssence.addAll(countries.get(country).toListOfRowEssences());
+        for (Map.Entry<String, Country> entry : countries.entrySet()) {
+            sheetEssence.addAll(entry.getValue().toListOfRowEssences());
         }
         sheetEssence.add(getGrandTotalRowEssence());
         return sheetEssence;

@@ -29,28 +29,28 @@ public class CellSharedStyles {
 
     public static final XSSFColor XSSF_COLOR_RED = new XSSFColor(Color.RED);
     public static final XSSFColor XSSF_COLOR_BLACK = new XSSFColor(Color.BLACK);
-    // colors
-    private static final byte[] LIGHT_STEEL_BLUE_ARGB = {(byte)0, (byte)176, (byte)196, (byte)240};
-    public static final XSSFColor XSSF_COLOR_LIGHT_STEEL_BLUE = new XSSFColor(LIGHT_STEEL_BLUE_ARGB);
     // header fields for manifest listing
-    public static CellStyleEssence HEADER_STYLE = new CellStyleEssence();
-    public static FontEssence HEADER_FONT = new FontEssence();
+    public static final CellStyleEssence HEADER_STYLE = new CellStyleEssence();
+    public static final FontEssence HEADER_FONT = new FontEssence();
     // field entries for manifest listing
-    public static CellStyleEssence ENTRY_STYLE = new CellStyleEssence(); // just use defaults for now
-    public static FontEssence ENTRY_FONT = new FontEssence();
+    public static final CellStyleEssence ENTRY_STYLE = new CellStyleEssence(); // just use defaults for now
+    public static final FontEssence ENTRY_FONT = new FontEssence();
     // country entries for summary table
-    public static CellStyleEssence COUNTRY_STYLE = new CellStyleEssence(); // if it was orange juice, it would have extra pulp :)
-    public static FontEssence COUNTRY_FONT = new FontEssence();
+    public static final CellStyleEssence COUNTRY_STYLE = new CellStyleEssence(); // if it was orange juice, it would have extra pulp :)
+    public static final FontEssence COUNTRY_FONT = new FontEssence();
     // hub entries for summary table
-    public static CellStyleEssence HUB_NAME_STYLE = new CellStyleEssence();
-    public static FontEssence HUB_NAME_FONT = new FontEssence();
-    public static CellStyleEssence HUB_ENTRY_STYLE = new CellStyleEssence();
-    public static FontEssence HUB_ENTRY_FONT = new FontEssence();
+    public static final CellStyleEssence HUB_NAME_STYLE = new CellStyleEssence();
+    public static final FontEssence HUB_NAME_FONT = new FontEssence();
+    public static final CellStyleEssence HUB_ENTRY_STYLE = new CellStyleEssence();
+    public static final FontEssence HUB_ENTRY_FONT = new FontEssence();
     // field entries for UNKNOWN destinations
-    public static CellStyleEssence UNKNOWN_HUB_NAME_STYLE = new CellStyleEssence();
-    public static FontEssence UNKNOWN_HUB_NAME_FONT = new FontEssence();
-    public static CellStyleEssence UNKNOWN_HUB_ENTRY_STYLE = new CellStyleEssence();
-    public static FontEssence UNKNOWN_HUB_ENTRY_FONT = new FontEssence();
+    public static final CellStyleEssence UNKNOWN_HUB_NAME_STYLE = new CellStyleEssence();
+    public static final FontEssence UNKNOWN_HUB_NAME_FONT = new FontEssence();
+    public static final CellStyleEssence UNKNOWN_HUB_ENTRY_STYLE = new CellStyleEssence();
+    public static final FontEssence UNKNOWN_HUB_ENTRY_FONT = new FontEssence();
+    // colors
+    private static final byte[] LIGHT_STEEL_BLUE_ARGB = {(byte) 0, (byte) 176, (byte) 196, (byte) 240};
+    public static final XSSFColor XSSF_COLOR_LIGHT_STEEL_BLUE = new XSSFColor(LIGHT_STEEL_BLUE_ARGB);
 
     static {
         HEADER_STYLE.setHorizontalAlignment(HorizontalAlignment.LEFT);

@@ -1,0 +1,644 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>FindBugs Report</title>
+<style type="text/css">
+		.tablerow0 {
+			background: #EEEEEE;
+		}
+
+		.tablerow1 {
+			background: white;
+		}
+
+		.detailrow0 {
+			background: #EEEEEE;
+		}
+
+		.detailrow1 {
+			background: white;
+		}
+
+		.tableheader {
+			background: #b9b9fe;
+			font-size: larger;
+		}
+		</style>
+</head>
+<body>
+<h1>FindBugs Report</h1>
+<p>Produced using <a href="http://findbugs.sourceforge.net">FindBugs</a>3.0.1.</p>
+<p>Project: 
+			crcManifestProcessor[crcManifestProcessor]</p>
+<h2>Metrics</h2>
+<p>2087 lines of code analyzed,
+	in 48 classes, 
+	in 11 packages.</p>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Metric</th>
+<th align="right">Total</th>
+<th align="right">Density*</th>
+</tr>
+<tr class="tablerow0">
+<td>High Priority Warnings</td>
+<td align="right">17</td>
+<td align="right">8.15</td>
+</tr>
+<tr class="tablerow1">
+<td>Medium Priority Warnings</td>
+<td align="right">12</td>
+<td align="right">5.75</td>
+</tr>
+<tr class="$totalClass">
+<td>
+<b>Total Warnings</b>
+</td>
+<td align="right">
+<b>29</b>
+</td>
+<td align="right">
+<b>13.90</b>
+</td>
+</tr>
+</table>
+<p>
+<i>(* Defects per Thousand lines of non-commenting source statements)</i>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h2>Summary</h2>
+<table width="500" cellpadding="5" cellspacing="2">
+<tr class="tableheader">
+<th align="left">Warning Type</th>
+<th align="right">Number</th>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</td>
+<td align="right">16</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<a href="#Warnings_PERFORMANCE">Performance Warnings</a>
+</td>
+<td align="right">11</td>
+</tr>
+<tr class="tablerow1">
+<td>
+<a href="#Warnings_STYLE">Dodgy code Warnings</a>
+</td>
+<td align="right">1</td>
+</tr>
+<tr class="tablerow0">
+<td>
+<b>Total</b>
+</td>
+<td align="right">
+<b>29</b>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h1>Warnings</h1>
+<p>Click on each warning link to see a full description of the issue, and
+	    details of how to resolve it.</p>
+<h2>
+<a name="Warnings_BAD_PRACTICE">Bad practice Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#EQ_CHECK_FOR_OPERAND_NOT_COMPATIBLE_WITH_THIS">Equals checks for incompatible operand</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.RowEssence.equals(Object) checks for operand being a java.util.LinkedList <br/>
+<br/>
+<br/>In file RowEssence.java,
+					
+						line 91<br/>In class com.starrypenguin.rmcnew.model.excel.RowEssence<br/>In method com.starrypenguin.rmcnew.model.excel.RowEssence.equals(Object)<br/>Actual type java.util.LinkedList<br/>At RowEssence.java:[line 91]<br/>At RowEssence.java:[line 91]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_MALICIOUS_CODE">Malicious code vulnerability Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.COUNTRY_FONT isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 43<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.COUNTRY_FONT<br/>At CellSharedStyles.java:[line 43]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.COUNTRY_STYLE isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 42<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.COUNTRY_STYLE<br/>At CellSharedStyles.java:[line 42]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.ENTRY_FONT isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 40<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.ENTRY_FONT<br/>At CellSharedStyles.java:[line 40]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.ENTRY_STYLE isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 39<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.ENTRY_STYLE<br/>At CellSharedStyles.java:[line 39]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.HEADER_FONT isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 37<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.HEADER_FONT<br/>At CellSharedStyles.java:[line 37]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.HEADER_STYLE isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 36<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.HEADER_STYLE<br/>At CellSharedStyles.java:[line 36]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.HUB_ENTRY_FONT isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 48<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.HUB_ENTRY_FONT<br/>At CellSharedStyles.java:[line 48]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.HUB_ENTRY_STYLE isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 47<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.HUB_ENTRY_STYLE<br/>At CellSharedStyles.java:[line 47]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.HUB_NAME_FONT isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 46<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.HUB_NAME_FONT<br/>At CellSharedStyles.java:[line 46]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.HUB_NAME_STYLE isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 45<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.HUB_NAME_STYLE<br/>At CellSharedStyles.java:[line 45]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.UNKNOWN_HUB_ENTRY_FONT isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 53<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.UNKNOWN_HUB_ENTRY_FONT<br/>At CellSharedStyles.java:[line 53]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.UNKNOWN_HUB_ENTRY_STYLE isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 52<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.UNKNOWN_HUB_ENTRY_STYLE<br/>At CellSharedStyles.java:[line 52]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.UNKNOWN_HUB_NAME_FONT isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 51<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.UNKNOWN_HUB_NAME_FONT<br/>At CellSharedStyles.java:[line 51]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.excel.CellSharedStyles.UNKNOWN_HUB_NAME_STYLE isn't final but should be<br/>
+<br/>
+<br/>In file CellSharedStyles.java,
+					
+						line 50<br/>In class com.starrypenguin.rmcnew.model.excel.CellSharedStyles<br/>Field com.starrypenguin.rmcnew.model.excel.CellSharedStyles.UNKNOWN_HUB_NAME_STYLE<br/>At CellSharedStyles.java:[line 50]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.shared.Util.LOCATION_REGEX isn't final but should be<br/>
+<br/>
+<br/>In file Util.java,
+					
+						line 36<br/>In class com.starrypenguin.rmcnew.shared.Util<br/>Field com.starrypenguin.rmcnew.shared.Util.LOCATION_REGEX<br/>At Util.java:[line 36]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</td>
+<td width="10%" valign="top">High</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.shared.Util.locationPattern isn't final but should be<br/>
+<br/>
+<br/>In file Util.java,
+					
+						line 37<br/>In class com.starrypenguin.rmcnew.shared.Util<br/>Field com.starrypenguin.rmcnew.shared.Util.locationPattern<br/>At Util.java:[line 37]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_PERFORMANCE">Performance Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SS_SHOULD_BE_STATIC">Unread field: should this field be static?</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread field: com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.errorMessageTitle; should this field be static?<br/>
+<br/>
+<br/>In file AbstractManifestTab.java,
+					
+						line 41<br/>In class com.starrypenguin.rmcnew.user_interface.AbstractManifestTab<br/>Field com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.errorMessageTitle<br/>At AbstractManifestTab.java:[line 41]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SS_SHOULD_BE_STATIC">Unread field: should this field be static?</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread field: com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.inputErrorMessage; should this field be static?<br/>
+<br/>
+<br/>In file AbstractManifestTab.java,
+					
+						line 42<br/>In class com.starrypenguin.rmcnew.user_interface.AbstractManifestTab<br/>Field com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.inputErrorMessage<br/>At AbstractManifestTab.java:[line 42]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SS_SHOULD_BE_STATIC">Unread field: should this field be static?</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread field: com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.inputFilenameLabelBasis; should this field be static?<br/>
+<br/>
+<br/>In file AbstractManifestTab.java,
+					
+						line 39<br/>In class com.starrypenguin.rmcnew.user_interface.AbstractManifestTab<br/>Field com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.inputFilenameLabelBasis<br/>At AbstractManifestTab.java:[line 39]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SS_SHOULD_BE_STATIC">Unread field: should this field be static?</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread field: com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.inputPrompt; should this field be static?<br/>
+<br/>
+<br/>In file AbstractManifestTab.java,
+					
+						line 37<br/>In class com.starrypenguin.rmcnew.user_interface.AbstractManifestTab<br/>Field com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.inputPrompt<br/>At AbstractManifestTab.java:[line 37]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SS_SHOULD_BE_STATIC">Unread field: should this field be static?</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread field: com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.outputErrorMessage; should this field be static?<br/>
+<br/>
+<br/>In file AbstractManifestTab.java,
+					
+						line 43<br/>In class com.starrypenguin.rmcnew.user_interface.AbstractManifestTab<br/>Field com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.outputErrorMessage<br/>At AbstractManifestTab.java:[line 43]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#SS_SHOULD_BE_STATIC">Unread field: should this field be static?</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread field: com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.outputFilenameLabelBasis; should this field be static?<br/>
+<br/>
+<br/>In file AbstractManifestTab.java,
+					
+						line 40<br/>In class com.starrypenguin.rmcnew.user_interface.AbstractManifestTab<br/>Field com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.outputFilenameLabelBasis<br/>At AbstractManifestTab.java:[line 40]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SS_SHOULD_BE_STATIC">Unread field: should this field be static?</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Unread field: com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.outputPrompt; should this field be static?<br/>
+<br/>
+<br/>In file AbstractManifestTab.java,
+					
+						line 38<br/>In class com.starrypenguin.rmcnew.user_interface.AbstractManifestTab<br/>Field com.starrypenguin.rmcnew.user_interface.AbstractManifestTab.outputPrompt<br/>At AbstractManifestTab.java:[line 38]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#WMI_WRONG_MAP_ITERATOR">Inefficient use of keySet iterator instead of entrySet iterator</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.config.HubsWithoutUlnsMap.toString() makes inefficient use of keySet iterator instead of entrySet iterator<br/>
+<br/>
+<br/>In file HubsWithoutUlnsMap.java,
+					
+						line 69<br/>In class com.starrypenguin.rmcnew.model.config.HubsWithoutUlnsMap<br/>In method com.starrypenguin.rmcnew.model.config.HubsWithoutUlnsMap.toString()<br/>Field com.starrypenguin.rmcnew.model.config.HubsWithoutUlnsMap.hubsWithoutUlns<br/>At HubsWithoutUlnsMap.java:[line 69]<br/>At HubsWithoutUlnsMap.java:[line 69]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#WMI_WRONG_MAP_ITERATOR">Inefficient use of keySet iterator instead of entrySet iterator</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.config.RankComparisonMap.toString() makes inefficient use of keySet iterator instead of entrySet iterator<br/>
+<br/>
+<br/>In file RankComparisonMap.java,
+					
+						line 68<br/>In class com.starrypenguin.rmcnew.model.config.RankComparisonMap<br/>In method com.starrypenguin.rmcnew.model.config.RankComparisonMap.toString()<br/>Field com.starrypenguin.rmcnew.model.config.RankComparisonMap.rankComparisonMap<br/>At RankComparisonMap.java:[line 68]<br/>At RankComparisonMap.java:[line 68]</p>
+</td>
+</tr>
+<tr class="tablerow0">
+<td width="20%" valign="top">
+<a href="#WMI_WRONG_MAP_ITERATOR">Inefficient use of keySet iterator instead of entrySet iterator</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.data.Country.getHubTotalsRowEssences() makes inefficient use of keySet iterator instead of entrySet iterator<br/>
+<br/>
+<br/>In file Country.java,
+					
+						line 169<br/>In class com.starrypenguin.rmcnew.model.data.Country<br/>In method com.starrypenguin.rmcnew.model.data.Country.getHubTotalsRowEssences()<br/>Field com.starrypenguin.rmcnew.model.data.Country.hubs<br/>At Country.java:[line 169]<br/>At Country.java:[line 169]</p>
+</td>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#WMI_WRONG_MAP_ITERATOR">Inefficient use of keySet iterator instead of entrySet iterator</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>com.starrypenguin.rmcnew.model.data.Manifest.toSheetEssence(String) makes inefficient use of keySet iterator instead of entrySet iterator<br/>
+<br/>
+<br/>In file Manifest.java,
+					
+						line 169<br/>In class com.starrypenguin.rmcnew.model.data.Manifest<br/>In method com.starrypenguin.rmcnew.model.data.Manifest.toSheetEssence(String)<br/>Field com.starrypenguin.rmcnew.model.data.Manifest.countries<br/>At Manifest.java:[line 169]<br/>At Manifest.java:[line 169]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="Warnings_STYLE">Dodgy code Warnings</a>
+</h2>
+<table class="warningtable" width="100%" cellspacing="2" cellpadding="5">
+<tr class="tableheader">
+<th align="left">Warning</th>
+<th align="left">Priority</th>
+<th align="left">Details</th>
+</tr>
+<tr class="tablerow1">
+<td width="20%" valign="top">
+<a href="#SF_SWITCH_NO_DEFAULT">Switch statement found where default case is missing</a>
+</td>
+<td width="10%" valign="top">Medium</td>
+<td width="70%">
+<p>Switch statement found in com.starrypenguin.rmcnew.shared.Util.copyXSSFCell(XSSFCell, XSSFCell) where default case is missing<br/>
+<br/>
+<br/>In file Util.java,
+					
+						lines 148
+						    to 167<br/>In class com.starrypenguin.rmcnew.shared.Util<br/>In method com.starrypenguin.rmcnew.shared.Util.copyXSSFCell(XSSFCell, XSSFCell)<br/>At Util.java:[lines 148-167]<br/>At Util.java:[lines 148-167]</p>
+</td>
+</tr>
+</table>
+<p>
+<br/>
+<br/>
+</p>
+<p>
+<br/>
+<br/>
+</p>
+<h1>
+<a name="Details">Warning Types</a>
+</h1>
+<h2>
+<a name="EQ_CHECK_FOR_OPERAND_NOT_COMPATIBLE_WITH_THIS">Equals checks for incompatible operand</a>
+</h2>
+
+  <p> This equals method is checking to see if the argument is some incompatible type
+(i.e., a class that is neither a supertype nor subtype of the class that defines
+the equals method). For example, the Foo class might have an equals method
+that looks like:
+</p>
+<pre>
+public boolean equals(Object o) {
+  if (o instanceof Foo)
+    return name.equals(((Foo)o).name);
+  else if (o instanceof String)
+    return name.equals(o);
+  else return false;
+</pre>
+
+<p>This is considered bad practice, as it makes it very hard to implement an equals method that
+is symmetric and transitive. Without those properties, very unexpected behavoirs are possible.
+</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="MS_SHOULD_BE_FINAL">Field isn't final but should be</a>
+</h2>
+
+   <p>
+This static field public but not final, and
+could be changed by malicious code or
+        by accident from another package.
+        The field could be made final to avoid
+        this vulnerability.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="SF_SWITCH_NO_DEFAULT">Switch statement found where default case is missing</a>
+</h2>
+
+  <p> This method contains a switch statement where default case is missing.
+  Usually you need to provide a default case.</p>
+  <p>Because the analysis only looks at the generated bytecode, this warning can be incorrect triggered if
+the default case is at the end of the switch statement and the switch statement doesn't contain break statements for other
+cases.
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="SS_SHOULD_BE_STATIC">Unread field: should this field be static?</a>
+</h2>
+
+  <p> This class contains an instance final field that
+   is initialized to a compile-time static value.
+   Consider making the field static.</p>
+
+    
+<p>
+<br/>
+<br/>
+</p>
+<h2>
+<a name="WMI_WRONG_MAP_ITERATOR">Inefficient use of keySet iterator instead of entrySet iterator</a>
+</h2>
+
+<p> This method accesses the value of a Map entry, using a key that was retrieved from
+a keySet iterator. It is more efficient to use an iterator on the entrySet of the map, to avoid the
+Map.get(key) lookup.</p>
+
+        
+<p>
+<br/>
+<br/>
+</p>
+</body>
+</html>

@@ -27,7 +27,7 @@ import java.util.TreeMap;
 
 public class Records implements Iterable<Record> {
 
-    TreeMap<String, Record> records = new TreeMap<String, Record>();
+    private TreeMap<String, Record> records = new TreeMap<>();
 
     public Records() {
     }
