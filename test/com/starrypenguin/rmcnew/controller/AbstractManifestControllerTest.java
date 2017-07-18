@@ -19,7 +19,15 @@
 
 package com.starrypenguin.rmcnew.controller;
 
+import com.starrypenguin.rmcnew.model.data.Manifest;
+import com.starrypenguin.rmcnew.model.exception.SheetNotFoundException;
+import com.starrypenguin.rmcnew.shared.Constants;
+import com.starrypenguin.rmcnew.shared.Util;
+import org.junit.Assert;
 import org.junit.Test;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * AbstractManifestControllerTest
@@ -29,8 +37,16 @@ import org.junit.Test;
 public class AbstractManifestControllerTest {
 
     @Test
-    public void processManifestFileTest() {
-
+    public void processManifestFileTest() throws IOException, SheetNotFoundException {
+        String manifestFileStr = Util.getCurrentDirectory() + "/test_resource/FinalManifest-valid.xlsx";
+        System.out.println("processing file:  " + manifestFileStr);
+        File manifestFile = new File(manifestFileStr);
+        // test pre-manifest processing
+        Manifest preManifest = AbstractManifestController.processManifestFile(manifestFile, Constants.PREMANIFEST_SHEET);
+        Assert.assertTrue(preManifest.getGrandTotal() > 0);
+        // test final manifest processing
+        Manifest finalManifest = AbstractManifestController.processManifestFile(manifestFile, Constants.FINAL_MANIFEST_SHEET);
+        Assert.assertTrue(finalManifest.getGrandTotal() > 0);
     }
 
     @Test

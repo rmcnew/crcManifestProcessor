@@ -27,7 +27,7 @@ import java.io.IOException;
 
 public class CrcManifestProcessorConfig {
 
-    private static CrcManifestProcessorConfig instance = new CrcManifestProcessorConfig();
+    private static CrcManifestProcessorConfig instance;
     private static DestinationHubMap destinationHubMap;
     private static LocationAliasMap locationAliasMap;
     private static PriorityMOSMap priorityMosMap;
@@ -39,10 +39,18 @@ public class CrcManifestProcessorConfig {
     }
 
     public static CrcManifestProcessorConfig getInstance() {
+        if (instance == null) {
+            try {
+                CrcManifestProcessorConfig.init();
+            } catch (IOException | SheetNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
         return instance;
     }
 
     public static void init() throws IOException, SheetNotFoundException {
+        instance = new CrcManifestProcessorConfig();
         ConfigXlsxReader configXlsxReader = new ConfigXlsxReader();
         configXlsxReader.openXlsxFile(Constants.CONFIGURATION_XLSX);
         configXlsxReader.read();
