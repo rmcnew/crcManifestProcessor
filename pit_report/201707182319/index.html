@@ -1,0 +1,348 @@
+<!--
+  ~ Copyright (c) 2017 Richard Scott McNew.
+  ~
+  ~ This file is part of CRC Manifest Processor.
+  ~
+  ~     CRC Manifest Processor is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     CRC Manifest Processor is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<html>
+<head>
+
+    <style type='text/css'>
+   
+   .tests{ 
+     width : 50%;
+     float : left;
+   }
+   
+   .mutees{
+     float : right;
+     width : 50%;
+   }
+   
+   .unit {
+     padding-top : 20px;
+     clear : both;
+   }
+   
+   .coverage_bar {
+    display : inline-block;
+    height : 1.1em;
+    width: 130px;
+    background: #FAA;
+    margin: 0 5px;
+    vertical-align: middle;
+    border: 1px solid #AAA;
+    position : relative;
+   }
+   
+   .coverage_complete {
+    display : inline-block;
+    height : 100%;
+    background: #DFD;
+    float: left;
+   }
+   
+   .coverage_ledgend {
+        position : absolute;
+        height : 100%;
+        width : 100%;
+        left : 0;
+        top : 0;
+        text-align : center;
+   }
+   
+   .line, .mut {
+        vertical-align : middle;
+   }
+   
+   .coveragePercentage {
+    display: inline-block;
+    width: 3em;
+    text-align: right;
+   }
+
+
+    </style>
+
+</head>
+<body>
+
+<h1>Pit Test Coverage Report</h1>
+
+<h3>Project Summary</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Number of Classes</th>
+        <th>Line Coverage</th>
+        <th>Mutation Coverage</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>38</td>
+        <td>33%
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:33%"></div>
+                <div class="coverage_ledgend">461/1389</div>
+            </div>
+        </td>
+        <td>19%
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:19%"></div>
+                <div class="coverage_ledgend">145/765</div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<h3>Breakdown by Package</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Number of Classes</th>
+        <th>Line Coverage</th>
+        <th>Mutation Coverage</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr>
+        <td><a href="./com.starrypenguin.rmcnew.api/index.html">com.starrypenguin.rmcnew.api</a></td>
+        <td>1</td>
+        <td>
+            <div class="coveragePercentage">0%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:0%"></div>
+                <div class="coverage_ledgend">0/4</div>
+            </div>
+        </td>
+        <td>
+            <div class="coveragePercentage">0%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:0%"></div>
+                <div class="coverage_ledgend">0/2</div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td><a href="./com.starrypenguin.rmcnew.business_rule/index.html">com.starrypenguin.rmcnew.business_rule</a>
+        </td>
+        <td>3</td>
+        <td>
+            <div class="coveragePercentage">88%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:88%"></div>
+                <div class="coverage_ledgend">23/26</div>
+            </div>
+        </td>
+        <td>
+            <div class="coveragePercentage">100%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:100%"></div>
+                <div class="coverage_ledgend">21/21</div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td><a href="./com.starrypenguin.rmcnew.controller/index.html">com.starrypenguin.rmcnew.controller</a></td>
+        <td>3</td>
+        <td>
+            <div class="coveragePercentage">58%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:58%"></div>
+                <div class="coverage_ledgend">45/78</div>
+            </div>
+        </td>
+        <td>
+            <div class="coveragePercentage">41%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:41%"></div>
+                <div class="coverage_ledgend">19/46</div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td><a href="./com.starrypenguin.rmcnew.model.config/index.html">com.starrypenguin.rmcnew.model.config</a></td>
+        <td>7</td>
+        <td>
+            <div class="coveragePercentage">32%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:32%"></div>
+                <div class="coverage_ledgend">54/168</div>
+            </div>
+        </td>
+        <td>
+            <div class="coveragePercentage">22%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:22%"></div>
+                <div class="coverage_ledgend">19/87</div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td><a href="./com.starrypenguin.rmcnew.model.data/index.html">com.starrypenguin.rmcnew.model.data</a></td>
+        <td>6</td>
+        <td>
+            <div class="coveragePercentage">38%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:38%"></div>
+                <div class="coverage_ledgend">169/450</div>
+            </div>
+        </td>
+        <td>
+            <div class="coveragePercentage">8%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:8%"></div>
+                <div class="coverage_ledgend">22/267</div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td><a href="./com.starrypenguin.rmcnew.model.excel/index.html">com.starrypenguin.rmcnew.model.excel</a></td>
+        <td>5</td>
+        <td>
+            <div class="coveragePercentage">0%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:0%"></div>
+                <div class="coverage_ledgend">0/201</div>
+            </div>
+        </td>
+        <td>
+            <div class="coveragePercentage">0%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:0%"></div>
+                <div class="coverage_ledgend">0/98</div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td><a href="./com.starrypenguin.rmcnew.model.exception/index.html">com.starrypenguin.rmcnew.model.exception</a>
+        </td>
+        <td>1</td>
+        <td>
+            <div class="coveragePercentage">50%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:50%"></div>
+                <div class="coverage_ledgend">2/4</div>
+            </div>
+        </td>
+        <td>
+            <div class="coveragePercentage">0%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:0%"></div>
+                <div class="coverage_ledgend">0/2</div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td><a href="./com.starrypenguin.rmcnew.reader/index.html">com.starrypenguin.rmcnew.reader</a></td>
+        <td>3</td>
+        <td>
+            <div class="coveragePercentage">92%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:92%"></div>
+                <div class="coverage_ledgend">146/158</div>
+            </div>
+        </td>
+        <td>
+            <div class="coveragePercentage">68%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:68%"></div>
+                <div class="coverage_ledgend">51/75</div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td><a href="./com.starrypenguin.rmcnew.shared/index.html">com.starrypenguin.rmcnew.shared</a></td>
+        <td>1</td>
+        <td>
+            <div class="coveragePercentage">22%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:22%"></div>
+                <div class="coverage_ledgend">22/101</div>
+            </div>
+        </td>
+        <td>
+            <div class="coveragePercentage">22%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:22%"></div>
+                <div class="coverage_ledgend">13/60</div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td><a href="./com.starrypenguin.rmcnew.user_interface/index.html">com.starrypenguin.rmcnew.user_interface</a>
+        </td>
+        <td>5</td>
+        <td>
+            <div class="coveragePercentage">0%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:0%"></div>
+                <div class="coverage_ledgend">0/126</div>
+            </div>
+        </td>
+        <td>
+            <div class="coveragePercentage">0%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:0%"></div>
+                <div class="coverage_ledgend">0/65</div>
+            </div>
+        </td>
+    </tr>
+
+    <tr>
+        <td><a href="./com.starrypenguin.rmcnew.writer/index.html">com.starrypenguin.rmcnew.writer</a></td>
+        <td>3</td>
+        <td>
+            <div class="coveragePercentage">0%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:0%"></div>
+                <div class="coverage_ledgend">0/73</div>
+            </div>
+        </td>
+        <td>
+            <div class="coveragePercentage">0%</div>
+            <div class="coverage_bar">
+                <div class="coverage_complete" style="width:0%"></div>
+                <div class="coverage_ledgend">0/42</div>
+            </div>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+<br/>
+
+
+<hr/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.2.2
+
+</body>
+</html>

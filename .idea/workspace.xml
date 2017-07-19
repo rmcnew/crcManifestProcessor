@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00c994c0-c747-4669-9f2d-b55288ec84a6" name="Default" comment="">
+    <list default="true" id="00c994c0-c747-4669-9f2d-b55288ec84a6" name="Default" comment="Clean up build.xml; add PIT mutation testing to build.xml and add mutation report; add PIT dependency libraries to test_lib">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_lib/pitest-entry-1.2.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_lib/xmlpull-1.1.3.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_lib/xstream-1.4.8.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.api/RunAbstractWorkflow.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.api/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.business_rule/AfghanUnknownPriorityMosGoesToBagram.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.business_rule/KuwaitQatarSingleHub.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.business_rule/MakeAllMilitaryServiceBranchA.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.business_rule/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.controller/AbstractManifestController.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.controller/FinalManifestController.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.controller/PreManifestController.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.controller/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.config/CrcManifestProcessorConfig.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.config/DestinationHubMap.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.config/HubCountry.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.config/HubsWithoutUlnsMap.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.config/LocationAliasMap.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.config/PriorityMOSMap.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.config/RankComparisonMap.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.config/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.data/Country.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.data/Hub.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.data/Manifest.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.data/PrioritizedRecords.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.data/Record.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.data/Records.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.data/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.excel/CellEssence.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.excel/CellStyleEssence.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.excel/FontEssence.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.excel/RowEssence.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.excel/SheetEssence.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.excel/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.exception/SheetNotFoundException.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.model.exception/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.reader/AbstractXlsxReader.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.reader/ConfigXlsxReader.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.reader/ManifestXlsxReader.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.reader/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.shared/Util.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.shared/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.user_interface/AboutTab.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.user_interface/AbstractManifestTab.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.user_interface/CommandLine.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.user_interface/MainWindow.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.user_interface/UlnQuestionPane.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.user_interface/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.writer/AbstractXlsxWriter.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.writer/FinalManifestXlsxWriter.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.writer/PreManifestXlsxWriter.java.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/com.starrypenguin.rmcnew.writer/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pit_report/201707182319/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/findbugs_reports/findbugs_reports.html" afterPath="$PROJECT_DIR$/findbugs_reports/findbugs_report_2017-07-14.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/controller/AbstractManifestController.java" afterPath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/controller/AbstractManifestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java" afterPath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/controller/AbstractManifestControllerTest.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/controller/AbstractManifestControllerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
     </list>
     <ignored path="crcManifestProcessor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,18 +118,7 @@
     <favorites_list name="crcManifestProcessor" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AbstractManifestControllerTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/controller/AbstractManifestControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="76" column="85" lean-forward="true" selection-start-line="76" selection-start-column="85" selection-end-line="76" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -152,7 +194,6 @@
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/excel/CellEssence.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/excel/CellStyleEssence.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/excel/FontEssence.java" />
-        <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/shared/UtilTest.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/user_interface/CommandLine.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/AbstractXlsxReader.java" />
@@ -175,6 +216,7 @@
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/controller/AbstractManifestController.java" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/controller/AbstractManifestControllerTest.java" />
+        <option value="$PROJECT_DIR$/build.xml" />
       </list>
     </option>
   </component>
@@ -217,70 +259,13 @@
               <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
               <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="rmcnew" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="rmcnew" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="rmcnew" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="rmcnew" type="462c0819:PsiDirectoryNode" />
-              <item name="business_rule" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="rmcnew" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="rmcnew" type="462c0819:PsiDirectoryNode" />
-              <item name="reader" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
-              <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="rmcnew" type="462c0819:PsiDirectoryNode" />
-              <item name="shared" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -627,11 +612,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1918" y="15" width="1918" height="1062" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12910448" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18325435" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.4975265" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32161874" sideWeight="0.4975265" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.5024735" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -641,7 +625,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19070259" sideWeight="0.67257845" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14063604" sideWeight="0.675307" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1405177" sideWeight="0.675307" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23955224" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -680,7 +664,9 @@
     <MESSAGE value="FindBugs error report and corresponding fixes" />
     <MESSAGE value="Test stub for AbstractManifestController" />
     <MESSAGE value="Test for AbstractManifestController.processManofestFile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test for AbstractManifestController.processManofestFile" />
+    <MESSAGE value="Unit tests for AbstractManifestController completed." />
+    <MESSAGE value="Clean up build.xml; add PIT mutation testing to build.xml and add mutation report; add PIT dependency libraries to test_lib" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean up build.xml; add PIT mutation testing to build.xml and add mutation report; add PIT dependency libraries to test_lib" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
@@ -888,13 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="91" column="30" lean-forward="false" selection-start-line="91" selection-start-column="30" selection-end-line="91" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/excel/RowEssence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -986,13 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/config/CrcManifestProcessorConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Manifest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1790">
@@ -1011,7 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="43" column="52" lean-forward="false" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1019,7 +990,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,7 +997,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1079">
           <caret line="87" column="1" lean-forward="true" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,7 +1004,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="832">
           <caret line="72" column="52" lean-forward="false" selection-start-line="72" selection-start-column="52" selection-end-line="72" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1043,7 +1011,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1051,6 +1018,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
           <caret line="76" column="85" lean-forward="true" selection-start-line="76" selection-start-column="85" selection-end-line="76" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/config/CrcManifestProcessorConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="920">
+          <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="689">
+          <caret line="143" column="41" lean-forward="false" selection-start-line="143" selection-start-column="41" selection-end-line="143" selection-end-column="41" />
           <folding />
         </state>
       </provider>

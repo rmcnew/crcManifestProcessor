@@ -1,0 +1,2642 @@
+<!--
+  ~ Copyright (c) 2017 Richard Scott McNew.
+  ~
+  ~ This file is part of CRC Manifest Processor.
+  ~
+  ~     CRC Manifest Processor is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     CRC Manifest Processor is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<html>
+<head>
+    <style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+
+
+    </style>
+
+</head>
+<body>
+
+
+<h1>AbstractManifestTab.java</h1>
+
+<table class="src">
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_1'/>
+            1
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_1'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>/*</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_2'/>
+            2
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_2'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> * Copyright (c) 2011 Richard Scott McNew.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_3'/>
+            3
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_3'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_4'/>
+            4
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_4'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> * This file is part of CRC Manifest Processor.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_5'/>
+            5
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_5'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_6'/>
+            6
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_6'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''> *     CRC Manifest Processor is free software: you can redistribute it and/or modify</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_7'/>
+            7
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_7'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     it under the terms of the GNU General Public License as published by</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_8'/>
+            8
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_8'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     the Free Software Foundation, either version 3 of the License, or</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_9'/>
+            9
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_9'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     (at your option) any later version.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_10'/>
+            10
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_10'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_11'/>
+            11
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_11'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     CRC Manifest Processor is distributed in the hope that it will be useful,</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_12'/>
+            12
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_12'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     but WITHOUT ANY WARRANTY; without even the implied warranty of</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_13'/>
+            13
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_13'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_14'/>
+            14
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_14'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     GNU General Public License for more details.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_15'/>
+            15
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_15'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_16'/>
+            16
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_16'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     You should have received a copy of the GNU General Public License</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_17'/>
+            17
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_17'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     along with CRC Manifest Processor.  If not, see &#60;http://www.gnu.org/licenses/&#62;.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_18'/>
+            18
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_18'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> */</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_19'/>
+            19
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_19'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_20'/>
+            20
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_20'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>package com.starrypenguin.rmcnew.user_interface;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_21'/>
+            21
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_21'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_22'/>
+            22
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_22'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import com.starrypenguin.rmcnew.controller.AbstractManifestController;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_23'/>
+            23
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_23'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import com.starrypenguin.rmcnew.model.exception.SheetNotFoundException;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_24'/>
+            24
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_24'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import com.starrypenguin.rmcnew.shared.Util;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_25'/>
+            25
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_25'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_26'/>
+            26
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_26'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import javax.swing.*;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_27'/>
+            27
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_27'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import java.awt.*;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_28'/>
+            28
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_28'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import java.awt.event.ActionEvent;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_29'/>
+            29
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_29'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import java.awt.event.ActionListener;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_30'/>
+            30
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_30'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import java.io.File;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_31'/>
+            31
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_31'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_32'/>
+            32
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_32'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''>public class AbstractManifestTab extends JComponent implements ActionListener {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_33'/>
+            33
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_33'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_34'/>
+            34
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_34'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    protected static final String inputPrompt = &#34;Select Excel manifest file from CRC&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_35'/>
+            35
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_35'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    protected static final String outputPrompt = &#34;Select Output filename (.xlsx)&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_36'/>
+            36
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_36'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    protected static final String inputFilenameLabelBasis = &#34;Excel manifest file from CRC:  &#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_37'/>
+            37
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_37'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    protected static final String outputFilenameLabelBasis = &#34;Output filename:  &#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_38'/>
+            38
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_38'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''>    protected static final String errorMessageTitle = &#34;File Not Specified&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_39'/>
+            39
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_39'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    protected static final String inputErrorMessage = &#34;Please select the Excel manifest input file&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_40'/>
+            40
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_40'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    protected static final String outputErrorMessage = &#34;Please select the desired name for the output file&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_41'/>
+            41
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_41'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    protected String buttonText;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_42'/>
+            42
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_42'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    protected String successText;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_43'/>
+            43
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_43'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    protected AbstractManifestController controller;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_44'/>
+            44
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_44'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;protected File manifestInputFile = null;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_45'/>
+            45
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_45'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;protected File manifestOutputFile = null;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_46'/>
+            46
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_46'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_47'/>
+            47
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_47'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;protected JButton inputButton;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_48'/>
+            48
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_48'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;protected JButton outputButton;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_49'/>
+            49
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_49'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;protected JLabel inputFilenameLabel;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_50'/>
+            50
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_50'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;protected JLabel outputFilenameLabel;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_51'/>
+            51
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_51'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;protected JButton generateButton;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_52'/>
+            52
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_52'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_53'/>
+            53
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_53'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;protected JFileChooser inputFileChooser;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_54'/>
+            54
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_54'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;protected JFileChooser outputFileChooser;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_55'/>
+            55
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_55'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_56'/>
+            56
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_56'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;public AbstractManifestTab(String buttonText, String successText, AbstractManifestController controller) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_57'/>
+            57
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_57'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;this.buttonText = buttonText;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_58'/>
+            58
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_58'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        this.successText = successText;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_59'/>
+            59
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_59'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        this.controller = controller;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_60'/>
+            60
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_60'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        inputButton = new JButton(inputPrompt);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_61'/>
+            61
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_61'>1</a>
+<span>
+1. <init> : removed call to javax/swing/JButton::addActionListener &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;inputButton.addActionListener(this);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_62'/>
+            62
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_62'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;outputButton = new JButton(outputPrompt);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_63'/>
+            63
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_63'>1</a>
+<span>
+1. <init> : removed call to javax/swing/JButton::addActionListener &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;outputButton.addActionListener(this);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_64'/>
+            64
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_64'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;inputFilenameLabel = new JLabel(inputFilenameLabelBasis);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_65'/>
+            65
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_65'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;outputFilenameLabel = new JLabel(outputFilenameLabelBasis);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_66'/>
+            66
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_66'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;generateButton = new JButton(buttonText);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_67'/>
+            67
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_67'>1</a>
+<span>
+1. <init> : removed call to javax/swing/JButton::addActionListener &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;generateButton.addActionListener(this);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_68'/>
+            68
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_68'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_69'/>
+            69
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_69'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;inputFileChooser = new JFileChooser();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_70'/>
+            70
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_70'>1</a>
+<span>
+1. <init> : removed call to javax/swing/JFileChooser::setDialogTitle &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;inputFileChooser.setDialogTitle(inputPrompt);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_71'/>
+            71
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_71'>1</a>
+<span>
+1. <init> : removed call to javax/swing/JFileChooser::setDialogType &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;inputFileChooser.setDialogType(JFileChooser.OPEN_DIALOG);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_72'/>
+            72
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_72'>1</a>
+<span>
+1. <init> : removed call to javax/swing/JFileChooser::setFileFilter &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;inputFileChooser.setFileFilter(Util.EXCEL_FILTER);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_73'/>
+            73
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_73'>1</a>
+<span>
+1. <init> : removed call to javax/swing/JFileChooser::setFileSelectionMode &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span
+                    class='survived'>&#9;&#9;inputFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_74'/>
+            74
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_74'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;outputFileChooser = new JFileChooser();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_75'/>
+            75
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_75'>1</a>
+<span>
+1. <init> : removed call to javax/swing/JFileChooser::setDialogTitle &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;outputFileChooser.setDialogTitle(outputPrompt);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_76'/>
+            76
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_76'>1</a>
+<span>
+1. <init> : removed call to javax/swing/JFileChooser::setDialogType &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;outputFileChooser.setDialogType(JFileChooser.SAVE_DIALOG);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_77'/>
+            77
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_77'>1</a>
+<span>
+1. <init> : removed call to javax/swing/JFileChooser::setFileSelectionMode &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;outputFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_78'/>
+            78
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_78'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_79'/>
+            79
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_79'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;&#9;// UI layout</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_80'/>
+            80
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_80'>1</a>
+<span>
+1. <init> : removed call to com/starrypenguin/rmcnew/user_interface/AbstractManifestTab::setLayout &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_81'/>
+            81
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_81'>1</a>
+<span>
+1. <init> : removed call to com/starrypenguin/rmcnew/user_interface/AbstractManifestTab::setMinimumSize &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;this.setMinimumSize(new Dimension(300,200));</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_82'/>
+            82
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_82'>1</a>
+<span>
+1. <init> : removed call to com/starrypenguin/rmcnew/user_interface/AbstractManifestTab::setPreferredSize &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;this.setPreferredSize(new Dimension(300, 200));</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_83'/>
+            83
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_83'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;this.add(inputButton);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_84'/>
+            84
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_84'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;this.add(inputFilenameLabel);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_85'/>
+            85
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_85'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;this.add(Box.createRigidArea(new Dimension(5, 20)));</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_86'/>
+            86
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_86'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;this.add(outputButton);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_87'/>
+            87
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_87'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;this.add(outputFilenameLabel);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_88'/>
+            88
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_88'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;this.add(Box.createRigidArea(new Dimension(5,35)));</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_89'/>
+            89
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_89'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;this.add(generateButton);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_90'/>
+            90
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_90'>1</a>
+<span>
+1. <init> : removed call to com/starrypenguin/rmcnew/user_interface/AbstractManifestTab::setVisible &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;this.setVisible(true);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_91'/>
+            91
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_91'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;}</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_92'/>
+            92
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_92'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_93'/>
+            93
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_93'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;@Override</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_94'/>
+            94
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_94'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;public void actionPerformed(ActionEvent actionEvent) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_95'/>
+            95
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_95'>1</a>
+<span>
+1. actionPerformed : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;if (actionEvent.getSource() == inputButton) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_96'/>
+            96
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_96'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span
+                    class=''>&#9;&#9;&#9;int returnValue = inputFileChooser.showOpenDialog(AbstractManifestTab.this);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_97'/>
+            97
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_97'>1</a>
+<span>
+1. actionPerformed : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;&#9;if (returnValue == JFileChooser.APPROVE_OPTION) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_98'/>
+            98
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_98'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;&#9;&#9;manifestInputFile = inputFileChooser.getSelectedFile();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_99'/>
+            99
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_99'>1</a>
+<span>
+1. actionPerformed : removed call to javax/swing/JLabel::setText &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;&#9;&#9;inputFilenameLabel.setText(inputFilenameLabelBasis + manifestInputFile.getName());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_100'/>
+            100
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_100'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;&#9;&#9;}</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_101'/>
+            101
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_101'>1</a>
+<span>
+1. actionPerformed : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;} else if (actionEvent.getSource() == outputButton) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_102'/>
+            102
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_102'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;&#9;int returnValue = outputFileChooser.showSaveDialog(AbstractManifestTab.this);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_103'/>
+            103
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_103'>1</a>
+<span>
+1. actionPerformed : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;&#9;if (returnValue == JFileChooser.APPROVE_OPTION) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_104'/>
+            104
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_104'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;&#9;&#9;&#9;manifestOutputFile = outputFileChooser.getSelectedFile();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_105'/>
+            105
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_105'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                manifestOutputFile = Util.attachXlsxExtensionIfMissing(manifestOutputFile);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_106'/>
+            106
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_106'>1</a>
+<span>
+1. actionPerformed : removed call to javax/swing/JLabel::setText &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;&#9;&#9;outputFilenameLabel.setText(outputFilenameLabelBasis + manifestOutputFile.getName());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_107'/>
+            107
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_107'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;&#9;&#9;}</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_108'/>
+            108
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_108'>1</a>
+<span>
+1. actionPerformed : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;} else if (actionEvent.getSource() == generateButton) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_109'/>
+            109
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_109'>1</a>
+<span>
+1. actionPerformed : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;&#9;if (manifestInputFile == null) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_110'/>
+            110
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_110'>1</a>
+<span>
+1. actionPerformed : removed call to javax/swing/JOptionPane::showMessageDialog &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;&#9;&#9;JOptionPane.showMessageDialog(this, inputErrorMessage, errorMessageTitle, JOptionPane.ERROR_MESSAGE);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_111'/>
+            111
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_111'>1</a>
+<span>
+1. actionPerformed : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;&#9;} else if (manifestOutputFile == null) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_112'/>
+            112
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_112'>1</a>
+<span>
+1. actionPerformed : removed call to javax/swing/JOptionPane::showMessageDialog &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;&#9;&#9;JOptionPane.showMessageDialog(this, outputErrorMessage, errorMessageTitle, JOptionPane.ERROR_MESSAGE);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_113'/>
+            113
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_113'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;&#9;&#9;} else {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_114'/>
+            114
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_114'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>                try {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_115'/>
+            115
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_115'>1</a>
+<span>
+1. actionPerformed : removed call to com/starrypenguin/rmcnew/controller/AbstractManifestController::runWorkflow &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;&#9;&#9;    controller.runWorkflow(manifestInputFile, manifestOutputFile);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_116'/>
+            116
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_116'>1</a>
+<span>
+1. actionPerformed : removed call to javax/swing/JOptionPane::showMessageDialog &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>&#9;&#9;&#9;&#9;    JOptionPane.showMessageDialog(this, successText, &#34;Success!&#34;, JOptionPane.PLAIN_MESSAGE);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_117'/>
+            117
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_117'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                } catch (SheetNotFoundException snfe) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_118'/>
+            118
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_118'>1</a>
+<span>
+1. actionPerformed : removed call to javax/swing/JOptionPane::showMessageDialog &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>                    JOptionPane.showMessageDialog(this, snfe.getMessage(), snfe.getClass().getName(), JOptionPane.ERROR_MESSAGE);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_119'/>
+            119
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_119'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                } catch (Exception e) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_120'/>
+            120
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_120'>1</a>
+<span>
+1. actionPerformed : removed call to javax/swing/JOptionPane::showMessageDialog &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>                    JOptionPane.showMessageDialog(this, e+&#34;\n&#34;+ Util.convertStackTraceToString(e.getStackTrace()), e.getClass().getName(), JOptionPane.ERROR_MESSAGE);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_121'/>
+            121
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_121'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_122'/>
+            122
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_122'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;&#9;&#9;}</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_123'/>
+            123
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_123'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>&#9;&#9;}</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_124'/>
+            124
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_124'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>&#9;}</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7f9e8421_125'/>
+            125
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_125'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>}</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td><h2>Mutations</h2></td>
+    </tr>
+
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_61'>61</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_61'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JButton::addActionListener &rarr; NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_63'>63</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_63'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JButton::addActionListener &rarr; NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_67'>67</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_67'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JButton::addActionListener &rarr; NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_70'>70</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_70'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JFileChooser::setDialogTitle &rarr; NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_71'>71</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_71'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JFileChooser::setDialogType &rarr; NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_72'>72</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_72'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JFileChooser::setFileFilter &rarr; NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_73'>73</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_73'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JFileChooser::setFileSelectionMode &rarr; NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_75'>75</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_75'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JFileChooser::setDialogTitle &rarr; NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_76'>76</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_76'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JFileChooser::setDialogType &rarr; NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_77'>77</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_77'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JFileChooser::setFileSelectionMode &rarr; NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_80'>80</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_80'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to com/starrypenguin/rmcnew/user_interface/AbstractManifestTab::setLayout &rarr;
+                NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_81'>81</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_81'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to com/starrypenguin/rmcnew/user_interface/AbstractManifestTab::setMinimumSize &rarr;
+                NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_82'>82</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_82'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to com/starrypenguin/rmcnew/user_interface/AbstractManifestTab::setPreferredSize &rarr;
+                NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_90'>90</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_90'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span>
+                removed call to com/starrypenguin/rmcnew/user_interface/AbstractManifestTab::setVisible &rarr;
+                NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_95'>95</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_95'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_97'>97</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_97'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_99'>99</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_99'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JLabel::setText &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_101'>101</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_101'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_103'>103</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_103'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_106'>106</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_106'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JLabel::setText &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_108'>108</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_108'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_109'>109</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_109'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_110'>110</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_110'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JOptionPane::showMessageDialog &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_111'>111</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_111'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_112'>112</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_112'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JOptionPane::showMessageDialog &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_115'>115</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_115'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                removed call to com/starrypenguin/rmcnew/controller/AbstractManifestController::runWorkflow &rarr;
+                NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_116'>116</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_116'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JOptionPane::showMessageDialog &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_118'>118</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_118'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JOptionPane::showMessageDialog &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7f9e8421_120'>120</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7f9e8421_120'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>actionPerformed<br/><b>Killed by : </b>none</span></span>
+                removed call to javax/swing/JOptionPane::showMessageDialog &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+    <li class='mutator'>INCREMENTS_MUTATOR</li>
+    <li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+    <li class='mutator'>RETURN_VALS_MUTATOR</li>
+    <li class='mutator'>MATH_MUTATOR</li>
+    <li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+    <li class='mutator'>INVERT_NEGS_MUTATOR</li>
+    <li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.2.2
+
+</body>
+</html>

@@ -1,0 +1,978 @@
+<!--
+  ~ Copyright (c) 2017 Richard Scott McNew.
+  ~
+  ~ This file is part of CRC Manifest Processor.
+  ~
+  ~     CRC Manifest Processor is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     CRC Manifest Processor is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<html>
+<head>
+    <style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+
+
+    </style>
+
+</head>
+<body>
+
+
+<h1>KuwaitQatarSingleHub.java</h1>
+
+<table class="src">
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_1'/>
+            1
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_1'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>/*</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_2'/>
+            2
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_2'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> * Copyright (c) 2011 Richard Scott McNew.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_3'/>
+            3
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_3'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_4'/>
+            4
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_4'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> * This file is part of CRC Manifest Processor.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_5'/>
+            5
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_5'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_6'/>
+            6
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_6'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''> *     CRC Manifest Processor is free software: you can redistribute it and/or modify</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_7'/>
+            7
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_7'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     it under the terms of the GNU General Public License as published by</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_8'/>
+            8
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_8'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     the Free Software Foundation, either version 3 of the License, or</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_9'/>
+            9
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_9'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     (at your option) any later version.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_10'/>
+            10
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_10'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_11'/>
+            11
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_11'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     CRC Manifest Processor is distributed in the hope that it will be useful,</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_12'/>
+            12
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_12'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     but WITHOUT ANY WARRANTY; without even the implied warranty of</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_13'/>
+            13
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_13'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_14'/>
+            14
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_14'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     GNU General Public License for more details.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_15'/>
+            15
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_15'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_16'/>
+            16
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_16'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     You should have received a copy of the GNU General Public License</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_17'/>
+            17
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_17'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     along with CRC Manifest Processor.  If not, see &#60;http://www.gnu.org/licenses/&#62;.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_18'/>
+            18
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_18'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> */</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_19'/>
+            19
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_19'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_20'/>
+            20
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_20'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>package com.starrypenguin.rmcnew.business_rule;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_21'/>
+            21
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_21'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_22'/>
+            22
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_22'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import com.starrypenguin.rmcnew.model.data.Record;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_23'/>
+            23
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_23'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import com.starrypenguin.rmcnew.shared.Constants;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_24'/>
+            24
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_24'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_25'/>
+            25
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_25'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>public class KuwaitQatarSingleHub {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_26'/>
+            26
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_26'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    /**</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_27'/>
+            27
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_27'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''>     * Kuwait and Qatar both have single hubs.  If the destination is UNKNOWN or the</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_28'/>
+            28
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_28'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''>     * hub is NOT_FOUND and the country is Kuwait, make the hub ALI AL SALEM.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_29'/>
+            29
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_29'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''>     * If the destination is UNKNOWN or the hub is NOT_FOUND and the country is</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_30'/>
+            30
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_30'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>     * Qatar, make the hub AL UDEID.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_31'/>
+            31
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_31'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>     * @param record the record to which the business rule is applied</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_32'/>
+            32
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_32'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>     */</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_33'/>
+            33
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_33'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static void applyRule(Record record) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_34'/>
+            34
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_34'>1</a>
+<span>
+1. applyRule : negated conditional &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>        if (record != null) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_35'/>
+            35
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_35'>2</a>
+<span>
+1. applyRule : negated conditional &rarr; KILLED<br/>
+2. applyRule : negated conditional &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>            if ((record.getFinalDestination().equalsIgnoreCase(Constants.UNKNOWN)) || record.getHub().equalsIgnoreCase(Constants.NOT_FOUND)) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_36'/>
+            36
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_36'>1</a>
+<span>
+1. applyRule : negated conditional &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span
+                    class='killed'>                if (record.getCountry().equalsIgnoreCase(Constants.KUWAIT)) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_37'/>
+            37
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_37'>1</a>
+<span>
+1. applyRule : removed call to com/starrypenguin/rmcnew/model/data/Record::setHub &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>                    record.setHub(Constants.ALI_AL_SALEM);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_38'/>
+            38
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_38'>1</a>
+<span>
+1. applyRule : negated conditional &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>                } else if (record.getCountry().equalsIgnoreCase(Constants.QATAR)) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_39'/>
+            39
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_39'>1</a>
+<span>
+1. applyRule : removed call to com/starrypenguin/rmcnew/model/data/Record::setHub &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>                    record.setHub(Constants.AL_UDEID);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_40'/>
+            40
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_40'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>                }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_41'/>
+            41
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_41'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_42'/>
+            42
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_42'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_43'/>
+            43
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_43'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@58f31629_44'/>
+            44
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_44'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>}</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td><h2>Mutations</h2></td>
+    </tr>
+
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@58f31629_34'>34</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_34'/>
+
+            <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>applyRule<br/><b>Killed by : </b>com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleApplied2(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@58f31629_35'>35</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_35'/>
+
+            <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>applyRule<br/><b>Killed by : </b>com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleApplied3(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+            <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>applyRule<br/><b>Killed by : </b>com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleApplied2(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@58f31629_36'>36</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_36'/>
+
+            <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>applyRule<br/><b>Killed by : </b>com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleApplied2(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@58f31629_37'>37</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_37'/>
+
+            <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>applyRule<br/><b>Killed by : </b>com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleApplied2(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)</span></span>
+                removed call to com/starrypenguin/rmcnew/model/data/Record::setHub &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@58f31629_38'>38</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_38'/>
+
+            <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>applyRule<br/><b>Killed by : </b>com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleApplied3(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@58f31629_39'>39</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@58f31629_39'/>
+
+            <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>applyRule<br/><b>Killed by : </b>com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleApplied3(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)</span></span>
+                removed call to com/starrypenguin/rmcnew/model/data/Record::setHub &rarr; KILLED</p>
+        </td>
+    </tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+    <li class='mutator'>INCREMENTS_MUTATOR</li>
+    <li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+    <li class='mutator'>RETURN_VALS_MUTATOR</li>
+    <li class='mutator'>MATH_MUTATOR</li>
+    <li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+    <li class='mutator'>INVERT_NEGS_MUTATOR</li>
+    <li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleApplied2(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)
+        (1 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleApplied3(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)
+        (1 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleApplied4(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)
+        (1 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleNotApplied2(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)
+        (2 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleApplied(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)
+        (2 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest.processManifestFileTest(com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest)
+        (445 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest.TestBusinessRuleNotApplied(com.starrypenguin.rmcnew.business_rule.KuwaitQatarSingleHubTest)
+        (1 ms)
+    </li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.2.2
+
+</body>
+</html>

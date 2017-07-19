@@ -1,0 +1,2720 @@
+<!--
+  ~ Copyright (c) 2017 Richard Scott McNew.
+  ~
+  ~ This file is part of CRC Manifest Processor.
+  ~
+  ~     CRC Manifest Processor is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     CRC Manifest Processor is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<html>
+<head>
+    <style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+
+
+    </style>
+
+</head>
+<body>
+
+
+<h1>FontEssence.java</h1>
+
+<table class="src">
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_1'/>
+            1
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_1'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>/*</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_2'/>
+            2
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_2'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> * Copyright (c) 2011 Richard Scott McNew.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_3'/>
+            3
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_3'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_4'/>
+            4
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_4'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> * This file is part of CRC Manifest Processor.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_5'/>
+            5
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_5'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_6'/>
+            6
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_6'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''> *     CRC Manifest Processor is free software: you can redistribute it and/or modify</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_7'/>
+            7
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_7'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     it under the terms of the GNU General Public License as published by</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_8'/>
+            8
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_8'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     the Free Software Foundation, either version 3 of the License, or</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_9'/>
+            9
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_9'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     (at your option) any later version.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_10'/>
+            10
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_10'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_11'/>
+            11
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_11'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     CRC Manifest Processor is distributed in the hope that it will be useful,</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_12'/>
+            12
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_12'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     but WITHOUT ANY WARRANTY; without even the implied warranty of</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_13'/>
+            13
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_13'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_14'/>
+            14
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_14'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     GNU General Public License for more details.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_15'/>
+            15
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_15'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_16'/>
+            16
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_16'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     You should have received a copy of the GNU General Public License</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_17'/>
+            17
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_17'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     along with CRC Manifest Processor.  If not, see &#60;http://www.gnu.org/licenses/&#62;.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_18'/>
+            18
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_18'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> */</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_19'/>
+            19
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_19'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_20'/>
+            20
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_20'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>package com.starrypenguin.rmcnew.model.excel;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_21'/>
+            21
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_21'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_22'/>
+            22
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_22'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import org.apache.poi.ss.usermodel.FontCharset;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_23'/>
+            23
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_23'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import org.apache.poi.ss.usermodel.FontFamily;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_24'/>
+            24
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_24'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import org.apache.poi.ss.usermodel.FontUnderline;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_25'/>
+            25
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_25'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import org.apache.poi.xssf.usermodel.XSSFColor;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_26'/>
+            26
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_26'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import org.apache.poi.xssf.usermodel.XSSFFont;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_27'/>
+            27
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_27'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import org.apache.poi.xssf.usermodel.XSSFWorkbook;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_28'/>
+            28
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_28'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_29'/>
+            29
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_29'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>// formatting data that will be used to create a XSSFFont</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_30'/>
+            30
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_30'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>public class FontEssence {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_31'/>
+            31
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_31'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_32'/>
+            32
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_32'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static final String MS_FONT_CALIBRI = &#34;Calibri&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_33'/>
+            33
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_33'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static final String MS_FONT_CAMBRIA = &#34;Cambria&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_34'/>
+            34
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_34'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static final String MS_FONT_ARIAL = &#34;Arial&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_35'/>
+            35
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_35'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static final String MS_FONT_BOOKMAN_OLD = &#34;Bookman Old Style&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_36'/>
+            36
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_36'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static final String MS_FONT_COPPERPLATE_GOTHIC_BOLD = &#34;Copperplate Gothic Bold&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_37'/>
+            37
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_37'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static final String MS_FONT_COURIER_NEW = &#34;Courier New&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_38'/>
+            38
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_38'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static final String MS_FONT_IMPACT = &#34;Impact&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_39'/>
+            39
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_39'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static final String MS_FONT_TAHOMA = &#34;Tahoma&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_40'/>
+            40
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_40'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''>    public static final String MS_FONT_TIMES_NEW_ROMAN = &#34;Times New Roman&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_41'/>
+            41
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_41'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static final String MS_FONT_VERDANA = &#34;Verdana&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_42'/>
+            42
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_42'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_43'/>
+            43
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_43'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    private FontFamily fontFamily;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_44'/>
+            44
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_44'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    private XSSFColor color;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_45'/>
+            45
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_45'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    private boolean bold;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_46'/>
+            46
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_46'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    private boolean italic;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_47'/>
+            47
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_47'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    private boolean underline;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_48'/>
+            48
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_48'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    private boolean strikeout;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_49'/>
+            49
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_49'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    private String fontName;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_50'/>
+            50
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_50'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    private short fontHeightInPoints;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_51'/>
+            51
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_51'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_52'/>
+            52
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_52'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    public FontEssence() {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_53'/>
+            53
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_53'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_54'/>
+            54
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_54'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_55'/>
+            55
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_55'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public FontFamily getFontFamily() {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_56'/>
+            56
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_56'>1</a>
+<span>
+1. getFontFamily : mutated return of Object value for com/starrypenguin/rmcnew/model/excel/FontEssence::getFontFamily to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        return fontFamily;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_57'/>
+            57
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_57'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_58'/>
+            58
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_58'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_59'/>
+            59
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_59'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public void setFontFamily(FontFamily fontFamily) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_60'/>
+            60
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_60'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        this.fontFamily = fontFamily;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_61'/>
+            61
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_61'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_62'/>
+            62
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_62'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_63'/>
+            63
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_63'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public XSSFColor getColor() {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_64'/>
+            64
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_64'>1</a>
+<span>
+1. getColor : mutated return of Object value for com/starrypenguin/rmcnew/model/excel/FontEssence::getColor to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        return color;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_65'/>
+            65
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_65'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_66'/>
+            66
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_66'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_67'/>
+            67
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_67'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public void setColor(XSSFColor color) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_68'/>
+            68
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_68'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        this.color = color;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_69'/>
+            69
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_69'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_70'/>
+            70
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_70'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_71'/>
+            71
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_71'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public boolean isBold() {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_72'/>
+            72
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_72'>1</a>
+<span>
+1. isBold : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        return bold;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_73'/>
+            73
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_73'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_74'/>
+            74
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_74'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_75'/>
+            75
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_75'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public void setBold(boolean bold) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_76'/>
+            76
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_76'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        this.bold = bold;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_77'/>
+            77
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_77'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_78'/>
+            78
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_78'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_79'/>
+            79
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_79'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public boolean isItalic() {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_80'/>
+            80
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_80'>1</a>
+<span>
+1. isItalic : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        return italic;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_81'/>
+            81
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_81'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_82'/>
+            82
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_82'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_83'/>
+            83
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_83'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public void setItalic(boolean italic) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_84'/>
+            84
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_84'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        this.italic = italic;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_85'/>
+            85
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_85'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_86'/>
+            86
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_86'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_87'/>
+            87
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_87'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public boolean isUnderline() {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_88'/>
+            88
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_88'>1</a>
+<span>
+1. isUnderline : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        return underline;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_89'/>
+            89
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_89'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_90'/>
+            90
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_90'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_91'/>
+            91
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_91'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public void setUnderline(boolean underline) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_92'/>
+            92
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_92'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        this.underline = underline;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_93'/>
+            93
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_93'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_94'/>
+            94
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_94'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_95'/>
+            95
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_95'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public boolean isStrikeout() {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_96'/>
+            96
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_96'>1</a>
+<span>
+1. isStrikeout : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        return strikeout;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_97'/>
+            97
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_97'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_98'/>
+            98
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_98'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_99'/>
+            99
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_99'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public void setStrikeout(boolean strikeout) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_100'/>
+            100
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_100'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        this.strikeout = strikeout;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_101'/>
+            101
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_101'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_102'/>
+            102
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_102'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_103'/>
+            103
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_103'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public String getFontName() {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_104'/>
+            104
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_104'>1</a>
+<span>
+1. getFontName : mutated return of Object value for com/starrypenguin/rmcnew/model/excel/FontEssence::getFontName to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        return fontName;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_105'/>
+            105
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_105'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_106'/>
+            106
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_106'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_107'/>
+            107
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_107'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public void setFontName(String fontName) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_108'/>
+            108
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_108'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        this.fontName = fontName;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_109'/>
+            109
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_109'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_110'/>
+            110
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_110'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_111'/>
+            111
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_111'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public short getFontHeightInPoints() {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_112'/>
+            112
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_112'>1</a>
+<span>
+1. getFontHeightInPoints : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        return fontHeightInPoints;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_113'/>
+            113
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_113'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_114'/>
+            114
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_114'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_115'/>
+            115
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_115'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public void setFontHeightInPoints(short fontHeightInPoints) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_116'/>
+            116
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_116'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        this.fontHeightInPoints = fontHeightInPoints;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_117'/>
+            117
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_117'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_118'/>
+            118
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_118'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_119'/>
+            119
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_119'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public XSSFFont toXSSFFont(XSSFWorkbook workbook) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_120'/>
+            120
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_120'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        XSSFFont xssfFont = null;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_121'/>
+            121
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_121'>1</a>
+<span>
+1. toXSSFFont : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        if (workbook != null) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_122'/>
+            122
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_122'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            xssfFont = workbook.createFont();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_123'/>
+            123
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_123'>1</a>
+<span>
+1. toXSSFFont : removed call to org/apache/poi/xssf/usermodel/XSSFFont::setCharSet &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>            xssfFont.setCharSet(FontCharset.DEFAULT);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_124'/>
+            124
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_124'>1</a>
+<span>
+1. toXSSFFont : removed call to org/apache/poi/xssf/usermodel/XSSFFont::setFamily &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>            xssfFont.setFamily(this.fontFamily);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_125'/>
+            125
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_125'>1</a>
+<span>
+1. toXSSFFont : removed call to org/apache/poi/xssf/usermodel/XSSFFont::setBold &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>            xssfFont.setBold(this.bold);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_126'/>
+            126
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_126'>1</a>
+<span>
+1. toXSSFFont : removed call to org/apache/poi/xssf/usermodel/XSSFFont::setItalic &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>            xssfFont.setItalic(this.italic);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_127'/>
+            127
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_127'>1</a>
+<span>
+1. toXSSFFont : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>            if (this.underline) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_128'/>
+            128
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_128'>1</a>
+<span>
+1. toXSSFFont : removed call to org/apache/poi/xssf/usermodel/XSSFFont::setUnderline &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>                xssfFont.setUnderline(FontUnderline.SINGLE);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_129'/>
+            129
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_129'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_130'/>
+            130
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_130'>1</a>
+<span>
+1. toXSSFFont : removed call to org/apache/poi/xssf/usermodel/XSSFFont::setStrikeout &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>            xssfFont.setStrikeout(this.strikeout);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_131'/>
+            131
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_131'>1</a>
+<span>
+1. toXSSFFont : removed call to org/apache/poi/xssf/usermodel/XSSFFont::setColor &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>            xssfFont.setColor(this.color);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_132'/>
+            132
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_132'>1</a>
+<span>
+1. toXSSFFont : removed call to org/apache/poi/xssf/usermodel/XSSFFont::setFontHeightInPoints &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span
+                    class='survived'>            xssfFont.setFontHeightInPoints(this.fontHeightInPoints);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_133'/>
+            133
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_133'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        } else {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_134'/>
+            134
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_134'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            throw new IllegalArgumentException(&#34;Cannot create XSSFFont in a null XSSFWorkbook!&#34;);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_135'/>
+            135
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_135'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_136'/>
+            136
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_136'>1</a>
+<span>
+1. toXSSFFont : mutated return of Object value for com/starrypenguin/rmcnew/model/excel/FontEssence::toXSSFFont to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        return xssfFont;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_137'/>
+            137
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_137'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@32d418a9_138'/>
+            138
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_138'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>}</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td><h2>Mutations</h2></td>
+    </tr>
+
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_56'>56</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_56'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getFontFamily<br/><b>Killed by : </b>none</span></span>
+                mutated return of Object value for com/starrypenguin/rmcnew/model/excel/FontEssence::getFontFamily to (
+                if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_64'>64</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_64'/>
+
+            <p class='NO_COVERAGE'><span
+                    class='pop'>1.<span><b>1</b><br/><b>Location : </b>getColor<br/><b>Killed by : </b>none</span></span>
+                mutated return of Object value for com/starrypenguin/rmcnew/model/excel/FontEssence::getColor to ( if (x
+                != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_72'>72</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_72'/>
+
+            <p class='NO_COVERAGE'><span
+                    class='pop'>1.<span><b>1</b><br/><b>Location : </b>isBold<br/><b>Killed by : </b>none</span></span>
+                replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_80'>80</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_80'/>
+
+            <p class='NO_COVERAGE'><span
+                    class='pop'>1.<span><b>1</b><br/><b>Location : </b>isItalic<br/><b>Killed by : </b>none</span></span>
+                replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_88'>88</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_88'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isUnderline<br/><b>Killed by : </b>none</span></span>
+                replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_96'>96</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_96'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isStrikeout<br/><b>Killed by : </b>none</span></span>
+                replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_104'>104</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_104'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getFontName<br/><b>Killed by : </b>none</span></span>
+                mutated return of Object value for com/starrypenguin/rmcnew/model/excel/FontEssence::getFontName to ( if
+                (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_112'>112</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_112'/>
+
+            <p class='NO_COVERAGE'><span
+                    class='pop'>1.<span><b>1</b><br/><b>Location : </b>getFontHeightInPoints<br/><b>Killed by : </b>none</span></span>
+                replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_121'>121</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_121'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toXSSFFont<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_123'>123</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_123'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toXSSFFont<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFFont::setCharSet &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_124'>124</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_124'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toXSSFFont<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFFont::setFamily &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_125'>125</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_125'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toXSSFFont<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFFont::setBold &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_126'>126</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_126'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toXSSFFont<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFFont::setItalic &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_127'>127</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_127'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toXSSFFont<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_128'>128</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_128'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toXSSFFont<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFFont::setUnderline &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_130'>130</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_130'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toXSSFFont<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFFont::setStrikeout &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_131'>131</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_131'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toXSSFFont<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFFont::setColor &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_132'>132</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_132'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toXSSFFont<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFFont::setFontHeightInPoints &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@32d418a9_136'>136</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@32d418a9_136'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toXSSFFont<br/><b>Killed by : </b>none</span></span>
+                mutated return of Object value for com/starrypenguin/rmcnew/model/excel/FontEssence::toXSSFFont to ( if
+                (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+    <li class='mutator'>INCREMENTS_MUTATOR</li>
+    <li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+    <li class='mutator'>RETURN_VALS_MUTATOR</li>
+    <li class='mutator'>MATH_MUTATOR</li>
+    <li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+    <li class='mutator'>INVERT_NEGS_MUTATOR</li>
+    <li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.2.2
+
+</body>
+</html>

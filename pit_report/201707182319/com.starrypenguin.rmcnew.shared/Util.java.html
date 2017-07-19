@@ -1,0 +1,4379 @@
+<!--
+  ~ Copyright (c) 2017 Richard Scott McNew.
+  ~
+  ~ This file is part of CRC Manifest Processor.
+  ~
+  ~     CRC Manifest Processor is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     CRC Manifest Processor is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<html>
+<head>
+    <style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src {
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+
+
+    </style>
+
+</head>
+<body>
+
+
+<h1>Util.java</h1>
+
+<table class="src">
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_1'/>
+            1
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_1'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>/*</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_2'/>
+            2
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_2'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> * Copyright (c) 2011 Richard Scott McNew.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_3'/>
+            3
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_3'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_4'/>
+            4
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_4'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> * This file is part of CRC Manifest Processor.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_5'/>
+            5
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_5'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_6'/>
+            6
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_6'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''> *     CRC Manifest Processor is free software: you can redistribute it and/or modify</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_7'/>
+            7
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_7'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     it under the terms of the GNU General Public License as published by</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_8'/>
+            8
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_8'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     the Free Software Foundation, either version 3 of the License, or</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_9'/>
+            9
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_9'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     (at your option) any later version.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_10'/>
+            10
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_10'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_11'/>
+            11
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_11'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     CRC Manifest Processor is distributed in the hope that it will be useful,</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_12'/>
+            12
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_12'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     but WITHOUT ANY WARRANTY; without even the implied warranty of</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_13'/>
+            13
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_13'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_14'/>
+            14
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_14'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     GNU General Public License for more details.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_15'/>
+            15
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_15'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_16'/>
+            16
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_16'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     You should have received a copy of the GNU General Public License</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_17'/>
+            17
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_17'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> *     along with CRC Manifest Processor.  If not, see &#60;http://www.gnu.org/licenses/&#62;.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_18'/>
+            18
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_18'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''> */</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_19'/>
+            19
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_19'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_20'/>
+            20
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_20'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>package com.starrypenguin.rmcnew.shared;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_21'/>
+            21
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_21'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_22'/>
+            22
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_22'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import org.apache.poi.ss.usermodel.Cell;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_23'/>
+            23
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_23'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import org.apache.poi.ss.usermodel.CellType;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_24'/>
+            24
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_24'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import org.apache.poi.ss.usermodel.DateUtil;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_25'/>
+            25
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_25'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import org.apache.poi.ss.usermodel.Row;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_26'/>
+            26
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_26'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import org.apache.poi.xssf.usermodel.*;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_27'/>
+            27
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_27'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_28'/>
+            28
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_28'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import javax.swing.filechooser.FileNameExtensionFilter;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_29'/>
+            29
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_29'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import java.io.File;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_30'/>
+            30
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_30'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import java.util.regex.Matcher;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_31'/>
+            31
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_31'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>import java.util.regex.Pattern;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_32'/>
+            32
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_32'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_33'/>
+            33
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_33'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>public class Util {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_34'/>
+            34
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_34'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_35'/>
+            35
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_35'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class=''>    public static final FileNameExtensionFilter EXCEL_FILTER = new FileNameExtensionFilter(&#34;Excel spreadsheets&#34;, &#34;xlsx&#34;, &#34;xls&#34;, &#34;XLSX&#34;, &#34;XLS&#34;);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_36'/>
+            36
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_36'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static final String LOCATION_REGEX = &#34;^CAMP|^COB|^FOB|^COP|^FB|^ABP|^PB|^FORWARD OPERATING BASE|^FIRE BASE|^COMBAT OUTPOST|^ANP|^OP|^VSO|^VSP|^RCC|ANP$|AFLD$|AFB$|DC$|OP$|PRT$|AIRBASE$|AIR BASE$|AIRFIELD$|AIR FIELD$&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_37'/>
+            37
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_37'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span
+                    class=''>    public static final Pattern locationPattern = Pattern.compile(LOCATION_REGEX);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_38'/>
+            38
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_38'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_39'/>
+            39
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_39'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static boolean notNullAndNotEmpty(String string) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_40'/>
+            40
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_40'>3</a>
+<span>
+1. notNullAndNotEmpty : negated conditional &rarr; KILLED<br/>
+2. notNullAndNotEmpty : negated conditional &rarr; KILLED<br/>
+3. notNullAndNotEmpty : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>        return (string != null &#38;&#38; !string.isEmpty());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_41'/>
+            41
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_41'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_42'/>
+            42
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_42'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_43'/>
+            43
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_43'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static boolean nullOrEmpty(String string) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_44'/>
+            44
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_44'>3</a>
+<span>
+1. nullOrEmpty : negated conditional &rarr; KILLED<br/>
+2. nullOrEmpty : negated conditional &rarr; KILLED<br/>
+3. nullOrEmpty : replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>        return (string == null || string.isEmpty());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_45'/>
+            45
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_45'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_46'/>
+            46
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_46'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_47'/>
+            47
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_47'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static String convertStackTraceToString(StackTraceElement[] stackTraceElements) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_48'/>
+            48
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_48'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        StringBuilder builder = new StringBuilder(&#34;&#34;);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_49'/>
+            49
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_49'>1</a>
+<span>
+1. convertStackTraceToString : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        if (stackTraceElements != null) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_50'/>
+            50
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_50'>3</a>
+<span>
+1. convertStackTraceToString : changed conditional boundary &rarr; NO_COVERAGE<br/>
+2. convertStackTraceToString : Changed increment from 1 to -1 &rarr; NO_COVERAGE<br/>
+3. convertStackTraceToString : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>            for (StackTraceElement element : stackTraceElements) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_51'/>
+            51
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_51'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                builder.append(&#34;\t&#34;);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_52'/>
+            52
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_52'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                builder.append(element.toString());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_53'/>
+            53
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_53'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                builder.append(&#34;\n&#34;);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_54'/>
+            54
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_54'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_55'/>
+            55
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_55'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_56'/>
+            56
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_56'>1</a>
+<span>
+1. convertStackTraceToString : mutated return of Object value for com/starrypenguin/rmcnew/shared/Util::convertStackTraceToString to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        return builder.toString();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_57'/>
+            57
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_57'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_58'/>
+            58
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_58'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_59'/>
+            59
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_59'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static String stripLocationPrefixesAndSuffixes(String string) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_60'/>
+            60
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_60'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        // remove destination prefixes: CAMP, FOB, COP, FORWARD OPERATING BASE, FIRE BASE, COMBAT OUTPOST, ANP, etc.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_61'/>
+            61
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_61'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        // remove destination suffixes: AIRFIELD, AIRBASE, ANP, OP, etc.</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_62'/>
+            62
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_62'>1</a>
+<span>
+1. stripLocationPrefixesAndSuffixes : negated conditional &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>        if (notNullAndNotEmpty(string)) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_63'/>
+            63
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_63'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class=''>            string = string.trim();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_64'/>
+            64
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_64'>2</a>
+<span>
+1. stripLocationPrefixesAndSuffixes : changed conditional boundary &rarr; SURVIVED<br/>
+2. stripLocationPrefixesAndSuffixes : negated conditional &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='survived'>            if (string.length() &#62; 0) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_65'/>
+            65
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_65'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class=''>                Matcher locationMatcher = locationPattern.matcher(string);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_66'/>
+            66
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_66'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class=''>                string = locationMatcher.replaceFirst(&#34;&#34;);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_67'/>
+            67
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_67'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class=''>                string = string.trim();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_68'/>
+            68
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_68'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_69'/>
+            69
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_69'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_70'/>
+            70
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_70'>1</a>
+<span>
+1. stripLocationPrefixesAndSuffixes : mutated return of Object value for com/starrypenguin/rmcnew/shared/Util::stripLocationPrefixesAndSuffixes to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>        return string;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_71'/>
+            71
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_71'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_72'/>
+            72
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_72'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_73'/>
+            73
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_73'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static String getCellValueAsStringOrEmptyString(Cell cell) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_74'/>
+            74
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_74'>1</a>
+<span>
+1. getCellValueAsStringOrEmptyString : negated conditional &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>        if (cell == null) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_75'/>
+            75
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_75'>1</a>
+<span>
+1. getCellValueAsStringOrEmptyString : mutated return of Object value for com/starrypenguin/rmcnew/shared/Util::getCellValueAsStringOrEmptyString to ( if (x != null) null else throw new RuntimeException ) &rarr; SURVIVED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='survived'>            return &#34;&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_76'/>
+            76
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_76'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_77'/>
+            77
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_77'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        String value;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_78'/>
+            78
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_78'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class=''>        switch (cell.getCellTypeEnum()) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_79'/>
+            79
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_79'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            case STRING:</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_80'/>
+            80
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_80'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class=''>                value = cell.getRichStringCellValue().getString();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_81'/>
+            81
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_81'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class=''>                break;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_82'/>
+            82
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_82'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            case NUMERIC:</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_83'/>
+            83
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_83'>1</a>
+<span>
+1. getCellValueAsStringOrEmptyString : negated conditional &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>                if (DateUtil.isCellDateFormatted(cell)) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_84'/>
+            84
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_84'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                    value = cell.getDateCellValue().toString();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_85'/>
+            85
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_85'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>                } else {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_86'/>
+            86
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_86'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span
+                    class=''>                    value = Integer.toString((int) cell.getNumericCellValue());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_87'/>
+            87
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_87'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>                }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_88'/>
+            88
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_88'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class=''>                break;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_89'/>
+            89
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_89'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            case BOOLEAN:</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_90'/>
+            90
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_90'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                value = Boolean.toString(cell.getBooleanCellValue());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_91'/>
+            91
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_91'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                break;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_92'/>
+            92
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_92'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            case FORMULA:</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_93'/>
+            93
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_93'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                value = cell.getCellFormula();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_94'/>
+            94
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_94'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                break;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_95'/>
+            95
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_95'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            default:</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_96'/>
+            96
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_96'></a>
+<span>
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class=''>                value = &#34;&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_97'/>
+            97
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_97'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_98'/>
+            98
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_98'>1</a>
+<span>
+1. getCellValueAsStringOrEmptyString : mutated return of Object value for com/starrypenguin/rmcnew/shared/Util::getCellValueAsStringOrEmptyString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>        return value;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_99'/>
+            99
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_99'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_100'/>
+            100
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_100'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_101'/>
+            101
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_101'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static File attachXlsxExtensionIfMissing(File outputFile) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_102'/>
+            102
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_102'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        String filename = outputFile.getAbsolutePath();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_103'/>
+            103
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_103'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        //System.out.println(&#34;Filename is: &#34; + filename);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_104'/>
+            104
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_104'>2</a>
+<span>
+1. attachXlsxExtensionIfMissing : negated conditional &rarr; NO_COVERAGE<br/>
+2. attachXlsxExtensionIfMissing : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        if (filename.endsWith(&#34;.xlsx&#34;) || filename.endsWith(&#34;.XLSX&#34;)) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_105'/>
+            105
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_105'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            // do nothing</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_106'/>
+            106
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_106'>2</a>
+<span>
+1. attachXlsxExtensionIfMissing : negated conditional &rarr; NO_COVERAGE<br/>
+2. attachXlsxExtensionIfMissing : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        } else if (filename.endsWith(&#34;.xls&#34;) || filename.endsWith(&#34;.XLS&#34;)) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_107'/>
+            107
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_107'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            // replace xls with xlsx</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_108'/>
+            108
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_108'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            filename = filename + &#34;x&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_109'/>
+            109
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_109'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            outputFile = new File(filename);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_110'/>
+            110
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_110'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        } else {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_111'/>
+            111
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_111'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            filename = filename + &#34;.xlsx&#34;;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_112'/>
+            112
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_112'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            outputFile = new File(filename);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_113'/>
+            113
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_113'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_114'/>
+            114
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_114'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''>        //System.out.println(&#34;Fixed file is: &#34; + outputFile.getAbsolutePath());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_115'/>
+            115
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_115'>1</a>
+<span>
+1. attachXlsxExtensionIfMissing : mutated return of Object value for com/starrypenguin/rmcnew/shared/Util::attachXlsxExtensionIfMissing to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        return outputFile;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_116'/>
+            116
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_116'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_117'/>
+            117
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_117'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_118'/>
+            118
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_118'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''>    public static void copyXSSFSheet(XSSFSheet srcSheet, XSSFSheet destSheet) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_119'/>
+            119
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_119'>2</a>
+<span>
+1. copyXSSFSheet : negated conditional &rarr; NO_COVERAGE<br/>
+2. copyXSSFSheet : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        if (srcSheet != null &#38;&#38; destSheet != null) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_120'/>
+            120
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_120'>1</a>
+<span>
+1. copyXSSFSheet : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>            for (Row srcRow : srcSheet) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_121'/>
+            121
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_121'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                Row destRow = destSheet.createRow(srcRow.getRowNum());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_122'/>
+            122
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_122'>1</a>
+<span>
+1. copyXSSFSheet : removed call to com/starrypenguin/rmcnew/shared/Util::copyXSSFRow &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>                copyXSSFRow((XSSFRow) srcRow, (XSSFRow) destRow);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_123'/>
+            123
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_123'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_124'/>
+            124
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_124'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            //copySheetDrawings(srcSheet, destSheet);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_125'/>
+            125
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_125'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        } else {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_126'/>
+            126
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_126'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            throw new IllegalArgumentException(&#34;Cannot copy from / to null XSSFSheet!&#34;);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_127'/>
+            127
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_127'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_128'/>
+            128
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_128'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_129'/>
+            129
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_129'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_130'/>
+            130
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_130'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''>    public static void copySheetDrawings(XSSFSheet srcSheet, XSSFSheet destSheet) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_131'/>
+            131
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_131'>2</a>
+<span>
+1. copySheetDrawings : negated conditional &rarr; NO_COVERAGE<br/>
+2. copySheetDrawings : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        if (srcSheet != null &#38;&#38; destSheet != null) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_132'/>
+            132
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_132'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            XSSFDrawing srcDrawing = srcSheet.createDrawingPatriarch();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_133'/>
+            133
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_133'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            XSSFDrawing destDrawing = destSheet.createDrawingPatriarch();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_134'/>
+            134
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_134'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTDrawing srcCTDrawing = srcDrawing.getCTDrawing();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_135'/>
+            135
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_135'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.CTDrawing destCTDrawing = destDrawing.getCTDrawing();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_136'/>
+            136
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_136'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            destCTDrawing.set(srcCTDrawing.copy());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_137'/>
+            137
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_137'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        } else {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_138'/>
+            138
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_138'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            throw new IllegalArgumentException(&#34;Cannot copy drawings from / to null XSSFSheet!&#34;);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_139'/>
+            139
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_139'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_140'/>
+            140
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_140'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_141'/>
+            141
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_141'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_142'/>
+            142
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_142'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static void copyXSSFRow(XSSFRow srcRow, XSSFRow destRow) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_143'/>
+            143
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_143'>1</a>
+<span>
+1. copyXSSFRow : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        for (Cell srcCell : srcRow) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_144'/>
+            144
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_144'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span
+                    class=''>            XSSFCell destCell = destRow.createCell(srcCell.getColumnIndex());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_145'/>
+            145
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_145'>1</a>
+<span>
+1. copyXSSFRow : removed call to com/starrypenguin/rmcnew/shared/Util::copyXSSFCell &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>            copyXSSFCell((XSSFCell) srcCell, destCell);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_146'/>
+            146
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_146'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_147'/>
+            147
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_147'>1</a>
+<span>
+1. copyXSSFRow : removed call to org/apache/poi/xssf/usermodel/XSSFRow::setHeight &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        destRow.setHeight(srcRow.getHeight());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_148'/>
+            148
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_148'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_149'/>
+            149
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_149'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_150'/>
+            150
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_150'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static void copyXSSFCell(XSSFCell srcCell, XSSFCell destCell) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_151'/>
+            151
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_151'>2</a>
+<span>
+1. copyXSSFCell : negated conditional &rarr; NO_COVERAGE<br/>
+2. copyXSSFCell : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        if (srcCell != null &#38;&#38; destCell != null) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_152'/>
+            152
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_152'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            switch (srcCell.getCellTypeEnum()) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_153'/>
+            153
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_153'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>                case STRING:</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_154'/>
+            154
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_154'>1</a>
+<span>
+1. copyXSSFCell : removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellType &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>                    destCell.setCellType(CellType.STRING);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_155'/>
+            155
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_155'>1</a>
+<span>
+1. copyXSSFCell : removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellValue &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span
+                    class='survived'>                    destCell.setCellValue(srcCell.getRichStringCellValue());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_156'/>
+            156
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_156'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                    break;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_157'/>
+            157
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_157'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>                case NUMERIC:</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_158'/>
+            158
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_158'>1</a>
+<span>
+1. copyXSSFCell : removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellType &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>                    destCell.setCellType(CellType.NUMERIC);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_159'/>
+            159
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_159'>1</a>
+<span>
+1. copyXSSFCell : negated conditional &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>                    if (DateUtil.isCellDateFormatted(srcCell)) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_160'/>
+            160
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_160'>1</a>
+<span>
+1. copyXSSFCell : removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellValue &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span
+                    class='survived'>                        destCell.setCellValue(srcCell.getDateCellValue());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_161'/>
+            161
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_161'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>                    } else {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_162'/>
+            162
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_162'>1</a>
+<span>
+1. copyXSSFCell : removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellValue &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span
+                    class='survived'>                        destCell.setCellValue(srcCell.getNumericCellValue());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_163'/>
+            163
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_163'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>                    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_164'/>
+            164
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_164'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                    break;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_165'/>
+            165
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_165'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>                case BOOLEAN:</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_166'/>
+            166
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_166'>1</a>
+<span>
+1. copyXSSFCell : removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellType &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>                    destCell.setCellType(CellType.BOOLEAN);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_167'/>
+            167
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_167'>1</a>
+<span>
+1. copyXSSFCell : removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellValue &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>                    destCell.setCellValue(srcCell.getBooleanCellValue());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_168'/>
+            168
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_168'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                    break;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_169'/>
+            169
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_169'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>                case FORMULA:</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_170'/>
+            170
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_170'>1</a>
+<span>
+1. copyXSSFCell : removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellType &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>                    destCell.setCellType(CellType.FORMULA);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_171'/>
+            171
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_171'>1</a>
+<span>
+1. copyXSSFCell : removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellValue &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span
+                    class='survived'>                    destCell.setCellValue(srcCell.getCellFormula());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_172'/>
+            172
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_172'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                    break;</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_173'/>
+            173
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_173'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>                default:</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_174'/>
+            174
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_174'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>                    throw new IllegalArgumentException(&#34;Unknown cell type!  Not sure how to copy this cell!&#34;);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_175'/>
+            175
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_175'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>            }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_176'/>
+            176
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_176'>1</a>
+<span>
+1. copyXSSFCell : removed call to com/starrypenguin/rmcnew/shared/Util::copyXSSFCellStyle &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>            copyXSSFCellStyle(srcCell, destCell);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_177'/>
+            177
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_177'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        } else {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_178'/>
+            178
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_178'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>            throw new IllegalArgumentException(&#34;Cannot copy from / to null XSSFCell!&#34;);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_179'/>
+            179
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_179'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_180'/>
+            180
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_180'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_181'/>
+            181
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_181'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_182'/>
+            182
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_182'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span
+                    class=''>    public static void copyXSSFCellStyle(XSSFCell srcCell, XSSFCell destCell) {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_183'/>
+            183
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_183'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        XSSFCellStyle srcCellStyle = srcCell.getCellStyle();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_184'/>
+            184
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_184'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>        XSSFCellStyle destCellStyle = destCell.getCellStyle();</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_185'/>
+            185
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_185'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>//        destCellStyle.cloneStyleFrom(srcCellStyle);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_186'/>
+            186
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_186'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setAlignment &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span
+                    class='survived'>        destCellStyle.setAlignment(srcCellStyle.getAlignmentEnum());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_187'/>
+            187
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_187'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setVerticalAlignment &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        destCellStyle.setVerticalAlignment(srcCellStyle.getVerticalAlignmentEnum());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_188'/>
+            188
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_188'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setFont &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        destCellStyle.setFont(srcCellStyle.getFont());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_189'/>
+            189
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_189'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setBorderBottom &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span
+                    class='survived'>        destCellStyle.setBorderBottom(srcCellStyle.getBorderBottomEnum());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_190'/>
+            190
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_190'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setBorderLeft &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span
+                    class='survived'>        destCellStyle.setBorderLeft(srcCellStyle.getBorderLeftEnum());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_191'/>
+            191
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_191'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setBorderRight &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        destCellStyle.setBorderRight(srcCellStyle.getBorderRightEnum());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_192'/>
+            192
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_192'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setBorderTop &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span
+                    class='survived'>        destCellStyle.setBorderTop(srcCellStyle.getBorderTopEnum());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_193'/>
+            193
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_193'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setFillPattern &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        destCellStyle.setFillPattern(srcCellStyle.getFillPatternEnum());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_194'/>
+            194
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_194'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>        // foreground color must be set before background color is set</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_195'/>
+            195
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_195'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setFillForegroundColor &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        destCellStyle.setFillForegroundColor(srcCellStyle.getFillForegroundColor());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_196'/>
+            196
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_196'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setFillBackgroundColor &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        destCellStyle.setFillBackgroundColor(srcCellStyle.getFillBackgroundColor());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_197'/>
+            197
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_197'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setIndention &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        destCellStyle.setIndention(srcCellStyle.getIndention());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_198'/>
+            198
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_198'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setWrapText &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        destCellStyle.setWrapText(srcCellStyle.getWrapText());</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_199'/>
+            199
+        </td>
+        <td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_199'>1</a>
+<span>
+1. copyXSSFCellStyle : removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellStyle &rarr; NO_COVERAGE<br/>
+
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class='survived'>        destCell.setCellStyle(destCellStyle);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='uncovered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_200'/>
+            200
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_200'></a>
+<span>
+</span>
+        </td>
+        <td class='uncovered'>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_201'/>
+            201
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_201'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''></span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_202'/>
+            202
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_202'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    public static String getCurrentDirectory() {</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='covered'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_203'/>
+            203
+        </td>
+        <td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_203'>1</a>
+<span>
+1. getCurrentDirectory : mutated return of Object value for com/starrypenguin/rmcnew/shared/Util::getCurrentDirectory to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+
+</span>
+        </td>
+        <td class='covered'>
+            <pre><span class='killed'>        return System.getProperty(&#34;user.dir&#34;);</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_204'/>
+            204
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_204'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>    }</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td class='na'>
+            <a name='org.pitest.mutationtest.report.html.SourceFile@7beae796_205'/>
+            205
+        </td>
+        <td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_205'></a>
+<span>
+</span>
+        </td>
+        <td class=''>
+            <pre><span class=''>}</span></pre>
+        </td>
+    </tr>
+
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td><h2>Mutations</h2></td>
+    </tr>
+
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_40'>40</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_40'/>
+
+            <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>notNullAndNotEmpty<br/><b>Killed by : </b>com.starrypenguin.rmcnew.shared.UtilTest.stripLocationPrefixesAndSuffixesTest(com.starrypenguin.rmcnew.shared.UtilTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+            <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>notNullAndNotEmpty<br/><b>Killed by : </b>com.starrypenguin.rmcnew.shared.UtilTest.stripLocationPrefixesAndSuffixesTest(com.starrypenguin.rmcnew.shared.UtilTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+            <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>notNullAndNotEmpty<br/><b>Killed by : </b>com.starrypenguin.rmcnew.shared.UtilTest.stripLocationPrefixesAndSuffixesTest(com.starrypenguin.rmcnew.shared.UtilTest)</span></span>
+                replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_44'>44</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_44'/>
+
+            <p class='KILLED'><span
+                    class='pop'>1.<span><b>1</b><br/><b>Location : </b>nullOrEmpty<br/><b>Killed by : </b>com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest.processFinalDestinationTest(com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+            <p class='KILLED'><span
+                    class='pop'>2.<span><b>2</b><br/><b>Location : </b>nullOrEmpty<br/><b>Killed by : </b>com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest.processFinalDestinationTest(com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+            <p class='KILLED'><span
+                    class='pop'>3.<span><b>3</b><br/><b>Location : </b>nullOrEmpty<br/><b>Killed by : </b>com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest.processFinalDestinationTest(com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest)</span></span>
+                replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_49'>49</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_49'/>
+
+            <p class='NO_COVERAGE'><span
+                    class='pop'>1.<span><b>1</b><br/><b>Location : </b>convertStackTraceToString<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_50'>50</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_50'/>
+
+            <p class='NO_COVERAGE'><span
+                    class='pop'>1.<span><b>1</b><br/><b>Location : </b>convertStackTraceToString<br/><b>Killed by : </b>none</span></span>
+                changed conditional boundary &rarr; NO_COVERAGE</p>
+            <p class='NO_COVERAGE'><span
+                    class='pop'>2.<span><b>2</b><br/><b>Location : </b>convertStackTraceToString<br/><b>Killed by : </b>none</span></span>
+                Changed increment from 1 to -1 &rarr; NO_COVERAGE</p>
+            <p class='NO_COVERAGE'><span
+                    class='pop'>3.<span><b>3</b><br/><b>Location : </b>convertStackTraceToString<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_56'>56</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_56'/>
+
+            <p class='NO_COVERAGE'><span
+                    class='pop'>1.<span><b>1</b><br/><b>Location : </b>convertStackTraceToString<br/><b>Killed by : </b>none</span></span>
+                mutated return of Object value for com/starrypenguin/rmcnew/shared/Util::convertStackTraceToString to (
+                if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_62'>62</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_62'/>
+
+            <p class='KILLED'><span
+                    class='pop'>1.<span><b>1</b><br/><b>Location : </b>stripLocationPrefixesAndSuffixes<br/><b>Killed by : </b>com.starrypenguin.rmcnew.shared.UtilTest.stripLocationPrefixesAndSuffixesTest(com.starrypenguin.rmcnew.shared.UtilTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_64'>64</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_64'/>
+
+            <p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>stripLocationPrefixesAndSuffixes<br/><b>Killed by : </b>none</span></span>
+                changed conditional boundary &rarr; SURVIVED</p>
+            <p class='KILLED'><span
+                    class='pop'>2.<span><b>2</b><br/><b>Location : </b>stripLocationPrefixesAndSuffixes<br/><b>Killed by : </b>com.starrypenguin.rmcnew.shared.UtilTest.stripLocationPrefixesAndSuffixesTest(com.starrypenguin.rmcnew.shared.UtilTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_70'>70</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_70'/>
+
+            <p class='KILLED'><span
+                    class='pop'>1.<span><b>1</b><br/><b>Location : </b>stripLocationPrefixesAndSuffixes<br/><b>Killed by : </b>com.starrypenguin.rmcnew.shared.UtilTest.stripLocationPrefixesAndSuffixesTest(com.starrypenguin.rmcnew.shared.UtilTest)</span></span>
+                mutated return of Object value for
+                com/starrypenguin/rmcnew/shared/Util::stripLocationPrefixesAndSuffixes to ( if (x != null) null else
+                throw new RuntimeException ) &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_74'>74</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_74'/>
+
+            <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCellValueAsStringOrEmptyString<br/><b>Killed by : </b>com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest.InvalidDataManifestTest(com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_75'>75</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_75'/>
+
+            <p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCellValueAsStringOrEmptyString<br/><b>Killed by : </b>none</span></span>
+                mutated return of Object value for
+                com/starrypenguin/rmcnew/shared/Util::getCellValueAsStringOrEmptyString to ( if (x != null) null else
+                throw new RuntimeException ) &rarr; SURVIVED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_83'>83</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_83'/>
+
+            <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCellValueAsStringOrEmptyString<br/><b>Killed by : </b>com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest.FullConfigTest(com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest)</span></span>
+                negated conditional &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_98'>98</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_98'/>
+
+            <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCellValueAsStringOrEmptyString<br/><b>Killed by : </b>com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest.InvalidDataManifestTest(com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest)</span></span>
+                mutated return of Object value for
+                com/starrypenguin/rmcnew/shared/Util::getCellValueAsStringOrEmptyString to ( if (x != null) null else
+                throw new RuntimeException ) &rarr; KILLED</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_104'>104</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_104'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>attachXlsxExtensionIfMissing<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+            <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>attachXlsxExtensionIfMissing<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_106'>106</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_106'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>attachXlsxExtensionIfMissing<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+            <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>attachXlsxExtensionIfMissing<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_115'>115</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_115'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>attachXlsxExtensionIfMissing<br/><b>Killed by : </b>none</span></span>
+                mutated return of Object value for com/starrypenguin/rmcnew/shared/Util::attachXlsxExtensionIfMissing to
+                ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_119'>119</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_119'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFSheet<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+            <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>copyXSSFSheet<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_120'>120</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_120'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFSheet<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_122'>122</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_122'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFSheet<br/><b>Killed by : </b>none</span></span>
+                removed call to com/starrypenguin/rmcnew/shared/Util::copyXSSFRow &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_131'>131</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_131'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copySheetDrawings<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+            <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>copySheetDrawings<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_143'>143</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_143'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFRow<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_145'>145</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_145'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFRow<br/><b>Killed by : </b>none</span></span>
+                removed call to com/starrypenguin/rmcnew/shared/Util::copyXSSFCell &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_147'>147</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_147'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFRow<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFRow::setHeight &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_151'>151</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_151'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+            <p class='NO_COVERAGE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_154'>154</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_154'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellType &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_155'>155</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_155'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellValue &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_158'>158</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_158'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellType &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_159'>159</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_159'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                negated conditional &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_160'>160</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_160'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellValue &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_162'>162</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_162'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellValue &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_166'>166</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_166'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellType &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_167'>167</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_167'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellValue &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_170'>170</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_170'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellType &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_171'>171</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_171'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellValue &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_176'>176</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_176'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCell<br/><b>Killed by : </b>none</span></span>
+                removed call to com/starrypenguin/rmcnew/shared/Util::copyXSSFCellStyle &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_186'>186</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_186'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setAlignment &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_187'>187</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_187'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setVerticalAlignment &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_188'>188</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_188'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setFont &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_189'>189</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_189'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setBorderBottom &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_190'>190</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_190'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setBorderLeft &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_191'>191</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_191'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setBorderRight &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_192'>192</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_192'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setBorderTop &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_193'>193</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_193'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setFillPattern &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_195'>195</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_195'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setFillForegroundColor &rarr; NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_196'>196</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_196'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setFillBackgroundColor &rarr; NO_COVERAGE
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_197'>197</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_197'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setIndention &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_198'>198</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_198'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCellStyle::setWrapText &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_199'>199</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_199'/>
+
+            <p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyXSSFCellStyle<br/><b>Killed by : </b>none</span></span>
+                removed call to org/apache/poi/xssf/usermodel/XSSFCell::setCellStyle &rarr; NO_COVERAGE</p>
+        </td>
+    </tr>
+    <tr>
+        <td><a href='#org.pitest.mutationtest.report.html.SourceFile@7beae796_203'>203</a></td>
+        <td></td>
+        <td>
+
+            <a name='grouporg.pitest.mutationtest.report.html.SourceFile@7beae796_203'/>
+
+            <p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getCurrentDirectory<br/><b>Killed by : </b>com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest.EmptyConfigTest(com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest)</span></span>
+                mutated return of Object value for com/starrypenguin/rmcnew/shared/Util::getCurrentDirectory to ( if (x
+                != null) null else throw new RuntimeException ) &rarr; KILLED</p>
+        </td>
+    </tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+    <li class='mutator'>INCREMENTS_MUTATOR</li>
+    <li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+    <li class='mutator'>RETURN_VALS_MUTATOR</li>
+    <li class='mutator'>MATH_MUTATOR</li>
+    <li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+    <li class='mutator'>INVERT_NEGS_MUTATOR</li>
+    <li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+    <li>
+        com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest.EmptyConfigTest(com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest)
+        (12 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest.TestBusinessRuleApplied(com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest)
+        (30 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest.MissingSheetsConfigTest(com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest)
+        (39 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest.InvalidDataConfigTest(com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest)
+        (44 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest.TestBusinessRuleApplied4(com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest)
+        (1 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest.MissingSheetsManifestTest(com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest)
+        (65 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest.FinalManifestTest(com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest)
+        (103 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest.FullConfigTest(com.starrypenguin.rmcnew.reader.ConfigXlsxReaderTest)
+        (108 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest.TestBusinessRuleNotApplied2(com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest)
+        (1 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest.processHubLookupTest(com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest)
+        (1 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest.TestBusinessRuleApplied2(com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest)
+        (1 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest.InvalidDataManifestTest(com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest)
+        (77 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.shared.UtilTest.stripLocationPrefixesAndSuffixesTest(com.starrypenguin.rmcnew.shared.UtilTest)
+        (1 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest.processFinalDestinationTest(com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest)
+        (918 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest.PreManifestTest(com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest)
+        (81 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest.TestBusinessRuleNotApplied(com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest)
+        (1 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest.TestBusinessRuleApplied3(com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest)
+        (1 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest.TestBusinessRuleApplied5(com.starrypenguin.rmcnew.business_rule.MakeAllMilitaryServiceBranchATest)
+        (1 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest.processManifestFileTest(com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest)
+        (445 ms)
+    </li>
+    <li>
+        com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest.EmptyManifestTest(com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest)
+        (45 ms)
+    </li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.2.2
+
+</body>
+</html>

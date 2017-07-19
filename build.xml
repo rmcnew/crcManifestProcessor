@@ -21,31 +21,67 @@
     <description>Tool used to process CRC manifests</description>
 
     <property name="src" location="src"/>
-    <property name="test.src" location="test"/>
+    <property name="test_src" location="test"/>
     <property name="build" location="build"/>
-    <property name="build.test" location="build/test"/>
+    <property name="build_test" location="build_test"/>
     <property name="dist" location="dist"/>
-    <property name="releaseVersion" value="2.0"/>
+    <property name="releaseVersion" value="2.1"/>
+    <property name="lib" location="lib"/>
+    <property name="test_lib" location="test_lib"/>
+    <property name="findbugs_report" location="findbugs_report"/>
+    <property name="pit_report" location="pit_report"/>
+    <property name="javadoc" location="javadoc"/>
 
-    <target name="init">
+    <path id="lib_classpath">
+        <fileset dir="${lib}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <path id="test_lib_classpath">
+        <fileset dir="${test_lib}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <path id="lib_test_lib_and_build_classpath">
+        <fileset dir="${lib}">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${test_lib}">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement location="${build}"/>
+    </path>
+
+    <path id="lib_test_lib_build_and_build_test_classpath">
+        <fileset dir="${lib}">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${test_lib}">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement location="${build}"/>
+        <pathelement location="${build_test}"/>
+    </path>
+
+    <taskdef name="pitest" classname="org.pitest.ant.PitestTask" classpathref="test_lib_classpath"/>
+
+    <target name="compile" description="compile the source">
         <mkdir dir="${build}"/>
-        <mkdir dir="${dist}"/>
-        <mkdir dir="${build.test}"/>
-    </target>
+        <!-- debugging and test instrumentation -->
+        <javac srcdir="${src}" destdir="${build}" classpathref="lib_classpath" debug="true" debuglevel="source,lines"/>
 
-    <target name="compile" depends="init" description="compile the source">
-        <javac srcdir="${src}" destdir="${build}">
-            <classpath>
-                <fileset dir="lib">
-                    <include name="*.jar"/>
-                </fileset>
-            </classpath>
-        </javac>
+        <!-- release -->
+        <!--
+        <javac srcdir="${src}" destdir="${build}"  classpathref="lib_classpath"/>
+        -->
     </target>
 
     <target name="jar" depends="compile, test" description="generate the jar">
         <echo message="Creating the jar archive.  This can take a while . . ."/>
-        <jar jarfile="${dist}/crcManifestProcessor.jar" basedir="${build}" index="true" excludes="${build.test}">
+        <mkdir dir="${dist}"/>
+        <jar jarfile="${dist}/crcManifestProcessor.jar" basedir="${build}" index="true">
             <manifest>
                 <attribute name="Main-Class" value="com.starrypenguin.rmcnew.user_interface.MainWindow"/>
             </manifest>
@@ -76,41 +112,37 @@
     </target>
 
     <target name="test" depends="compile" description="run unit tests">
+        <echo message="Building unit tests . . ."/>
+        <mkdir dir="${build_test}"/>
+        <javac srcdir="${test_src}" destdir="${build_test}" includeantruntime="false"
+               classpathref="lib_test_lib_and_build_classpath"/>
         <echo message="Running unit tests . . ."/>
-        <javac srcdir="${test.src}" destdir="${build.test}" includeantruntime="false">
-            <classpath>
-                <fileset dir="test_lib">
-                    <include name="*.jar"/>
-                </fileset>
-                <path>
-                    <pathelement location="${build}"/>
-                </path>
-            </classpath>
-        </javac>
         <junit printsummary="on" haltonfailure="yes" fork="true">
-            <classpath>
-                <fileset dir="lib">
-                    <include name="*.jar"/>
-                </fileset>
-                <fileset dir="test_lib">
-                    <include name="*.jar"/>
-                </fileset>
-                <path>
-                    <pathelement location="${build}"/>
-                    <pathelement location="${build.test}"/>
-                </path>
-            </classpath>
+            <classpath refid="lib_test_lib_build_and_build_test_classpath"/>
             <formatter type="brief" usefile="false"/>
             <batchtest>
-                <fileset dir="${test.src}" includes="**/*Test.java"/>
+                <fileset dir="${test_src}" includes="**/*Test.java"/>
             </batchtest>
         </junit>
+    </target>
+
+    <target name="mutation_test" depends="test">
+        <mkdir dir="${pit_report}"/>
+        <pitest
+                pitClasspath="test_lib_classpath"
+                threads="2"
+                classPath="lib_test_lib_build_and_build_test_classpath"
+                targetClasses="com.starrypenguin.rmcnew.*"
+                targetTests="com.starrypenguin.rmcnew.*"
+                reportDir="${pit_report}"
+                sourceDir="${src}"/>
     </target>
 
     <target name="clean" description="clean up">
         <parallel>
             <delete dir="${build}"/>
             <delete dir="${dist}"/>
+            <delete dir="${build_test}"/>
         </parallel>
     </target>
 </project>
