@@ -40,6 +40,10 @@ public class Util {
         return (string != null && !string.isEmpty());
     }
 
+    public static boolean nullOrEmpty(String string) {
+        return (string == null || string.isEmpty());
+    }
+
     public static String convertStackTraceToString(StackTraceElement[] stackTraceElements) {
         StringBuilder builder = new StringBuilder("");
         if (stackTraceElements != null) {

@@ -61,45 +61,56 @@ public abstract class AbstractManifestController {
     }
 
     protected static void processFinalDestination(Record record, LocationAliasMap aliasMap) {
-        String finalDestination = record.getFinalDestination();
-        // strip prefixes and suffixes
-        finalDestination = Util.stripLocationPrefixesAndSuffixes(finalDestination);
-        // location alias substitution
-        if (finalDestination.isEmpty()) {
-            finalDestination = Constants.UNKNOWN;
-        }
-        String alias = aliasMap.get(finalDestination);
-        if (alias != null) {
-            //System.out.println("Replaced alias:  " + finalDestination + " => " + alias);
-            record.setFinalDestination(alias);
-        } else {
-            record.setFinalDestination(finalDestination);
+        if (record != null && aliasMap != null) {
+            String finalDestination = record.getFinalDestination();
+            // strip prefixes and suffixes
+            finalDestination = Util.stripLocationPrefixesAndSuffixes(finalDestination);
+            // location alias substitution
+            if (Util.nullOrEmpty(finalDestination)) {
+                finalDestination = Constants.UNKNOWN;
+            }
+            String alias = aliasMap.get(finalDestination);
+            if (alias != null) {
+                //System.out.println("Replaced alias:  " + finalDestination + " => " + alias);
+                record.setFinalDestination(alias);
+            } else {
+                record.setFinalDestination(finalDestination);
+            }
         }
     }
 
     protected static void processHubLookup(Record record, DestinationHubMap hubMap) {
-        String finalDestination = record.getFinalDestination();
-        // hub look-up
-        HubCountry hubCountry = hubMap.get(finalDestination);
-        if (hubCountry != null) {
-            //System.out.println("Found hub: " + finalDestination + " => " + hubCountry);
-            record.setHub(hubCountry.getHub());
-            if (!record.getCountry().equalsIgnoreCase(hubCountry.getCountry())) {
-                System.out.println("Countries do not match!  " + record.getCountry() + " != " + hubCountry.getCountry());
-            }
-            record.setCountry(hubCountry.getCountry());
-        } else {
-            if (finalDestination.equalsIgnoreCase(Constants.UNKNOWN)) {
-                record.setHub(Constants.UNKNOWN);
+        if (record != null && hubMap != null) {
+            String finalDestination = record.getFinalDestination();
+            // hub look-up
+            if (Util.notNullAndNotEmpty(finalDestination)) {
+                HubCountry hubCountry = hubMap.get(finalDestination);
+                if (hubCountry != null) {
+                    //System.out.println("Found hub: " + finalDestination + " => " + hubCountry);
+                    record.setHub(hubCountry.getHub());
+                    if (!record.getCountry().equalsIgnoreCase(hubCountry.getCountry())) {
+                        System.out.println("Countries do not match!  " + record.getCountry() + " != " + hubCountry.getCountry());
+                    }
+                    record.setCountry(hubCountry.getCountry());
+                } else {
+                    if (finalDestination.equalsIgnoreCase(Constants.UNKNOWN)) {
+                        record.setHub(Constants.UNKNOWN);
+                    } else {
+                        record.setHub(Constants.NOT_FOUND);
+                    }
+                }
             } else {
-                record.setHub(Constants.NOT_FOUND);
+                record.setFinalDestination(Constants.UNKNOWN);
+                record.setHub(Constants.UNKNOWN);
             }
         }
     }
 
     protected static void applyBusinessRules(Record record, PriorityMOSMap mosMap) throws IOException {
-        KuwaitQatarSingleHub.applyRule(record);
-        AfghanUnknownPriorityMosGoesToBagram.applyRule(record, mosMap);
-        MakeAllMilitaryServiceBranchA.applyRule(record);
+        if (record != null && mosMap != null) {
+            KuwaitQatarSingleHub.applyRule(record);
+            AfghanUnknownPriorityMosGoesToBagram.applyRule(record, mosMap);
+            MakeAllMilitaryServiceBranchA.applyRule(record);
+        }
     }
 }

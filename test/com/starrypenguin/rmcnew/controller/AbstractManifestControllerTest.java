@@ -19,11 +19,16 @@
 
 package com.starrypenguin.rmcnew.controller;
 
+import com.starrypenguin.rmcnew.model.config.CrcManifestProcessorConfig;
+import com.starrypenguin.rmcnew.model.config.DestinationHubMap;
+import com.starrypenguin.rmcnew.model.config.LocationAliasMap;
 import com.starrypenguin.rmcnew.model.data.Manifest;
+import com.starrypenguin.rmcnew.model.data.Record;
 import com.starrypenguin.rmcnew.model.exception.SheetNotFoundException;
 import com.starrypenguin.rmcnew.shared.Constants;
 import com.starrypenguin.rmcnew.shared.Util;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
@@ -35,6 +40,13 @@ import java.io.IOException;
  * Tests for AbstractManifestController
  */
 public class AbstractManifestControllerTest {
+
+    private CrcManifestProcessorConfig config;
+
+    @Before
+    public void setupTests() {
+        config = CrcManifestProcessorConfig.getInstance();
+    }
 
     @Test
     public void processManifestFileTest() throws IOException, SheetNotFoundException {
@@ -51,16 +63,47 @@ public class AbstractManifestControllerTest {
 
     @Test
     public void processFinalDestinationTest() {
-
+        LocationAliasMap locationAliasMap = config.getAliasMap();
+        Record record = new Record();
+        // empty destination
+        AbstractManifestController.processFinalDestination(record, locationAliasMap);
+        Assert.assertEquals(record.getFinalDestination(), Constants.UNKNOWN);
+        // HERAT
+        record.setFinalDestination("CAMP HEART");
+        AbstractManifestController.processFinalDestination(record, locationAliasMap);
+        Assert.assertEquals(record.getFinalDestination(), "HERAT");
+        // SOMEWHERE
+        record.setFinalDestination("FOB SOMEWHERE");
+        AbstractManifestController.processFinalDestination(record, locationAliasMap);
+        Assert.assertEquals(record.getFinalDestination(), "SOMEWHERE");
+        // SUPER FOB
+        record.setFinalDestination("KHAIR KHOT CASTLE");
+        AbstractManifestController.processFinalDestination(record, locationAliasMap);
+        Assert.assertEquals(record.getFinalDestination(), "SUPER FOB");
     }
 
     @Test
     public void processHubLookupTest() {
-
+        DestinationHubMap destinationHubMap = config.getHubMap();
+        Record record = new Record();
+        // empty destination
+        AbstractManifestController.processHubLookup(record, destinationHubMap);
+        Assert.assertEquals(record.getHub(), Constants.UNKNOWN);
+        // HERAT
+        record.setFinalDestination("HERAT");
+        record.setCountry(Constants.AFGHANISTAN);
+        AbstractManifestController.processHubLookup(record, destinationHubMap);
+        Assert.assertEquals(record.getHub(), "KANDAHAR");
+        // SOMEWHERE
+        record.setFinalDestination("SOMEWHERE");
+        record.setCountry("OUT_THERE");
+        AbstractManifestController.processHubLookup(record, destinationHubMap);
+        Assert.assertEquals(record.getHub(), "NOT_FOUND");
+        // SUPER FOB
+        record.setFinalDestination("SUPER FOB");
+        record.setCountry(Constants.AFGHANISTAN);
+        AbstractManifestController.processHubLookup(record, destinationHubMap);
+        Assert.assertEquals(record.getHub(), "KABUL");
     }
 
-    @Test
-    public void applyBusinessRulesTest() {
-
-    }
 }
