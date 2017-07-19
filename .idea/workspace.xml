@@ -2,9 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00c994c0-c747-4669-9f2d-b55288ec84a6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_lib/pitest-1.2.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_lib/pitest-ant-1.2.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_lib/pitest-command-line-1.2.2.jar" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/README.markdown" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/cobertura-2.1.1-javadoc.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/cobertura-2.1.1-sources.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/cobertura-2.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/cobertura-check.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/cobertura-check.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/cobertura-instrument.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/cobertura-instrument.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/cobertura-merge.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/cobertura-merge.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/cobertura-report.bat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/cobertura-report.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/coberturaFlush.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/examples/basic/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/examples/basic/build.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/examples/basic/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/examples/basic/build_with_specific_data_file.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/examples/basic/src/com/example/simple/Simple.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/examples/basic/src/com/example/simple/SimpleTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/asm-5.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/asm-analysis-5.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/asm-commons-5.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/asm-tree-5.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/asm-util-5.0.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/commons-lang3-3.3.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/hamcrest-core-1.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/jaxen-1.1.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/jetty-6.1.14.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/jetty-util-6.1.14.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/junit-4.11.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/logback-classic-1.0.13.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/logback-core-1.0.13.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/oro-2.0.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/servlet-api-2.5-6.1.14.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test_lib/cobertura-2.1.1/lib/slf4j-api-1.7.5.jar" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/findbugs_reports/findbugs_reports" afterPath="$PROJECT_DIR$/findbugs_reports/findbugs_reports.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/config/CrcManifestProcessorConfig.java" afterPath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/config/CrcManifestProcessorConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/controller/AbstractManifestControllerTest.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/controller/AbstractManifestControllerTest.java" />
     </list>
     <ignored path="crcManifestProcessor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,47 +98,26 @@
     <breakpoint_rules converted="true" />
     <ui_properties converted="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="crcManifestProcessor" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AbstractManifestController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AbstractManifestController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/controller/AbstractManifestController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="41" column="66" lean-forward="false" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
+            <state relative-caret-position="825">
+              <caret line="55" column="39" lean-forward="false" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Manifest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Manifest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1790">
-              <caret line="170" column="9" lean-forward="false" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractManifestControllerTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AbstractManifestControllerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/controller/AbstractManifestControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="42" column="52" lean-forward="false" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Record.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Record.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="214" column="78" lean-forward="false" selection-start-line="214" selection-start-column="78" selection-end-line="214" selection-end-column="78" />
+            <state relative-caret-position="432">
+              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -214,7 +231,7 @@
   <component name="NamedScopeManager">
     <scope name="ScottLocalDevelopment" pattern="src:*..*||test:*..*" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="4" />
     <option name="y" value="22" />
     <option name="width" value="1436" />
@@ -240,374 +257,24 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_resource" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shared" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business_rule" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="writer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user_interface" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shared" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="excel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="business_rule" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crcManifestProcessor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rmcnew" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="api" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
+              <item name="findbugs_reports" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -654,107 +321,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AbstractManifestControllerTest.processManifestFileTest">
-    <configuration default="false" name="ManifestXlsxReaderTest.EmptyManifestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.starrypenguin.rmcnew.reader.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="crcManifestProcessor" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.starrypenguin.rmcnew.reader" />
-      <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest" />
-      <option name="METHOD_NAME" value="EmptyManifestTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="ManifestXlsxReaderTest.InvalidDataManifestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.starrypenguin.rmcnew.reader.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="crcManifestProcessor" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.starrypenguin.rmcnew.reader" />
-      <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest" />
-      <option name="METHOD_NAME" value="InvalidDataManifestTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="ManifestXlsxReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.starrypenguin.rmcnew.reader.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="crcManifestProcessor" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.starrypenguin.rmcnew.reader" />
-      <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="All in crcManifestProcessor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="crcManifestProcessor" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="AbstractManifestControllerTest.processManifestFileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="AbstractManifestControllerTest.processManifestFileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.starrypenguin.rmcnew.controller.*" />
@@ -778,7 +346,117 @@
       </option>
       <envs />
       <patterns />
-      <method />
+    </configuration>
+    <configuration name="All in crcManifestProcessor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="crcManifestProcessor" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="MainWindow" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.user_interface.MainWindow" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="crcManifestProcessor" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+    </configuration>
+    <configuration name="ManifestXlsxReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.starrypenguin.rmcnew.reader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="crcManifestProcessor" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.starrypenguin.rmcnew.reader" />
+      <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="ManifestXlsxReaderTest.EmptyManifestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.starrypenguin.rmcnew.reader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="crcManifestProcessor" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.starrypenguin.rmcnew.reader" />
+      <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest" />
+      <option name="METHOD_NAME" value="EmptyManifestTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="ManifestXlsxReaderTest.InvalidDataManifestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.starrypenguin.rmcnew.reader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="crcManifestProcessor" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.starrypenguin.rmcnew.reader" />
+      <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.reader.ManifestXlsxReaderTest" />
+      <option name="METHOD_NAME" value="InvalidDataManifestTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module />
@@ -787,7 +465,6 @@
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -802,23 +479,6 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -839,6 +499,28 @@
       </option>
       <envs />
       <patterns />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -862,30 +544,10 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-      <method />
-    </configuration>
-    <configuration default="false" name="MainWindow" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.user_interface.MainWindow" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="crcManifestProcessor" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
+    <configuration default="true" type="PIT" factoryName="PIT Runner" REPORT_DIR="$PROJECT_DIR$/report" SOURCE_DIRS="$PROJECT_DIR$/src" TARGET_CLASSES="com.*" otherParams="--outputFormats XML,HTML" />
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.MainWindow" />
@@ -904,10 +566,6 @@
         <item index="4" class="java.lang.String" itemvalue="JUnit.ManifestXlsxReaderTest.EmptyManifestTest" />
       </list>
     </recent_temporary>
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
-    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -964,23 +622,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1436" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12910448" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18325435" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.4975265" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.5024735" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3263158" sideWeight="0.49752998" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932863" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25795054" sideWeight="0.67257845" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19151944" sideWeight="0.67257845" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14063604" sideWeight="0.675307" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23955224" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -989,10 +643,16 @@
       <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19266056" sideWeight="0.675307" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.4975265" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3263158" sideWeight="0.49752998" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3263158" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.configurationType" implementationName="PIT" />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
     <option name="UPDATE_COPYRIGHT" value="true" />
@@ -1013,7 +673,8 @@
     <MESSAGE value="Add tests for ConfigXlsxReader and ManifestXlsxReader" />
     <MESSAGE value="FindBugs error report and corresponding fixes" />
     <MESSAGE value="Test stub for AbstractManifestController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test stub for AbstractManifestController" />
+    <MESSAGE value="Test for AbstractManifestController.processManofestFile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test for AbstractManifestController.processManofestFile" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1057,7 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
           <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1072,7 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1122,7 +781,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="411">
           <caret line="124" column="40" lean-forward="false" selection-start-line="124" selection-start-column="40" selection-end-line="124" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1130,7 +788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
           <caret line="37" column="4" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1138,7 +795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1160,7 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1225">
           <caret line="144" column="53" lean-forward="false" selection-start-line="144" selection-start-column="53" selection-end-line="144" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1175,7 +830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="72" column="42" lean-forward="false" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1183,7 +837,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1191,7 +844,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
           <caret line="66" column="46" lean-forward="false" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1199,7 +851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1207,7 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1733">
           <caret line="158" column="76" lean-forward="false" selection-start-line="158" selection-start-column="76" selection-end-line="158" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1215,7 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-174">
           <caret line="33" column="71" lean-forward="true" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1223,7 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="9" lean-forward="false" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1231,7 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-563">
           <caret line="42" column="10" lean-forward="false" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,7 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="32" column="43" lean-forward="false" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,7 +893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1263,10 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="98" column="13" lean-forward="false" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
-          <folding>
-            <element signature="e#3048#3049#0" expanded="false" />
-            <element signature="e#3094#3095#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1274,7 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
           <caret line="52" column="24" lean-forward="false" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1290,7 +930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="69" column="43" lean-forward="false" selection-start-line="69" selection-start-column="43" selection-end-line="69" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1298,7 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="68" column="43" lean-forward="false" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1306,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="42" column="21" lean-forward="false" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1314,7 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="60" column="46" lean-forward="true" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1322,7 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1330,7 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1338,7 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="87" column="59" lean-forward="false" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1346,7 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="591">
           <caret line="166" column="9" lean-forward="false" selection-start-line="166" selection-start-column="9" selection-end-line="166" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1354,7 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="692">
           <caret line="61" column="23" lean-forward="false" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1362,23 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/controller/FinalManifestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="31" lean-forward="false" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Manifest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1790">
-          <caret line="170" column="9" lean-forward="false" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1386,7 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="457">
           <caret line="98" column="4" lean-forward="false" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1394,15 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="214" column="78" lean-forward="false" selection-start-line="214" selection-start-column="78" selection-end-line="214" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/controller/AbstractManifestControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="42" column="52" lean-forward="false" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1410,14 +1014,35 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Manifest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1790">
+          <caret line="170" column="9" lean-forward="false" selection-start-line="170" selection-start-column="9" selection-end-line="170" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/controller/FinalManifestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="35" column="31" lean-forward="false" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/controller/AbstractManifestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="41" column="66" lean-forward="false" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
+        <state relative-caret-position="825">
+          <caret line="55" column="39" lean-forward="false" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/controller/AbstractManifestControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding />
         </state>
       </provider>
