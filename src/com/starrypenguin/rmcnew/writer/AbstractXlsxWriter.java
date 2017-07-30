@@ -20,8 +20,8 @@
 package com.starrypenguin.rmcnew.writer;
 
 import com.starrypenguin.rmcnew.model.data.Manifest;
-import com.starrypenguin.rmcnew.shared.Constants;
 import com.starrypenguin.rmcnew.model.data.Records;
+import com.starrypenguin.rmcnew.shared.Constants;
 import com.starrypenguin.rmcnew.shared.Util;
 import org.apache.poi.xssf.usermodel.*;
 
@@ -46,7 +46,7 @@ public abstract class AbstractXlsxWriter {
         fileOutputStream.close();
     }
 
-    protected void writeRecords(Records records, String sheetName) {
+    public void writeRecords(Records records, String sheetName) {
         if (records != null && !records.isEmpty()) {
             XSSFSheet finalManifestSheet = records.toSheetEssence(sheetName).toXSSFSheet(workbook);
             for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
