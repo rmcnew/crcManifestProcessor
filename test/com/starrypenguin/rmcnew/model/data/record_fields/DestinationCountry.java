@@ -19,30 +19,17 @@
 
 package com.starrypenguin.rmcnew.model.data.record_fields;
 
-import com.starrypenguin.rmcnew.shared.Constants;
-
 /**
- * ServiceBranchGenerator
+ * DestinationCountry
  * <p/>
- * Generate Service Branch for test Record generation
+ * Data class that holds Destination and Country
  */
-public class ServiceBranchGenerator {
+class DestinationCountry {
+    public String destination;
+    public String country;
 
-    private static String[] serviceBranches = new String[6];
-
-    static {
-        serviceBranches[0] = Constants.ARMY;
-        serviceBranches[1] = Constants.AIR_FORCE;
-        serviceBranches[2] = Constants.AIR_FORCE2;
-        serviceBranches[3] = Constants.NAVY;
-        serviceBranches[4] = Constants.MARINE_CORP;
-        serviceBranches[5] = Constants.COAST_GUARD;
-    }
-
-    public ServiceBranchGenerator() {
-    }
-
-    public String getRandomServiceBranch() {
-        return serviceBranches[(int) (Math.random() * (serviceBranches.length - 1))];
+    public DestinationCountry(String destination, String country) {
+        this.destination = destination;
+        this.country = country;
     }
 }

@@ -20,6 +20,7 @@
 package com.starrypenguin.rmcnew.model.data;
 
 import com.starrypenguin.rmcnew.model.config.CrcManifestProcessorConfig;
+import com.starrypenguin.rmcnew.model.data.record_fields.MosGenerator;
 import com.starrypenguin.rmcnew.model.data.record_fields.NameGenerator;
 import com.starrypenguin.rmcnew.model.data.record_fields.RankGenerator;
 import com.starrypenguin.rmcnew.model.exception.SheetNotFoundException;
@@ -47,6 +48,7 @@ public class RecordBuilder {
 
     private NameGenerator nameGenerator = new NameGenerator();
     private RankGenerator rankGenerator;
+    private MosGenerator mosGenerator;
 
     public RecordBuilder() {
         rankGenerator = new RankGenerator(config);

@@ -19,6 +19,11 @@
 
 package com.starrypenguin.rmcnew.model.data.record_fields;
 
+import com.starrypenguin.rmcnew.model.config.CrcManifestProcessorConfig;
+
+import java.util.Arrays;
+import java.util.Set;
+
 /**
  * MosGenerator
  * <p/>
@@ -26,7 +31,49 @@ package com.starrypenguin.rmcnew.model.data.record_fields;
  */
 public class MosGenerator {
 
-    // Read in MOS's from config
+    private static final String[] otherMOSs = new String[]{
+            "11A",
+            "11B",
+            "11C",
+            "11Z",
+            "12A",
+            "12B",
+            "13A",
+            "13B",
+            "15A",
+            "25A",
+            "25C",
+            "25N",
+            "27A",
+            "27D",
+            "35D",
+            "35F",
+            "42B",
+            "42A",
+            "42H",
+            "74A",
+            "74D",
+            "88M",
+            "90A",
+            "92F",
+            "92G",
+            "92S",
+            "92Y"
+    };
 
-    // Then add some other MOS's
+    private final String[] MOSs;
+
+    public MosGenerator(CrcManifestProcessorConfig config) {
+        // Read in MOS's from config
+        Set<String> mosSet = config.getMosMap().keySet();
+        // Then add some other MOS's
+        mosSet.addAll(Arrays.asList(otherMOSs));
+        MOSs = mosSet.toArray(new String[0]);
+    }
+
+    public String getRandomMos() {
+        return MOSs[(int) (Math.random() * (MOSs.length - 1))];
+    }
+
+
 }

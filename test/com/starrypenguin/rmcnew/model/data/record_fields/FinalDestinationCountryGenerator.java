@@ -19,6 +19,12 @@
 
 package com.starrypenguin.rmcnew.model.data.record_fields;
 
+import com.starrypenguin.rmcnew.model.config.CrcManifestProcessorConfig;
+import com.starrypenguin.rmcnew.model.config.HubCountry;
+
+import java.util.Map;
+import java.util.Set;
+
 /**
  * FinalDestinationCountryGenerator
  * <p/>
@@ -26,5 +32,19 @@ package com.starrypenguin.rmcnew.model.data.record_fields;
  */
 public class FinalDestinationCountryGenerator {
 
+    private DestinationCountry[] destinationCountries;
 
+    public FinalDestinationCountryGenerator(CrcManifestProcessorConfig config) {
+        Set<Map.Entry<String, HubCountry>> entries = config.getHubMap().entrySet();
+        destinationCountries = new DestinationCountry[entries.size()];
+        int index = 0;
+        for (Map.Entry<String, HubCountry> entry : entries) {
+            destinationCountries[index].destination = entry.getKey();
+            destinationCountries[index].country = entry.getValue().getCountry();
+        }
+    }
+
+    public DestinationCountry getRandomDestinationCountry() {
+        return destinationCountries[(int) (Math.random() * (destinationCountries.length - 1))];
+    }
 }

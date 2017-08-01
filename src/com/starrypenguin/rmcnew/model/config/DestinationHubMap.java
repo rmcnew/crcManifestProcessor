@@ -21,6 +21,7 @@ package com.starrypenguin.rmcnew.model.config;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class DestinationHubMap {
@@ -70,8 +71,12 @@ public class DestinationHubMap {
 		return map.values();
 	}
 
-	@Override
-	public String toString() {
+    public Set<Map.Entry<String, HubCountry>> entrySet() {
+        return map.entrySet();
+    }
+
+    @Override
+    public String toString() {
 		Set<String> keys = this.keySet();
 		StringBuilder builder = new StringBuilder();
 		builder.append("{\n");

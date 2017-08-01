@@ -77,6 +77,7 @@ public class NameGenerator {
             "Riley Amos",
             "Perry Talbert",
             "Rodney Sieber"};
+
     String[] femaleNames = new String[]{
             "Iraida Batchelder",
             "Calista Hollandsworth",
