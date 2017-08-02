@@ -17,17 +17,12 @@
  *     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.starrypenguin.rmcnew.model.data.record_fields;
+package com.starrypenguin.rmcnew.api;
 
 /**
- * DestinationCountry
+ * RunFinalManifestWorkflowTest
  * <p/>
- * Data class that holds Destination and Country
+ * System test for FinalManifestWorkflow API
  */
-public class DestinationCountry {
-    public String destination;
-    public String country;
-
-    public DestinationCountry() {
-    }
+public class RunFinalManifestWorkflowTest {
 }

@@ -19,38 +19,14 @@
 
 package com.starrypenguin.rmcnew.model.data.record_fields;
 
-import com.starrypenguin.rmcnew.shared.Constants;
-
 /**
- * ServiceBranchGenerator
+ * Coin
  * <p/>
- * Generate Service Branch for test Record generation
+ * Coin flip simulator to generate
  */
-public class ServiceBranchGenerator {
+public class Coin {
 
-    private static String[] serviceBranches = new String[6];
-
-    static {
-        serviceBranches[0] = Constants.ARMY;
-        serviceBranches[1] = Constants.AIR_FORCE;
-        serviceBranches[2] = Constants.AIR_FORCE2;
-        serviceBranches[3] = Constants.NAVY;
-        serviceBranches[4] = Constants.MARINE_CORP;
-        serviceBranches[5] = Constants.COAST_GUARD;
-    }
-
-    public ServiceBranchGenerator() {
-    }
-
-    public String getRandomServiceBranch() {
-        return serviceBranches[(int) (Math.random() * (serviceBranches.length - 1))];
-    }
-
-    public String getPossiblyBadServiceBranch() {
-        if (Coin.flip()) {
-            return getRandomServiceBranch();
-        } else {
-            return null;
-        }
+    public static boolean flip() {
+        return (Math.random() > 0.5);
     }
 }

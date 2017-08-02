@@ -17,17 +17,20 @@
  *     along with CRC Manifest Processor.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.starrypenguin.rmcnew.model.data.record_fields;
+package com.starrypenguin.rmcnew.api;
+
+import java.util.regex.Pattern;
 
 /**
- * DestinationCountry
+ * OutputManifestFilename
  * <p/>
- * Data class that holds Destination and Country
+ * Given an input manifest filename String, create an output manifest filename String
  */
-public class DestinationCountry {
-    public String destination;
-    public String country;
+public class OutputManifestFilename {
 
-    public DestinationCountry() {
+    private static final Pattern pattern = Pattern.compile("\\.xlsx");
+
+    public static String convert(String outputManifestFilename) {
+        return pattern.matcher(outputManifestFilename).replaceFirst("_output.xlsx");
     }
 }

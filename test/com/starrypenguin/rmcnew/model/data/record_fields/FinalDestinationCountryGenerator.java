@@ -32,19 +32,33 @@ import java.util.Set;
  */
 public class FinalDestinationCountryGenerator {
 
-    private DestinationCountry[] destinationCountries;
+    private final DestinationCountry[] destinationCountries;
 
     public FinalDestinationCountryGenerator(CrcManifestProcessorConfig config) {
         Set<Map.Entry<String, HubCountry>> entries = config.getHubMap().entrySet();
         destinationCountries = new DestinationCountry[entries.size()];
         int index = 0;
         for (Map.Entry<String, HubCountry> entry : entries) {
+            destinationCountries[index] = new DestinationCountry();
             destinationCountries[index].destination = entry.getKey();
             destinationCountries[index].country = entry.getValue().getCountry();
+            index++;
         }
     }
 
     public DestinationCountry getRandomDestinationCountry() {
         return destinationCountries[(int) (Math.random() * (destinationCountries.length - 1))];
+    }
+
+    public DestinationCountry getPossiblyBadDestinationCountry() {
+        DestinationCountry retVal = new DestinationCountry();
+        DestinationCountry fromConfig = destinationCountries[(int) (Math.random() * (destinationCountries.length - 1))];
+        if (Coin.flip()) {
+            retVal.country = fromConfig.country;
+        }
+        if (Coin.flip()) {
+            retVal.destination = fromConfig.destination;
+        }
+        return retVal;
     }
 }

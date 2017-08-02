@@ -44,7 +44,7 @@ public class ManifestBuilder {
 
     public ManifestBuilder() {
         try {
-            tempDirectory = Files.createTempDirectory("ManifestBuilder_" + Instant.now().toString(), null);
+            tempDirectory = Files.createTempDirectory("ManifestBuilder_" + Instant.now().toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -59,14 +59,17 @@ public class ManifestBuilder {
         preManifestXlsxWriter.openXlsxForWriting(manifestFile.toFile());
         // pick a random number between 4 and 16 for number of rows to generate
         int rowCount = generateRandomRecordCount();
+        System.out.println(rowCount + " rows will be generated in the good test manifest");
         Records records = new Records();
         for (int i = 0; i < rowCount; i++) {
             Record record = recordBuilder.generateGoodRecord();
             records.addRecord(record);
         }
+        System.out.println("Records are created.  Writing them to the manifest test file . . .");
         // generate good rows and put them in the premanifest
         preManifestXlsxWriter.writeRecords(records, Constants.PREMANIFEST_SHEET);
         preManifestXlsxWriter.close();
+        System.out.println("Completed manifest test file is: " + manifestFile.toString());
         return manifestFile;
     }
 
@@ -77,9 +80,17 @@ public class ManifestBuilder {
         // open manifest file
         PreManifestXlsxWriter preManifestXlsxWriter = new PreManifestXlsxWriter();
         preManifestXlsxWriter.openXlsxForWriting(manifestFile.toFile());
-        // open premanifest tab
         // pick a random number between 4 and 16 for number of rows to generate
-        // generate at least one bad row and put it in the premanifest
+        int rowCount = generateRandomRecordCount();
+        Records records = new Records();
+        for (int i = 0; i < rowCount; i++) {
+            Record record = recordBuilder.generateBadRecord();
+            records.addRecord(record);
+        }
+        // generate good rows and put them in the premanifest
+        preManifestXlsxWriter.writeRecords(records, Constants.PREMANIFEST_SHEET);
+        preManifestXlsxWriter.close();
+
         return manifestFile;
     }
 
@@ -118,6 +129,7 @@ public class ManifestBuilder {
 
     private void copyManifestTemplateToTempDir(Path manifestFilename) throws IOException {
         if (manifestFilename != null) {
+            System.out.println("Copying " + manifestTemplate.toString() + " to " + manifestFilename.toString() + " . . .");
             Files.copy(manifestTemplate, manifestFilename);
         }
     }

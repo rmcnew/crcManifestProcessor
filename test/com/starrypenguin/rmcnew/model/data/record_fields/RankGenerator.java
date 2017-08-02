@@ -38,4 +38,11 @@ public class RankGenerator {
         return ranks[(int) (Math.random() * (ranks.length - 1))];
     }
 
+    public String getPossiblyBadRank() {
+        if (Coin.flip()) {
+            return getRandomRank();
+        } else {
+            return null;
+        }
+    }
 }

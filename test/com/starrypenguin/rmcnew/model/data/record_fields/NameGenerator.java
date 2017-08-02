@@ -26,7 +26,7 @@ package com.starrypenguin.rmcnew.model.data.record_fields;
  */
 public class NameGenerator {
 
-    String[] maleNames = new String[]{
+    String[] names = new String[]{
             "Cedric Getty",
             "Booker Spells",
             "Luigi Estep",
@@ -76,9 +76,7 @@ public class NameGenerator {
             "Bradly Gallegos",
             "Riley Amos",
             "Perry Talbert",
-            "Rodney Sieber"};
-
-    String[] femaleNames = new String[]{
+            "Rodney Sieber",
             "Iraida Batchelder",
             "Calista Hollandsworth",
             "Cristina Rickerson",
@@ -133,12 +131,16 @@ public class NameGenerator {
         // nothing to do
     }
 
-    public String getRandomMaleName() {
-        return maleNames[(int) (Math.random() * (maleNames.length - 1))];
+    public String getRandomName() {
+        return names[(int) (Math.random() * (names.length - 1))];
     }
 
-    public String getRandomFemaleName() {
-        return femaleNames[(int) (Math.random() * (femaleNames.length - 1))];
+    public String getPossiblyBadName() {
+        if (Coin.flip()) {
+            return getRandomName();
+        } else {
+            return null;
+        }
     }
 
 }

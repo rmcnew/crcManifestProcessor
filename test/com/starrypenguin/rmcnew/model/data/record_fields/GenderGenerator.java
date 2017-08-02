@@ -19,36 +19,25 @@
 
 package com.starrypenguin.rmcnew.model.data.record_fields;
 
-import com.starrypenguin.rmcnew.shared.Constants;
-
 /**
- * ServiceBranchGenerator
+ * GenderGenerator
  * <p/>
- * Generate Service Branch for test Record generation
+ * Generator for gender field test data
  */
-public class ServiceBranchGenerator {
+public class GenderGenerator {
 
-    private static String[] serviceBranches = new String[6];
+    public static final String[] genders = new String[]{"male", "female"};
 
-    static {
-        serviceBranches[0] = Constants.ARMY;
-        serviceBranches[1] = Constants.AIR_FORCE;
-        serviceBranches[2] = Constants.AIR_FORCE2;
-        serviceBranches[3] = Constants.NAVY;
-        serviceBranches[4] = Constants.MARINE_CORP;
-        serviceBranches[5] = Constants.COAST_GUARD;
+    public GenderGenerator() {
     }
 
-    public ServiceBranchGenerator() {
+    public String getRandomGender() {
+        return genders[(int) (Math.random() * (genders.length - 1))];
     }
 
-    public String getRandomServiceBranch() {
-        return serviceBranches[(int) (Math.random() * (serviceBranches.length - 1))];
-    }
-
-    public String getPossiblyBadServiceBranch() {
+    public String getPossiblyBadGender() {
         if (Coin.flip()) {
-            return getRandomServiceBranch();
+            return getRandomGender();
         } else {
             return null;
         }
