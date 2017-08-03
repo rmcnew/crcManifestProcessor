@@ -48,9 +48,9 @@ public abstract class AbstractXlsxWriter {
 
     public void writeRecords(Records records, String sheetName) {
         if (records != null && !records.isEmpty()) {
-            XSSFSheet finalManifestSheet = records.toSheetEssence(sheetName).toXSSFSheet(workbook);
+            XSSFSheet manifestSheet = records.toSheetEssence(sheetName).toXSSFSheet(workbook);
             for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
-                finalManifestSheet.autoSizeColumn(columnIndex);
+                manifestSheet.autoSizeColumn(columnIndex);
             }
         } else {
             throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");

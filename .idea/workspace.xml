@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00c994c0-c747-4669-9f2d-b55288ec84a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/OutputManifestFilename.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunFinalManifestWorkflowTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunPreManifestWorkflowTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/Coin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/GenderGenerator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Record.java" afterPath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Record.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Records.java" afterPath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Records.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java" afterPath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/writer/AbstractXlsxWriter.java" afterPath="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/writer/AbstractXlsxWriter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunFinalManifestWorkflowTest.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunFinalManifestWorkflowTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunPreManifestWorkflowTest.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunPreManifestWorkflowTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/ManifestBuilder.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/ManifestBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/RecordBuilder.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/RecordBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/DestinationCountry.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/DestinationCountry.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/FinalDestinationCountryGenerator.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/FinalDestinationCountryGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/MosGenerator.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/MosGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/NameGenerator.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/NameGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/RankGenerator.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/RankGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/ServiceBranchGenerator.java" afterPath="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/ServiceBranchGenerator.java" />
     </list>
     <ignored path="crcManifestProcessor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,12 +70,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ManifestBuilder.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ManifestBuilder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/ManifestBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1065">
-              <caret line="71" column="88" lean-forward="false" selection-start-line="71" selection-start-column="88" selection-end-line="71" selection-end-column="88" />
+            <state relative-caret-position="205">
+              <caret line="49" column="62" lean-forward="false" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Records.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Records.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="62" column="38" lean-forward="false" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+              <folding>
+                <element signature="e#1809#1810#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,31 +95,8 @@
       <file leaf-file-name="RunPreManifestWorkflowTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunPreManifestWorkflowTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="49" column="100" lean-forward="false" selection-start-line="49" selection-start-column="100" selection-end-line="49" selection-end-column="100" />
-              <folding>
-                <element signature="e#1365#1366#0" expanded="true" />
-                <element signature="e#1420#1421#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ManifestXlsxReader.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/ManifestXlsxReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OutputManifestFilename.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/OutputManifestFilename.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="72" lean-forward="false" selection-start-line="33" selection-start-column="72" selection-end-line="33" selection-end-column="72" />
+            <state relative-caret-position="593">
+              <caret line="65" column="5" lean-forward="false" selection-start-line="38" selection-start-column="2" selection-end-line="65" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -122,8 +105,8 @@
       <file leaf-file-name="RunFinalManifestWorkflowTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunFinalManifestWorkflowTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="44" lean-forward="false" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+            <state relative-caret-position="488">
+              <caret line="58" column="63" lean-forward="false" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -202,14 +185,11 @@
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/excel/FontEssence.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/user_interface/CommandLine.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/AbstractXlsxReader.java" />
-        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/ManifestXlsxReader.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/ConfigXlsxReader.java" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/reader/ConfigXlsxReaderTest.java" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/reader/ManifestXlsxReaderTest.java" />
-        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Records.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/PrioritizedRecords.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Hub.java" />
-        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Record.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/excel/RowEssence.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/excel/CellSharedStyles.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/config/HubsWithoutUlnsMap.java" />
@@ -222,8 +202,6 @@
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/controller/AbstractManifestControllerTest.java" />
         <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/shared/UtilTest.java" />
-        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java" />
-        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/writer/AbstractXlsxWriter.java" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/ManifestBuilder.java" />
         <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/config/DestinationHubMap.java" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/Coin.java" />
@@ -234,11 +212,16 @@
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/RankGenerator.java" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/ServiceBranchGenerator.java" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/RecordBuilder.java" />
-        <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunFinalManifestWorkflowTest.java" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/MosGenerator.java" />
-        <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/ManifestBuilder.java" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/OutputManifestFilename.java" />
+        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java" />
+        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/writer/AbstractXlsxWriter.java" />
+        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Record.java" />
+        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/ManifestXlsxReader.java" />
         <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunPreManifestWorkflowTest.java" />
+        <option value="$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Records.java" />
+        <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunFinalManifestWorkflowTest.java" />
+        <option value="$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/ManifestBuilder.java" />
       </list>
     </option>
   </component>
@@ -274,9 +257,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -334,6 +316,13 @@
             <path>
               <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
               <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="rmcnew" type="462c0819:PsiDirectoryNode" />
+              <item name="writer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crcManifestProcessor" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crcManifestProcessor" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -353,6 +342,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -401,31 +391,6 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.RunPreManifestWorkflowTest">
-    <configuration name="AbstractManifestControllerTest.processHubLookupTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.starrypenguin.rmcnew.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="crcManifestProcessor" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.starrypenguin.rmcnew.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.controller.AbstractManifestControllerTest" />
-      <option name="METHOD_NAME" value="processHubLookupTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
     <configuration name="All in crcManifestProcessor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="crcManifestProcessor" />
@@ -501,6 +466,31 @@
       <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.api.RunPreManifestWorkflowTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="RunPreManifestWorkflowTest.BadPreManifestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.starrypenguin.rmcnew.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="crcManifestProcessor" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.starrypenguin.rmcnew.api" />
+      <option name="MAIN_CLASS_NAME" value="com.starrypenguin.rmcnew.api.RunPreManifestWorkflowTest" />
+      <option name="METHOD_NAME" value="BadPreManifestTest" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -630,18 +620,18 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.MainWindow" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.All in crcManifestProcessor" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.AbstractManifestControllerTest.processHubLookupTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.UtilTest.nullAndEmptyTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.KuwaitQatarSingleHubTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.RunPreManifestWorkflowTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.UtilTest.nullAndEmptyTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.KuwaitQatarSingleHubTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.RunPreManifestWorkflowTest" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.RunPreManifestWorkflowTest.BadPreManifestTest" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JUnit.RunPreManifestWorkflowTest" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.KuwaitQatarSingleHubTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.UtilTest.nullAndEmptyTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.All in crcManifestProcessor" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.AbstractManifestControllerTest.processHubLookupTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.RunPreManifestWorkflowTest.BadPreManifestTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.All in crcManifestProcessor" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.KuwaitQatarSingleHubTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.UtilTest.nullAndEmptyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -658,26 +648,26 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="KuwaitQatarSingleHubTest - 2017.07.26 at 22h 38m 26s.xml">
-      <configuration name="KuwaitQatarSingleHubTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ManifestXlsxReaderTest_EmptyManifestTest - 2017.07.13 at 23h 15m 32s.xml">
-      <configuration name="ManifestXlsxReaderTest.EmptyManifestTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ManifestXlsxReaderTest_InvalidDataManifestTest - 2017.07.13 at 23h 16m 09s.xml">
-      <configuration name="ManifestXlsxReaderTest.InvalidDataManifestTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RunPreManifestWorkflowTest - 2017.08.01 at 19h 01m 25s.xml">
+    <history-entry file="RunPreManifestWorkflowTest - 2017.08.01 at 20h 55m 16s.xml">
       <configuration name="RunPreManifestWorkflowTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunPreManifestWorkflowTest - 2017.08.01 at 19h 04m 53s.xml">
+    <history-entry file="RunPreManifestWorkflowTest - 2017.08.01 at 21h 02m 05s.xml">
       <configuration name="RunPreManifestWorkflowTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunPreManifestWorkflowTest - 2017.08.01 at 19h 07m 53s.xml">
+    <history-entry file="RunPreManifestWorkflowTest - 2017.08.01 at 21h 05m 46s.xml">
       <configuration name="RunPreManifestWorkflowTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="RunPreManifestWorkflowTest - 2017.08.01 at 19h 21m 27s.xml">
+    <history-entry file="RunPreManifestWorkflowTest - 2017.08.01 at 21h 15m 36s.xml">
       <configuration name="RunPreManifestWorkflowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RunPreManifestWorkflowTest - 2017.08.02 at 22h 06m 13s.xml">
+      <configuration name="RunPreManifestWorkflowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RunPreManifestWorkflowTest - 2017.08.02 at 22h 23m 36s.xml">
+      <configuration name="RunPreManifestWorkflowTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RunPreManifestWorkflowTest_BadPreManifestTest - 2017.08.01 at 21h 50m 03s.xml">
+      <configuration name="RunPreManifestWorkflowTest.BadPreManifestTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="UtilTest_nullAndEmptyTest - 2017.07.20 at 00h 09m 26s.xml">
       <configuration name="UtilTest.nullAndEmptyTest" configurationId="JUnit" />
@@ -700,13 +690,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1436" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12910448" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18325435" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32105264" sideWeight="0.4975265" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.5024735" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932863" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32368422" sideWeight="0.49752998" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.190106" sideWeight="0.67257845" order="0" side_tool="false" content_ui="tabs" />
@@ -714,6 +707,7 @@
       <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1405177" sideWeight="0.675307" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23955224" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -721,11 +715,8 @@
       <window_info id="Maven Projects" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19266056" sideWeight="0.675307" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32105264" sideWeight="0.4975265" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32368422" sideWeight="0.49752998" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3263158" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -756,7 +747,8 @@
     <MESSAGE value="Clean up build.xml; add PIT mutation testing to build.xml and add mutation report; add PIT dependency libraries to test_lib" />
     <MESSAGE value="Checkpoint:  Stubs for test Manifest and Record generation" />
     <MESSAGE value="Checkpoint:  Added basic generators for test data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checkpoint:  Added basic generators for test data" />
+    <MESSAGE value="Checkpoint:  Added basic bad data generation and workflow-level test stubs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Checkpoint:  Added basic bad data generation and workflow-level test stubs." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
@@ -941,13 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="203" column="5" lean-forward="false" selection-start-line="203" selection-start-column="5" selection-end-line="203" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/user_interface/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -959,7 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -974,27 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-82">
           <caret line="27" column="13" lean-forward="false" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/writer/PreManifestXlsxWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Records.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="33" column="71" lean-forward="true" selection-start-line="33" selection-start-column="71" selection-end-line="33" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/writer/AbstractXlsxWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="48" column="10" lean-forward="false" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1017,14 +980,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="73" column="50" lean-forward="false" selection-start-line="73" selection-start-column="11" selection-end-line="73" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Record.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="214" column="78" lean-forward="false" selection-start-line="214" selection-start-column="78" selection-end-line="214" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1091,14 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/ManifestBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" column="88" lean-forward="false" selection-start-line="71" selection-start-column="88" selection-end-line="71" selection-end-column="88" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/record_fields/MosGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -1122,29 +1069,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunFinalManifestWorkflowTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/shared/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="44" lean-forward="false" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
-          <folding />
+        <state relative-caret-position="60">
+          <caret line="75" column="14" lean-forward="false" selection-start-line="75" selection-start-column="14" selection-end-line="75" selection-end-column="14" />
+          <folding>
+            <element signature="e#9033#9034#0" expanded="true" />
+            <element signature="e#9086#9087#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunPreManifestWorkflowTest.java">
+    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/writer/PreManifestXlsxWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="49" column="100" lean-forward="false" selection-start-line="49" selection-start-column="100" selection-end-line="49" selection-end-column="100" />
-          <folding>
-            <element signature="e#1365#1366#0" expanded="true" />
-            <element signature="e#1420#1421#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="212">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/reader/ManifestXlsxReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state relative-caret-position="411">
+          <caret line="79" column="2" lean-forward="false" selection-start-line="79" selection-start-column="2" selection-end-line="79" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="77" column="41" lean-forward="false" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/writer/AbstractXlsxWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="50" column="23" lean-forward="false" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/starrypenguin/rmcnew/model/data/Records.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="62" column="38" lean-forward="false" selection-start-line="62" selection-start-column="38" selection-end-line="62" selection-end-column="38" />
+          <folding>
+            <element signature="e#1809#1810#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunPreManifestWorkflowTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="65" column="5" lean-forward="false" selection-start-line="38" selection-start-column="2" selection-end-line="65" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/api/RunFinalManifestWorkflowTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="58" column="63" lean-forward="false" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/com/starrypenguin/rmcnew/model/data/ManifestBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="49" column="62" lean-forward="false" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
           <folding />
         </state>
       </provider>

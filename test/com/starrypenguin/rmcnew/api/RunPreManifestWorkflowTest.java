@@ -50,5 +50,18 @@ public class RunPreManifestWorkflowTest {
         System.out.println("Output manifest filename is: " + preManifestOutputFile.getAbsolutePath());
         RunPreManifestWorkflow runPreManifestWorkflow = new RunPreManifestWorkflow(preManifestPath.toFile(), preManifestOutputFile);
         Assert.assertNotNull(runPreManifestWorkflow);
+        preManifestPath.toFile().deleteOnExit();
+        //preManifestOutputFile.deleteOnExit();
+    }
+
+    @Test
+    public void BadPreManifestTest() throws IOException, SheetNotFoundException {
+        Path preManifestPath = manifestBuilder.createBadPreManifest();
+        File preManifestOutputFile = new File(OutputManifestFilename.convert(preManifestPath.toString()));
+        System.out.println("Output manifest filename is: " + preManifestOutputFile.getAbsolutePath());
+        RunPreManifestWorkflow runPreManifestWorkflow = new RunPreManifestWorkflow(preManifestPath.toFile(), preManifestOutputFile);
+        Assert.assertNotNull(runPreManifestWorkflow);
+        preManifestPath.toFile().deleteOnExit();
+        //preManifestOutputFile.deleteOnExit();
     }
 }

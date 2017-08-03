@@ -60,6 +60,10 @@ public class Records implements Iterable<Record> {
         return records.size();
     }
 
+    public Record remove(Object key) {
+        return records.remove(key);
+    }
+
     public Iterator<Record> iterator() {
         return new Iterator<Record>() {
             private Iterator<String> it = records.keySet().iterator();

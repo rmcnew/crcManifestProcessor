@@ -19,10 +19,49 @@
 
 package com.starrypenguin.rmcnew.api;
 
+import com.starrypenguin.rmcnew.model.data.ManifestBuilder;
+import com.starrypenguin.rmcnew.model.exception.SheetNotFoundException;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+
 /**
  * RunFinalManifestWorkflowTest
  * <p/>
  * System test for FinalManifestWorkflow API
  */
 public class RunFinalManifestWorkflowTest {
+
+    private ManifestBuilder manifestBuilder;
+
+    @Before
+    public void SetupTests() {
+        manifestBuilder = new ManifestBuilder();
+    }
+
+    @Test
+    public void GoodFinalManifestTest() throws IOException, SheetNotFoundException {
+        Path finalManifestPath = manifestBuilder.createGoodFinalManifest();
+        File finalManifestOutputFile = new File(OutputManifestFilename.convert(finalManifestPath.toString()));
+        System.out.println("Output manifest filename is: " + finalManifestOutputFile.getAbsolutePath());
+        RunFinalManifestWorkflow runFinalManifestWorkflow = new RunFinalManifestWorkflow(finalManifestPath.toFile(), finalManifestOutputFile);
+        Assert.assertNotNull(runFinalManifestWorkflow);
+        finalManifestPath.toFile().deleteOnExit();
+        //finalManifestOutputFile.deleteOnExit();
+    }
+
+    @Test
+    public void BadFinalManifestTest() throws IOException, SheetNotFoundException {
+        Path finalManifestPath = manifestBuilder.createBadFinalManifest();
+        File finalManifestOutputFile = new File(OutputManifestFilename.convert(finalManifestPath.toString()));
+        System.out.println("Output manifest filename is: " + finalManifestOutputFile.getAbsolutePath());
+        RunFinalManifestWorkflow runFinalManifestWorkflow = new RunFinalManifestWorkflow(finalManifestPath.toFile(), finalManifestOutputFile);
+        Assert.assertNotNull(runFinalManifestWorkflow);
+        finalManifestPath.toFile().deleteOnExit();
+        //finalManifestOutputFile.deleteOnExit();
+    }
 }

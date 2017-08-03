@@ -76,10 +76,9 @@ public class Record implements Comparable<Record> {
         arrayList.add(Constants.FINAL_DESTINATION);
         arrayList.add(Constants.HUB);
         arrayList.add(Constants.COUNTRY);
-        // Do not output these fields;  ULNs are provided by higher
-        //arrayList.add(Constants.ULN);
-        //arrayList.add(Constants.FTN);
-        //arrayList.add(Constants.WIAS);
+        arrayList.add(Constants.ULN);
+        arrayList.add(Constants.FTN);
+        arrayList.add(Constants.WIAS);
         return arrayList;
     }
 

@@ -71,29 +71,29 @@ public class Util {
     }
 
     public static String getCellValueAsStringOrEmptyString(Cell cell) {
-        if (cell == null) {
-            return "";
-        }
-        String value;
-        switch (cell.getCellTypeEnum()) {
-            case STRING:
-                value = cell.getRichStringCellValue().getString();
-                break;
-            case NUMERIC:
-                if (DateUtil.isCellDateFormatted(cell)) {
-                    value = cell.getDateCellValue().toString();
-                } else {
-                    value = Integer.toString((int) cell.getNumericCellValue());
-                }
-                break;
-            case BOOLEAN:
-                value = Boolean.toString(cell.getBooleanCellValue());
-                break;
-            case FORMULA:
-                value = cell.getCellFormula();
-                break;
-            default:
-                value = "";
+        String value = "";
+        if (cell != null) {
+            //System.out.println("CellTypeEnum is " + cell.getCellTypeEnum());
+            switch (cell.getCellTypeEnum()) {
+                case STRING:
+                    value = cell.getRichStringCellValue().getString();
+                    break;
+                case NUMERIC:
+                    if (DateUtil.isCellDateFormatted(cell)) {
+                        value = cell.getDateCellValue().toString();
+                    } else {
+                        value = Integer.toString((int) cell.getNumericCellValue());
+                    }
+                    break;
+                case BOOLEAN:
+                    value = Boolean.toString(cell.getBooleanCellValue());
+                    break;
+                case FORMULA:
+                    value = cell.getCellFormula();
+                    break;
+                default:
+                    value = "";
+            }
         }
         return value;
     }
