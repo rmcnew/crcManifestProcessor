@@ -26,13 +26,12 @@ package com.starrypenguin.rmcnew.model.data.record_fields;
  */
 public class GenderGenerator {
 
-    public static final String[] genders = new String[]{"male", "female"};
 
     public GenderGenerator() {
     }
 
     public String getRandomGender() {
-        return genders[(int) (Math.random() * (genders.length - 1))];
+        return Coin.flip() ? "MALE" : "FEMALE";
     }
 
     public String getPossiblyBadGender() {

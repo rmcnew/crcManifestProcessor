@@ -43,6 +43,7 @@ public abstract class AbstractXlsxWriter {
 
     public void close() throws IOException {
         workbook.write(fileOutputStream);
+        fileOutputStream.flush();
         fileOutputStream.close();
     }
 

@@ -114,7 +114,6 @@ public class ManifestBuilder {
         }
         // generate good rows and put them in the premanifest
         finalManifestXlsxWriter.writeRecords(records, Constants.PREMANIFEST_SHEET);
-        finalManifestXlsxWriter.close();
         TreeSet<String> keys = new TreeSet<>();
         keys.addAll(records.keySet());
         String first = keys.first();
@@ -144,7 +143,6 @@ public class ManifestBuilder {
         }
         // generate good rows and put them in the premanifest
         finalManifestXlsxWriter.writeRecords(records, Constants.PREMANIFEST_SHEET);
-        finalManifestXlsxWriter.close();
         TreeSet<String> keys = new TreeSet<>();
         keys.addAll(records.keySet());
         String first = keys.first();

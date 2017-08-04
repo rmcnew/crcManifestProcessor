@@ -30,28 +30,17 @@ import java.io.IOException;
 import java.nio.file.Path;
 
 /**
- * RunPreManifestWorkflowTest
+ * RunBadManifestWorkflowsTest
  * <p/>
- * System test for RunPreManifestWorkflow API
+ * System test for Manifest Workflows using bad data
  */
-public class RunPreManifestWorkflowTest {
+public class RunBadManifestWorkflowsTest {
 
     private ManifestBuilder manifestBuilder;
 
     @Before
     public void SetupTests() {
         manifestBuilder = new ManifestBuilder();
-    }
-
-    @Test
-    public void GoodPreManifestTest() throws IOException, SheetNotFoundException {
-        Path preManifestPath = manifestBuilder.createGoodPreManifest();
-        File preManifestOutputFile = new File(OutputManifestFilename.convert(preManifestPath.toString()));
-        System.out.println("Output manifest filename is: " + preManifestOutputFile.getAbsolutePath());
-        RunPreManifestWorkflow runPreManifestWorkflow = new RunPreManifestWorkflow(preManifestPath.toFile(), preManifestOutputFile);
-        Assert.assertNotNull(runPreManifestWorkflow);
-        preManifestPath.toFile().deleteOnExit();
-        //preManifestOutputFile.deleteOnExit();
     }
 
     @Test
@@ -62,6 +51,17 @@ public class RunPreManifestWorkflowTest {
         RunPreManifestWorkflow runPreManifestWorkflow = new RunPreManifestWorkflow(preManifestPath.toFile(), preManifestOutputFile);
         Assert.assertNotNull(runPreManifestWorkflow);
         preManifestPath.toFile().deleteOnExit();
-        //preManifestOutputFile.deleteOnExit();
+        preManifestOutputFile.deleteOnExit();
+    }
+
+    @Test
+    public void BadFinalManifestTest() throws IOException, SheetNotFoundException {
+        Path finalManifestPath = manifestBuilder.createBadFinalManifest();
+        File finalManifestOutputFile = new File(OutputManifestFilename.convert(finalManifestPath.toString()));
+        System.out.println("Output manifest filename is: " + finalManifestOutputFile.getAbsolutePath());
+        RunFinalManifestWorkflow runFinalManifestWorkflow = new RunFinalManifestWorkflow(finalManifestPath.toFile(), finalManifestOutputFile);
+        Assert.assertNotNull(runFinalManifestWorkflow);
+        finalManifestPath.toFile().deleteOnExit();
+        finalManifestOutputFile.deleteOnExit();
     }
 }
