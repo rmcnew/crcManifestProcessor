@@ -29,45 +29,61 @@ public class FinalManifestXlsxWriter extends AbstractXlsxWriter {
 
     public void writeFinalManifest(Manifest finalManifest, Manifest preManifest, Records onPreManifestButDidNotFly) {
         if (finalManifest != null) {
-            writeRecords(finalManifest.getRecords(), Constants.FINAL_MANIFEST_SHEET);
-            writeSummaryTable(finalManifest, Constants.FINAL_MANIFEST_COUNTS_SHEET);
-            writeRecords(preManifest.getRecords(), Constants.PREMANIFEST_SHEET);
-            writeSummaryTable(preManifest, Constants.PREMANFIEST_COUNTS_SHEET);
-            writeRecords(onPreManifestButDidNotFly, Constants.ON_PREMANIFEST_BUT_DID_NOT_FLY);
-            writeHubs(finalManifest);
-            // there are bugs in the current version of Apache POI that do not
-            // copy cell styles correctly and corrupt the spreadsheet.  Copying
-            // the instruction sheet is not essential, so we will defer doing this for now.
-            //writeInstructions(finalManifest);
+            if (preManifest != null) {
+                if (onPreManifestButDidNotFly != null) {
+                    writeRecords(finalManifest.getRecords(), Constants.FINAL_MANIFEST_SHEET);
+                    writeSummaryTable(finalManifest, Constants.FINAL_MANIFEST_COUNTS_SHEET);
+                    writeRecords(preManifest.getRecords(), Constants.PREMANIFEST_SHEET);
+                    writeSummaryTable(preManifest, Constants.PREMANFIEST_COUNTS_SHEET);
+                    writeRecords(onPreManifestButDidNotFly, Constants.ON_PREMANIFEST_BUT_DID_NOT_FLY);
+                    writeHubs(finalManifest);
+                    // there are bugs in the current version of Apache POI that do not
+                    // copy cell styles correctly and corrupt the spreadsheet.  Copying
+                    // the instruction sheet is not essential, so we will defer doing this for now.
+                    //writeInstructions(finalManifest);
+                } else {
+                    throw new IllegalArgumentException("Cannot write null onPreManifestButDidNotFly records!");
+                }
+            } else {
+                throw new IllegalArgumentException("Cannot write Pre Manifest for null PreManifest model!");
+            }
         } else {
             throw new IllegalArgumentException("Cannot write Final Manifest for null FinalManifest model!");
         }
     }
 
     private void writeHubs(Manifest finalManifest) {
-        HubsWithoutUlnsMap hubsWithoutUlnsMap = CrcManifestProcessorConfig.getInstance().getHubsWithoutUlnsMap();
-        for (Country country : finalManifest) {
-            for (Hub hub : country) {
-                if (hubsWithoutUlnsMap.get(hub.getName())) {
-                    continue;
+        if (finalManifest != null) {
+            HubsWithoutUlnsMap hubsWithoutUlnsMap = CrcManifestProcessorConfig.getInstance().getHubsWithoutUlnsMap();
+            for (Country country : finalManifest) {
+                for (Hub hub : country) {
+                    if (hubsWithoutUlnsMap.get(hub.getName())) {
+                        continue;
+                    }
+                    writePrioritizedRecords(hub);
                 }
-                writePrioritizedRecords(hub);
             }
+        } else {
+            throw new IllegalArgumentException("finalManifest cannot be null!");
         }
     }
 
     private void writePrioritizedRecords(Hub hub) {
-        PrioritizedRecords prioritizedRecords = hub.getPrioritizedRecords();
-        String sheetName = hub.getName();
-        if (prioritizedRecords != null && !prioritizedRecords.isEmpty()) {
-            XSSFSheet finalManifestSheet = prioritizedRecords.toSheetEssence(sheetName).toXSSFSheet(workbook);
-            for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
-                finalManifestSheet.autoSizeColumn(columnIndex);
+        if (hub != null) {
+            PrioritizedRecords prioritizedRecords = hub.getPrioritizedRecords();
+            String sheetName = hub.getName();
+            if (prioritizedRecords != null && !prioritizedRecords.isEmpty()) {
+                XSSFSheet finalManifestSheet = prioritizedRecords.toSheetEssence(sheetName).toXSSFSheet(workbook);
+                for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
+                    finalManifestSheet.autoSizeColumn(columnIndex);
+                }
+                //String text = hub.generateUlnUsageString() + hub.generateOnwardMovementString();
+                //createTextBox(finalManifestSheet, hub.getClientAnchor(), text);
+            } else {
+                throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
             }
-            //String text = hub.generateUlnUsageString() + hub.generateOnwardMovementString();
-            //createTextBox(finalManifestSheet, hub.getClientAnchor(), text);
         } else {
-            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
+            throw new IllegalArgumentException("hub cannot be null!");
         }
     }
 

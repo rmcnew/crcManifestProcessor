@@ -112,31 +112,39 @@ public class Manifest implements Iterable<Country> {
     }
 
     public void plusOneToMilCount(Record record) {
-        String countryName = record.getCountry();
-        if (countries.containsKey(countryName)) {
-            Country country = countries.get(countryName);
-            country.plusOneToMilCountAndAppendRecord(record);
-            countries.put(countryName, country);
+        if (record != null) {
+            String countryName = record.getCountry();
+            if (countries.containsKey(countryName)) {
+                Country country = countries.get(countryName);
+                country.plusOneToMilCountAndAppendRecord(record);
+                countries.put(countryName, country);
+            } else {
+                Country country = new Country(countryName);
+                country.plusOneToMilCountAndAppendRecord(record);
+                countries.put(countryName, country);
+            }
+            milTotal++;
         } else {
-            Country country = new Country(countryName);
-            country.plusOneToMilCountAndAppendRecord(record);
-            countries.put(countryName, country);
+            throw new IllegalArgumentException("record cannot be null!");
         }
-        milTotal++;
     }
 
     public void plusOneToCivCount(Record record) {
-        String countryName = record.getCountry();
-        if (countries.containsKey(countryName)) {
-            Country country = countries.get(countryName);
-            country.plusOneToCivCountAndAppendRecord(record);
-            countries.put(countryName, country);
+        if (record != null) {
+            String countryName = record.getCountry();
+            if (countries.containsKey(countryName)) {
+                Country country = countries.get(countryName);
+                country.plusOneToCivCountAndAppendRecord(record);
+                countries.put(countryName, country);
+            } else {
+                Country country = new Country(countryName);
+                country.plusOneToCivCountAndAppendRecord(record);
+                countries.put(countryName, country);
+            }
+            civTotal++;
         } else {
-            Country country = new Country(countryName);
-            country.plusOneToCivCountAndAppendRecord(record);
-            countries.put(countryName, country);
+            throw new IllegalArgumentException("record cannot be null!");
         }
-        civTotal++;
     }
 
     public RowEssence getGrandTotalRowEssence() {

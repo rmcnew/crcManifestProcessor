@@ -305,10 +305,9 @@ public class Record implements Comparable<Record> {
         arrayList.add(finalDestination);
         arrayList.add(hub);
         arrayList.add(country);
-        // Do not output these fields;  ULNs are provided by higher
-        //arrayList.add(uln);
-        //arrayList.add(ftnId);
-        //arrayList.add(wiasId);
+        arrayList.add(uln);
+        arrayList.add(ftnId);
+        arrayList.add(wiasId);
         return arrayList;
     }
 
@@ -324,14 +323,18 @@ public class Record implements Comparable<Record> {
     }
 
     public RowEssence toRowEssence(CellStyleEssence cellStyleEssence) {
-        RowEssence rowEssence = new RowEssence();
-        for (String field : toList()) {
-            CellEssence cell = new CellEssence();
-            cell.setCellStyleEssence(cellStyleEssence);
-            cell.setValue(field);
-            rowEssence.add(cell);
+        if (cellStyleEssence != null) {
+            RowEssence rowEssence = new RowEssence();
+            for (String field : toList()) {
+                CellEssence cell = new CellEssence();
+                cell.setCellStyleEssence(cellStyleEssence);
+                cell.setValue(field);
+                rowEssence.add(cell);
+            }
+            return rowEssence;
+        } else {
+            throw new IllegalArgumentException("cellStyleEssence cannot be null!");
         }
-        return rowEssence;
     }
 
     public boolean isMilitary() {

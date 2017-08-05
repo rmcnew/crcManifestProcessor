@@ -30,7 +30,7 @@ import java.util.List;
 
 public class SheetEssence implements Iterable<RowEssence> {
 
-    private List<RowEssence> rowEssences = new ArrayList<RowEssence>();
+    private List<RowEssence> rowEssences = new ArrayList<>();
     private String sheetName;
 
     public SheetEssence() {

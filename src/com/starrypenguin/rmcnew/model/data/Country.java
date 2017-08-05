@@ -108,35 +108,43 @@ public class Country implements Iterable<Hub> {
     }
 
     public void plusOneToMilCountAndAppendRecord(Record record) {
-        String hubName = record.getHub();
-        Hub hub;
-        if (hubs.containsKey(hubName)) {
-            hub = hubs.get(hubName);
-            hub.plusOneToMilCount();
-            hubs.put(hubName, hub);
+        if (record != null) {
+            String hubName = record.getHub();
+            Hub hub;
+            if (hubs.containsKey(hubName)) {
+                hub = hubs.get(hubName);
+                hub.plusOneToMilCount();
+                hubs.put(hubName, hub);
+            } else {
+                hub = new Hub(hubName, this);
+                hub.plusOneToMilCount();
+                hubs.put(hubName, hub);
+            }
+            milCount++;
+            hub.appendRecord(record);
         } else {
-            hub = new Hub(hubName, this);
-            hub.plusOneToMilCount();
-            hubs.put(hubName, hub);
+            throw new IllegalArgumentException("record cannot be null!");
         }
-        milCount++;
-        hub.appendRecord(record);
     }
 
     public void plusOneToCivCountAndAppendRecord(Record record) {
-        String hubName = record.getHub();
-        Hub hub;
-        if (hubs.containsKey(hubName)) {
-            hub = hubs.get(hubName);
-            hub.plusOneToCivCount();
-            hubs.put(hubName, hub);
+        if (record != null) {
+            String hubName = record.getHub();
+            Hub hub;
+            if (hubs.containsKey(hubName)) {
+                hub = hubs.get(hubName);
+                hub.plusOneToCivCount();
+                hubs.put(hubName, hub);
+            } else {
+                hub = new Hub(hubName, this);
+                hub.plusOneToCivCount();
+                hubs.put(hubName, hub);
+            }
+            civCount++;
+            hub.appendRecord(record);
         } else {
-            hub = new Hub(hubName, this);
-            hub.plusOneToCivCount();
-            hubs.put(hubName, hub);
+            throw new IllegalArgumentException("record cannot be null!");
         }
-        civCount++;
-        hub.appendRecord(record);
     }
 
     // name, MIL total, CIV total, Grand total

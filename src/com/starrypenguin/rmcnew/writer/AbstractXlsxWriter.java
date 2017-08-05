@@ -31,27 +31,43 @@ import java.io.IOException;
 
 public abstract class AbstractXlsxWriter {
 
-    XSSFWorkbook workbook;
-    FileOutputStream fileOutputStream;
+    XSSFWorkbook workbook = null;
+    FileOutputStream fileOutputStream = null;
 
     public void openXlsxForWriting(File file) throws IOException {
         if (file != null) {
-            workbook = new XSSFWorkbook();
-            fileOutputStream = new FileOutputStream(file);
+            if ((workbook == null) && (fileOutputStream == null)) {
+                workbook = new XSSFWorkbook();
+                fileOutputStream = new FileOutputStream(file);
+            } else {
+                throw new IllegalStateException("File already open for writing!");
+            }
+        } else {
+            throw new IllegalArgumentException("Output file cannot be null!");
         }
     }
 
     public void close() throws IOException {
-        workbook.write(fileOutputStream);
-        fileOutputStream.flush();
-        fileOutputStream.close();
+        if ((workbook != null) && (fileOutputStream != null)) {
+            workbook.write(fileOutputStream);
+            fileOutputStream.flush();
+            fileOutputStream.close();
+            workbook = null;
+            fileOutputStream = null;
+        } else {
+            throw new IllegalStateException("Cannot close a file is that is not open!");
+        }
     }
 
     public void writeRecords(Records records, String sheetName) {
         if (records != null && !records.isEmpty()) {
-            XSSFSheet manifestSheet = records.toSheetEssence(sheetName).toXSSFSheet(workbook);
-            for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
-                manifestSheet.autoSizeColumn(columnIndex);
+            if ((workbook != null) && (fileOutputStream != null)) {
+                XSSFSheet manifestSheet = records.toSheetEssence(sheetName).toXSSFSheet(workbook);
+                for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
+                    manifestSheet.autoSizeColumn(columnIndex);
+                }
+            } else {
+                throw new IllegalStateException("File is not open!  Cannot write records to unopened file.");
             }
         } else {
             throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
@@ -60,9 +76,13 @@ public abstract class AbstractXlsxWriter {
 
     protected void writeSummaryTable(Manifest manifest, String sheetName) {
         if (manifest != null) {
-            XSSFSheet manifestCountsSheet = manifest.toSheetEssence(sheetName).toXSSFSheet(workbook);
-            for (int columnIndex = 0; columnIndex < 4; columnIndex++) {
-                manifestCountsSheet.autoSizeColumn(columnIndex);
+            if ((workbook != null) && (fileOutputStream != null)) {
+                XSSFSheet manifestCountsSheet = manifest.toSheetEssence(sheetName).toXSSFSheet(workbook);
+                for (int columnIndex = 0; columnIndex < 4; columnIndex++) {
+                    manifestCountsSheet.autoSizeColumn(columnIndex);
+                }
+            } else {
+                throw new IllegalStateException("Cannot write summary table to  a file is that is not open!");
             }
         } else {
             throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty manifest!");
@@ -71,11 +91,15 @@ public abstract class AbstractXlsxWriter {
 
     protected void writeInstructions(Manifest manifest) {
         if (manifest != null) {
-            XSSFSheet destSheet = workbook.createSheet(Constants.INSTRUCTIONS_SHEET);
-            XSSFSheet srcSheet = manifest.getInstructions();
-            Util.copyXSSFSheet(srcSheet, destSheet);
-            for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
-                destSheet.autoSizeColumn(columnIndex);
+            if ((workbook != null) && (fileOutputStream != null)) {
+                XSSFSheet destSheet = workbook.createSheet(Constants.INSTRUCTIONS_SHEET);
+                XSSFSheet srcSheet = manifest.getInstructions();
+                Util.copyXSSFSheet(srcSheet, destSheet);
+                for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
+                    destSheet.autoSizeColumn(columnIndex);
+                }
+            } else {
+                throw new IllegalStateException("Cannot write instructions to  a file is that is not open!");
             }
         } else {
             throw new IllegalArgumentException("Cannot create instructions sheet from null Manifest!");
@@ -84,16 +108,17 @@ public abstract class AbstractXlsxWriter {
 
     protected void createTextBox(XSSFSheet xssfSheet, XSSFClientAnchor xssfClientAnchor, String text) {
         if (xssfSheet != null) {
-            XSSFDrawing xssfDrawing = xssfSheet.createDrawingPatriarch();
-            XSSFTextBox xssfTextBox = xssfDrawing.createTextbox(xssfClientAnchor);
-            xssfTextBox.setText(new XSSFRichTextString(text));
-
+            if ((workbook != null) && (fileOutputStream != null)) {
+                XSSFDrawing xssfDrawing = xssfSheet.createDrawingPatriarch();
+                XSSFTextBox xssfTextBox = xssfDrawing.createTextbox(xssfClientAnchor);
+                xssfTextBox.setText(new XSSFRichTextString(text));
+            } else {
+                throw new IllegalStateException("Cannot create text box in a file is that is not open!");
+            }
         } else {
             throw new IllegalArgumentException("Cannot create drawing on  null or empty sheet!");
         }
     }
 
-    public void copyInstructionsSheet() {
 
-    }
 }
