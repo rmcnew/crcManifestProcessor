@@ -24,23 +24,36 @@ import com.starrypenguin.rmcnew.model.exception.SheetNotFoundException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * RunGoodManifestWorkflowsTest
  * <p/>
  * System test for Manifest Workflows using good data
  */
+@RunWith(Parameterized.class)
 public class RunGoodManifestWorkflowsTest {
 
-    private ManifestBuilder manifestBuilder;
+    private static final ManifestBuilder manifestBuilder = new ManifestBuilder();
+    private static final int iterationMax = 4; // each test will run iterationMax times
+    private static int testsRunCount = 0;
+
+    @Parameterized.Parameters
+    public static List<Object[]> iterationsToRun() {
+        return Arrays.asList(new Object[iterationMax][0]);
+    }
 
     @Before
     public void SetupTests() {
-        manifestBuilder = new ManifestBuilder();
+        System.out.println("Running good data test number: " + testsRunCount);
+        testsRunCount++;
     }
 
     @Test

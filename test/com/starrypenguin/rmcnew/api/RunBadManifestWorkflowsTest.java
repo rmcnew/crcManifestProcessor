@@ -24,27 +24,40 @@ import com.starrypenguin.rmcnew.model.exception.SheetNotFoundException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * RunBadManifestWorkflowsTest
  * <p/>
  * System test for Manifest Workflows using bad data
  */
+@RunWith(Parameterized.class)
 public class RunBadManifestWorkflowsTest {
 
-    private ManifestBuilder manifestBuilder;
+    private static final ManifestBuilder manifestBuilder = new ManifestBuilder();
+    private static final int iterationMax = 10; // each test will run iterationMax times
+    private static int testsRunCount = 0;
+
+    @Parameterized.Parameters
+    public static List<Object[]> iterationsToRun() {
+        return Arrays.asList(new Object[iterationMax][0]);
+    }
 
     @Before
     public void SetupTests() {
-        manifestBuilder = new ManifestBuilder();
+        System.out.println("Running bad data test number: " + testsRunCount);
+        testsRunCount++;
     }
 
     @Test
-    public void BadPreManifestTest() throws IOException, SheetNotFoundException {
+    public void BadPreManifestTest() throws IOException, SheetNotFoundException, IllegalArgumentException {
         Path preManifestPath = manifestBuilder.createBadPreManifest();
         File preManifestOutputFile = new File(OutputManifestFilename.convert(preManifestPath.toString()));
         System.out.println("Output manifest filename is: " + preManifestOutputFile.getAbsolutePath());
@@ -55,7 +68,7 @@ public class RunBadManifestWorkflowsTest {
     }
 
     @Test
-    public void BadFinalManifestTest() throws IOException, SheetNotFoundException {
+    public void BadFinalManifestTest() throws IOException, SheetNotFoundException, IllegalArgumentException {
         Path finalManifestPath = manifestBuilder.createBadFinalManifest();
         File finalManifestOutputFile = new File(OutputManifestFilename.convert(finalManifestPath.toString()));
         System.out.println("Output manifest filename is: " + finalManifestOutputFile.getAbsolutePath());
