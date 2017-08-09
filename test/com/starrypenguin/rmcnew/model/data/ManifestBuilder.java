@@ -29,7 +29,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.Instant;
-import java.util.TreeSet;
 
 /**
  * ManifestBuilder
@@ -45,9 +44,9 @@ public class ManifestBuilder {
 
     public ManifestBuilder() {
         try {
-            //String tempDirString = System.getProperty("java.io.tmpdir");
+            String tempDirString = System.getProperty("java.io.tmpdir");
             //System.out.println("System temp directory is: " + tempDirString);
-            String tempDirString = Util.getCurrentDirectory();
+            //String tempDirString = Util.getCurrentDirectory();
             tempDirectory = Files.createTempDirectory((new File(tempDirString)).toPath(), "ManifestBuilder_" + Instant.now().toString());
             tempDirectory.toFile().deleteOnExit();
         } catch (IOException e) {
@@ -65,6 +64,7 @@ public class ManifestBuilder {
         preManifestXlsxWriter.openXlsxForWriting(manifestFile.toFile());
         // pick a random number between 4 and 16 for number of rows to generate
         int rowCount = generateRandomRecordCount();
+        System.out.println(rowCount + " rows will be created for the good pre-manifest.");
         Records records = new Records();
         for (int i = 0; i < rowCount; i++) {
             Record record = recordBuilder.generateGoodRecord();
@@ -86,6 +86,7 @@ public class ManifestBuilder {
         preManifestXlsxWriter.openXlsxForWriting(manifestFile.toFile());
         // pick a random number between 4 and 16 for number of rows to generate
         int rowCount = generateRandomRecordCount();
+        System.out.println(rowCount + " rows will be created for the bad pre-manifest.");
         Records records = new Records();
         for (int i = 0; i < rowCount; i++) {
             Record record = recordBuilder.generateBadRecord();
@@ -107,21 +108,21 @@ public class ManifestBuilder {
         FinalManifestXlsxWriter finalManifestXlsxWriter = new FinalManifestXlsxWriter();
         finalManifestXlsxWriter.openXlsxForWriting(manifestFile.toFile());
         int rowCount = generateRandomRecordCount();
-        Records records = new Records();
+        System.out.println(rowCount + " rows will be created for the good pre-manifest.");
+        Records preManifestRecords = new Records();
+        Records finalManifestRecords = new Records();
         for (int i = 0; i < rowCount; i++) {
             Record record = recordBuilder.generateGoodRecord();
-            records.addRecord(record);
+            preManifestRecords.addRecord(record);
+            if (i % 5 != 0) {
+                finalManifestRecords.addRecord(record);
+            }
         }
         // generate good rows and put them in the premanifest
-        finalManifestXlsxWriter.writeRecords(records, Constants.PREMANIFEST_SHEET);
-        TreeSet<String> keys = new TreeSet<>();
-        keys.addAll(records.keySet());
-        String first = keys.first();
-        String last = keys.last();
-        records.remove(first);
-        records.remove(last);
+        finalManifestXlsxWriter.writeRecords(preManifestRecords, Constants.PREMANIFEST_SHEET);
+        System.out.println(finalManifestRecords.size() + " rows will be created for the good final manifest.");
         // generate good rows and put them in the final manifest
-        finalManifestXlsxWriter.writeRecords(records, Constants.FINAL_MANIFEST_SHEET);
+        finalManifestXlsxWriter.writeRecords(finalManifestRecords, Constants.FINAL_MANIFEST_SHEET);
         finalManifestXlsxWriter.close();
 
         return manifestFile;
@@ -136,21 +137,21 @@ public class ManifestBuilder {
         FinalManifestXlsxWriter finalManifestXlsxWriter = new FinalManifestXlsxWriter();
         finalManifestXlsxWriter.openXlsxForWriting(manifestFile.toFile());
         int rowCount = generateRandomRecordCount();
-        Records records = new Records();
+        System.out.println(rowCount + " rows will be created for the bad pre-manifest.");
+        Records preManifestRecords = new Records();
+        Records finalManifestRecords = new Records();
         for (int i = 0; i < rowCount; i++) {
             Record record = recordBuilder.generateBadRecord();
-            records.addRecord(record);
+            preManifestRecords.addRecord(record);
+            if (i % 5 != 0) {
+                finalManifestRecords.addRecord(record);
+            }
         }
         // generate good rows and put them in the premanifest
-        finalManifestXlsxWriter.writeRecords(records, Constants.PREMANIFEST_SHEET);
-        TreeSet<String> keys = new TreeSet<>();
-        keys.addAll(records.keySet());
-        String first = keys.first();
-        String last = keys.last();
-        records.remove(first);
-        records.remove(last);
+        finalManifestXlsxWriter.writeRecords(preManifestRecords, Constants.PREMANIFEST_SHEET);
+        System.out.println(finalManifestRecords.size() + " rows will be created for the bad final manifest.");
         // generate good rows and put them in the final manifest
-        finalManifestXlsxWriter.writeRecords(records, Constants.FINAL_MANIFEST_SHEET);
+        finalManifestXlsxWriter.writeRecords(finalManifestRecords, Constants.FINAL_MANIFEST_SHEET);
         finalManifestXlsxWriter.close();
         
         return manifestFile;
@@ -164,7 +165,7 @@ public class ManifestBuilder {
     }
 
     private int generateRandomRecordCount() {
-        return (int) (Math.random() * 12 + 4);
+        return (int) ((Math.random() * 12) + 8);
     }
 
 

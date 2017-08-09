@@ -60,7 +60,7 @@ public abstract class AbstractXlsxWriter {
     }
 
     public void writeRecords(Records records, String sheetName) {
-        if (records != null && !records.isEmpty()) {
+        if ((records != null) && (!records.isEmpty())) {
             if ((workbook != null) && (fileOutputStream != null)) {
                 XSSFSheet manifestSheet = records.toSheetEssence(sheetName).toXSSFSheet(workbook);
                 for (int columnIndex = 0; columnIndex < 13; columnIndex++) {
@@ -70,6 +70,11 @@ public abstract class AbstractXlsxWriter {
                 throw new IllegalStateException("File is not open!  Cannot write records to unopened file.");
             }
         } else {
+            if (records == null) {
+                System.err.println("records is null!");
+            } else if (records.isEmpty()) {
+                System.err.println("records is empty!");
+            }
             throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
         }
     }
