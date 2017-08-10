@@ -1,0 +1,493 @@
+<html>
+<head>
+<style type='text/css'>
+html, body, div, span, p, blockquote, pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+body{
+	line-height: 1;
+	color: black;
+	background: white;
+	margin-left: 20px;
+}
+
+.src { 
+	border: 1px solid #dddddd;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-family: Consolas, Courier, monospace;
+}
+
+
+.covered {background-color: #ddffdd}
+.uncovered {background-color: #ffdddd}
+.killed {background-color: #aaffaa}
+.survived {background-color: #ffaaaa}
+.uncertain {background-color: #dde7ef}
+.run_error {background-color: #dde7ef}
+.na {background-color: #eeeeee}
+.timed_out {background-color: #dde7ef}
+.non_viable {background-color: #aaffaa}
+.memory_error {background-color: #dde7ef}
+.not_started {background-color: #dde7ef; color : red}
+.no_coverage {background-color: #ffaaaa}
+
+
+.pop {outline:none; }
+.pop strong {line-height:30px;}
+.pop {text-decoration:none;}
+.pop span { z-index:10;display:none; padding:14px 20px; margin-top:-30px; margin-left:28px; width:800px; line-height:16px; word-wrap:break-word; }
+.pop:hover span{ display:inline; position:absolute; color:#111; border:1px solid #DCA; background:#fffAF0;}
+
+.pop span { border-radius:4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; -moz-box-shadow: 5px 5px 8px #CCC; -webkit-box-shadow: 5px 5px 8px #CCC; box-shadow: 5px 5px 8px #CCC; }
+</style>
+
+</head>
+<body>
+
+
+<h1>ManifestBuilder.java</h1>
+
+<table class="src">
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_51'>51</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_51'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span> removed call to java/io/File::deleteOnExit &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_53'>53</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_53'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b><init><br/><b>Killed by : </b>none</span></span> removed call to java/io/IOException::printStackTrace &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_61'>61</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_61'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodPreManifest<br/><b>Killed by : </b>none</span></span> removed call to com/starrypenguin/rmcnew/model/data/ManifestBuilder::copyManifestTemplateToTempDir &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_64'>64</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_64'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodPreManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodPreManifestTest[0](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest)</span></span> removed call to com/starrypenguin/rmcnew/writer/PreManifestXlsxWriter::openXlsxForWriting &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_67'>67</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_67'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodPreManifest<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_69'>69</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_69'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodPreManifest<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; TIMED_OUT</p> <p class='TIMED_OUT'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>createGoodPreManifest<br/><b>Killed by : </b>none</span></span> Changed increment from 1 to -1 &rarr; TIMED_OUT</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>createGoodPreManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodPreManifestTest[0](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_74'>74</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_74'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodPreManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodPreManifestTest[0](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest)</span></span> removed call to com/starrypenguin/rmcnew/writer/PreManifestXlsxWriter::writeRecords &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_75'>75</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_75'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodPreManifest<br/><b>Killed by : </b>none</span></span> removed call to com/starrypenguin/rmcnew/writer/PreManifestXlsxWriter::close &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_76'>76</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_76'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodPreManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodPreManifestTest[0](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest)</span></span> mutated return of Object value for com/starrypenguin/rmcnew/model/data/ManifestBuilder::createGoodPreManifest to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_83'>83</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_83'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadPreManifest<br/><b>Killed by : </b>none</span></span> removed call to com/starrypenguin/rmcnew/model/data/ManifestBuilder::copyManifestTemplateToTempDir &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_86'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadPreManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[0](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest)</span></span> removed call to com/starrypenguin/rmcnew/writer/PreManifestXlsxWriter::openXlsxForWriting &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_89'>89</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_89'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadPreManifest<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_91'>91</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_91'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadPreManifest<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; TIMED_OUT</p> <p class='TIMED_OUT'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>createBadPreManifest<br/><b>Killed by : </b>none</span></span> Changed increment from 1 to -1 &rarr; TIMED_OUT</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>createBadPreManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[0](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_96'>96</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_96'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadPreManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[0](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest)</span></span> removed call to com/starrypenguin/rmcnew/writer/PreManifestXlsxWriter::writeRecords &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_97'>97</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_97'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadPreManifest<br/><b>Killed by : </b>none</span></span> removed call to com/starrypenguin/rmcnew/writer/PreManifestXlsxWriter::close &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_99'>99</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_99'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadPreManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[0](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest)</span></span> mutated return of Object value for com/starrypenguin/rmcnew/model/data/ManifestBuilder::createBadPreManifest to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_106'>106</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_106'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>none</span></span> removed call to com/starrypenguin/rmcnew/model/data/ManifestBuilder::copyManifestTemplateToTempDir &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_109'>109</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_109'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodFinalManifestTest[3](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest)</span></span> removed call to com/starrypenguin/rmcnew/writer/FinalManifestXlsxWriter::openXlsxForWriting &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_111'>111</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_111'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_114'>114</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_114'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; TIMED_OUT</p> <p class='TIMED_OUT'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>none</span></span> Changed increment from 1 to -1 &rarr; TIMED_OUT</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodFinalManifestTest[3](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_117'>117</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_117'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>none</span></span> Replaced integer modulus with multiplication &rarr; TIMED_OUT</p> <p class='TIMED_OUT'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_122'>122</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_122'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodFinalManifestTest[3](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest)</span></span> removed call to com/starrypenguin/rmcnew/writer/FinalManifestXlsxWriter::writeRecords &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_123'>123</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_123'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_125'>125</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_125'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodFinalManifestTest[3](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest)</span></span> removed call to com/starrypenguin/rmcnew/writer/FinalManifestXlsxWriter::writeRecords &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_126'>126</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_126'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodFinalManifestTest[3](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest)</span></span> removed call to com/starrypenguin/rmcnew/writer/FinalManifestXlsxWriter::close &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_128'>128</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_128'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createGoodFinalManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodFinalManifestTest[3](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest)</span></span> mutated return of Object value for com/starrypenguin/rmcnew/model/data/ManifestBuilder::createGoodFinalManifest to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_135'>135</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_135'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>none</span></span> removed call to com/starrypenguin/rmcnew/model/data/ManifestBuilder::copyManifestTemplateToTempDir &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_138'>138</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_138'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[9](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest)</span></span> removed call to com/starrypenguin/rmcnew/writer/FinalManifestXlsxWriter::openXlsxForWriting &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_140'>140</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_140'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_143'>143</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_143'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>none</span></span> changed conditional boundary &rarr; TIMED_OUT</p> <p class='TIMED_OUT'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>none</span></span> Changed increment from 1 to -1 &rarr; TIMED_OUT</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[9](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest)</span></span> negated conditional &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_146'>146</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_146'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>none</span></span> Replaced integer modulus with multiplication &rarr; SURVIVED</p> <p class='TIMED_OUT'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_151'>151</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_151'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[9](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest)</span></span> removed call to com/starrypenguin/rmcnew/writer/FinalManifestXlsxWriter::writeRecords &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_152'>152</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_152'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_154'>154</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_154'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>none</span></span> removed call to com/starrypenguin/rmcnew/writer/FinalManifestXlsxWriter::writeRecords &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_155'>155</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_155'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>none</span></span> removed call to com/starrypenguin/rmcnew/writer/FinalManifestXlsxWriter::close &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_157'>157</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_157'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>createBadFinalManifest<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[9](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest)</span></span> mutated return of Object value for com/starrypenguin/rmcnew/model/data/ManifestBuilder::createBadFinalManifest to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_161'>161</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_161'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyManifestTemplateToTempDir<br/><b>Killed by : </b>none</span></span> negated conditional &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_162'>162</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_162'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>copyManifestTemplateToTempDir<br/><b>Killed by : </b>none</span></span> removed call to java/io/PrintStream::println &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_168'>168</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_168'/> 
+
+<p class='TIMED_OUT'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>generateRandomRecordCount<br/><b>Killed by : </b>none</span></span> Replaced double multiplication with division &rarr; TIMED_OUT</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>generateRandomRecordCount<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[0](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest)</span></span> Replaced double addition with subtraction &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>generateRandomRecordCount<br/><b>Killed by : </b>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[0](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest)</span></span> replaced return of integer sized value with (x == 0 ? 1 : 0) &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@47a3d56a_173'>173</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@47a3d56a_173'/> 
+
+<p class='NO_COVERAGE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getTempDirectory<br/><b>Killed by : </b>none</span></span> mutated return of Object value for com/starrypenguin/rmcnew/model/data/ManifestBuilder::getTempDirectory to ( if (x != null) null else throw new RuntimeException ) &rarr; NO_COVERAGE</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>INCREMENTS_MUTATOR</li>
+<li class='mutator'>VOID_METHOD_CALL_MUTATOR</li>
+<li class='mutator'>RETURN_VALS_MUTATOR</li>
+<li class='mutator'>MATH_MUTATOR</li>
+<li class='mutator'>NEGATE_CONDITIONALS_MUTATOR</li>
+<li class='mutator'>INVERT_NEGS_MUTATOR</li>
+<li class='mutator'>CONDITIONALS_BOUNDARY_MUTATOR</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[1](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (1659 ms)</li><li>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodFinalManifestTest[2](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest) (2078 ms)</li><li>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodPreManifestTest[1](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest) (869 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[8](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (475 ms)</li><li>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodFinalManifestTest[1](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest) (2079 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[6](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (1804 ms)</li><li>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodPreManifestTest[0](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest) (501 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[8](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (1184 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[5](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (1270 ms)</li><li>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodPreManifestTest[3](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest) (583 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[0](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (445 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[6](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (511 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[3](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (1529 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[2](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (692 ms)</li><li>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodFinalManifestTest[0](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest) (2199 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[4](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (559 ms)</li><li>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodPreManifestTest[2](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest) (805 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[0](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (5865 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[9](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (1083 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[7](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (1300 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[9](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (461 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[4](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (1556 ms)</li><li>com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest.GoodFinalManifestTest[3](com.starrypenguin.rmcnew.api.RunGoodManifestWorkflowsTest) (1584 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[7](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (464 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[1](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (736 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[5](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (655 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadFinalManifestTest[2](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (1504 ms)</li><li>com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest.BadPreManifestTest[3](com.starrypenguin.rmcnew.api.RunBadManifestWorkflowsTest) (623 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.2.2
+
+</body>
+</html>

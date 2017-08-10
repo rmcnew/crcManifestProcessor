@@ -72,10 +72,11 @@ public abstract class AbstractXlsxWriter {
         } else {
             if (records == null) {
                 System.err.println("records is null!");
+                throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
             } else if (records.isEmpty()) {
+                // if records are empty, there is nothing to do
                 System.err.println("records is empty!");
             }
-            throw new IllegalArgumentException("Cannot create XLSX sheet from null or empty Records!");
         }
     }
 
